@@ -1,0 +1,123 @@
+INSERT INTO `dontstarve`.`userinfo`
+(`Guid_id`,
+`Name`,
+`Pwd`,
+`Remark`,
+`SubTime`,
+`Signature`,
+`QQ`,
+`Phone`,
+`IdCard`)
+VALUES
+(
+uuid(),
+'零心',
+md5('123') ,
+'学生党',
+'12345678',
+'梦想总要有的，万一见鬼了昵',
+'530060499',
+'12345678987',
+'032165498523671259'
+);
+
+INSERT INTO `dontstarve`.`userinfo`
+(`Guid_id`,
+`Name`,
+`Pwd`,
+`Remark`,
+`SubTime`,
+`Signature`,
+`QQ`,
+`Phone`,
+`IdCard`)
+VALUES
+(
+uuid(),
+'上帝掷骰子',
+md5('123') ,
+'技术党',
+'12345678',
+'梦想总要有的，万一见鬼了昵',
+'530060499',
+'12345678987',
+'032165498523671259'
+);
+
+
+
+INSERT INTO `dontstarve`.`cookinfo`
+(`Guid_id`,
+`Name`,
+`Rating`,
+`PraiseNum`,
+`VideoPath`,
+`Remark`,
+`Func`)
+VALUES(uuid(),'三鲜锅煲',80,999,'3pot_boil','1．锅煲的菜料要新鲜、干净。2．成菜在色泽和造型上要美观悦目。','1、香菇、冬笋、皮肚切成片，下锅煮熟，用调料调味，起锅放入小砂煲中。
+2、火腿、胡萝卜、莴笋切成长片，焯水后整齐摆放在小砂煲中的菜肴上，烧热即食。')
+
+
+INSERT INTO `dontstarve`.`materialinfo`
+(
+`Name`)
+VALUES('香菇'),('冬笋'),('火腿'),('皮肚'),('胡萝卜'),('莴笋');
+
+
+INSERT INTO `dontstarve`.`r_material_cookinfo`
+(`CookId`,
+`MaterialId`)
+VALUES('3b99cfb2-bc2a-11e6-928b-68f72891be95',1),('3b99cfb2-bc2a-11e6-928b-68f72891be95',2),('3b99cfb2-bc2a-11e6-928b-68f72891be95',3),('3b99cfb2-bc2a-11e6-928b-68f72891be95',4),('3b99cfb2-bc2a-11e6-928b-68f72891be95',5),('3b99cfb2-bc2a-11e6-928b-68f72891be95',6)
+
+
+
+INSERT INTO `dontstarve`.`categoryinfo`
+(`Name`)
+VALUES('徽菜'),('煲汤'),('老少皆宜');
+
+INSERT INTO `dontstarve`.`r_category_cookinfo`
+(`CategoryId`,
+`CookId`)
+VALUES(1,'3b99cfb2-bc2a-11e6-928b-68f72891be95'),(2,'3b99cfb2-bc2a-11e6-928b-68f72891be95'),(3,'3b99cfb2-bc2a-11e6-928b-68f72891be95');
+
+
+
+INSERT INTO `dontstarve`.`cookcommentinfo`
+(`Guid_id`,
+`CookId`,
+`UserId`,
+`Content`,
+`PraiseNum`)
+VALUES(uuid(),'3b99cfb2-bc2a-11e6-928b-68f72891be95','5142d787-bc28-11e6-928b-68f72891be95','
+方法一: 
+delete from tb1; 
+ALTER TABLE tbl AUTO_INCREMENT = 100; 
+（好处, 可以设置 AUTO_INCREMENT 为任意值开始） 
+提示:如果表列和数据很多, 速度会很慢, 如90多万条, 会在10分钟以上. ',1001);
+
+
+
+
+INSERT INTO `dontstarve`.`saysayinfo`
+(`Guid_id`,
+`UserId`,
+`Content`,
+`Subtime`,
+`IsAllUserCanSee`)
+VALUES(uuid(),'5142d787-bc28-11e6-928b-68f72891be95','很早以前的想法，现在终于做出来了。BGM：三天三夜',12346578,true);
+
+
+INSERT INTO `dontstarve`.`saysaycommentinfo`
+(`Guid_id`,
+`SaysayId`,
+`UserId`,
+`Content`,
+`Subtime`)
+VALUES(uuid(),'ceef6e7a-bc44-11e6-928b-68f72891be95','5142d787-bc28-11e6-928b-68f72891be95','评论区，我就服你',12346578);
+
+
+INSERT INTO `dontstarve`.`friendinfo`
+(`UserId`,
+`FriendId`,
+`SubTime`)
+VALUES('5142d787-bc28-11e6-928b-68f72891be95','c220ccf3-bc45-11e6-928b-68f72891be95',12346579);

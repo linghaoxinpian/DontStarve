@@ -1,0 +1,914 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dontstarveModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="actioninfo">
+          <Key>
+            <PropertyRef Name="Guid_id" />
+          </Key>
+          <Property Name="Guid_id" Type="guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="categoryinfo">
+          <Key>
+            <PropertyRef Name="Auto_id" />
+          </Key>
+          <Property Name="Auto_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Level" Type="utinyint" />
+        </EntityType>
+        <EntityType Name="cookcommentinfo">
+          <Key>
+            <PropertyRef Name="Guid_id" />
+          </Key>
+          <Property Name="Guid_id" Type="guid" Nullable="false" />
+          <Property Name="CookId" Type="guid" />
+          <Property Name="UserId" Type="guid" />
+          <Property Name="Content" Type="varchar" MaxLength="600" />
+          <Property Name="PraiseNum" Type="uint" />
+        </EntityType>
+        <EntityType Name="cookinfo">
+          <Key>
+            <PropertyRef Name="Guid_id" />
+          </Key>
+          <Property Name="Guid_id" Type="guid" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Level" Type="utinyint" />
+          <Property Name="DelFlag" Type="bit" />
+          <Property Name="Rating" Type="utinyint" />
+          <Property Name="PraiseNum" Type="uint" />
+          <Property Name="pic" Type="mediumblob" />
+          <Property Name="VideoPath" Type="varchar" MaxLength="100" />
+          <Property Name="Remark" Type="text" />
+          <Property Name="Func" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="friendinfo">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="guid" Nullable="false" />
+          <Property Name="FriendId" Type="guid" Nullable="false" />
+          <Property Name="SubTime" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="materialinfo">
+          <Key>
+            <PropertyRef Name="auto_id" />
+          </Key>
+          <Property Name="auto_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Remark" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="r_category_cookinfo">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+            <PropertyRef Name="CookId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="CookId" Type="guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="r_material_cookinfo">
+          <Key>
+            <PropertyRef Name="CookId" />
+            <PropertyRef Name="MaterialId" />
+          </Key>
+          <Property Name="CookId" Type="guid" Nullable="false" />
+          <Property Name="MaterialId" Type="int" Nullable="false" />
+          <Property Name="Num" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="r_role_actioninfo">
+          <Key>
+            <PropertyRef Name="Guid_id" />
+            <PropertyRef Name="Rol_Guid_id" />
+          </Key>
+          <Property Name="Guid_id" Type="guid" Nullable="false" />
+          <Property Name="Rol_Guid_id" Type="guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="r_user_actioninfo">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ActionId" />
+          </Key>
+          <Property Name="UserId" Type="guid" Nullable="false" />
+          <Property Name="ActionId" Type="guid" Nullable="false" />
+          <Property Name="IsPass" Type="bit" />
+        </EntityType>
+        <EntityType Name="r_user_roleinfo">
+          <Key>
+            <PropertyRef Name="Guid_id" />
+            <PropertyRef Name="Rol_Guid_id" />
+          </Key>
+          <Property Name="Guid_id" Type="guid" Nullable="false" />
+          <Property Name="Rol_Guid_id" Type="guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="roleinfo">
+          <Key>
+            <PropertyRef Name="Guid_id" />
+          </Key>
+          <Property Name="Guid_id" Type="guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="saysaycommentinfo">
+          <Key>
+            <PropertyRef Name="Guid_id" />
+          </Key>
+          <Property Name="Guid_id" Type="guid" Nullable="false" />
+          <Property Name="SaysayId" Type="guid" Nullable="false" />
+          <Property Name="UserId" Type="guid" Nullable="false" />
+          <Property Name="Content" Type="text" />
+          <Property Name="Subtime" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="saysayinfo">
+          <Key>
+            <PropertyRef Name="Guid_id" />
+          </Key>
+          <Property Name="Guid_id" Type="guid" Nullable="false" />
+          <Property Name="UserId" Type="guid" Nullable="false" />
+          <Property Name="Content" Type="text" Nullable="false" />
+          <Property Name="Subtime" Type="bigint" Nullable="false" />
+          <Property Name="Pic" Type="mediumblob" />
+          <Property Name="DelFlag" Type="bit" Nullable="false" />
+          <Property Name="IsAllUserCanSee" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="userinfo">
+          <Key>
+            <PropertyRef Name="Guid_id" />
+          </Key>
+          <Property Name="Guid_id" Type="guid" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="pwd" Type="char" MaxLength="32" />
+          <Property Name="Remark" Type="varchar" MaxLength="256" />
+          <Property Name="Pic" Type="mediumblob" />
+          <Property Name="SubTime" Type="bigint" Nullable="false" />
+          <Property Name="Signature" Type="varchar" MaxLength="32" />
+          <Property Name="QQ" Type="char" MaxLength="13" />
+          <Property Name="Phone" Type="char" MaxLength="11" />
+          <Property Name="DelFlag" Type="bit" />
+          <Property Name="IdCard" Type="char" MaxLength="18" />
+        </EntityType>
+        <Association Name="FK_Reference_1">
+          <End Role="categoryinfo" Type="Self.categoryinfo" Multiplicity="1" />
+          <End Role="r_category_cookinfo" Type="Self.r_category_cookinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categoryinfo">
+              <PropertyRef Name="Auto_id" />
+            </Principal>
+            <Dependent Role="r_category_cookinfo">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_10">
+          <End Role="userinfo" Type="Self.userinfo" Multiplicity="1" />
+          <End Role="r_user_actioninfo" Type="Self.r_user_actioninfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="userinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="r_user_actioninfo">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_11">
+          <End Role="cookinfo" Type="Self.cookinfo" Multiplicity="0..1" />
+          <End Role="cookcommentinfo" Type="Self.cookcommentinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cookinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="cookcommentinfo">
+              <PropertyRef Name="CookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_13">
+          <End Role="saysayinfo" Type="Self.saysayinfo" Multiplicity="1" />
+          <End Role="saysaycommentinfo" Type="Self.saysaycommentinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="saysayinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="saysaycommentinfo">
+              <PropertyRef Name="SaysayId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_14">
+          <End Role="userinfo" Type="Self.userinfo" Multiplicity="1" />
+          <End Role="saysayinfo" Type="Self.saysayinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="userinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="saysayinfo">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_15">
+          <End Role="userinfo" Type="Self.userinfo" Multiplicity="0..1" />
+          <End Role="cookcommentinfo" Type="Self.cookcommentinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="userinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="cookcommentinfo">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_16">
+          <End Role="userinfo" Type="Self.userinfo" Multiplicity="1" />
+          <End Role="friendinfo" Type="Self.friendinfo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="userinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="friendinfo">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_2">
+          <End Role="cookinfo" Type="Self.cookinfo" Multiplicity="1" />
+          <End Role="r_category_cookinfo" Type="Self.r_category_cookinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cookinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="r_category_cookinfo">
+              <PropertyRef Name="CookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_3">
+          <End Role="materialinfo" Type="Self.materialinfo" Multiplicity="1" />
+          <End Role="r_material_cookinfo" Type="Self.r_material_cookinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="materialinfo">
+              <PropertyRef Name="auto_id" />
+            </Principal>
+            <Dependent Role="r_material_cookinfo">
+              <PropertyRef Name="MaterialId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_4">
+          <End Role="cookinfo" Type="Self.cookinfo" Multiplicity="1" />
+          <End Role="r_material_cookinfo" Type="Self.r_material_cookinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cookinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="r_material_cookinfo">
+              <PropertyRef Name="CookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_5">
+          <End Role="userinfo" Type="Self.userinfo" Multiplicity="1" />
+          <End Role="r_user_roleinfo" Type="Self.r_user_roleinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="userinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="r_user_roleinfo">
+              <PropertyRef Name="Guid_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_6">
+          <End Role="roleinfo" Type="Self.roleinfo" Multiplicity="1" />
+          <End Role="r_user_roleinfo" Type="Self.r_user_roleinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="roleinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="r_user_roleinfo">
+              <PropertyRef Name="Rol_Guid_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_7">
+          <End Role="roleinfo" Type="Self.roleinfo" Multiplicity="1" />
+          <End Role="r_role_actioninfo" Type="Self.r_role_actioninfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="roleinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="r_role_actioninfo">
+              <PropertyRef Name="Rol_Guid_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_8">
+          <End Role="actioninfo" Type="Self.actioninfo" Multiplicity="1" />
+          <End Role="r_role_actioninfo" Type="Self.r_role_actioninfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="actioninfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="r_role_actioninfo">
+              <PropertyRef Name="Guid_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_9">
+          <End Role="actioninfo" Type="Self.actioninfo" Multiplicity="1" />
+          <End Role="r_user_actioninfo" Type="Self.r_user_actioninfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="actioninfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="r_user_actioninfo">
+              <PropertyRef Name="ActionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dontstarveModelStoreContainer">
+          <EntitySet Name="actioninfo" EntityType="Self.actioninfo" Schema="dontstarve" store:Type="Tables" />
+          <EntitySet Name="categoryinfo" EntityType="Self.categoryinfo" Schema="dontstarve" store:Type="Tables" />
+          <EntitySet Name="cookcommentinfo" EntityType="Self.cookcommentinfo" Schema="dontstarve" store:Type="Tables" />
+          <EntitySet Name="cookinfo" EntityType="Self.cookinfo" Schema="dontstarve" store:Type="Tables" />
+          <EntitySet Name="friendinfo" EntityType="Self.friendinfo" Schema="dontstarve" store:Type="Tables" />
+          <EntitySet Name="materialinfo" EntityType="Self.materialinfo" Schema="dontstarve" store:Type="Tables" />
+          <EntitySet Name="r_category_cookinfo" EntityType="Self.r_category_cookinfo" Schema="dontstarve" store:Type="Tables" />
+          <EntitySet Name="r_material_cookinfo" EntityType="Self.r_material_cookinfo" Schema="dontstarve" store:Type="Tables" />
+          <EntitySet Name="r_role_actioninfo" EntityType="Self.r_role_actioninfo" Schema="dontstarve" store:Type="Tables" />
+          <EntitySet Name="r_user_actioninfo" EntityType="Self.r_user_actioninfo" Schema="dontstarve" store:Type="Tables" />
+          <EntitySet Name="r_user_roleinfo" EntityType="Self.r_user_roleinfo" Schema="dontstarve" store:Type="Tables" />
+          <EntitySet Name="roleinfo" EntityType="Self.roleinfo" Schema="dontstarve" store:Type="Tables" />
+          <EntitySet Name="saysaycommentinfo" EntityType="Self.saysaycommentinfo" Schema="dontstarve" store:Type="Tables" />
+          <EntitySet Name="saysayinfo" EntityType="Self.saysayinfo" Schema="dontstarve" store:Type="Tables" />
+          <EntitySet Name="userinfo" EntityType="Self.userinfo" Schema="dontstarve" store:Type="Tables" />
+          <AssociationSet Name="FK_Reference_1" Association="Self.FK_Reference_1">
+            <End Role="categoryinfo" EntitySet="categoryinfo" />
+            <End Role="r_category_cookinfo" EntitySet="r_category_cookinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_10" Association="Self.FK_Reference_10">
+            <End Role="userinfo" EntitySet="userinfo" />
+            <End Role="r_user_actioninfo" EntitySet="r_user_actioninfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_11" Association="Self.FK_Reference_11">
+            <End Role="cookinfo" EntitySet="cookinfo" />
+            <End Role="cookcommentinfo" EntitySet="cookcommentinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_13" Association="Self.FK_Reference_13">
+            <End Role="saysayinfo" EntitySet="saysayinfo" />
+            <End Role="saysaycommentinfo" EntitySet="saysaycommentinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_14" Association="Self.FK_Reference_14">
+            <End Role="userinfo" EntitySet="userinfo" />
+            <End Role="saysayinfo" EntitySet="saysayinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_15" Association="Self.FK_Reference_15">
+            <End Role="userinfo" EntitySet="userinfo" />
+            <End Role="cookcommentinfo" EntitySet="cookcommentinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_16" Association="Self.FK_Reference_16">
+            <End Role="userinfo" EntitySet="userinfo" />
+            <End Role="friendinfo" EntitySet="friendinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_2" Association="Self.FK_Reference_2">
+            <End Role="cookinfo" EntitySet="cookinfo" />
+            <End Role="r_category_cookinfo" EntitySet="r_category_cookinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_3" Association="Self.FK_Reference_3">
+            <End Role="materialinfo" EntitySet="materialinfo" />
+            <End Role="r_material_cookinfo" EntitySet="r_material_cookinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_4" Association="Self.FK_Reference_4">
+            <End Role="cookinfo" EntitySet="cookinfo" />
+            <End Role="r_material_cookinfo" EntitySet="r_material_cookinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_5" Association="Self.FK_Reference_5">
+            <End Role="userinfo" EntitySet="userinfo" />
+            <End Role="r_user_roleinfo" EntitySet="r_user_roleinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_6" Association="Self.FK_Reference_6">
+            <End Role="roleinfo" EntitySet="roleinfo" />
+            <End Role="r_user_roleinfo" EntitySet="r_user_roleinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_7" Association="Self.FK_Reference_7">
+            <End Role="roleinfo" EntitySet="roleinfo" />
+            <End Role="r_role_actioninfo" EntitySet="r_role_actioninfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_8" Association="Self.FK_Reference_8">
+            <End Role="actioninfo" EntitySet="actioninfo" />
+            <End Role="r_role_actioninfo" EntitySet="r_role_actioninfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_9" Association="Self.FK_Reference_9">
+            <End Role="actioninfo" EntitySet="actioninfo" />
+            <End Role="r_user_actioninfo" EntitySet="r_user_actioninfo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dontstarveModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="actioninfo">
+          <Key>
+            <PropertyRef Name="Guid_id" />
+          </Key>
+          <Property Name="Guid_id" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="r_user_actioninfo" Relationship="Self.FK_Reference_9" FromRole="actioninfo" ToRole="r_user_actioninfo" />
+          <NavigationProperty Name="roleinfo" Relationship="Self.r_role_actioninfo" FromRole="actioninfo" ToRole="roleinfo" />
+        </EntityType>
+        <EntityType Name="categoryinfo">
+          <Key>
+            <PropertyRef Name="Auto_id" />
+          </Key>
+          <Property Name="Auto_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Level" Type="Byte" />
+          <NavigationProperty Name="cookinfo" Relationship="Self.r_category_cookinfo" FromRole="categoryinfo" ToRole="cookinfo" />
+        </EntityType>
+        <EntityType Name="cookcommentinfo">
+          <Key>
+            <PropertyRef Name="Guid_id" />
+          </Key>
+          <Property Name="Guid_id" Type="Guid" Nullable="false" />
+          <Property Name="CookId" Type="Guid" />
+          <Property Name="UserId" Type="Guid" />
+          <Property Name="Content" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+          <Property Name="PraiseNum" Type="Int64" />
+          <NavigationProperty Name="cookinfo" Relationship="Self.FK_Reference_11" FromRole="cookcommentinfo" ToRole="cookinfo" />
+          <NavigationProperty Name="userinfo" Relationship="Self.FK_Reference_15" FromRole="cookcommentinfo" ToRole="userinfo" />
+        </EntityType>
+        <EntityType Name="cookinfo">
+          <Key>
+            <PropertyRef Name="Guid_id" />
+          </Key>
+          <Property Name="Guid_id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Level" Type="Byte" />
+          <Property Name="DelFlag" Type="Boolean" />
+          <Property Name="Rating" Type="Byte" />
+          <Property Name="PraiseNum" Type="Int64" />
+          <Property Name="pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="VideoPath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Remark" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Func" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="cookcommentinfo" Relationship="Self.FK_Reference_11" FromRole="cookinfo" ToRole="cookcommentinfo" />
+          <NavigationProperty Name="r_material_cookinfo" Relationship="Self.FK_Reference_4" FromRole="cookinfo" ToRole="r_material_cookinfo" />
+          <NavigationProperty Name="categoryinfo" Relationship="Self.r_category_cookinfo" FromRole="cookinfo" ToRole="categoryinfo" />
+        </EntityType>
+        <EntityType Name="friendinfo">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="FriendId" Type="Guid" Nullable="false" />
+          <Property Name="SubTime" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="userinfo" Relationship="Self.FK_Reference_16" FromRole="friendinfo" ToRole="userinfo" />
+        </EntityType>
+        <EntityType Name="materialinfo">
+          <Key>
+            <PropertyRef Name="auto_id" />
+          </Key>
+          <Property Name="auto_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Remark" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="r_material_cookinfo" Relationship="Self.FK_Reference_3" FromRole="materialinfo" ToRole="r_material_cookinfo" />
+        </EntityType>
+        <EntityType Name="r_material_cookinfo">
+          <Key>
+            <PropertyRef Name="CookId" />
+            <PropertyRef Name="MaterialId" />
+          </Key>
+          <Property Name="CookId" Type="Guid" Nullable="false" />
+          <Property Name="MaterialId" Type="Int32" Nullable="false" />
+          <Property Name="Num" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="cookinfo" Relationship="Self.FK_Reference_4" FromRole="r_material_cookinfo" ToRole="cookinfo" />
+          <NavigationProperty Name="materialinfo" Relationship="Self.FK_Reference_3" FromRole="r_material_cookinfo" ToRole="materialinfo" />
+        </EntityType>
+        <EntityType Name="r_user_actioninfo">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ActionId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="ActionId" Type="Guid" Nullable="false" />
+          <Property Name="IsPass" Type="Boolean" />
+          <NavigationProperty Name="actioninfo" Relationship="Self.FK_Reference_9" FromRole="r_user_actioninfo" ToRole="actioninfo" />
+          <NavigationProperty Name="userinfo" Relationship="Self.FK_Reference_10" FromRole="r_user_actioninfo" ToRole="userinfo" />
+        </EntityType>
+        <EntityType Name="roleinfo">
+          <Key>
+            <PropertyRef Name="Guid_id" />
+          </Key>
+          <Property Name="Guid_id" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="actioninfo" Relationship="Self.r_role_actioninfo" FromRole="roleinfo" ToRole="actioninfo" />
+          <NavigationProperty Name="userinfo" Relationship="Self.r_user_roleinfo" FromRole="roleinfo" ToRole="userinfo" />
+        </EntityType>
+        <EntityType Name="saysaycommentinfo">
+          <Key>
+            <PropertyRef Name="Guid_id" />
+          </Key>
+          <Property Name="Guid_id" Type="Guid" Nullable="false" />
+          <Property Name="SaysayId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Subtime" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="saysayinfo" Relationship="Self.FK_Reference_13" FromRole="saysaycommentinfo" ToRole="saysayinfo" />
+        </EntityType>
+        <EntityType Name="saysayinfo">
+          <Key>
+            <PropertyRef Name="Guid_id" />
+          </Key>
+          <Property Name="Guid_id" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Subtime" Type="Int64" Nullable="false" />
+          <Property Name="Pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="DelFlag" Type="Boolean" Nullable="false" />
+          <Property Name="IsAllUserCanSee" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="saysaycommentinfo" Relationship="Self.FK_Reference_13" FromRole="saysayinfo" ToRole="saysaycommentinfo" />
+          <NavigationProperty Name="userinfo" Relationship="Self.FK_Reference_14" FromRole="saysayinfo" ToRole="userinfo" />
+        </EntityType>
+        <EntityType Name="userinfo">
+          <Key>
+            <PropertyRef Name="Guid_id" />
+          </Key>
+          <Property Name="Guid_id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pwd" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Remark" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="Pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="SubTime" Type="Int64" Nullable="false" />
+          <Property Name="Signature" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="QQ" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="DelFlag" Type="Boolean" />
+          <Property Name="IdCard" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="cookcommentinfo" Relationship="Self.FK_Reference_15" FromRole="userinfo" ToRole="cookcommentinfo" />
+          <NavigationProperty Name="friendinfo" Relationship="Self.FK_Reference_16" FromRole="userinfo" ToRole="friendinfo" />
+          <NavigationProperty Name="r_user_actioninfo" Relationship="Self.FK_Reference_10" FromRole="userinfo" ToRole="r_user_actioninfo" />
+          <NavigationProperty Name="saysayinfo" Relationship="Self.FK_Reference_14" FromRole="userinfo" ToRole="saysayinfo" />
+          <NavigationProperty Name="roleinfo" Relationship="Self.r_user_roleinfo" FromRole="userinfo" ToRole="roleinfo" />
+        </EntityType>
+        <Association Name="FK_Reference_9">
+          <End Role="actioninfo" Type="Self.actioninfo" Multiplicity="1" />
+          <End Role="r_user_actioninfo" Type="Self.r_user_actioninfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="actioninfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="r_user_actioninfo">
+              <PropertyRef Name="ActionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_11">
+          <End Role="cookinfo" Type="Self.cookinfo" Multiplicity="0..1" />
+          <End Role="cookcommentinfo" Type="Self.cookcommentinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cookinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="cookcommentinfo">
+              <PropertyRef Name="CookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_15">
+          <End Role="userinfo" Type="Self.userinfo" Multiplicity="0..1" />
+          <End Role="cookcommentinfo" Type="Self.cookcommentinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="userinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="cookcommentinfo">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_4">
+          <End Role="cookinfo" Type="Self.cookinfo" Multiplicity="1" />
+          <End Role="r_material_cookinfo" Type="Self.r_material_cookinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cookinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="r_material_cookinfo">
+              <PropertyRef Name="CookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_16">
+          <End Role="userinfo" Type="Self.userinfo" Multiplicity="1" />
+          <End Role="friendinfo" Type="Self.friendinfo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="userinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="friendinfo">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_3">
+          <End Role="materialinfo" Type="Self.materialinfo" Multiplicity="1" />
+          <End Role="r_material_cookinfo" Type="Self.r_material_cookinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="materialinfo">
+              <PropertyRef Name="auto_id" />
+            </Principal>
+            <Dependent Role="r_material_cookinfo">
+              <PropertyRef Name="MaterialId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_10">
+          <End Role="userinfo" Type="Self.userinfo" Multiplicity="1" />
+          <End Role="r_user_actioninfo" Type="Self.r_user_actioninfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="userinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="r_user_actioninfo">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_13">
+          <End Role="saysayinfo" Type="Self.saysayinfo" Multiplicity="1" />
+          <End Role="saysaycommentinfo" Type="Self.saysaycommentinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="saysayinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="saysaycommentinfo">
+              <PropertyRef Name="SaysayId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_14">
+          <End Role="userinfo" Type="Self.userinfo" Multiplicity="1" />
+          <End Role="saysayinfo" Type="Self.saysayinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="userinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="saysayinfo">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="r_category_cookinfo">
+          <End Role="categoryinfo" Type="Self.categoryinfo" Multiplicity="*" />
+          <End Role="cookinfo" Type="Self.cookinfo" Multiplicity="*" />
+        </Association>
+        <Association Name="r_role_actioninfo">
+          <End Role="roleinfo" Type="Self.roleinfo" Multiplicity="*" />
+          <End Role="actioninfo" Type="Self.actioninfo" Multiplicity="*" />
+        </Association>
+        <Association Name="r_user_roleinfo">
+          <End Role="userinfo" Type="Self.userinfo" Multiplicity="*" />
+          <End Role="roleinfo" Type="Self.roleinfo" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="dontstarveEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="actioninfo" EntityType="Self.actioninfo" />
+          <EntitySet Name="categoryinfo" EntityType="Self.categoryinfo" />
+          <EntitySet Name="cookcommentinfo" EntityType="Self.cookcommentinfo" />
+          <EntitySet Name="cookinfo" EntityType="Self.cookinfo" />
+          <EntitySet Name="friendinfo" EntityType="Self.friendinfo" />
+          <EntitySet Name="materialinfo" EntityType="Self.materialinfo" />
+          <EntitySet Name="r_material_cookinfo" EntityType="Self.r_material_cookinfo" />
+          <EntitySet Name="r_user_actioninfo" EntityType="Self.r_user_actioninfo" />
+          <EntitySet Name="roleinfo" EntityType="Self.roleinfo" />
+          <EntitySet Name="saysaycommentinfo" EntityType="Self.saysaycommentinfo" />
+          <EntitySet Name="saysayinfo" EntityType="Self.saysayinfo" />
+          <EntitySet Name="userinfo" EntityType="Self.userinfo" />
+          <AssociationSet Name="FK_Reference_9" Association="Self.FK_Reference_9">
+            <End Role="actioninfo" EntitySet="actioninfo" />
+            <End Role="r_user_actioninfo" EntitySet="r_user_actioninfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_11" Association="Self.FK_Reference_11">
+            <End Role="cookinfo" EntitySet="cookinfo" />
+            <End Role="cookcommentinfo" EntitySet="cookcommentinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_15" Association="Self.FK_Reference_15">
+            <End Role="userinfo" EntitySet="userinfo" />
+            <End Role="cookcommentinfo" EntitySet="cookcommentinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_4" Association="Self.FK_Reference_4">
+            <End Role="cookinfo" EntitySet="cookinfo" />
+            <End Role="r_material_cookinfo" EntitySet="r_material_cookinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_16" Association="Self.FK_Reference_16">
+            <End Role="userinfo" EntitySet="userinfo" />
+            <End Role="friendinfo" EntitySet="friendinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_3" Association="Self.FK_Reference_3">
+            <End Role="materialinfo" EntitySet="materialinfo" />
+            <End Role="r_material_cookinfo" EntitySet="r_material_cookinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_10" Association="Self.FK_Reference_10">
+            <End Role="userinfo" EntitySet="userinfo" />
+            <End Role="r_user_actioninfo" EntitySet="r_user_actioninfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_13" Association="Self.FK_Reference_13">
+            <End Role="saysayinfo" EntitySet="saysayinfo" />
+            <End Role="saysaycommentinfo" EntitySet="saysaycommentinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_14" Association="Self.FK_Reference_14">
+            <End Role="userinfo" EntitySet="userinfo" />
+            <End Role="saysayinfo" EntitySet="saysayinfo" />
+          </AssociationSet>
+          <AssociationSet Name="r_category_cookinfo" Association="Self.r_category_cookinfo">
+            <End Role="categoryinfo" EntitySet="categoryinfo" />
+            <End Role="cookinfo" EntitySet="cookinfo" />
+          </AssociationSet>
+          <AssociationSet Name="r_role_actioninfo" Association="Self.r_role_actioninfo">
+            <End Role="roleinfo" EntitySet="roleinfo" />
+            <End Role="actioninfo" EntitySet="actioninfo" />
+          </AssociationSet>
+          <AssociationSet Name="r_user_roleinfo" Association="Self.r_user_roleinfo">
+            <End Role="userinfo" EntitySet="userinfo" />
+            <End Role="roleinfo" EntitySet="roleinfo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dontstarveModelStoreContainer" CdmEntityContainer="dontstarveEntities">
+          <EntitySetMapping Name="actioninfo">
+            <EntityTypeMapping TypeName="dontstarveModel.actioninfo">
+              <MappingFragment StoreEntitySet="actioninfo">
+                <ScalarProperty Name="Guid_id" ColumnName="Guid_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="categoryinfo">
+            <EntityTypeMapping TypeName="dontstarveModel.categoryinfo">
+              <MappingFragment StoreEntitySet="categoryinfo">
+                <ScalarProperty Name="Auto_id" ColumnName="Auto_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cookcommentinfo">
+            <EntityTypeMapping TypeName="dontstarveModel.cookcommentinfo">
+              <MappingFragment StoreEntitySet="cookcommentinfo">
+                <ScalarProperty Name="Guid_id" ColumnName="Guid_id" />
+                <ScalarProperty Name="CookId" ColumnName="CookId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="PraiseNum" ColumnName="PraiseNum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cookinfo">
+            <EntityTypeMapping TypeName="dontstarveModel.cookinfo">
+              <MappingFragment StoreEntitySet="cookinfo">
+                <ScalarProperty Name="Guid_id" ColumnName="Guid_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="PraiseNum" ColumnName="PraiseNum" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="VideoPath" ColumnName="VideoPath" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Func" ColumnName="Func" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="friendinfo">
+            <EntityTypeMapping TypeName="dontstarveModel.friendinfo">
+              <MappingFragment StoreEntitySet="friendinfo">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FriendId" ColumnName="FriendId" />
+                <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="materialinfo">
+            <EntityTypeMapping TypeName="dontstarveModel.materialinfo">
+              <MappingFragment StoreEntitySet="materialinfo">
+                <ScalarProperty Name="auto_id" ColumnName="auto_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="r_material_cookinfo">
+            <EntityTypeMapping TypeName="dontstarveModel.r_material_cookinfo">
+              <MappingFragment StoreEntitySet="r_material_cookinfo">
+                <ScalarProperty Name="CookId" ColumnName="CookId" />
+                <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+                <ScalarProperty Name="Num" ColumnName="Num" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="r_user_actioninfo">
+            <EntityTypeMapping TypeName="dontstarveModel.r_user_actioninfo">
+              <MappingFragment StoreEntitySet="r_user_actioninfo">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ActionId" ColumnName="ActionId" />
+                <ScalarProperty Name="IsPass" ColumnName="IsPass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="roleinfo">
+            <EntityTypeMapping TypeName="dontstarveModel.roleinfo">
+              <MappingFragment StoreEntitySet="roleinfo">
+                <ScalarProperty Name="Guid_id" ColumnName="Guid_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="saysaycommentinfo">
+            <EntityTypeMapping TypeName="dontstarveModel.saysaycommentinfo">
+              <MappingFragment StoreEntitySet="saysaycommentinfo">
+                <ScalarProperty Name="Guid_id" ColumnName="Guid_id" />
+                <ScalarProperty Name="SaysayId" ColumnName="SaysayId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Subtime" ColumnName="Subtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="saysayinfo">
+            <EntityTypeMapping TypeName="dontstarveModel.saysayinfo">
+              <MappingFragment StoreEntitySet="saysayinfo">
+                <ScalarProperty Name="Guid_id" ColumnName="Guid_id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Subtime" ColumnName="Subtime" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+                <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+                <ScalarProperty Name="IsAllUserCanSee" ColumnName="IsAllUserCanSee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userinfo">
+            <EntityTypeMapping TypeName="dontstarveModel.userinfo">
+              <MappingFragment StoreEntitySet="userinfo">
+                <ScalarProperty Name="Guid_id" ColumnName="Guid_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+                <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+                <ScalarProperty Name="Signature" ColumnName="Signature" />
+                <ScalarProperty Name="QQ" ColumnName="QQ" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+                <ScalarProperty Name="IdCard" ColumnName="IdCard" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="r_category_cookinfo" TypeName="dontstarveModel.r_category_cookinfo" StoreEntitySet="r_category_cookinfo">
+            <EndProperty Name="categoryinfo">
+              <ScalarProperty Name="Auto_id" ColumnName="CategoryId" />
+            </EndProperty>
+            <EndProperty Name="cookinfo">
+              <ScalarProperty Name="Guid_id" ColumnName="CookId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="r_role_actioninfo" TypeName="dontstarveModel.r_role_actioninfo" StoreEntitySet="r_role_actioninfo">
+            <EndProperty Name="roleinfo">
+              <ScalarProperty Name="Guid_id" ColumnName="Rol_Guid_id" />
+            </EndProperty>
+            <EndProperty Name="actioninfo">
+              <ScalarProperty Name="Guid_id" ColumnName="Guid_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="r_user_roleinfo" TypeName="dontstarveModel.r_user_roleinfo" StoreEntitySet="r_user_roleinfo">
+            <EndProperty Name="userinfo">
+              <ScalarProperty Name="Guid_id" ColumnName="Guid_id" />
+            </EndProperty>
+            <EndProperty Name="roleinfo">
+              <ScalarProperty Name="Guid_id" ColumnName="Rol_Guid_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
