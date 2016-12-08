@@ -95,6 +95,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -132,6 +133,14 @@
     <Content Include="IServices.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\eat.png" />
+    <None Include="Resources\yellow-37.png" />
+    <None Include="Resources\morefood.jpg" />
+    <None Include="Resources\invite.jpg" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\house173.png" />
+    <None Include="Resources\house.png" />
+    <None Include="Resources\132.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
