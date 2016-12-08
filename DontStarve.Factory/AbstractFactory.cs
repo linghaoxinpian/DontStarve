@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,6 +17,16 @@ namespace DontStarve.Factory
         public static IUserInfoDAL CreateInstanceIUserInfoDAL()
         {
             return (IUserInfoDAL)System.Reflection.Assembly.Load(assembly).CreateInstance(class_namespace + ".UserInfoDAL");
+        }
+
+        public static ICategoryInfoDAL CreateInstanceICategoryInfoDAL()
+        {
+            return (ICategoryInfoDAL)System.Reflection.Assembly.Load(assembly).CreateInstance(class_namespace + ".CategoryInfoDAL");
+        }
+
+        public static ICookieInfoDAL CreateInstanceICookieInfoDAL()
+        {
+            return (ICookieInfoDAL)Assembly.Load(assembly).CreateInstance(class_namespace + ".CookieInfoDAL");
         }
     }
 }

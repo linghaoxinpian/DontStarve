@@ -49,7 +49,33 @@ namespace DontStarve.DSL
             {
                 _iuserinfoDAL = value;
             }
-        } 
+        }
+
+        private ICategoryInfoDAL _icategoryinfoDAL;
+        public ICategoryInfoDAL icategoryInfoDAL
+        {
+            get
+            {
+                return _icategoryinfoDAL == null ? AbstractFactory.CreateInstanceICategoryInfoDAL() : _icategoryinfoDAL;
+            }
+            set
+            {
+                _icategoryinfoDAL = value;
+            }
+        }
+
+        private ICookieInfoDAL _icookieinfoDAL;
+        public ICookieInfoDAL icookieInfoDAL
+        {
+            get
+            {
+                return _icookieinfoDAL == null ? AbstractFactory.CreateInstanceICookieInfoDAL() : _icookieinfoDAL;
+            }
+            set
+            {
+                _icookieinfoDAL = value;
+            }
+        }
         #endregion
     }
 }

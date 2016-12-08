@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IBaseDAL.cs" />
+    <Compile Include="ICategoryInfoDAL.cs" />
+    <Compile Include="ICookieInfoDAL.cs" />
     <Compile Include="IUserInfoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
