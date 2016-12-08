@@ -8,7 +8,8 @@ namespace DontStarve.Common
 {
     public class SpringIocHelper
     {
-        private static Spring.Context.IApplicationContext ctx = Spring.Context.Support.ContextRegistry.GetContext();
+        private static Spring.Context.IApplicationContext ctx = Spring.Context.Support.ContextRegistry.GetContext();    //300ms
+
         /// <summary>
         /// Ioc控制反转
         /// </summary>

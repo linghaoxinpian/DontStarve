@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace DontStarve.App
 {
-    public partial class F_Main : Form
+    public partial class F_Main : CCWin.CCSkinMain
     {
         public F_Main()
         {
