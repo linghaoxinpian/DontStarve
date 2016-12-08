@@ -17,10 +17,26 @@ namespace DontStarve.App
             InitializeComponent();
         }
 
-        private IService.IUserInfoService iuserInfoService = (IService.IUserInfoService)Common.SpringIocHelper.GetObject("IUserInfoService");
+        private IService.IUserInfoService iuserInfoService = (IService.IUserInfoService)Common.SpringIocHelper.GetObject("iuserInfoService");
         private void F_Login_Load(object sender, EventArgs e)
         {
 
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            F_Main.current_user = iuserInfoService.Login(txtName.Text, Common.HashHelper.GetMD5(txtPwd.Text));
+            if(F_Main.current_user!=null)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }
+    

@@ -20,7 +20,7 @@ namespace DontStarve.DSL
         /// 单例模式
         /// </summary>
         /// <returns></returns>
-        public DBSession GetInstance()
+        public static DBSession GetInstance()
         {
             if (dbSession == null)
             {
@@ -30,6 +30,14 @@ namespace DontStarve.DSL
         }
         #endregion
 
+        #region 将更改保存到数据库
+        public bool SaveChanges()
+        {
+           return  Model.dontstarveEntities.GetInstance().SaveChanges()>0;
+        }
+        #endregion
+
+        #region 各个 IDAL层接口实例对象
         private IUserInfoDAL _iuserinfoDAL;
         public IUserInfoDAL iuserInfoDAL
         {
@@ -41,6 +49,7 @@ namespace DontStarve.DSL
             {
                 _iuserinfoDAL = value;
             }
-        }
+        } 
+        #endregion
     }
 }

@@ -28,6 +28,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{12
 		Database\sql.txt = Database\sql.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DontStarve.DAL", "DontStarve.DAL\DontStarve.DAL.csproj", "{0C4BEB33-8A85-416C-9341-6D34B09A72A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DontStarve.Service", "DontStarve.Service\DontStarve.Service.csproj", "{D927A454-9D39-4943-B710-EF46C551F06E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +66,14 @@ Global
 		{3049AFBC-9C1D-4418-A76B-F9747C63B720}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3049AFBC-9C1D-4418-A76B-F9747C63B720}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3049AFBC-9C1D-4418-A76B-F9747C63B720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C4BEB33-8A85-416C-9341-6D34B09A72A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C4BEB33-8A85-416C-9341-6D34B09A72A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C4BEB33-8A85-416C-9341-6D34B09A72A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C4BEB33-8A85-416C-9341-6D34B09A72A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D927A454-9D39-4943-B710-EF46C551F06E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D927A454-9D39-4943-B710-EF46C551F06E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D927A454-9D39-4943-B710-EF46C551F06E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D927A454-9D39-4943-B710-EF46C551F06E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

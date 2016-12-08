@@ -15,7 +15,7 @@ namespace DontStarve.Model
     
     public partial class dontstarveEntities : DbContext
     {
-        private dontstarveEntities()
+        public dontstarveEntities()
             : base("name=dontstarveEntities")
         {
         }

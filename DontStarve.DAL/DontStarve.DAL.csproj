@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3049AFBC-9C1D-4418-A76B-F9747C63B720}</ProjectGuid>
+    <ProjectGuid>{0C4BEB33-8A85-416C-9341-6D34B09A72A2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DontStarve.Factory</RootNamespace>
-    <AssemblyName>DontStarve.Factory</AssemblyName>
+    <RootNamespace>DontStarve.DAL</RootNamespace>
+    <AssemblyName>DontStarve.DAL</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,7 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,18 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractFactory.cs" />
+    <Compile Include="BaseDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInfoDAL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DontStarve.DAL\DontStarve.DAL.csproj">
-      <Project>{0c4beb33-8a85-416c-9341-6d34b09a72a2}</Project>
-      <Name>DontStarve.DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DontStarve.IDAL\DontStarve.IDAL.csproj">
       <Project>{ab093856-5a96-4d21-975b-2d32be70f977}</Project>
       <Name>DontStarve.IDAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DontStarve.Model\DontStarve.Model.csproj">
+      <Project>{90a954d4-b288-491c-ab54-227cf918d5c1}</Project>
+      <Name>DontStarve.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
