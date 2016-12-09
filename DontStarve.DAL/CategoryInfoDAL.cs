@@ -10,6 +10,6 @@ namespace DontStarve.DAL
 {
     public class CategoryInfoDAL : BaseDAL<categoryinfo>, ICategoryInfoDAL
     {
-
+      
     }
 }

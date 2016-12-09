@@ -33,16 +33,16 @@
             this.skinTabControl1 = new CCWin.SkinControl.SkinTabControl();
             this.tpHome = new CCWin.SkinControl.SkinTabPage();
             this.tpFoodWorld = new CCWin.SkinControl.SkinTabPage();
+            this.skinSplitContainer1 = new CCWin.SkinControl.SkinSplitContainer();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnJumpSearch = new CCWin.SkinControl.SkinButton();
+            this.tbFoods = new CCWin.SkinControl.SkinTabControl();
+            this.skinTabPage1 = new CCWin.SkinControl.SkinTabPage();
+            this.skinTabPage2 = new CCWin.SkinControl.SkinTabPage();
             this.tpFriend = new CCWin.SkinControl.SkinTabPage();
             this.tpMoreFriend = new CCWin.SkinControl.SkinTabPage();
             this.tpSearch = new CCWin.SkinControl.SkinTabPage();
             this.tpSelfManage = new CCWin.SkinControl.SkinTabPage();
-            this.skinSplitContainer1 = new CCWin.SkinControl.SkinSplitContainer();
-            this.btnJumpSearch = new CCWin.SkinControl.SkinButton();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.tbFoods = new CCWin.SkinControl.SkinTabControl();
-            this.skinTabPage1 = new CCWin.SkinControl.SkinTabPage();
-            this.skinTabPage2 = new CCWin.SkinControl.SkinTabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.skinTabControl1.SuspendLayout();
             this.tpFoodWorld.SuspendLayout();
@@ -96,7 +96,7 @@
             this.tpHome.Name = "tpHome";
             this.tpHome.Size = new System.Drawing.Size(898, 547);
             this.tpHome.TabIndex = 0;
-            this.tpHome.TabItemImage = global::DontStarve.App.Properties.Resources.house;
+            this.tpHome.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpHome.TabItemImage")));
             this.tpHome.Text = "首页";
             // 
             // tpFoodWorld
@@ -108,52 +108,8 @@
             this.tpFoodWorld.Name = "tpFoodWorld";
             this.tpFoodWorld.Size = new System.Drawing.Size(898, 547);
             this.tpFoodWorld.TabIndex = 1;
-            this.tpFoodWorld.TabItemImage = global::DontStarve.App.Properties.Resources.images;
+            this.tpFoodWorld.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpFoodWorld.TabItemImage")));
             this.tpFoodWorld.Text = "食届";
-            // 
-            // tpFriend
-            // 
-            this.tpFriend.BackColor = System.Drawing.Color.White;
-            this.tpFriend.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tpFriend.Location = new System.Drawing.Point(0, 130);
-            this.tpFriend.Name = "tpFriend";
-            this.tpFriend.Size = new System.Drawing.Size(898, 547);
-            this.tpFriend.TabIndex = 2;
-            this.tpFriend.TabItemImage = global::DontStarve.App.Properties.Resources._132;
-            this.tpFriend.Text = "食友圈";
-            // 
-            // tpMoreFriend
-            // 
-            this.tpMoreFriend.BackColor = System.Drawing.Color.White;
-            this.tpMoreFriend.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tpMoreFriend.Location = new System.Drawing.Point(0, 130);
-            this.tpMoreFriend.Name = "tpMoreFriend";
-            this.tpMoreFriend.Size = new System.Drawing.Size(898, 547);
-            this.tpMoreFriend.TabIndex = 3;
-            this.tpMoreFriend.TabItemImage = global::DontStarve.App.Properties.Resources.morefood;
-            this.tpMoreFriend.Text = "大千世界";
-            // 
-            // tpSearch
-            // 
-            this.tpSearch.BackColor = System.Drawing.Color.White;
-            this.tpSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tpSearch.Location = new System.Drawing.Point(0, 130);
-            this.tpSearch.Name = "tpSearch";
-            this.tpSearch.Size = new System.Drawing.Size(898, 547);
-            this.tpSearch.TabIndex = 4;
-            this.tpSearch.TabItemImage = global::DontStarve.App.Properties.Resources.yellow_37;
-            this.tpSearch.Text = "搜索";
-            // 
-            // tpSelfManage
-            // 
-            this.tpSelfManage.BackColor = System.Drawing.Color.White;
-            this.tpSelfManage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tpSelfManage.Location = new System.Drawing.Point(0, 130);
-            this.tpSelfManage.Name = "tpSelfManage";
-            this.tpSelfManage.Size = new System.Drawing.Size(898, 547);
-            this.tpSelfManage.TabIndex = 5;
-            this.tpSelfManage.TabItemImage = global::DontStarve.App.Properties.Resources.eat;
-            this.tpSelfManage.Text = "我的世界";
             // 
             // skinSplitContainer1
             // 
@@ -178,6 +134,18 @@
             this.skinSplitContainer1.SplitterWidth = 1;
             this.skinSplitContainer1.TabIndex = 0;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(243)))), ((int)(((byte)(130)))));
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(75, 13);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(123, 97);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 9;
+            this.pictureBox4.TabStop = false;
+            // 
             // btnJumpSearch
             // 
             this.btnJumpSearch.BackColor = System.Drawing.Color.Transparent;
@@ -195,18 +163,6 @@
             this.btnJumpSearch.TabIndex = 8;
             this.btnJumpSearch.Text = "搜索一下";
             this.btnJumpSearch.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(243)))), ((int)(((byte)(130)))));
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox4.Image = global::DontStarve.App.Properties.Resources.images;
-            this.pictureBox4.Location = new System.Drawing.Point(75, 13);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(123, 97);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 9;
-            this.pictureBox4.TabStop = false;
             // 
             // tbFoods
             // 
@@ -259,6 +215,50 @@
             this.skinTabPage2.TabIndex = 1;
             this.skinTabPage2.TabItemImage = null;
             this.skinTabPage2.Text = "湘菜";
+            // 
+            // tpFriend
+            // 
+            this.tpFriend.BackColor = System.Drawing.Color.White;
+            this.tpFriend.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tpFriend.Location = new System.Drawing.Point(0, 130);
+            this.tpFriend.Name = "tpFriend";
+            this.tpFriend.Size = new System.Drawing.Size(898, 547);
+            this.tpFriend.TabIndex = 2;
+            this.tpFriend.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpFriend.TabItemImage")));
+            this.tpFriend.Text = "食友圈";
+            // 
+            // tpMoreFriend
+            // 
+            this.tpMoreFriend.BackColor = System.Drawing.Color.White;
+            this.tpMoreFriend.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tpMoreFriend.Location = new System.Drawing.Point(0, 130);
+            this.tpMoreFriend.Name = "tpMoreFriend";
+            this.tpMoreFriend.Size = new System.Drawing.Size(898, 547);
+            this.tpMoreFriend.TabIndex = 3;
+            this.tpMoreFriend.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpMoreFriend.TabItemImage")));
+            this.tpMoreFriend.Text = "大千世界";
+            // 
+            // tpSearch
+            // 
+            this.tpSearch.BackColor = System.Drawing.Color.White;
+            this.tpSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tpSearch.Location = new System.Drawing.Point(0, 130);
+            this.tpSearch.Name = "tpSearch";
+            this.tpSearch.Size = new System.Drawing.Size(898, 547);
+            this.tpSearch.TabIndex = 4;
+            this.tpSearch.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpSearch.TabItemImage")));
+            this.tpSearch.Text = "搜索";
+            // 
+            // tpSelfManage
+            // 
+            this.tpSelfManage.BackColor = System.Drawing.Color.White;
+            this.tpSelfManage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tpSelfManage.Location = new System.Drawing.Point(0, 130);
+            this.tpSelfManage.Name = "tpSelfManage";
+            this.tpSelfManage.Size = new System.Drawing.Size(898, 547);
+            this.tpSelfManage.TabIndex = 5;
+            this.tpSelfManage.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpSelfManage.TabItemImage")));
+            this.tpSelfManage.Text = "我的世界";
             // 
             // imageList1
             // 

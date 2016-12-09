@@ -11,7 +11,7 @@ namespace DontStarve.DAL
 {
     public class BaseDAL<T> where T: class,new() 
     {
-        DbContext dbContext = DontStarve.Model.dontstarveEntities.GetInstance();
+       protected DbContext dbContext = DontStarve.Model.dontstarveEntities.GetInstance();
         public bool AddEntity(T entity)
         {
             dbContext.Entry<T>(entity).State = EntityState.Added;

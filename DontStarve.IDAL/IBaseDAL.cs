@@ -9,14 +9,14 @@ namespace DontStarve.IDAL
 {
     public interface IBaseDAL<T>
     {
-       bool AddEntity(T entity);
+        bool AddEntity(T entity);
 
-       T DeleteEntity(T entity);
+        T DeleteEntity(T entity);
 
         bool EditEntity(T entity);
 
         IQueryable<T> LoadEntities(Expression<Func<T, bool>> whereLambda);
 
-        IQueryable<T> LoadPageEntities<S>(Expression<Func<T, bool>> whereLambda, Expression<Func<T, S>> orderbyLambda, int pageIndex, int pageSize, out int Count,bool isAsc=true);
+        IQueryable<T> LoadPageEntities<S>(Expression<Func<T, bool>> whereLambda, Expression<Func<T, S>> orderbyLambda, int pageIndex, int pageSize, out int Count, bool isAsc = true);
     }
 }
