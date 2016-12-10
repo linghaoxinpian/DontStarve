@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Yyu_CookieComment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Yyu_CookieComment.Designer.cs">
+      <DependentUpon>Yyu_CookieComment.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_CookieInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,8 +99,12 @@
     <Compile Include="Yyu_PraiseNum.Designer.cs">
       <DependentUpon>Yyu_PraiseNum.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Yyu_CookieComment.resx">
+      <DependentUpon>Yyu_CookieComment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_CookieInfo.resx">
       <DependentUpon>F_CookieInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Login.resx">
       <DependentUpon>F_Login.cs</DependentUpon>
@@ -151,6 +161,7 @@
     <Content Include="IServices.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\christmas.png" />
     <None Include="Resources\thumb_up2.png" />
     <None Include="Resources\thumb_up.png" />
     <None Include="Resources\eat.png" />

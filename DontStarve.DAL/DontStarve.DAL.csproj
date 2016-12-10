@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="BaseDAL.cs" />
     <Compile Include="CategoryInfoDAL.cs" />
+    <Compile Include="CookcommentInfoDAL.cs" />
     <Compile Include="CookieInfoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserInfoDAL.cs" />

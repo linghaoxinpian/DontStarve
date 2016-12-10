@@ -76,6 +76,19 @@ namespace DontStarve.DSL
                 _icookieinfoDAL = value;
             }
         }
+
+        private ICookcommentInfoDAL _icookcommentInfoDAL;
+        public ICookcommentInfoDAL icookcommentInfoDAL
+        {
+            get
+            {
+                return _icookcommentInfoDAL == null ? AbstractFactory.CreateInstanceICookcommentInfoDAL() : _icookcommentInfoDAL;
+            }
+            set
+            {
+                _icookcommentInfoDAL = value;
+            }
+        }
         #endregion
     }
 }

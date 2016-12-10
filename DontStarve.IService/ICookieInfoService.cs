@@ -21,5 +21,10 @@ namespace DontStarve.IService
         /// </summary>
         /// <param name="cookie_guid"></param>        
         cookinfo LoadEntitByCookieId(Guid cookie_guid);
+        
+        /// <summary>
+        /// 点赞数加一
+        /// </summary>
+        void AddPraise(Guid guid_id);
     }
 }

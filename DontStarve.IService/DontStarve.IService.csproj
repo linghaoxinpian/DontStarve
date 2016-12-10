@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IBaseService.cs" />
     <Compile Include="ICategoryInfoService.cs" />
+    <Compile Include="ICookcommentInfoService.cs" />
     <Compile Include="ICookieInfoService.cs" />
     <Compile Include="IUserInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

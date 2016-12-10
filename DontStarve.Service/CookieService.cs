@@ -10,6 +10,14 @@ namespace DontStarve.Service
 {
     public class CookieInfoService : BaseService<cookinfo>, ICookieInfoService
     {
+        public void AddPraise(Guid guid_id)
+        {
+            var entity = LoadEntities(c => c.Guid_id == guid_id).FirstOrDefault();
+            entity.PraiseNum++;
+            entity.Rating = (byte?)(entity.PraiseNum / 50);
+            EditEntity(entity);
+        }
+
         public cookinfo LoadEntitByCookieId(Guid cookie_guid)
         {
             return CurrentDAL.LoadEntities(c => c.Guid_id == cookie_guid).FirstOrDefault();
@@ -17,7 +25,7 @@ namespace DontStarve.Service
 
         public Dictionary<Guid, string> LoadEntitiesByCategoryId(int category_id)
         {
-         return  dbSessioin.icookieInfoDAL.LoadEntitiesByCategoryId(category_id).ToDictionary(c => c.Guid_id, c => c.Name);
+            return dbSessioin.icookieInfoDAL.LoadEntitiesByCategoryId(category_id).ToDictionary(c => c.Guid_id, c => c.Name);
         }
 
         protected override void Set_CurrentDAL()

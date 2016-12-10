@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DontStarve.App.Properties
+namespace DontStarve.Model.Properties
 {
 
 

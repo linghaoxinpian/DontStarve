@@ -74,22 +74,26 @@ namespace DontStarve.App
         /// </summary>
         private void Load_foodWorld()
         {
-            //加载所有分类
-            Dictionary<int, string> dic_category = icategoryInfoService.LoadCategoryByLevel1();
-            tbFoods.Controls.Clear();   //清除控件
-            foreach (int key in dic_category.Keys)
+            tpFoodWorld.BeginInvoke(new Action(() =>
             {
-                TabPage tp = new TabPage(dic_category[key]);
-                tp.Tag = key;   //储存“美食分类”的Id
-                ListView lv = new ListView();                
-                lv.Dock = DockStyle.Fill;
-                lv.LargeImageList = imageList1; //
-                lv.MultiSelect = false;
-                lv.View = View.LargeIcon;   //以大图标形式显示
-                tp.Controls.Add(lv);
-                tbFoods.TabPages.Add(tp);
-            }
-            tbFoods_Selecting(null, new TabControlCancelEventArgs(tbFoods.SelectedTab, tbFoods.SelectedIndex, false, TabControlAction.Selected));
+                //加载所有分类
+                Dictionary<int, string> dic_category = icategoryInfoService.LoadCategoryByLevel1();
+                tbFoods.Controls.Clear();   //清除控件
+                foreach (int key in dic_category.Keys)
+                {
+                    TabPage tp = new TabPage(dic_category[key]);
+                    tp.Tag = key;   //储存“美食分类”的Id
+                    ListView lv = new ListView();
+                    lv.Dock = DockStyle.Fill;
+                    lv.LargeImageList = imageList1; //
+                    lv.MultiSelect = false;
+                    lv.View = View.LargeIcon;   //以大图标形式显示
+                    tp.Controls.Add(lv);
+                    tbFoods.TabPages.Add(tp);
+                }
+                tbFoods_Selecting(null, new TabControlCancelEventArgs(tbFoods.SelectedTab, tbFoods.SelectedIndex, false, TabControlAction.Selected));
+            }));                  
+           
         }
 
         private void Load_home()
@@ -117,9 +121,9 @@ namespace DontStarve.App
             lv.Click += new EventHandler((a, b) =>
               {
                   if(lv.SelectedItems.Count>0)  //说明点击在item上，
-                  {                      
-                     cookinfo entity= icookieInfoService.LoadEntitByCookieId((Guid)lv.SelectedItems[0].Tag);
+                  {                                         
                       F_CookieInfo f_cookie = new F_CookieInfo();
+                      f_cookie.current_cookie = icookieInfoService.LoadEntitByCookieId((Guid)lv.SelectedItems[0].Tag);
                       f_cookie.Show();
                   }
               });

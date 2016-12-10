@@ -16,11 +16,11 @@ namespace DontStarve.App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            F_Login login = new F_Login();
-            if (login.ShowDialog() == DialogResult.OK)
-            {                
+         //   F_Login login = new F_Login();
+         //   if (login.ShowDialog() == DialogResult.OK)
+         //   {                
                 Application.Run(new F_Main());
-            }
+         //   }
         }
     }
 }

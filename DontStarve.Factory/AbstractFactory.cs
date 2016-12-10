@@ -28,5 +28,10 @@ namespace DontStarve.Factory
         {
             return (ICookieInfoDAL)Assembly.Load(assembly).CreateInstance(class_namespace + ".CookieInfoDAL");
         }
+
+        public static ICookcommentInfoDAL CreateInstanceICookcommentInfoDAL()
+        {
+            return (ICookcommentInfoDAL)Assembly.Load(assembly).CreateInstance(class_namespace + ".CookcommentInfoDAL");
+        }
     }
 }

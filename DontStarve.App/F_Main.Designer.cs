@@ -82,7 +82,7 @@
             this.skinTabControl1.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Top;
             this.skinTabControl1.PageNorml = null;
             this.skinTabControl1.Radius = 15;
-            this.skinTabControl1.SelectedIndex = 1;
+            this.skinTabControl1.SelectedIndex = 0;
             this.skinTabControl1.Size = new System.Drawing.Size(898, 677);
             this.skinTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.skinTabControl1.TabIndex = 0;
@@ -109,7 +109,7 @@
             this.tpFoodWorld.Size = new System.Drawing.Size(898, 547);
             this.tpFoodWorld.TabIndex = 1;
             this.tpFoodWorld.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpFoodWorld.TabItemImage")));
-            this.tpFoodWorld.Text = "食届";
+            this.tpFoodWorld.Text = "食界";
             // 
             // skinSplitContainer1
             // 

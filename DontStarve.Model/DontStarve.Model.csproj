@@ -113,6 +113,7 @@
     <Compile Include="userinfo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\CommentView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
