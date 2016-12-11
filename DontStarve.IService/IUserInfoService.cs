@@ -9,6 +9,6 @@ namespace DontStarve.IService
 {
     public interface IUserInfoService : IBaseService<userinfo>
     {
-        userinfo Login(string text, string v);
+        userinfo Login(string username, string userpwd);
     }
 }

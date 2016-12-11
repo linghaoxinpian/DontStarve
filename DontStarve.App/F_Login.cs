@@ -20,7 +20,7 @@ namespace DontStarve.App
         private IService.IUserInfoService iuserInfoService = new Service.UserInfoService();//(IService.IUserInfoService)Common.SpringIocHelper.GetObject("iuserInfoService");
     
         private void btnLogin_Click(object sender, EventArgs e)
-        {
+        {            
             F_Main.current_user = iuserInfoService.Login(txtName.Text, Common.HashHelper.GetMD5(txtPwd.Text));
             if(F_Main.current_user!=null)
             {
@@ -32,6 +32,12 @@ namespace DontStarve.App
         {
             DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void llbRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            F_Register register = new F_Register();
+            register.ShowDialog();
         }
     }
 }

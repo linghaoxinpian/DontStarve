@@ -13,7 +13,8 @@ namespace DontStarve.Service
     {
         public List<cookcommentinfo> LoadEntitiesByCookieId(Guid guid_id)
         {
-            return CurrentDAL.LoadEntities(cm => cm.CookId == guid_id).ToList();
+
+            return CurrentDAL.LoadEntities(cm => cm.CookId == guid_id).OrderBy(cm=>cm.PraiseNum).ToList();
         
         }
 

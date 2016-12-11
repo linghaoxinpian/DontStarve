@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="F_Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Register.Designer.cs">
+      <DependentUpon>F_Register.cs</DependentUpon>
+    </Compile>
     <Compile Include="Yyu_CookieComment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="Yyu_PraiseNum.Designer.cs">
       <DependentUpon>Yyu_PraiseNum.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="F_Register.resx">
+      <DependentUpon>F_Register.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Yyu_CookieComment.resx">
       <DependentUpon>Yyu_CookieComment.cs</DependentUpon>
     </EmbeddedResource>

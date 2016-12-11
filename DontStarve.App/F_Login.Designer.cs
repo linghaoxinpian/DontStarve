@@ -36,6 +36,7 @@
             this.skinLabel2 = new CCWin.SkinControl.SkinLabel();
             this.skinPictureBox1 = new CCWin.SkinControl.SkinPictureBox();
             this.btnClose = new CCWin.SkinControl.SkinButton();
+            this.llbRegister = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,11 +128,23 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // llbRegister
+            // 
+            this.llbRegister.AutoSize = true;
+            this.llbRegister.Location = new System.Drawing.Point(250, 449);
+            this.llbRegister.Name = "llbRegister";
+            this.llbRegister.Size = new System.Drawing.Size(101, 12);
+            this.llbRegister.TabIndex = 4;
+            this.llbRegister.TabStop = true;
+            this.llbRegister.Text = "还没有账号？ -->";
+            this.llbRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbRegister_LinkClicked);
+            // 
             // F_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 500);
+            this.Controls.Add(this.llbRegister);
             this.Controls.Add(this.skinPictureBox1);
             this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.txtName);
@@ -147,7 +160,6 @@
             this.SkinOpacity = 0.8D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-//            this.Load += new System.EventHandler(this.F_Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -163,6 +175,7 @@
         private CCWin.SkinControl.SkinLabel skinLabel2;
         private CCWin.SkinControl.SkinPictureBox skinPictureBox1;
         private CCWin.SkinControl.SkinButton btnClose;
+        private System.Windows.Forms.LinkLabel llbRegister;
     }
 }
 

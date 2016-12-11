@@ -74,8 +74,6 @@ namespace DontStarve.App
         /// </summary>
         private void Load_foodWorld()
         {
-            tpFoodWorld.BeginInvoke(new Action(() =>
-            {
                 //加载所有分类
                 Dictionary<int, string> dic_category = icategoryInfoService.LoadCategoryByLevel1();
                 tbFoods.Controls.Clear();   //清除控件
@@ -91,8 +89,7 @@ namespace DontStarve.App
                     tp.Controls.Add(lv);
                     tbFoods.TabPages.Add(tp);
                 }
-                tbFoods_Selecting(null, new TabControlCancelEventArgs(tbFoods.SelectedTab, tbFoods.SelectedIndex, false, TabControlAction.Selected));
-            }));                  
+                tbFoods_Selecting(null, new TabControlCancelEventArgs(tbFoods.SelectedTab, tbFoods.SelectedIndex, false, TabControlAction.Selected));         
            
         }
 
