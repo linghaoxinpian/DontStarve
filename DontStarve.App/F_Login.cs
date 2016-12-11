@@ -37,7 +37,7 @@ namespace DontStarve.App
         private void llbRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             F_Register register = new F_Register();
-            register.ShowDialog();
+            register.ShowDialog(this);
         }
     }
 }

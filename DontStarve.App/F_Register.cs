@@ -96,17 +96,22 @@ namespace DontStarve.App
             entity.Name = txtName.Text;
             entity.pwd = HashHelper.GetMD5(txtPwd.Text.Trim());
             entity.Remark = txtRemark.Text;
-            if(picUserPhoto.Image!=null) Common.CommonHelper.PicToBytes(picUserPhoto.Image);
+            if(picUserPhoto.Image!=null) entity.Pic= Common.CommonHelper.PicToBytes(picUserPhoto.Image);    byte0 = entity.Pic;
             entity.SubTime = Common.CommonHelper.GetCurrentDateStamp();
             entity.Signature = txtSignatrue.Text;
             entity.QQ = txtQQ.Text;
             entity.Phone = txtPhone.Text;
             entity.IdCard = txtIDCard.Text;
-
+            entity.DelFlag = false;
             if (iuserInfoService.AddEntity(entity))
             {
                 //注册成功
                 MessageBoxEx.Show("注册成功！");
+                if (this.Owner is F_Login)
+                {
+                    (Owner as F_Login).txtName.Text = this.txtName.Text;
+                    if (picUserPhoto.Image != null) (Owner as F_Login).picUserPhoto.Image = this.picUserPhoto.Image;
+                }
                 this.Close();
             }else
             {
@@ -114,7 +119,7 @@ namespace DontStarve.App
             }
             //跳转登陆UI
         }
-
+        public static byte[] byte0;
         private void btnGoLogin_Click(object sender, EventArgs e)
         {
             this.Close();

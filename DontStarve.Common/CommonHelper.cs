@@ -29,14 +29,14 @@ namespace DontStarve.Common
         /// <param name="img"></param>
         /// <returns></returns>
         public static byte[] PicToBytes(Image img)
-        {
-            //ImageConverter ic = new ImageConverter();
-            //return (byte[])ic.ConvertFrom(img);
+        {           
             MemoryStream ms = new MemoryStream();
             img.Save(ms, img.RawFormat);
-            byte[] bytes = new byte[ms.Length];
-            ms.Read(bytes, 0, bytes.Length);
-            return bytes;
+            //byte[] bytes = new byte[ms.Length];
+            //ms.Read(bytes, 0, bytes.Length);
+            //return bytes;
+
+            return ms.ToArray();
         }
 
         /// <summary>

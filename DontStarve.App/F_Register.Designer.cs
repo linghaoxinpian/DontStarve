@@ -324,7 +324,6 @@
             this.MinimizeBox = false;
             this.Name = "F_Register";
             this.RoundStyle = CCWin.SkinClass.RoundStyle.None;
-            this.ShadowRectangle = new System.Drawing.Rectangle(10, 10, 100, 100);
             this.ShadowWidth = 40;
             this.ShowDrawIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

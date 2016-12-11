@@ -34,10 +34,10 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPwd = new System.Windows.Forms.TextBox();
             this.skinLabel2 = new CCWin.SkinControl.SkinLabel();
-            this.skinPictureBox1 = new CCWin.SkinControl.SkinPictureBox();
+            this.picUserPhoto = new CCWin.SkinControl.SkinPictureBox();
             this.btnClose = new CCWin.SkinControl.SkinButton();
             this.llbRegister = new System.Windows.Forms.LinkLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUserPhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -104,14 +104,16 @@
             this.skinLabel2.TabIndex = 1;
             this.skinLabel2.Text = "密 码：";
             // 
-            // skinPictureBox1
+            // picUserPhoto
             // 
-            this.skinPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.skinPictureBox1.Location = new System.Drawing.Point(182, 92);
-            this.skinPictureBox1.Name = "skinPictureBox1";
-            this.skinPictureBox1.Size = new System.Drawing.Size(137, 98);
-            this.skinPictureBox1.TabIndex = 3;
-            this.skinPictureBox1.TabStop = false;
+            this.picUserPhoto.BackColor = System.Drawing.Color.Transparent;
+            this.picUserPhoto.Image = global::DontStarve.App.Properties.Resources.christmas;
+            this.picUserPhoto.Location = new System.Drawing.Point(183, 80);
+            this.picUserPhoto.Name = "picUserPhoto";
+            this.picUserPhoto.Size = new System.Drawing.Size(137, 98);
+            this.picUserPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picUserPhoto.TabIndex = 3;
+            this.picUserPhoto.TabStop = false;
             // 
             // btnClose
             // 
@@ -145,7 +147,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 500);
             this.Controls.Add(this.llbRegister);
-            this.Controls.Add(this.skinPictureBox1);
+            this.Controls.Add(this.picUserPhoto);
             this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.skinLabel2);
@@ -160,7 +162,7 @@
             this.SkinOpacity = 0.8D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUserPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,10 +172,10 @@
 
         private CCWin.SkinControl.SkinButton btnLogin;
         private CCWin.SkinControl.SkinLabel skinLabel1;
-        private System.Windows.Forms.TextBox txtName;
+        public System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtPwd;
         private CCWin.SkinControl.SkinLabel skinLabel2;
-        private CCWin.SkinControl.SkinPictureBox skinPictureBox1;
+        public CCWin.SkinControl.SkinPictureBox picUserPhoto;
         private CCWin.SkinControl.SkinButton btnClose;
         private System.Windows.Forms.LinkLabel llbRegister;
     }

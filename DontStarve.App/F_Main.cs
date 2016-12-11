@@ -1,4 +1,5 @@
-﻿using DontStarve.IService;
+﻿using DontStarve.Common;
+using DontStarve.IService;
 using DontStarve.Model;
 using DontStarve.Service;
 using System;
@@ -51,7 +52,10 @@ namespace DontStarve.App
 
         private void Load_selfManage()
         {
-
+            if(current_user.Pic!=null) btnSelfUserPhoto.BackgroundImage= CommonHelper.BytesToPic(current_user.Pic);
+            lbSelfUserName.Text = current_user.Name;
+            lbSelfSignature.Text = current_user.Signature;
+            lbSelfFoodAge.Text = "食龄："+current_user.SubTime.ToString();
         }
 
         private void Load_search()
