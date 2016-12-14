@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DontStarve.Model;
 
 namespace DontStarve.DSL
 {
@@ -87,6 +88,19 @@ namespace DontStarve.DSL
             set
             {
                 _icookcommentInfoDAL = value;
+            }
+        }
+
+        public IFriendInfoDAL _ifriendInfoDAL;
+        public IFriendInfoDAL ifriendInfoDAL
+        {
+            get
+            {
+                return _ifriendInfoDAL == null ? AbstractFactory.CreateInstanceIFriendInfoDAL() : _ifriendInfoDAL;
+            }
+            set
+            {
+                _ifriendInfoDAL = value;
             }
         }
         #endregion

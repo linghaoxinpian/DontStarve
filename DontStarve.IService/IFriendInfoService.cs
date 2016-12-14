@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace DontStarve.IService
 {
-    public interface IUserInfoService : IBaseService<userinfo>
+    public interface IFriendInfoService : IBaseService<friendinfo>
     {
-        userinfo Login(string username, string userpwd);        
+        List<userinfo> LoadFriend(Guid currentUser_guid);
     }
 }

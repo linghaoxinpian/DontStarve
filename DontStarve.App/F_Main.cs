@@ -52,10 +52,10 @@ namespace DontStarve.App
 
         private void Load_selfManage()
         {
-            if(current_user.Pic!=null) btnSelfUserPhoto.BackgroundImage= CommonHelper.BytesToPic(current_user.Pic);
+            if (current_user.Pic != null) btnSelfUserPhoto.BackgroundImage = CommonHelper.BytesToPic(current_user.Pic);
             lbSelfUserName.Text = current_user.Name;
             lbSelfSignature.Text = current_user.Signature;
-            lbSelfFoodAge.Text = "食龄："+current_user.SubTime.ToString();
+            lbSelfFoodAge.Text = "食龄：" + current_user.SubTime.ToString();
         }
 
         private void Load_search()
@@ -78,23 +78,23 @@ namespace DontStarve.App
         /// </summary>
         private void Load_foodWorld()
         {
-                //加载所有分类
-                Dictionary<int, string> dic_category = icategoryInfoService.LoadCategoryByLevel1();
-                tbFoods.Controls.Clear();   //清除控件
-                foreach (int key in dic_category.Keys)
-                {
-                    TabPage tp = new TabPage(dic_category[key]);
-                    tp.Tag = key;   //储存“美食分类”的Id
-                    ListView lv = new ListView();
-                    lv.Dock = DockStyle.Fill;
-                    lv.LargeImageList = imageList1; //
-                    lv.MultiSelect = false;
-                    lv.View = View.LargeIcon;   //以大图标形式显示
-                    tp.Controls.Add(lv);
-                    tbFoods.TabPages.Add(tp);
-                }
-                tbFoods_Selecting(null, new TabControlCancelEventArgs(tbFoods.SelectedTab, tbFoods.SelectedIndex, false, TabControlAction.Selected));         
-           
+            //加载所有分类
+            Dictionary<int, string> dic_category = icategoryInfoService.LoadCategoryByLevel1();
+            tbFoods.Controls.Clear();   //清除控件
+            foreach (int key in dic_category.Keys)
+            {
+                TabPage tp = new TabPage(dic_category[key]);
+                tp.Tag = key;   //储存“美食分类”的Id
+                ListView lv = new ListView();
+                lv.Dock = DockStyle.Fill;
+                lv.LargeImageList = imageList1; //
+                lv.MultiSelect = false;
+                lv.View = View.LargeIcon;   //以大图标形式显示
+                tp.Controls.Add(lv);
+                tbFoods.TabPages.Add(tp);
+            }
+            tbFoods_Selecting(null, new TabControlCancelEventArgs(tbFoods.SelectedTab, tbFoods.SelectedIndex, false, TabControlAction.Selected));
+
         }
 
         private void Load_home()
@@ -121,13 +121,33 @@ namespace DontStarve.App
             //为每个“美食图标”注册单击事件
             lv.Click += new EventHandler((a, b) =>
               {
-                  if(lv.SelectedItems.Count>0)  //说明点击在item上，
-                  {                                         
+                  if (lv.SelectedItems.Count > 0)  //说明点击在item上，
+                  {
                       F_CookieInfo f_cookie = new F_CookieInfo();
                       f_cookie.current_cookie = icookieInfoService.LoadEntitByCookieId((Guid)lv.SelectedItems[0].Tag);
                       f_cookie.Show();
                   }
               });
+        }
+
+        //修改个人资料
+        private void llbSelfEditUserDetails_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            F_Register f_regieter = new F_Register();
+            //注册关闭--刷新事件
+            f_regieter.FormClosed += new FormClosedEventHandler((a, b) =>
+              {
+                  Load_selfManage();
+              });
+            f_regieter.SetTxt(current_user);
+            f_regieter.ShowDialog();
+        }
+        
+        //好友列表
+        private void llbSelfFriend_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            F_Friend f_friend = new F_Friend();
+            f_friend.Show();
         }
     }
 }

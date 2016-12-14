@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Main));
             this.skinTabControl1 = new CCWin.SkinControl.SkinTabControl();
-            this.tpHome = new CCWin.SkinControl.SkinTabPage();
             this.tpFoodWorld = new CCWin.SkinControl.SkinTabPage();
             this.skinSplitContainer1 = new CCWin.SkinControl.SkinSplitContainer();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -39,15 +38,18 @@
             this.tbFoods = new CCWin.SkinControl.SkinTabControl();
             this.skinTabPage1 = new CCWin.SkinControl.SkinTabPage();
             this.skinTabPage2 = new CCWin.SkinControl.SkinTabPage();
+            this.tpHome = new CCWin.SkinControl.SkinTabPage();
             this.tpMoreFriend = new CCWin.SkinControl.SkinTabPage();
             this.tpSearch = new CCWin.SkinControl.SkinTabPage();
             this.tpFriend = new CCWin.SkinControl.SkinTabPage();
             this.tpSelfManage = new CCWin.SkinControl.SkinTabPage();
+            this.llbSelfEditUserDetails = new System.Windows.Forms.LinkLabel();
             this.lbSelfFoodAge = new CCWin.SkinControl.SkinLabel();
             this.lbSelfSignature = new CCWin.SkinControl.SkinLabel();
             this.lbSelfUserName = new CCWin.SkinControl.SkinLabel();
             this.btnSelfUserPhoto = new CCWin.SkinControl.SkinButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.llbSelfFriend = new System.Windows.Forms.LinkLabel();
             this.skinTabControl1.SuspendLayout();
             this.tpFoodWorld.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinSplitContainer1)).BeginInit();
@@ -92,17 +94,6 @@
             this.skinTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.skinTabControl1.TabIndex = 0;
             this.skinTabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.skinTabControl1_Selecting);
-            // 
-            // tpHome
-            // 
-            this.tpHome.BackColor = System.Drawing.Color.White;
-            this.tpHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tpHome.Location = new System.Drawing.Point(0, 130);
-            this.tpHome.Name = "tpHome";
-            this.tpHome.Size = new System.Drawing.Size(898, 547);
-            this.tpHome.TabIndex = 0;
-            this.tpHome.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpHome.TabItemImage")));
-            this.tpHome.Text = "首页";
             // 
             // tpFoodWorld
             // 
@@ -221,6 +212,17 @@
             this.skinTabPage2.TabItemImage = null;
             this.skinTabPage2.Text = "湘菜";
             // 
+            // tpHome
+            // 
+            this.tpHome.BackColor = System.Drawing.Color.White;
+            this.tpHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tpHome.Location = new System.Drawing.Point(0, 130);
+            this.tpHome.Name = "tpHome";
+            this.tpHome.Size = new System.Drawing.Size(898, 547);
+            this.tpHome.TabIndex = 0;
+            this.tpHome.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpHome.TabItemImage")));
+            this.tpHome.Text = "首页";
+            // 
             // tpMoreFriend
             // 
             this.tpMoreFriend.BackColor = System.Drawing.Color.White;
@@ -257,6 +259,8 @@
             // tpSelfManage
             // 
             this.tpSelfManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(208)))), ((int)(((byte)(255)))));
+            this.tpSelfManage.Controls.Add(this.llbSelfFriend);
+            this.tpSelfManage.Controls.Add(this.llbSelfEditUserDetails);
             this.tpSelfManage.Controls.Add(this.lbSelfFoodAge);
             this.tpSelfManage.Controls.Add(this.lbSelfSignature);
             this.tpSelfManage.Controls.Add(this.lbSelfUserName);
@@ -268,6 +272,18 @@
             this.tpSelfManage.TabIndex = 5;
             this.tpSelfManage.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpSelfManage.TabItemImage")));
             this.tpSelfManage.Text = "我的世界";
+            // 
+            // llbSelfEditUserDetails
+            // 
+            this.llbSelfEditUserDetails.AutoSize = true;
+            this.llbSelfEditUserDetails.LinkColor = System.Drawing.Color.Red;
+            this.llbSelfEditUserDetails.Location = new System.Drawing.Point(814, 31);
+            this.llbSelfEditUserDetails.Name = "llbSelfEditUserDetails";
+            this.llbSelfEditUserDetails.Size = new System.Drawing.Size(77, 12);
+            this.llbSelfEditUserDetails.TabIndex = 2;
+            this.llbSelfEditUserDetails.TabStop = true;
+            this.llbSelfEditUserDetails.Text = "修改个人资料";
+            this.llbSelfEditUserDetails.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbSelfEditUserDetails_LinkClicked);
             // 
             // lbSelfFoodAge
             // 
@@ -336,6 +352,18 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "food.png");
             // 
+            // llbSelfFriend
+            // 
+            this.llbSelfFriend.AutoSize = true;
+            this.llbSelfFriend.LinkColor = System.Drawing.Color.Red;
+            this.llbSelfFriend.Location = new System.Drawing.Point(814, 62);
+            this.llbSelfFriend.Name = "llbSelfFriend";
+            this.llbSelfFriend.Size = new System.Drawing.Size(71, 12);
+            this.llbSelfFriend.TabIndex = 2;
+            this.llbSelfFriend.TabStop = true;
+            this.llbSelfFriend.Text = "我 的 好 友";
+            this.llbSelfFriend.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbSelfFriend_LinkClicked);
+            // 
             // F_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -383,5 +411,7 @@
         private CCWin.SkinControl.SkinLabel lbSelfUserName;
         private CCWin.SkinControl.SkinLabel lbSelfFoodAge;
         private CCWin.SkinControl.SkinLabel lbSelfSignature;
+        private System.Windows.Forms.LinkLabel llbSelfEditUserDetails;
+        private System.Windows.Forms.LinkLabel llbSelfFriend;
     }
 }

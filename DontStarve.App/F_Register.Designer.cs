@@ -330,7 +330,6 @@
             this.Text = "期  待  您  的  加  入~~";
             this.TitleCenter = true;
             this.TitleColor = System.Drawing.Color.Red;
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.F_Register_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picUserPhoto)).EndInit();
             this.ResumeLayout(false);
