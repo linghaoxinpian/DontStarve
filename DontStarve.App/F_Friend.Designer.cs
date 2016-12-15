@@ -33,13 +33,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Friend));
             this.chatListBox1 = new CCWin.SkinControl.ChatListBox();
             this.skinSplitContainer1 = new CCWin.SkinControl.SkinSplitContainer();
-            this.lbSearchFriendList = new CCWin.SkinControl.SkinListBox();
-            this.txtUserName = new System.Windows.Forms.TextBox();
             this.btnSearchFriend = new CCWin.SkinControl.SkinButton();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.lbSearchFriendList = new CCWin.SkinControl.SkinListBox();
+            this.contextMenuStrip_chatLb = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuDeleteFriendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.skinSplitContainer1)).BeginInit();
             this.skinSplitContainer1.Panel1.SuspendLayout();
             this.skinSplitContainer1.Panel2.SuspendLayout();
             this.skinSplitContainer1.SuspendLayout();
+            this.contextMenuStrip_chatLb.SuspendLayout();
             this.SuspendLayout();
             // 
             // chatListBox1
@@ -57,7 +60,7 @@
             chatListItem1.TwinkleSubItemNumber = 0;
             this.chatListBox1.Items.AddRange(new CCWin.SkinControl.ChatListItem[] {
             chatListItem1});
-            this.chatListBox1.ListSubItemMenu = null;
+            this.chatListBox1.ListSubItemMenu = this.contextMenuStrip_chatLb;
             this.chatListBox1.Location = new System.Drawing.Point(4, 28);
             this.chatListBox1.Name = "chatListBox1";
             this.chatListBox1.SelectSubItem = null;
@@ -86,31 +89,6 @@
             this.skinSplitContainer1.SplitterWidth = 1;
             this.skinSplitContainer1.TabIndex = 1;
             // 
-            // lbSearchFriendList
-            // 
-            this.lbSearchFriendList.Back = null;
-            this.lbSearchFriendList.BackColor = System.Drawing.Color.Transparent;
-            this.lbSearchFriendList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbSearchFriendList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.lbSearchFriendList.FormattingEnabled = true;
-            this.lbSearchFriendList.ItemHeight = 30;
-            this.lbSearchFriendList.ItemImageLayout = false;
-            this.lbSearchFriendList.Items.AddRange(new CCWin.SkinControl.SkinListBoxItem[] {
-            ((CCWin.SkinControl.SkinListBoxItem)(resources.GetObject("lbSearchFriendList.Items"))),
-            ((CCWin.SkinControl.SkinListBoxItem)(resources.GetObject("lbSearchFriendList.Items1")))});
-            this.lbSearchFriendList.Location = new System.Drawing.Point(0, 0);
-            this.lbSearchFriendList.Name = "lbSearchFriendList";
-            this.lbSearchFriendList.Size = new System.Drawing.Size(305, 378);
-            this.lbSearchFriendList.TabIndex = 0;
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.Location = new System.Drawing.Point(28, 41);
-            this.txtUserName.Multiline = true;
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(120, 29);
-            this.txtUserName.TabIndex = 0;
-            // 
             // btnSearchFriend
             // 
             this.btnSearchFriend.BackColor = System.Drawing.Color.Transparent;
@@ -125,6 +103,48 @@
             this.btnSearchFriend.Text = "搜  索";
             this.btnSearchFriend.UseVisualStyleBackColor = false;
             this.btnSearchFriend.Click += new System.EventHandler(this.btnSearchFriend_Click);
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(28, 41);
+            this.txtUserName.Multiline = true;
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(120, 29);
+            this.txtUserName.TabIndex = 0;
+            // 
+            // lbSearchFriendList
+            // 
+            this.lbSearchFriendList.Back = null;
+            this.lbSearchFriendList.BackColor = System.Drawing.Color.Transparent;
+            this.lbSearchFriendList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbSearchFriendList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSearchFriendList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.lbSearchFriendList.FormattingEnabled = true;
+            this.lbSearchFriendList.ItemHeight = 30;
+            this.lbSearchFriendList.ItemImageLayout = false;
+            this.lbSearchFriendList.Items.AddRange(new CCWin.SkinControl.SkinListBoxItem[] {
+            ((CCWin.SkinControl.SkinListBoxItem)(resources.GetObject("lbSearchFriendList.Items"))),
+            ((CCWin.SkinControl.SkinListBoxItem)(resources.GetObject("lbSearchFriendList.Items1")))});
+            this.lbSearchFriendList.Location = new System.Drawing.Point(0, 0);
+            this.lbSearchFriendList.Name = "lbSearchFriendList";
+            this.lbSearchFriendList.SelectedColor = System.Drawing.Color.Red;
+            this.lbSearchFriendList.Size = new System.Drawing.Size(305, 378);
+            this.lbSearchFriendList.TabIndex = 0;
+            this.lbSearchFriendList.DoubleClick += new System.EventHandler(this.lbSearchFriendList_DoubleClick);
+            // 
+            // contextMenuStrip_chatLb
+            // 
+            this.contextMenuStrip_chatLb.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuDeleteFriendToolStripMenuItem});
+            this.contextMenuStrip_chatLb.Name = "contextMenuStrip_chatLb";
+            this.contextMenuStrip_chatLb.Size = new System.Drawing.Size(153, 48);
+            // 
+            // menuDeleteFriendToolStripMenuItem
+            // 
+            this.menuDeleteFriendToolStripMenuItem.Name = "menuDeleteFriendToolStripMenuItem";
+            this.menuDeleteFriendToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.menuDeleteFriendToolStripMenuItem.Text = "删除好友";
+            this.menuDeleteFriendToolStripMenuItem.Click += new System.EventHandler(this.menuDeleteFriendToolStripMenuItem_Click);
             // 
             // F_Friend
             // 
@@ -148,6 +168,7 @@
             this.skinSplitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.skinSplitContainer1)).EndInit();
             this.skinSplitContainer1.ResumeLayout(false);
+            this.contextMenuStrip_chatLb.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -159,5 +180,7 @@
         private CCWin.SkinControl.SkinListBox lbSearchFriendList;
         private CCWin.SkinControl.SkinButton btnSearchFriend;
         private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip_chatLb;
+        private System.Windows.Forms.ToolStripMenuItem menuDeleteFriendToolStripMenuItem;
     }
 }

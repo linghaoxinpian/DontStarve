@@ -18,6 +18,7 @@ namespace DontStarve.Model
         public userinfo()
         {
             this.cookcommentinfo = new HashSet<cookcommentinfo>();
+            this.friendinfo = new HashSet<friendinfo>();
             this.r_user_actioninfo = new HashSet<r_user_actioninfo>();
             this.saysayinfo = new HashSet<saysayinfo>();
             this.roleinfo = new HashSet<roleinfo>();
@@ -32,12 +33,13 @@ namespace DontStarve.Model
         public string Signature { get; set; }
         public string QQ { get; set; }
         public string Phone { get; set; }
-        public Nullable<bool> DelFlag { get; set; }
+        public bool DelFlag { get; set; }
         public string IdCard { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<cookcommentinfo> cookcommentinfo { get; set; }
-        public virtual friendinfo friendinfo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<friendinfo> friendinfo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<r_user_actioninfo> r_user_actioninfo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

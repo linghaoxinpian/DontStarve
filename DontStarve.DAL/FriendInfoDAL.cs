@@ -9,10 +9,6 @@ using DontStarve.IDAL;
 namespace DontStarve.DAL
 {
     public class FriendInfoDAL:BaseDAL<friendinfo>, IFriendInfoDAL
-    {
-        public List<userinfo> LoadFriend(Guid currentUser_guid)
-        {
-            return null;
-        }
+    {      
     }
 }

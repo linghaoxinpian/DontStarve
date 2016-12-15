@@ -142,12 +142,19 @@ namespace DontStarve.App
             f_regieter.SetTxt(current_user);
             f_regieter.ShowDialog();
         }
-        
+
         //好友列表
         private void llbSelfFriend_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             F_Friend f_friend = new F_Friend();
             f_friend.Show();
+        }
+
+        //注销
+        private void llbLoginUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {            
+            F_Login login = new F_Login();
+            login.ShowDialog();                       
         }
     }
 }

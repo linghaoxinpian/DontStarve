@@ -47,6 +47,7 @@
         <EntityType Name="friendinfo">
           <Key>
             <PropertyRef Name="UserId" />
+            <PropertyRef Name="FriendId" />
           </Key>
           <Property Name="UserId" Type="guid" Nullable="false" />
           <Property Name="FriendId" Type="guid" Nullable="false" />
@@ -143,7 +144,7 @@
           <Property Name="Signature" Type="varchar" MaxLength="32" />
           <Property Name="QQ" Type="char" MaxLength="13" />
           <Property Name="Phone" Type="char" MaxLength="11" />
-          <Property Name="DelFlag" Type="bit" />
+          <Property Name="DelFlag" Type="bit" Nullable="false" />
           <Property Name="IdCard" Type="char" MaxLength="18" />
         </EntityType>
         <Association Name="FK_Reference_1">
@@ -220,7 +221,7 @@
         </Association>
         <Association Name="FK_Reference_16">
           <End Role="userinfo" Type="Self.userinfo" Multiplicity="1" />
-          <End Role="friendinfo" Type="Self.friendinfo" Multiplicity="0..1" />
+          <End Role="friendinfo" Type="Self.friendinfo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="userinfo">
               <PropertyRef Name="Guid_id" />
@@ -457,6 +458,7 @@
         <EntityType Name="friendinfo">
           <Key>
             <PropertyRef Name="UserId" />
+            <PropertyRef Name="FriendId" />
           </Key>
           <Property Name="UserId" Type="Guid" Nullable="false" />
           <Property Name="FriendId" Type="Guid" Nullable="false" />
@@ -540,7 +542,7 @@
           <Property Name="Signature" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
           <Property Name="QQ" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
           <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
-          <Property Name="DelFlag" Type="Boolean" />
+          <Property Name="DelFlag" Type="Boolean" Nullable="false" />
           <Property Name="IdCard" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="cookcommentinfo" Relationship="Self.FK_Reference_15" FromRole="userinfo" ToRole="cookcommentinfo" />
           <NavigationProperty Name="friendinfo" Relationship="Self.FK_Reference_16" FromRole="userinfo" ToRole="friendinfo" />
@@ -598,7 +600,7 @@
         </Association>
         <Association Name="FK_Reference_16">
           <End Role="userinfo" Type="Self.userinfo" Multiplicity="1" />
-          <End Role="friendinfo" Type="Self.friendinfo" Multiplicity="0..1" />
+          <End Role="friendinfo" Type="Self.friendinfo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="userinfo">
               <PropertyRef Name="Guid_id" />

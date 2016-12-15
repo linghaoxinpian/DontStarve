@@ -14,9 +14,13 @@ namespace DontStarve.Service
         {
             var a = LoadEntities(f => f.UserId == currentUser_guid);
             var  b= from u in a
-                        select u.userinfo;
-            return b.ToList();
-            
+                        select u.FriendId;
+            var c = dbSessioin.iuserInfoDAL.LoadEntities(u => u.DelFlag == false);
+            var d = from u in c
+                    from b0 in b
+                    where u.Guid_id==b0
+                    select u;
+            return d.ToList();
         }
 
         protected override void Set_CurrentDAL()

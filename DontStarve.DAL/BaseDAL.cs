@@ -25,10 +25,7 @@ namespace DontStarve.DAL
         }
 
         public bool EditEntity(T entity)
-        {
-         //   DontStarve.Model.dontstarveEntities en = new Model.dontstarveEntities();
-            // en.Entry<Model.userinfo>((Model.userinfo)entity).State = EntityState.Modified;
-            
+        {                 
             //执行这句之前，确保entity的完整，包括其中的导航属性
             dbContext.Entry<T>(entity).State = EntityState.Modified;    // The entity is being tracked by the context and exists in the database, and some or all of its property values have been modified.
             return true;       
