@@ -38,5 +38,10 @@ namespace DontStarve.Factory
         {
             return (IFriendInfoDAL)Assembly.Load(assembly).CreateInstance(class_namespace + ".FriendInfoDAL");
         }
+
+        public static ISaySayInfoDAL CreateInstanceISaySayInfoInfoDAL()
+        {
+            return (ISaySayInfoDAL)Assembly.Load(assembly).CreateInstance(class_namespace + ".SaySayInfoDAL");
+        }
     }
 }

@@ -91,7 +91,7 @@ namespace DontStarve.DSL
             }
         }
 
-        public IFriendInfoDAL _ifriendInfoDAL;
+        private IFriendInfoDAL _ifriendInfoDAL;
         public IFriendInfoDAL ifriendInfoDAL
         {
             get
@@ -103,6 +103,19 @@ namespace DontStarve.DSL
                 _ifriendInfoDAL = value;
             }
         }
+
+        private ISaySayInfoDAL _isaysayInfoDAL;
+        public ISaySayInfoDAL isaysayInfoDAL
+        {
+            get
+            {
+                return _isaysayInfoDAL == null ? AbstractFactory.CreateInstanceISaySayInfoInfoDAL() : _isaysayInfoDAL;
+            }
+            set
+            {
+                _isaysayInfoDAL = value;
+            }
+        } 
         #endregion
     }
 }

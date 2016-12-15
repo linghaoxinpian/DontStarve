@@ -22,7 +22,7 @@ namespace DontStarve.App
         private void btnLogin_Click(object sender, EventArgs e)
         {            
             F_Main.current_user = iuserInfoService.Login(txtName.Text, Common.HashHelper.GetMD5(txtPwd.Text));
-            if(F_Main.current_user!=null)
+           if(F_Main.current_user!=null)
             {
                 this.DialogResult = DialogResult.OK;
             }
@@ -38,6 +38,14 @@ namespace DontStarve.App
         {
             F_Register register = new F_Register();
             register.ShowDialog(this);
+        }
+
+        private void F_Login_Load(object sender, EventArgs e)
+        {
+            txtName.AutoSize = false;
+            txtPwd.AutoSize = false;
+            txtName.Size = new Size(174, 36);
+            txtPwd.Size = new Size(174, 36);
         }
     }
 }

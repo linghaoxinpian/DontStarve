@@ -44,13 +44,13 @@
             this.tpFriend = new CCWin.SkinControl.SkinTabPage();
             this.tpSelfManage = new CCWin.SkinControl.SkinTabPage();
             this.llbSelfFriend = new System.Windows.Forms.LinkLabel();
+            this.llbLoginUp = new System.Windows.Forms.LinkLabel();
             this.llbSelfEditUserDetails = new System.Windows.Forms.LinkLabel();
             this.lbSelfFoodAge = new CCWin.SkinControl.SkinLabel();
             this.lbSelfSignature = new CCWin.SkinControl.SkinLabel();
             this.lbSelfUserName = new CCWin.SkinControl.SkinLabel();
             this.btnSelfUserPhoto = new CCWin.SkinControl.SkinButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.llbLoginUp = new System.Windows.Forms.LinkLabel();
             this.skinTabControl1.SuspendLayout();
             this.tpFoodWorld.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinSplitContainer1)).BeginInit();
@@ -67,8 +67,8 @@
             this.skinTabControl1.AnimatorType = CCWin.SkinControl.AnimationType.HorizSlide;
             this.skinTabControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(202)))), ((int)(((byte)(99)))));
             this.skinTabControl1.CloseRect = new System.Drawing.Rectangle(2, 2, 12, 12);
-            this.skinTabControl1.Controls.Add(this.tpFoodWorld);
             this.skinTabControl1.Controls.Add(this.tpHome);
+            this.skinTabControl1.Controls.Add(this.tpFoodWorld);
             this.skinTabControl1.Controls.Add(this.tpMoreFriend);
             this.skinTabControl1.Controls.Add(this.tpSearch);
             this.skinTabControl1.Controls.Add(this.tpFriend);
@@ -279,7 +279,7 @@
             // 
             this.llbSelfFriend.AutoSize = true;
             this.llbSelfFriend.LinkColor = System.Drawing.Color.Red;
-            this.llbSelfFriend.Location = new System.Drawing.Point(818, 46);
+            this.llbSelfFriend.Location = new System.Drawing.Point(810, 132);
             this.llbSelfFriend.Name = "llbSelfFriend";
             this.llbSelfFriend.Size = new System.Drawing.Size(71, 12);
             this.llbSelfFriend.TabIndex = 2;
@@ -287,11 +287,23 @@
             this.llbSelfFriend.Text = "我 的 好 友";
             this.llbSelfFriend.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbSelfFriend_LinkClicked);
             // 
+            // llbLoginUp
+            // 
+            this.llbLoginUp.AutoSize = true;
+            this.llbLoginUp.LinkColor = System.Drawing.Color.Red;
+            this.llbLoginUp.Location = new System.Drawing.Point(831, 161);
+            this.llbLoginUp.Name = "llbLoginUp";
+            this.llbLoginUp.Size = new System.Drawing.Size(29, 12);
+            this.llbLoginUp.TabIndex = 2;
+            this.llbLoginUp.TabStop = true;
+            this.llbLoginUp.Text = "注销";
+            this.llbLoginUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbLoginUp_LinkClicked);
+            // 
             // llbSelfEditUserDetails
             // 
             this.llbSelfEditUserDetails.AutoSize = true;
             this.llbSelfEditUserDetails.LinkColor = System.Drawing.Color.Red;
-            this.llbSelfEditUserDetails.Location = new System.Drawing.Point(815, 17);
+            this.llbSelfEditUserDetails.Location = new System.Drawing.Point(807, 103);
             this.llbSelfEditUserDetails.Name = "llbSelfEditUserDetails";
             this.llbSelfEditUserDetails.Size = new System.Drawing.Size(77, 12);
             this.llbSelfEditUserDetails.TabIndex = 2;
@@ -359,6 +371,7 @@
             this.btnSelfUserPhoto.Size = new System.Drawing.Size(222, 222);
             this.btnSelfUserPhoto.TabIndex = 0;
             this.btnSelfUserPhoto.UseVisualStyleBackColor = false;
+            this.btnSelfUserPhoto.Click += new System.EventHandler(this.btnSelfUserPhoto_Click);
             // 
             // imageList1
             // 
@@ -366,25 +379,15 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "food.png");
             // 
-            // llbLoginUp
-            // 
-            this.llbLoginUp.AutoSize = true;
-            this.llbLoginUp.LinkColor = System.Drawing.Color.Red;
-            this.llbLoginUp.Location = new System.Drawing.Point(839, 75);
-            this.llbLoginUp.Name = "llbLoginUp";
-            this.llbLoginUp.Size = new System.Drawing.Size(29, 12);
-            this.llbLoginUp.TabIndex = 2;
-            this.llbLoginUp.TabStop = true;
-            this.llbLoginUp.Text = "注销";
-            this.llbLoginUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbLoginUp_LinkClicked);
-            // 
             // F_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(906, 709);
+            this.CloseBoxSize = new System.Drawing.Size(32, 24);
             this.Controls.Add(this.skinTabControl1);
             this.MaximizeBox = false;
+            this.MiniSize = new System.Drawing.Size(32, 24);
             this.Name = "F_Main";
             this.Radius = 20;
             this.ShadowWidth = 10;

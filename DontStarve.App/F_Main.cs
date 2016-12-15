@@ -156,5 +156,19 @@ namespace DontStarve.App
             F_Login login = new F_Login();
             login.ShowDialog();                       
         }
+
+        private void btnSelfUserPhoto_Click(object sender, EventArgs e)
+        {
+            Load_SelfDynamic();
+        }
+
+        /// <summary>
+        /// 加载个人动态
+        /// </summary>
+        private void Load_SelfDynamic()
+        {
+            F_SelfSaySay fs = new F_SelfSaySay();
+            fs.Show();
+        }
     }
 }

@@ -44,6 +44,7 @@
             // 
             this.btnLogin.BackColor = System.Drawing.Color.Transparent;
             this.btnLogin.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnLogin.DownBack = null;
             this.btnLogin.Location = new System.Drawing.Point(295, 380);
             this.btnLogin.MouseBack = null;
@@ -73,9 +74,8 @@
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtName.Font = new System.Drawing.Font("宋体", 12F);
             this.txtName.Location = new System.Drawing.Point(208, 233);
-            this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(174, 36);
+            this.txtName.Size = new System.Drawing.Size(174, 19);
             this.txtName.TabIndex = 2;
             this.txtName.Text = "零芯";
             // 
@@ -85,12 +85,11 @@
             this.txtPwd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPwd.Font = new System.Drawing.Font("宋体", 12F);
             this.txtPwd.Location = new System.Drawing.Point(208, 298);
-            this.txtPwd.Multiline = true;
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.PasswordChar = '★';
-            this.txtPwd.Size = new System.Drawing.Size(174, 36);
+            this.txtPwd.Size = new System.Drawing.Size(174, 19);
             this.txtPwd.TabIndex = 2;
-            this.txtPwd.Text = "123";
+            this.txtPwd.Text = "123456";
             // 
             // skinLabel2
             // 
@@ -119,6 +118,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.DownBack = null;
             this.btnClose.Location = new System.Drawing.Point(142, 380);
             this.btnClose.MouseBack = null;
@@ -143,8 +143,10 @@
             // 
             // F_Login
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(500, 500);
             this.Controls.Add(this.llbRegister);
             this.Controls.Add(this.picUserPhoto);
@@ -162,6 +164,7 @@
             this.SkinOpacity = 0.8D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.F_Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picUserPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -45,6 +45,7 @@
     <Compile Include="ICookcommentInfoService.cs" />
     <Compile Include="ICookieInfoService.cs" />
     <Compile Include="IFriendInfoService.cs" />
+    <Compile Include="ISaySayInfoService.cs" />
     <Compile Include="IUserInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
