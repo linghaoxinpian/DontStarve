@@ -130,6 +130,7 @@
           <Property Name="Pic" Type="mediumblob" />
           <Property Name="DelFlag" Type="bit" Nullable="false" />
           <Property Name="IsAllUserCanSee" Type="bit" Nullable="false" />
+          <Property Name="PraiseNum" Type="uint" Nullable="false" />
         </EntityType>
         <EntityType Name="userinfo">
           <Key>
@@ -528,6 +529,7 @@
           <Property Name="IsAllUserCanSee" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="saysaycommentinfo" Relationship="Self.FK_Reference_13" FromRole="saysayinfo" ToRole="saysaycommentinfo" />
           <NavigationProperty Name="userinfo" Relationship="Self.FK_Reference_14" FromRole="saysayinfo" ToRole="userinfo" />
+          <Property Name="PraiseNum" Type="Int64" Nullable="false" />
         </EntityType>
         <EntityType Name="userinfo">
           <Key>
@@ -838,6 +840,7 @@
           <EntitySetMapping Name="saysayinfo">
             <EntityTypeMapping TypeName="dontstarveModel.saysayinfo">
               <MappingFragment StoreEntitySet="saysayinfo">
+                <ScalarProperty Name="PraiseNum" ColumnName="PraiseNum" />
                 <ScalarProperty Name="Guid_id" ColumnName="Guid_id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="Content" ColumnName="Content" />

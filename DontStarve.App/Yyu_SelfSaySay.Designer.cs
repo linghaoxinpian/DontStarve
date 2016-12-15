@@ -29,55 +29,55 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.skinWaterTextBox1 = new CCWin.SkinControl.SkinWaterTextBox();
+            this.pic = new System.Windows.Forms.PictureBox();
+            this.lbName = new System.Windows.Forms.Label();
+            this.txtContent = new CCWin.SkinControl.SkinWaterTextBox();
             this.yyu_PraiseNum1 = new DontStarve.App.Yyu_PraiseNum();
-            this.skinButton1 = new CCWin.SkinControl.SkinButton();
+            this.btnReply = new CCWin.SkinControl.SkinButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pic
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::DontStarve.App.Properties.Resources.christmas;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pic.Image = global::DontStarve.App.Properties.Resources.christmas;
+            this.pic.Location = new System.Drawing.Point(8, 3);
+            this.pic.Name = "pic";
+            this.pic.Size = new System.Drawing.Size(100, 50);
+            this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic.TabIndex = 0;
+            this.pic.TabStop = false;
             // 
-            // label1
+            // lbName
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lbName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("隶书", 20F);
-            this.label1.Location = new System.Drawing.Point(20, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 27);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "零芯";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("隶书", 20F);
+            this.lbName.Location = new System.Drawing.Point(20, 71);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(68, 27);
+            this.lbName.TabIndex = 1;
+            this.lbName.Text = "零芯";
+            this.lbName.Click += new System.EventHandler(this.label1_Click);
             // 
-            // skinWaterTextBox1
+            // txtContent
             // 
-            this.skinWaterTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.skinWaterTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.skinWaterTextBox1.Location = new System.Drawing.Point(125, 3);
-            this.skinWaterTextBox1.Multiline = true;
-            this.skinWaterTextBox1.Name = "skinWaterTextBox1";
-            this.skinWaterTextBox1.Size = new System.Drawing.Size(414, 113);
-            this.skinWaterTextBox1.TabIndex = 3;
-            this.skinWaterTextBox1.Text = "C# 5.0新特性:Async和Await使异步编程更简单 - 51CTO.COM\r\n";
-            this.skinWaterTextBox1.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinWaterTextBox1.WaterText = "";
+            this.txtContent.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtContent.Location = new System.Drawing.Point(125, 3);
+            this.txtContent.Multiline = true;
+            this.txtContent.Name = "txtContent";
+            this.txtContent.Size = new System.Drawing.Size(414, 113);
+            this.txtContent.TabIndex = 3;
+            this.txtContent.Text = "C# 5.0新特性:Async和Await使异步编程更简单 - 51CTO.COM\r\n";
+            this.txtContent.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.txtContent.WaterText = "";
             // 
             // yyu_PraiseNum1
             // 
@@ -88,26 +88,27 @@
             this.yyu_PraiseNum1.Size = new System.Drawing.Size(116, 46);
             this.yyu_PraiseNum1.TabIndex = 4;
             // 
-            // skinButton1
+            // btnReply
             // 
-            this.skinButton1.BaseColor = System.Drawing.SystemColors.Control;
-            this.skinButton1.BorderColor = System.Drawing.SystemColors.Control;
-            this.skinButton1.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.skinButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.skinButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.skinButton1.DownBack = null;
-            this.skinButton1.DownBaseColor = System.Drawing.SystemColors.Control;
-            this.skinButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.skinButton1.Font = new System.Drawing.Font("楷体", 19F);
-            this.skinButton1.Location = new System.Drawing.Point(125, 122);
-            this.skinButton1.MouseBack = null;
-            this.skinButton1.MouseBaseColor = System.Drawing.SystemColors.Control;
-            this.skinButton1.Name = "skinButton1";
-            this.skinButton1.NormlBack = null;
-            this.skinButton1.Size = new System.Drawing.Size(414, 46);
-            this.skinButton1.TabIndex = 5;
-            this.skinButton1.Text = "回复";
-            this.skinButton1.UseVisualStyleBackColor = false;
+            this.btnReply.BackColor = System.Drawing.Color.Transparent;
+            this.btnReply.BaseColor = System.Drawing.SystemColors.Control;
+            this.btnReply.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnReply.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.btnReply.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReply.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnReply.DownBack = null;
+            this.btnReply.DownBaseColor = System.Drawing.SystemColors.Control;
+            this.btnReply.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReply.Font = new System.Drawing.Font("楷体", 19F);
+            this.btnReply.Location = new System.Drawing.Point(125, 122);
+            this.btnReply.MouseBack = null;
+            this.btnReply.MouseBaseColor = System.Drawing.SystemColors.Control;
+            this.btnReply.Name = "btnReply";
+            this.btnReply.NormlBack = null;
+            this.btnReply.Size = new System.Drawing.Size(414, 46);
+            this.btnReply.TabIndex = 5;
+            this.btnReply.Text = "回复";
+            this.btnReply.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel1
             // 
@@ -115,9 +116,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.50923F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.49078F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.skinButton1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnReply, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.yyu_PraiseNum1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.skinWaterTextBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtContent, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -129,8 +130,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pic);
+            this.panel1.Controls.Add(this.lbName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
@@ -144,7 +145,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Yyu_SelfSaySay";
             this.Size = new System.Drawing.Size(542, 171);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -155,12 +156,12 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private CCWin.SkinControl.SkinWaterTextBox skinWaterTextBox1;
-        private Yyu_PraiseNum yyu_PraiseNum1;
-        private CCWin.SkinControl.SkinButton skinButton1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        public System.Windows.Forms.PictureBox pic;
+        public System.Windows.Forms.Label lbName;
+        public CCWin.SkinControl.SkinWaterTextBox txtContent;
+        public Yyu_PraiseNum yyu_PraiseNum1;
+        public CCWin.SkinControl.SkinButton btnReply;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
     }
 }

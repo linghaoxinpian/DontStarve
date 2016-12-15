@@ -27,6 +27,7 @@ namespace DontStarve.Model
         public byte[] Pic { get; set; }
         public bool DelFlag { get; set; }
         public bool IsAllUserCanSee { get; set; }
+        public long PraiseNum { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<saysaycommentinfo> saysaycommentinfo { get; set; }
