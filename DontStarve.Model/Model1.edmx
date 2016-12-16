@@ -116,6 +116,7 @@
           <Property Name="Guid_id" Type="guid" Nullable="false" />
           <Property Name="SaysayId" Type="guid" Nullable="false" />
           <Property Name="UserId" Type="guid" Nullable="false" />
+          <Property Name="ToUserId" Type="guid" Nullable="false" />
           <Property Name="Content" Type="text" />
           <Property Name="Subtime" Type="bigint" Nullable="false" />
         </EntityType>
@@ -515,6 +516,7 @@
           <Property Name="Content" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
           <Property Name="Subtime" Type="Int64" Nullable="false" />
           <NavigationProperty Name="saysayinfo" Relationship="Self.FK_Reference_13" FromRole="saysaycommentinfo" ToRole="saysayinfo" />
+          <Property Name="ToUserId" Type="Guid" Nullable="false" />
         </EntityType>
         <EntityType Name="saysayinfo">
           <Key>
@@ -829,6 +831,7 @@
           <EntitySetMapping Name="saysaycommentinfo">
             <EntityTypeMapping TypeName="dontstarveModel.saysaycommentinfo">
               <MappingFragment StoreEntitySet="saysaycommentinfo">
+                <ScalarProperty Name="ToUserId" ColumnName="ToUserId" />
                 <ScalarProperty Name="Guid_id" ColumnName="Guid_id" />
                 <ScalarProperty Name="SaysayId" ColumnName="SaysayId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />

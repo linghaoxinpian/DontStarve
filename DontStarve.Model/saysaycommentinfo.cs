@@ -19,6 +19,7 @@ namespace DontStarve.Model
         public System.Guid UserId { get; set; }
         public string Content { get; set; }
         public long Subtime { get; set; }
+        public System.Guid ToUserId { get; set; }
     
         public virtual saysayinfo saysayinfo { get; set; }
     }

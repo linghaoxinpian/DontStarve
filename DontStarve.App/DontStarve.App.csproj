@@ -124,6 +124,12 @@
     <Compile Include="Yyu_PraiseNum.Designer.cs">
       <DependentUpon>Yyu_PraiseNum.cs</DependentUpon>
     </Compile>
+    <Compile Include="Yyu_Reply.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Yyu_Reply.Designer.cs">
+      <DependentUpon>Yyu_Reply.cs</DependentUpon>
+    </Compile>
     <Compile Include="Yyu_SelfSaySay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </Compile>
     <EmbeddedResource Include="Yyu_PraiseNum.resx">
       <DependentUpon>Yyu_PraiseNum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yyu_Reply.resx">
+      <DependentUpon>Yyu_Reply.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Yyu_SelfSaySay.resx">
       <DependentUpon>Yyu_SelfSaySay.cs</DependentUpon>

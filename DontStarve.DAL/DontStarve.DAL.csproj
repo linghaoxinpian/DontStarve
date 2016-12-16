@@ -55,6 +55,7 @@
     <Compile Include="CookieInfoDAL.cs" />
     <Compile Include="FriendInfoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaysaycommentInfoDAL.cs" />
     <Compile Include="SaySayInfoDAL.cs" />
     <Compile Include="UserInfoDAL.cs" />
   </ItemGroup>

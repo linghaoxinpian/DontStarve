@@ -28,14 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(4, 28);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(451, 563);
+            this.panel1.TabIndex = 0;
             // 
             // F_SaySayReplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(459, 595);
+            this.Controls.Add(this.panel1);
             this.Name = "F_SaySayReplay";
+            this.ShowDrawIcon = false;
             this.Text = "";
             this.Load += new System.EventHandler(this.F_SaySayReplay_Load);
             this.ResumeLayout(false);
@@ -43,5 +55,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
     }
 }

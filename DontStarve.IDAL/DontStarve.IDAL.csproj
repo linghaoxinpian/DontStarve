@@ -45,6 +45,7 @@
     <Compile Include="ICookcommentInfoDAL.cs" />
     <Compile Include="ICookieInfoDAL.cs" />
     <Compile Include="IFriendInfoDAL.cs" />
+    <Compile Include="ISaysaycommentInfoDAL.cs" />
     <Compile Include="ISaySayInfoDAL.cs" />
     <Compile Include="IUserInfoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

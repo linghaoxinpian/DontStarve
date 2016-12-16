@@ -115,7 +115,20 @@ namespace DontStarve.DSL
             {
                 _isaysayInfoDAL = value;
             }
-        } 
+        }
+
+        private ISaysaycommentInfoDAL _isaysaycommentInfoDAL;
+        public ISaysaycommentInfoDAL isaysaycommentInfoDAL
+        {
+            get
+            {
+                return _isaysaycommentInfoDAL == null ? AbstractFactory.CreateInstanceSaysaycommentInfoDAL() : _isaysaycommentInfoDAL;
+            }
+            set
+            {
+                _isaysaycommentInfoDAL = value;
+            }
+        }
         #endregion
     }
 }
