@@ -68,10 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DontStarve\IService\IFriendInfoService.cs" />
-    <Compile Include="F_Friend.cs">
+    <Compile Include="SelfManage\F_Friend.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_Friend.Designer.cs">
+    <Compile Include="SelfManage\F_Friend.Designer.cs">
       <DependentUpon>F_Friend.cs</DependentUpon>
     </Compile>
     <Compile Include="F_Register.cs">
@@ -80,22 +80,22 @@
     <Compile Include="F_Register.Designer.cs">
       <DependentUpon>F_Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_SaySayReplay.cs">
+    <Compile Include="SelfManage\F_SaySayReplay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_SaySayReplay.Designer.cs">
+    <Compile Include="SelfManage\F_SaySayReplay.Designer.cs">
       <DependentUpon>F_SaySayReplay.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_SelfSaySay.cs">
+    <Compile Include="SelfManage\F_SelfSaySay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_SelfSaySay.Designer.cs">
+    <Compile Include="SelfManage\F_SelfSaySay.Designer.cs">
       <DependentUpon>F_SelfSaySay.cs</DependentUpon>
     </Compile>
-    <Compile Include="Yyu_CookieComment.cs">
+    <Compile Include="Yyu_Control\Yyu_CookieComment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Yyu_CookieComment.Designer.cs">
+    <Compile Include="Yyu_Control\Yyu_CookieComment.Designer.cs">
       <DependentUpon>Yyu_CookieComment.cs</DependentUpon>
     </Compile>
     <Compile Include="F_CookieInfo.cs">
@@ -118,37 +118,37 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Yyu_PraiseNum.cs">
+    <Compile Include="Yyu_Control\Yyu_PraiseNum.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Yyu_PraiseNum.Designer.cs">
+    <Compile Include="Yyu_Control\Yyu_PraiseNum.Designer.cs">
       <DependentUpon>Yyu_PraiseNum.cs</DependentUpon>
     </Compile>
-    <Compile Include="Yyu_Reply.cs">
+    <Compile Include="Yyu_Control\Yyu_Reply.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Yyu_Reply.Designer.cs">
+    <Compile Include="Yyu_Control\Yyu_Reply.Designer.cs">
       <DependentUpon>Yyu_Reply.cs</DependentUpon>
     </Compile>
-    <Compile Include="Yyu_SelfSaySay.cs">
+    <Compile Include="Yyu_Control\Yyu_SelfSaySay.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Yyu_SelfSaySay.Designer.cs">
+    <Compile Include="Yyu_Control\Yyu_SelfSaySay.Designer.cs">
       <DependentUpon>Yyu_SelfSaySay.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="F_Friend.resx">
+    <EmbeddedResource Include="SelfManage\F_Friend.resx">
       <DependentUpon>F_Friend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Register.resx">
       <DependentUpon>F_Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_SaySayReplay.resx">
+    <EmbeddedResource Include="SelfManage\F_SaySayReplay.resx">
       <DependentUpon>F_SaySayReplay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_SelfSaySay.resx">
+    <EmbeddedResource Include="SelfManage\F_SelfSaySay.resx">
       <DependentUpon>F_SelfSaySay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Yyu_CookieComment.resx">
+    <EmbeddedResource Include="Yyu_Control\Yyu_CookieComment.resx">
       <DependentUpon>Yyu_CookieComment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_CookieInfo.resx">
@@ -171,13 +171,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Yyu_PraiseNum.resx">
+    <EmbeddedResource Include="Yyu_Control\Yyu_PraiseNum.resx">
       <DependentUpon>Yyu_PraiseNum.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Yyu_Reply.resx">
+    <EmbeddedResource Include="Yyu_Control\Yyu_Reply.resx">
       <DependentUpon>Yyu_Reply.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Yyu_SelfSaySay.resx">
+    <EmbeddedResource Include="Yyu_Control\Yyu_SelfSaySay.resx">
       <DependentUpon>Yyu_SelfSaySay.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -228,6 +228,7 @@
     <None Include="Resources\house.png" />
     <None Include="Resources\132.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
