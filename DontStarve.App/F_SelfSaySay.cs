@@ -50,9 +50,9 @@ namespace DontStarve.App
                   {
                       F_SaySayReplay fs = new F_SaySayReplay(onesaysay.Guid_id);
                       fs.Show();
-                  });
+                  });                
                 skinPanel1.Controls.Add(ys);
-            }         
+            }
         }
     }
 }

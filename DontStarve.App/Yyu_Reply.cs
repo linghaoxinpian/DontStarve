@@ -16,5 +16,13 @@ namespace DontStarve.App
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// 点击回复委托
+        /// </summary>
+        public Action ReplyAction;
+        private void lbUserToUser_Click(object sender, EventArgs e)
+        {
+            ReplyAction?.Invoke();
+        }
     }
 }

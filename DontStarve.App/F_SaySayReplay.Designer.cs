@@ -37,18 +37,20 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(4, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(451, 563);
+            this.panel1.Size = new System.Drawing.Size(452, 563);
             this.panel1.TabIndex = 0;
             // 
             // F_SaySayReplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 595);
+            this.ClientSize = new System.Drawing.Size(460, 595);
             this.Controls.Add(this.panel1);
+            this.EffectBack = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.Name = "F_SaySayReplay";
             this.ShowDrawIcon = false;
-            this.Text = "";
+            this.Text = "个 人 动 态";
+            this.TitleCenter = true;
             this.Load += new System.EventHandler(this.F_SaySayReplay_Load);
             this.ResumeLayout(false);
 

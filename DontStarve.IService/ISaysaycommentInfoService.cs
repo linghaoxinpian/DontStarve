@@ -9,6 +9,6 @@ namespace DontStarve.IService
 {
     public interface ISaysaycommentInfoService : IBaseService<saysaycommentinfo>
     {
-       void LoadReplyBySaysayId(Guid saySayId, int v1, int v2, out int count);
+       dynamic LoadReplyBySaysayId(Guid saySayId, int v1, int v2, out int count);
     }
 }
