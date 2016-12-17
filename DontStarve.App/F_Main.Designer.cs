@@ -39,9 +39,9 @@
             this.skinTabPage1 = new CCWin.SkinControl.SkinTabPage();
             this.skinTabPage2 = new CCWin.SkinControl.SkinTabPage();
             this.tpHome = new CCWin.SkinControl.SkinTabPage();
-            this.tpMoreFriend = new CCWin.SkinControl.SkinTabPage();
-            this.tpSearch = new CCWin.SkinControl.SkinTabPage();
             this.tpFriend = new CCWin.SkinControl.SkinTabPage();
+            this.tpSearch = new CCWin.SkinControl.SkinTabPage();
+            this.tpMoreFriend = new CCWin.SkinControl.SkinTabPage();
             this.tpSelfManage = new CCWin.SkinControl.SkinTabPage();
             this.llbSelfFriend = new System.Windows.Forms.LinkLabel();
             this.llbLoginUp = new System.Windows.Forms.LinkLabel();
@@ -51,6 +51,8 @@
             this.lbSelfUserName = new CCWin.SkinControl.SkinLabel();
             this.btnSelfUserPhoto = new CCWin.SkinControl.SkinButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.pl_left = new System.Windows.Forms.Panel();
+            this.pl_right = new System.Windows.Forms.Panel();
             this.skinTabControl1.SuspendLayout();
             this.tpFoodWorld.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinSplitContainer1)).BeginInit();
@@ -59,6 +61,7 @@
             this.skinSplitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tbFoods.SuspendLayout();
+            this.tpMoreFriend.SuspendLayout();
             this.tpSelfManage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,9 +72,9 @@
             this.skinTabControl1.CloseRect = new System.Drawing.Rectangle(2, 2, 12, 12);
             this.skinTabControl1.Controls.Add(this.tpHome);
             this.skinTabControl1.Controls.Add(this.tpFoodWorld);
+            this.skinTabControl1.Controls.Add(this.tpFriend);
             this.skinTabControl1.Controls.Add(this.tpMoreFriend);
             this.skinTabControl1.Controls.Add(this.tpSearch);
-            this.skinTabControl1.Controls.Add(this.tpFriend);
             this.skinTabControl1.Controls.Add(this.tpSelfManage);
             this.skinTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.skinTabControl1.HeadBack = null;
@@ -90,7 +93,7 @@
             this.skinTabControl1.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Top;
             this.skinTabControl1.PageNorml = null;
             this.skinTabControl1.Radius = 15;
-            this.skinTabControl1.SelectedIndex = 5;
+            this.skinTabControl1.SelectedIndex = 3;
             this.skinTabControl1.Size = new System.Drawing.Size(898, 677);
             this.skinTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.skinTabControl1.TabIndex = 0;
@@ -224,16 +227,16 @@
             this.tpHome.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpHome.TabItemImage")));
             this.tpHome.Text = "首页";
             // 
-            // tpMoreFriend
+            // tpFriend
             // 
-            this.tpMoreFriend.BackColor = System.Drawing.Color.White;
-            this.tpMoreFriend.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tpMoreFriend.Location = new System.Drawing.Point(0, 130);
-            this.tpMoreFriend.Name = "tpMoreFriend";
-            this.tpMoreFriend.Size = new System.Drawing.Size(898, 547);
-            this.tpMoreFriend.TabIndex = 3;
-            this.tpMoreFriend.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpMoreFriend.TabItemImage")));
-            this.tpMoreFriend.Text = "大千世界";
+            this.tpFriend.BackColor = System.Drawing.Color.White;
+            this.tpFriend.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tpFriend.Location = new System.Drawing.Point(0, 130);
+            this.tpFriend.Name = "tpFriend";
+            this.tpFriend.Size = new System.Drawing.Size(898, 547);
+            this.tpFriend.TabIndex = 2;
+            this.tpFriend.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpFriend.TabItemImage")));
+            this.tpFriend.Text = "食友圈";
             // 
             // tpSearch
             // 
@@ -246,16 +249,18 @@
             this.tpSearch.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpSearch.TabItemImage")));
             this.tpSearch.Text = "搜索";
             // 
-            // tpFriend
+            // tpMoreFriend
             // 
-            this.tpFriend.BackColor = System.Drawing.Color.White;
-            this.tpFriend.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tpFriend.Location = new System.Drawing.Point(0, 130);
-            this.tpFriend.Name = "tpFriend";
-            this.tpFriend.Size = new System.Drawing.Size(898, 547);
-            this.tpFriend.TabIndex = 2;
-            this.tpFriend.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpFriend.TabItemImage")));
-            this.tpFriend.Text = "食友圈";
+            this.tpMoreFriend.BackColor = System.Drawing.Color.White;
+            this.tpMoreFriend.Controls.Add(this.pl_right);
+            this.tpMoreFriend.Controls.Add(this.pl_left);
+            this.tpMoreFriend.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tpMoreFriend.Location = new System.Drawing.Point(0, 130);
+            this.tpMoreFriend.Name = "tpMoreFriend";
+            this.tpMoreFriend.Size = new System.Drawing.Size(898, 547);
+            this.tpMoreFriend.TabIndex = 3;
+            this.tpMoreFriend.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpMoreFriend.TabItemImage")));
+            this.tpMoreFriend.Text = "大千世界";
             // 
             // tpSelfManage
             // 
@@ -379,6 +384,30 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "food.png");
             // 
+            // pl_left
+            // 
+            this.pl_left.BackColor = System.Drawing.Color.DarkGray;
+            this.pl_left.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pl_left.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pl_left.Location = new System.Drawing.Point(0, 0);
+            this.pl_left.Name = "pl_left";
+            this.pl_left.Size = new System.Drawing.Size(128, 547);
+            this.pl_left.TabIndex = 0;
+            this.pl_left.MouseEnter += new System.EventHandler(this.pl_left_MouseEnter);
+            this.pl_left.MouseLeave += new System.EventHandler(this.pl_left_MouseLeave);
+            // 
+            // pl_right
+            // 
+            this.pl_right.BackColor = System.Drawing.Color.DarkGray;
+            this.pl_right.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pl_right.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pl_right.Location = new System.Drawing.Point(770, 0);
+            this.pl_right.Name = "pl_right";
+            this.pl_right.Size = new System.Drawing.Size(128, 547);
+            this.pl_right.TabIndex = 1;
+            this.pl_right.MouseEnter += new System.EventHandler(this.pl_left_MouseEnter);
+            this.pl_right.MouseLeave += new System.EventHandler(this.pl_left_MouseLeave);
+            // 
             // F_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -402,6 +431,7 @@
             this.skinSplitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tbFoods.ResumeLayout(false);
+            this.tpMoreFriend.ResumeLayout(false);
             this.tpSelfManage.ResumeLayout(false);
             this.tpSelfManage.PerformLayout();
             this.ResumeLayout(false);
@@ -431,5 +461,7 @@
         private System.Windows.Forms.LinkLabel llbSelfEditUserDetails;
         private System.Windows.Forms.LinkLabel llbSelfFriend;
         private System.Windows.Forms.LinkLabel llbLoginUp;
+        private System.Windows.Forms.Panel pl_left;
+        private System.Windows.Forms.Panel pl_right;
     }
 }

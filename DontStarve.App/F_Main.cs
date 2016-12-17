@@ -170,5 +170,15 @@ namespace DontStarve.App
             F_SelfSaySay fs = new F_SelfSaySay();
             fs.Show();
         }
+
+        private void pl_left_MouseEnter(object sender, EventArgs e)
+        {
+            (sender as Control).BackColor = Color.DimGray;
+        }
+
+        private void pl_left_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as Control).BackColor = Color.DarkGray;
+        }
     }
 }
