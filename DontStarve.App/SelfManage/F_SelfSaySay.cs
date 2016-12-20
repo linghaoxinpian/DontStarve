@@ -54,5 +54,15 @@ namespace DontStarve.App
                 skinPanel1.Controls.Add(ys);
             }
         }
+
+        private void btnShare_Click(object sender, EventArgs e)
+        {
+            F_SelfShare fs = new F_SelfShare();
+            fs.ShowDialog();
+            if(fs.DialogResult== DialogResult.OK)
+            {
+                Load_SelfSaySay();
+            }
+        }
     }
 }

@@ -7,7 +7,12 @@ using DontStarve.Model;
 
 namespace DontStarve.IService
 {
-public interface ISaySayInfoService:IBaseService<saysayinfo>
+    public interface ISaySayInfoService : IBaseService<saysayinfo>
     {
+        /// <summary>
+        /// 加载所有公开说说
+        /// </summary>
+        /// <returns></returns>
+        dynamic LoadWorldFriend(int pageIndex, int pageSize, out int count);
     }
 }

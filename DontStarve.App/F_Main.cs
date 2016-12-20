@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,6 +29,7 @@ namespace DontStarve.App
 
         private ICategoryInfoService icategoryInfoService = new CategoryInfoService();
         private ICookieInfoService icookieInfoService = new CookieInfoService();
+        private ISaySayInfoService isaysayInfoService = new SaySayInfoService();
 
         /// <summary>
         /// 选项卡改变事件
@@ -68,9 +70,47 @@ namespace DontStarve.App
 
         }
 
+        /// <summary>
+        /// 大千世界
+        /// </summary>
         private void Load_moreFriend()
         {
+            Load_WorldFriend();
+        }
 
+        /// <summary>
+        /// 加载所有人的说说
+        /// </summary>
+        private void Load_WorldFriend()
+        {
+            int count;
+            dynamic list = isaysayInfoService.LoadWorldFriend(1, 3, out count);
+            //s.Pic,
+            //u.Name,
+            //s.PraiseNum,
+            //s.Subtime,
+            //s.Content
+            tableLayoutPanel1.Controls.Clear(); //清理
+            foreach (dynamic item in list)
+            {
+                Yyu_SaySayDetails yssd = new Yyu_SaySayDetails();
+
+                //反射得到匿名类型值  并  填充控件
+                Type t = item.GetType();
+                PropertyInfo[] pros= t.GetProperties();
+                byte[] picByte = pros[0].GetValue(item) as byte[];
+                if (picByte != null)
+                {
+                   yssd.pic.Image=CommonHelper.BytesToPic(picByte);
+                }
+                yssd.llbName.Text = pros[1].GetValue(item);
+                yssd.yyu_PraiseNum1.labPraiseNum.Text = pros[2].GetValue(item).ToString();
+                yssd.lbSubtime.Text = pros[3].GetValue(item).ToString();
+                yssd.txtContent.Text = pros[4].GetValue(item);
+
+                //添加控件
+                tableLayoutPanel1.Controls.Add(yssd);
+            }
         }
 
         /// <summary>
@@ -152,9 +192,9 @@ namespace DontStarve.App
 
         //注销
         private void llbLoginUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {            
+        {
             F_Login login = new F_Login();
-            login.ShowDialog();                       
+            login.ShowDialog();
         }
 
         private void btnSelfUserPhoto_Click(object sender, EventArgs e)
