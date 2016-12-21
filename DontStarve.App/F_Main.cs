@@ -75,16 +75,28 @@ namespace DontStarve.App
         /// </summary>
         private void Load_moreFriend()
         {
-            Load_WorldFriend();
+            Load_WorldFriend();            
         }
 
+        /// <summary>
+        /// 当前页码
+        /// </summary>
+        private int moreFriend_pageIndx = 1;
+        /// <summary>
+        /// 每页显示记录数
+        /// </summary>
+        private int moreFriend_pageSize = 3;
+        /// <summary>
+        /// 当前可加载的所有说说记录数
+        /// </summary>
+        private int moreFriend_count;
         /// <summary>
         /// 加载所有人的说说
         /// </summary>
         private void Load_WorldFriend()
         {
-            int count;
-            dynamic list = isaysayInfoService.LoadWorldFriend(1, 3, out count);
+            //从数据库加载数据
+            dynamic list = isaysayInfoService.LoadWorldFriend(moreFriend_pageIndx, moreFriend_pageSize, out moreFriend_count);
             //s.Pic,
             //u.Name,
             //s.PraiseNum,
@@ -97,11 +109,11 @@ namespace DontStarve.App
 
                 //反射得到匿名类型值  并  填充控件
                 Type t = item.GetType();
-                PropertyInfo[] pros= t.GetProperties();
+                PropertyInfo[] pros = t.GetProperties();
                 byte[] picByte = pros[0].GetValue(item) as byte[];
                 if (picByte != null)
                 {
-                   yssd.pic.Image=CommonHelper.BytesToPic(picByte);
+                    yssd.pic.Image = CommonHelper.BytesToPic(picByte);
                 }
                 yssd.llbName.Text = pros[1].GetValue(item);
                 yssd.yyu_PraiseNum1.labPraiseNum.Text = pros[2].GetValue(item).ToString();
@@ -213,12 +225,47 @@ namespace DontStarve.App
 
         private void pl_left_MouseEnter(object sender, EventArgs e)
         {
-            (sender as Control).BackColor = Color.DimGray;
+            Control panel = sender as Control;
+            panel.BackColor = Color.DimGray;
+            if (panel.Name == "pl_left")
+            {
+                toolTip1.Show("第 " + (moreFriend_pageIndx - 1).ToString() + " 页", sender as Control);
+            }
+            else
+            {
+                toolTip1.Show("第 " + (moreFriend_pageIndx +1).ToString() + " 页", sender as Control);
+            }
         }
 
         private void pl_left_MouseLeave(object sender, EventArgs e)
         {
             (sender as Control).BackColor = Color.DarkGray;
+        }
+
+        private void pl_left_Click(object sender, EventArgs e)
+        {
+            if ((sender as Panel).Name == "pl_left")
+            {
+                //上一页
+                if (moreFriend_pageIndx <= 1)
+                {
+                    return;
+                }
+                //当前页码减一
+                moreFriend_pageIndx--;
+                Load_WorldFriend();
+            }
+            else
+            {
+                //下一页
+                if (moreFriend_pageIndx * 3 >= moreFriend_count)
+                {
+                    return;
+                }
+                //当前页码加一
+                moreFriend_pageIndx++;
+                Load_WorldFriend();
+            }
         }
     }
 }

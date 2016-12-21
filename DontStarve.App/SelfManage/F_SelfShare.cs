@@ -50,5 +50,15 @@ namespace DontStarve.App
                 MessageBox.Show("添加失败", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void pic_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "图片|*.png;*.jpeg;*.jpg;*.ico;*.bmp;*.gif|所有文件|*.*";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                pic.Image = Image.FromStream(ofd.OpenFile());
+            }
+        }
     }
 }

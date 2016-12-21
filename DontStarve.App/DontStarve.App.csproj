@@ -234,6 +234,8 @@
     <Content Include="IServices.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\next.png" />
+    <None Include="Resources\first.png" />
     <None Include="Resources\christmas.png" />
     <None Include="Resources\thumb_up2.png" />
     <None Include="Resources\thumb_up.png" />

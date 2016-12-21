@@ -57,6 +57,7 @@
             this.lbSelfSignature = new CCWin.SkinControl.SkinLabel();
             this.lbSelfUserName = new CCWin.SkinControl.SkinLabel();
             this.btnSelfUserPhoto = new CCWin.SkinControl.SkinButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.skinTabControl1.SuspendLayout();
             this.tpFoodWorld.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinSplitContainer1)).BeginInit();
@@ -279,15 +280,15 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 544F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(642, 547);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
@@ -318,24 +319,30 @@
             // pl_right
             // 
             this.pl_right.BackColor = System.Drawing.Color.DarkGray;
+            this.pl_right.BackgroundImage = global::DontStarve.App.Properties.Resources.next;
+            this.pl_right.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pl_right.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pl_right.Dock = System.Windows.Forms.DockStyle.Right;
             this.pl_right.Location = new System.Drawing.Point(770, 0);
             this.pl_right.Name = "pl_right";
             this.pl_right.Size = new System.Drawing.Size(128, 547);
             this.pl_right.TabIndex = 1;
+            this.pl_right.Click += new System.EventHandler(this.pl_left_Click);
             this.pl_right.MouseEnter += new System.EventHandler(this.pl_left_MouseEnter);
             this.pl_right.MouseLeave += new System.EventHandler(this.pl_left_MouseLeave);
             // 
             // pl_left
             // 
             this.pl_left.BackColor = System.Drawing.Color.DarkGray;
+            this.pl_left.BackgroundImage = global::DontStarve.App.Properties.Resources.first;
+            this.pl_left.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pl_left.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pl_left.Dock = System.Windows.Forms.DockStyle.Left;
             this.pl_left.Location = new System.Drawing.Point(0, 0);
             this.pl_left.Name = "pl_left";
             this.pl_left.Size = new System.Drawing.Size(128, 547);
             this.pl_left.TabIndex = 0;
+            this.pl_left.Click += new System.EventHandler(this.pl_left_Click);
             this.pl_left.MouseEnter += new System.EventHandler(this.pl_left_MouseEnter);
             this.pl_left.MouseLeave += new System.EventHandler(this.pl_left_MouseLeave);
             // 
@@ -466,6 +473,14 @@
             this.btnSelfUserPhoto.UseVisualStyleBackColor = false;
             this.btnSelfUserPhoto.Click += new System.EventHandler(this.btnSelfUserPhoto_Click);
             // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 10000;
+            this.toolTip1.InitialDelay = 50;
+            this.toolTip1.ReshowDelay = 50;
+            this.toolTip1.ShowAlways = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
             // F_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -526,5 +541,6 @@
         private Yyu_SaySayDetails yyu_SaySayDetails1;
         private Yyu_SaySayDetails yyu_SaySayDetails2;
         private Yyu_SaySayDetails yyu_SaySayDetails3;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -36,6 +36,7 @@
             // 
             // pic
             // 
+            this.pic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic.Image = global::DontStarve.App.Properties.Resources.images;
             this.pic.Location = new System.Drawing.Point(47, 12);
             this.pic.Name = "pic";
@@ -43,6 +44,7 @@
             this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic.TabIndex = 0;
             this.pic.TabStop = false;
+            this.pic.Click += new System.EventHandler(this.pic_Click);
             // 
             // btnShare
             // 
