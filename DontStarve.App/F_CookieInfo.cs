@@ -33,7 +33,7 @@ namespace DontStarve.App
             labCookieName.Text = current_cookie.Name;
             yyu_PraiseNum1.labPraiseNum.Text = current_cookie.PraiseNum.ToString();
             picCookie.Image = current_cookie.pic == null ? DontStarve.App.Properties.Resources._132 : Common.CommonHelper.BytesToPic(current_cookie.pic);
-            labRating.Text = (current_cookie.Rating).ToString() + "%";
+            labRating.Text = "好评率："+(current_cookie.Rating).ToString() + "%";
             //加载做法步骤
             var strs = current_cookie.Func.Split('\n');
             lbFunc.Items.Clear();   //开发时便于设计

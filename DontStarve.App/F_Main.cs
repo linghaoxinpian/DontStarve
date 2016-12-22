@@ -67,7 +67,45 @@ namespace DontStarve.App
 
         private void Load_friend()
         {
+            Load_MyFriend();
+        }
+        
+        private int myFriend_pageIndex = 1;
+        private int myFriend_pageSize = 3;
+        private int myFriend_count;
+        /// <summary>
+        /// 加载我的好友的说说
+        /// </summary>
+        private void Load_MyFriend()
+        {
+            //从数据库加载数据
+            dynamic list = isaysayInfoService.LoadMyFriend(F_Main.current_user.Guid_id,myFriend_pageIndex, myFriend_pageSize, out myFriend_count);
+            //s.Pic,
+            //u.Name,
+            //s.PraiseNum,
+            //s.Subtime,
+            //s.Content
+            tableLayoutPanel2.Controls.Clear(); //清理
+            foreach (dynamic item in list)
+            {
+                Yyu_SaySayDetails yssd = new Yyu_SaySayDetails();
 
+                //反射得到匿名类型值  并  填充控件
+                Type t = item.GetType();
+                PropertyInfo[] pros = t.GetProperties();
+                byte[] picByte = pros[0].GetValue(item) as byte[];
+                if (picByte != null)
+                {
+                    yssd.pic.Image = CommonHelper.BytesToPic(picByte);
+                }
+                yssd.llbName.Text = pros[1].GetValue(item);
+                yssd.yyu_PraiseNum1.labPraiseNum.Text = pros[2].GetValue(item).ToString();
+                yssd.lbSubtime.Text = pros[3].GetValue(item).ToString();
+                yssd.txtContent.Text = pros[4].GetValue(item);
+
+                //添加控件
+                tableLayoutPanel2.Controls.Add(yssd);
+            }
         }
 
         /// <summary>
@@ -227,13 +265,28 @@ namespace DontStarve.App
         {
             Control panel = sender as Control;
             panel.BackColor = Color.DimGray;
-            if (panel.Name == "pl_left")
+            if (skinTabControl1.SelectedTab.Name == "tpFriend")
             {
-                toolTip1.Show("第 " + (moreFriend_pageIndx - 1).ToString() + " 页", sender as Control);
+                //食友圈
+                if (panel.Name == "pl_left2")
+                {
+                    toolTip1.Show("上一页： " + (myFriend_pageIndex - 1).ToString() + " 页  "+"\r\n总计记录数："+myFriend_count.ToString(), sender as Control);
+                }                          
+                else                       
+                {                          
+                    toolTip1.Show("下一页： " + (myFriend_pageIndex + 1).ToString() + " 页  "+"\r\n总计记录数："+myFriend_count, sender as Control);
+                }
             }
             else
             {
-                toolTip1.Show("第 " + (moreFriend_pageIndx +1).ToString() + " 页", sender as Control);
+                if (panel.Name == "pl_left")
+                {
+                    toolTip1.Show("上一页： " + (moreFriend_pageIndx - 1).ToString() + " 页  "+"\r\n总计记录数："+moreFriend_count, sender as Control);
+                }
+                else
+                {
+                    toolTip1.Show("下一页： " + (moreFriend_pageIndx + 1).ToString() + " 页  "+"\r\n总计记录数："+moreFriend_count, sender as Control);
+                }
             }
         }
 
@@ -244,27 +297,58 @@ namespace DontStarve.App
 
         private void pl_left_Click(object sender, EventArgs e)
         {
-            if ((sender as Panel).Name == "pl_left")
+            //判断是大千世界还是是食友圈
+            Control pl = sender as Control;
+            if (pl.Name.Substring(pl.Name.Length - 1, 1) != "2")    //pl.Name="pl_left2"
             {
-                //上一页
-                if (moreFriend_pageIndx <= 1)
+                if (pl.Name == "pl_left")
                 {
-                    return;
+                    //上一页
+                    if (moreFriend_pageIndx <= 1)
+                    {
+                        return;
+                    }
+                    //当前页码减一
+                    moreFriend_pageIndx--;
+                    Load_WorldFriend();
                 }
-                //当前页码减一
-                moreFriend_pageIndx--;
-                Load_WorldFriend();
+                else
+                {
+                    //下一页
+                    if (moreFriend_pageIndx * 3 >= moreFriend_count)
+                    {
+                        return;
+                    }
+                    //当前页码加一
+                    moreFriend_pageIndx++;
+                    Load_WorldFriend();
+                }
             }
+            //食友圈
             else
             {
-                //下一页
-                if (moreFriend_pageIndx * 3 >= moreFriend_count)
+                if (pl.Name == "pl_left2")
                 {
-                    return;
+                    //上一页
+                    if (myFriend_pageIndex <= 1)
+                    {
+                        return;
+                    }
+                    //当前页码减一
+                    myFriend_pageIndex--;
+                    Load_MyFriend();
                 }
-                //当前页码加一
-                moreFriend_pageIndx++;
-                Load_WorldFriend();
+                else
+                {
+                    //下一页
+                    if (myFriend_pageIndex * 3 >= myFriend_count)
+                    {
+                        return;
+                    }
+                    //当前页码加一
+                    myFriend_pageIndex++;
+                    Load_MyFriend();
+                }
             }
         }
     }
