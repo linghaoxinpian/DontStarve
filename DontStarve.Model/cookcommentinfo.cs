@@ -18,7 +18,7 @@ namespace DontStarve.Model
         public Nullable<System.Guid> CookId { get; set; }
         public Nullable<System.Guid> UserId { get; set; }
         public string Content { get; set; }
-        public Nullable<long> PraiseNum { get; set; }
+        public long PraiseNum { get; set; }
     
         public virtual cookinfo cookinfo { get; set; }
         public virtual userinfo userinfo { get; set; }

@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_CookieInfo));
             this.skinSplitContainer1 = new CCWin.SkinControl.SkinSplitContainer();
             this.skinSplitContainer2 = new CCWin.SkinControl.SkinSplitContainer();
             this.labRating = new CCWin.SkinControl.SkinLabel();
             this.labCookieName = new CCWin.SkinControl.SkinLabel();
-            this.picCookie = new CCWin.SkinControl.SkinPictureBox();
             this.lbFunc = new CCWin.SkinControl.SkinListBox();
+            this.btnComplain = new CCWin.SkinControl.SkinButton();
             this.gifBox1 = new CCWin.SkinControl.GifBox();
+            this.picCookie = new CCWin.SkinControl.SkinPictureBox();
             this.yyu_PraiseNum1 = new DontStarve.App.Yyu_PraiseNum();
             ((System.ComponentModel.ISupportInitialize)(this.skinSplitContainer1)).BeginInit();
             this.skinSplitContainer1.Panel1.SuspendLayout();
@@ -55,7 +57,7 @@
             this.skinSplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.skinSplitContainer1.IsSplitterFixed = true;
             this.skinSplitContainer1.LineBack = System.Drawing.Color.Teal;
-            this.skinSplitContainer1.Location = new System.Drawing.Point(4, 9);
+            this.skinSplitContainer1.Location = new System.Drawing.Point(4, 22);
             this.skinSplitContainer1.Name = "skinSplitContainer1";
             // 
             // skinSplitContainer1.Panel1
@@ -65,7 +67,7 @@
             // skinSplitContainer1.Panel2
             // 
             this.skinSplitContainer1.Panel2.Controls.Add(this.skinSplitContainer2);
-            this.skinSplitContainer1.Size = new System.Drawing.Size(802, 611);
+            this.skinSplitContainer1.Size = new System.Drawing.Size(802, 598);
             this.skinSplitContainer1.SplitterDistance = 316;
             this.skinSplitContainer1.TabIndex = 0;
             this.skinSplitContainer1.CollapseClick += new System.EventHandler(this.skinSplitContainer1_CollapseClick);
@@ -91,7 +93,7 @@
             // skinSplitContainer2.Panel2
             // 
             this.skinSplitContainer2.Panel2.Controls.Add(this.lbFunc);
-            this.skinSplitContainer2.Size = new System.Drawing.Size(482, 611);
+            this.skinSplitContainer2.Size = new System.Drawing.Size(482, 598);
             this.skinSplitContainer2.SplitterDistance = 143;
             this.skinSplitContainer2.SplitterWidth = 10;
             this.skinSplitContainer2.TabIndex = 0;
@@ -124,17 +126,6 @@
             this.labCookieName.TabIndex = 1;
             this.labCookieName.Text = "三鲜煲";
             // 
-            // picCookie
-            // 
-            this.picCookie.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.picCookie.BackColor = System.Drawing.Color.Transparent;
-            this.picCookie.Location = new System.Drawing.Point(17, 3);
-            this.picCookie.Name = "picCookie";
-            this.picCookie.Size = new System.Drawing.Size(132, 108);
-            this.picCookie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picCookie.TabIndex = 0;
-            this.picCookie.TabStop = false;
-            // 
             // lbFunc
             // 
             this.lbFunc.Back = null;
@@ -146,7 +137,8 @@
             this.lbFunc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lbFunc.FormattingEnabled = true;
             this.lbFunc.ImageVisble = false;
-            this.lbFunc.ItemHeight = 50;
+            this.lbFunc.IntegralHeight = false;
+            this.lbFunc.ItemHeight = 80;
             this.lbFunc.ItemImageLayout = false;
             this.lbFunc.ItemRadius = 80;
             this.lbFunc.Items.AddRange(new CCWin.SkinControl.SkinListBoxItem[] {
@@ -158,8 +150,25 @@
             this.lbFunc.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.lbFunc.RowBackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lbFunc.RowBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lbFunc.Size = new System.Drawing.Size(482, 458);
+            this.lbFunc.Size = new System.Drawing.Size(482, 445);
             this.lbFunc.TabIndex = 0;
+            // 
+            // btnComplain
+            // 
+            this.btnComplain.BackColor = System.Drawing.Color.Transparent;
+            this.btnComplain.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.btnComplain.DownBack = null;
+            this.btnComplain.Font = new System.Drawing.Font("宋体", 9F);
+            this.btnComplain.Location = new System.Drawing.Point(710, 580);
+            this.btnComplain.MouseBack = null;
+            this.btnComplain.Name = "btnComplain";
+            this.btnComplain.NormlBack = null;
+            this.btnComplain.Radius = 30;
+            this.btnComplain.RoundStyle = CCWin.SkinClass.RoundStyle.All;
+            this.btnComplain.Size = new System.Drawing.Size(94, 33);
+            this.btnComplain.TabIndex = 4;
+            this.btnComplain.Text = "吐槽一下 ~ ~";
+            this.btnComplain.UseVisualStyleBackColor = false;
             // 
             // gifBox1
             // 
@@ -167,12 +176,23 @@
             this.gifBox1.BorderColor = System.Drawing.Color.Transparent;
             this.gifBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.gifBox1.Image = ((System.Drawing.Image)(resources.GetObject("gifBox1.Image")));
-            this.gifBox1.Location = new System.Drawing.Point(3, 188);
+            this.gifBox1.Location = new System.Drawing.Point(3, 182);
             this.gifBox1.Name = "gifBox1";
             this.gifBox1.Size = new System.Drawing.Size(310, 199);
             this.gifBox1.TabIndex = 0;
             this.gifBox1.Text = "gifBox1";
             this.gifBox1.Click += new System.EventHandler(this.gifBox1_Click);
+            // 
+            // picCookie
+            // 
+            this.picCookie.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picCookie.BackColor = System.Drawing.Color.Transparent;
+            this.picCookie.Location = new System.Drawing.Point(17, 3);
+            this.picCookie.Name = "picCookie";
+            this.picCookie.Size = new System.Drawing.Size(132, 108);
+            this.picCookie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCookie.TabIndex = 0;
+            this.picCookie.TabStop = false;
             // 
             // yyu_PraiseNum1
             // 
@@ -191,6 +211,7 @@
             this.CaptionHeight = 18;
             this.ClientSize = new System.Drawing.Size(810, 624);
             this.CloseBoxSize = new System.Drawing.Size(32, 27);
+            this.Controls.Add(this.btnComplain);
             this.Controls.Add(this.skinSplitContainer1);
             this.EffectCaption = CCWin.TitleType.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -230,5 +251,6 @@
         private CCWin.SkinControl.SkinListBox lbFunc;
         private CCWin.SkinControl.SkinLabel labRating;
         private CCWin.SkinControl.GifBox gifBox1;
+        private CCWin.SkinControl.SkinButton btnComplain;
     }
 }

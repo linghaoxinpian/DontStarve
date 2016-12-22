@@ -84,6 +84,7 @@
             // 
             // txtComment
             // 
+            this.txtComment.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtComment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtComment.Location = new System.Drawing.Point(86, 3);
             this.txtComment.Multiline = true;

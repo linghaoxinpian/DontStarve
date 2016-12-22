@@ -62,7 +62,7 @@ namespace DontStarve.App
 
         private void Load_search()
         {
-
+            lbSearchResult.Items.Clear();   //清理设计时的多余控件
         }
 
         private void Load_friend()
@@ -354,7 +354,7 @@ namespace DontStarve.App
         
         private void btnJumpSearch_Click(object sender, EventArgs e)
         {
-
+            skinTabControl1.SelectedIndex = 4;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -363,7 +363,19 @@ namespace DontStarve.App
             lbSearchResult.Items.Clear();
             foreach(var l in list)
             {
-                lbSearchResult.Items.Add(new CCWin.SkinControl.SkinListBoxItem(l.Func, l.pic == null ? null : CommonHelper.BytesToPic(l.pic));
+                var item = new CCWin.SkinControl.SkinListBoxItem(l.Func, l.pic == null ? Properties.Resources.nopic : CommonHelper.BytesToPic(l.pic));
+                item.Tag = l;                    
+                lbSearchResult.Items.Add(item);
+            }
+        }
+
+        private void lbSearchResult_DoubleClick(object sender, EventArgs e)
+        {
+            if (lbSearchResult.SelectedIndices.Count > 0)   //判断是否在列表上双击的，而不是在控件的其他地方双击的
+            {
+                F_CookieInfo fc = new F_CookieInfo();
+                fc.current_cookie = (lbSearchResult.SelectedItem as CCWin.SkinControl.SkinListBoxItem).Tag as cookinfo;
+                fc.Show();
             }
         }
     }

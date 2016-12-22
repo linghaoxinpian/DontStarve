@@ -19,7 +19,9 @@ namespace DontStarve.App
         {
             InitializeComponent();
         }
-        //当前“美食”实体
+        /// <summary>
+        ///当前“美食”实体        
+        /// </summary>
         public cookinfo current_cookie;
         //当前“评论”界面是否打开在
         private bool IsOpen = false;
@@ -33,12 +35,17 @@ namespace DontStarve.App
             labCookieName.Text = current_cookie.Name;
             yyu_PraiseNum1.labPraiseNum.Text = current_cookie.PraiseNum.ToString();
             picCookie.Image = current_cookie.pic == null ? DontStarve.App.Properties.Resources._132 : Common.CommonHelper.BytesToPic(current_cookie.pic);
-            labRating.Text = "好评率："+(current_cookie.Rating).ToString() + "%";
+            labRating.Text = "好评率：" + (current_cookie.Rating).ToString() + "%";
             //加载做法步骤
             var strs = current_cookie.Func.Split('\n');
             lbFunc.Items.Clear();   //开发时便于设计
             for (int i = 1; i <= strs.Length; i++)
             {
+                int count = strs[i - 1].Length / 26;
+                for (int j = 0; j < count; j++)
+                {
+                    strs[i - 1] = strs[i - 1].Insert(26 + j, "\n");
+                }
                 lbFunc.Items.Add(new CCWin.SkinControl.SkinListBoxItem("第" + i + "步：" + strs[i - 1]));
             }
 
@@ -54,11 +61,15 @@ namespace DontStarve.App
         /// </summary>
         private void Load_cookie_comment()
         {
+            //清理
+            skinSplitContainer1.Panel1.Controls.Clear();
+            //数据库加载
             var list = icookcommentInfoService.LoadEntitiesByCookieId(current_cookie.Guid_id);
 
             foreach (var comment in list)
             {
                 Yyu_CookieComment ycc = new Yyu_CookieComment();
+                ycc.Dock = DockStyle.Top;
                 if (comment.userinfo.Pic != null) ycc.picUserphoto.Image = Common.CommonHelper.BytesToPic(comment.userinfo.Pic);
                 ycc.labUserName.Text = comment.userinfo.Name;
                 ycc.txtComment.Text = comment.Content;
@@ -98,10 +109,17 @@ namespace DontStarve.App
             }
         }
 
+        //显示评论
         private void gifBox1_Click(object sender, EventArgs e)
         {
             Load_cookie_comment();
             skinSplitContainer1.Panel1.Controls.Remove(gifBox1);
+        }
+
+        //吐槽
+        private void btnComplain_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
