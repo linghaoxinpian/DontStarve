@@ -26,7 +26,7 @@ namespace DontStarve.App
         {
             this.OnClick(null);
 
-            picPraise.Image = DontStarve.App.Properties.Resources.thumb_up2;   //更换背景
+            picPraise.Image = DontStarve.App.Properties.Resources.thumb_up3;   //更换背景
             labPraiseNum.Text = (Convert.ToInt32(labPraiseNum.Text) + 1).ToString();    //点赞数加 1
             //卸载事件，避免二次点击
             this.Click -= Yyu_PraiseNum_Click;  

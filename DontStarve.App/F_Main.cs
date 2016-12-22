@@ -351,5 +351,20 @@ namespace DontStarve.App
                 }
             }
         }
+        
+        private void btnJumpSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            var list=icookieInfoService.LoadEntities(c => c.Name == txtSearch.Text);
+            lbSearchResult.Items.Clear();
+            foreach(var l in list)
+            {
+                lbSearchResult.Items.Add(new CCWin.SkinControl.SkinListBoxItem(l.Func, l.pic == null ? null : CommonHelper.BytesToPic(l.pic));
+            }
+        }
     }
 }

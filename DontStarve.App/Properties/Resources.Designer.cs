@@ -103,6 +103,16 @@ namespace DontStarve.App.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap hometp {
+            get {
+                object obj = ResourceManager.GetObject("hometp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap house {
             get {
                 object obj = ResourceManager.GetObject("house", resourceCulture);
@@ -176,6 +186,16 @@ namespace DontStarve.App.Properties {
         internal static System.Drawing.Bitmap thumb_up2 {
             get {
                 object obj = ResourceManager.GetObject("thumb_up2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap thumb_up3 {
+            get {
+                object obj = ResourceManager.GetObject("thumb_up3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
