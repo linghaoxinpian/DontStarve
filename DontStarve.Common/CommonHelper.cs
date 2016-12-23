@@ -45,8 +45,33 @@ namespace DontStarve.Common
         /// <returns></returns>
         public static long GetCurrentDateStamp()
         {
-            TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0,DateTimeKind.Utc);
-            return Convert.ToInt64(ts.TotalSeconds);
+            System.DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new System.DateTime(1970, 1, 1));
+            return (long)(DateTime.Now - startTime).TotalSeconds;
+        }
+
+       /// <summary>
+       /// 将指定DateTime转成时间戳
+       /// </summary>
+       /// <param name="time"></param>
+       /// <returns></returns>
+        public static long GetCurrentDateStamp(System.DateTime time)
+        {
+            System.DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new System.DateTime(1970, 1, 1));
+            return (long)(time - startTime).TotalSeconds;
+        }
+
+        /// <summary>
+        /// 将时间戳转换成DateTime
+        /// </summary>
+        /// <param name="timeStamp"></param>
+        /// <returns></returns>
+        public static DateTime StampToDateTime(string timeStamp)
+        {
+            DateTime dateTimeStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+            long lTime = long.Parse(timeStamp + "0000000");
+            TimeSpan toNow = new TimeSpan(lTime);
+
+            return dateTimeStart.Add(toNow);
         }
     }
 }

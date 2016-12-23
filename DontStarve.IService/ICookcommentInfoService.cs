@@ -18,5 +18,6 @@ namespace DontStarve.IService
         /// <param name="cookies"></param>
         /// <returns></returns>
         List<cookcommentinfo> LoadHotCookieCommentByCoookieIds(params Guid[] cookies);
+        List<cookcommentinfo> LoadHotCommentByCookieId(Guid id, int size);
     }
 }

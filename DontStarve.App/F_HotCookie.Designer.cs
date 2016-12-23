@@ -53,10 +53,12 @@
             this.skinListBox1.Items.AddRange(new CCWin.SkinControl.SkinListBoxItem[] {
             ((CCWin.SkinControl.SkinListBoxItem)(resources.GetObject("skinListBox1.Items")))});
             this.skinListBox1.Location = new System.Drawing.Point(4, 28);
+            this.skinListBox1.MouseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.skinListBox1.Name = "skinListBox1";
-            this.skinListBox1.SelectedColor = System.Drawing.Color.DimGray;
+            this.skinListBox1.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.skinListBox1.Size = new System.Drawing.Size(326, 662);
             this.skinListBox1.TabIndex = 0;
+            this.skinListBox1.Click += new System.EventHandler(this.skinListBox1_Click);
             this.skinListBox1.DoubleClick += new System.EventHandler(this.skinListBox1_DoubleClick);
             // 
             // skinListBox2
@@ -65,10 +67,10 @@
             this.skinListBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(208)))), ((int)(((byte)(255)))));
             this.skinListBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(208)))), ((int)(((byte)(255)))));
             this.skinListBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.skinListBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.skinListBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.skinListBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.skinListBox2.Font = new System.Drawing.Font("华文彩云", 15F);
-            this.skinListBox2.ForeColor = System.Drawing.Color.Red;
+            this.skinListBox2.Font = new System.Drawing.Font("华文仿宋", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinListBox2.ForeColor = System.Drawing.Color.Black;
             this.skinListBox2.FormattingEnabled = true;
             this.skinListBox2.HorizontalScrollbar = true;
             this.skinListBox2.ImagePoint = false;
@@ -79,8 +81,9 @@
             this.skinListBox2.Items.AddRange(new CCWin.SkinControl.SkinListBoxItem[] {
             ((CCWin.SkinControl.SkinListBoxItem)(resources.GetObject("skinListBox2.Items")))});
             this.skinListBox2.Location = new System.Drawing.Point(330, 28);
+            this.skinListBox2.MouseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.skinListBox2.Name = "skinListBox2";
-            this.skinListBox2.SelectedColor = System.Drawing.Color.DimGray;
+            this.skinListBox2.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.skinListBox2.Size = new System.Drawing.Size(326, 662);
             this.skinListBox2.TabIndex = 1;
             // 

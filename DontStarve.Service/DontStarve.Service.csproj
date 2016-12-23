@@ -51,6 +51,10 @@
     <Compile Include="UserInfoService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DontStarve.Common\DontStarve.Common.csproj">
+      <Project>{922c0a3b-bd6d-4ad1-8922-49ec5e4b1742}</Project>
+      <Name>DontStarve.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DontStarve.DSL\DontStarve.DSL.csproj">
       <Project>{D4597829-830B-4BB0-871E-58967091E00D}</Project>
       <Name>DontStarve.DSL</Name>
