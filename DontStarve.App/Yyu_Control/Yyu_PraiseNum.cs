@@ -24,16 +24,42 @@ namespace DontStarve.App
         /// <param name="e"></param>
         private void Yyu_PraiseNum_Click(object sender, EventArgs e)
         {
-            this.OnClick(null);
+           // this.OnClick(null); //单击自定义控件的Click事件（不被Button等覆盖的部分可点击）
 
             picPraise.Image = DontStarve.App.Properties.Resources.thumb_up3;   //更换背景
             labPraiseNum.Text = (Convert.ToInt32(labPraiseNum.Text) + 1).ToString();    //点赞数加 1
             //卸载事件，避免二次点击
-            this.Click -= Yyu_PraiseNum_Click;  
+            this.Click -= Yyu_PraiseNum_Click;
             labPraiseNum.Click -= Yyu_PraiseNum_Click;
             picPraise.Click -= Yyu_PraiseNum_Click;
             //更新数据库
             AddPraise?.Invoke();
         }
+
+        private Form fp;
+        //显示
+        private void Yyu_PraiseNum_MouseEnter(object sender, EventArgs e)
+        {
+            if (fp == null)
+                fp = new F_Praise();    //此句完美解决不显示问题
+
+            //为 fp注册鼠标点击事件
+            fp.Click += new EventHandler((a, b) =>
+            {
+                //更新数据库
+                this.OnClick(null);                                
+                //fp变更图片
+                (fp as F_Praise).BackgroundImage2();
+            });
+            //为 fp注册鼠标离开事件
+            fp.MouseLeave += new EventHandler((a, b) =>
+            {
+                fp.Hide();
+            });
+
+            //显示
+            fp.Location = new Point(MousePosition.X - 160, MousePosition.Y - 180);
+            fp.Show();
+        }       
     }
 }

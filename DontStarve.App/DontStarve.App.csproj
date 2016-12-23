@@ -74,6 +74,12 @@
     <Compile Include="F_HotCookie.Designer.cs">
       <DependentUpon>F_HotCookie.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_Praise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Praise.Designer.cs">
+      <DependentUpon>F_Praise.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_SimplyReply.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,10 +92,10 @@
     <Compile Include="SelfManage\F_Friend.Designer.cs">
       <DependentUpon>F_Friend.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_Register.cs">
+    <Compile Include="Yyu_Control\F_Register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_Register.Designer.cs">
+    <Compile Include="Yyu_Control\F_Register.Designer.cs">
       <DependentUpon>F_Register.cs</DependentUpon>
     </Compile>
     <Compile Include="SelfManage\F_SaySayReplay.cs">
@@ -109,6 +115,12 @@
     </Compile>
     <Compile Include="SelfManage\F_SelfShare.Designer.cs">
       <DependentUpon>F_SelfShare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_OneDayOneCate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_OneDayOneCate.Designer.cs">
+      <DependentUpon>F_OneDayOneCate.cs</DependentUpon>
     </Compile>
     <Compile Include="Yyu_Control\Yyu_CookieComment.cs">
       <SubType>UserControl</SubType>
@@ -163,13 +175,16 @@
     <EmbeddedResource Include="F_HotCookie.resx">
       <DependentUpon>F_HotCookie.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_Praise.resx">
+      <DependentUpon>F_Praise.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_SimplyReply.resx">
       <DependentUpon>F_SimplyReply.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelfManage\F_Friend.resx">
       <DependentUpon>F_Friend.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_Register.resx">
+    <EmbeddedResource Include="Yyu_Control\F_Register.resx">
       <DependentUpon>F_Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelfManage\F_SaySayReplay.resx">
@@ -180,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelfManage\F_SelfShare.resx">
       <DependentUpon>F_SelfShare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_OneDayOneCate.resx">
+      <DependentUpon>F_OneDayOneCate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Yyu_Control\Yyu_CookieComment.resx">
       <DependentUpon>Yyu_CookieComment.cs</DependentUpon>

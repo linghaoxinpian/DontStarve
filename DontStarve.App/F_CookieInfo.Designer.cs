@@ -36,9 +36,9 @@
             this.labCookieName = new CCWin.SkinControl.SkinLabel();
             this.lbFunc = new CCWin.SkinControl.SkinListBox();
             this.btnComplain = new CCWin.SkinControl.SkinButton();
+            this.yyu_PraiseNum1 = new DontStarve.App.Yyu_PraiseNum();
             this.gifBox1 = new CCWin.SkinControl.GifBox();
             this.picCookie = new CCWin.SkinControl.SkinPictureBox();
-            this.yyu_PraiseNum1 = new DontStarve.App.Yyu_PraiseNum();
             ((System.ComponentModel.ISupportInitialize)(this.skinSplitContainer1)).BeginInit();
             this.skinSplitContainer1.Panel1.SuspendLayout();
             this.skinSplitContainer1.Panel2.SuspendLayout();
@@ -141,9 +141,6 @@
             this.lbFunc.ItemHeight = 80;
             this.lbFunc.ItemImageLayout = false;
             this.lbFunc.ItemRadius = 80;
-            this.lbFunc.Items.AddRange(new CCWin.SkinControl.SkinListBoxItem[] {
-            ((CCWin.SkinControl.SkinListBoxItem)(resources.GetObject("lbFunc.Items"))),
-            ((CCWin.SkinControl.SkinListBoxItem)(resources.GetObject("lbFunc.Items1")))});
             this.lbFunc.Location = new System.Drawing.Point(0, 0);
             this.lbFunc.MouseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbFunc.Name = "lbFunc";
@@ -170,6 +167,15 @@
             this.btnComplain.Text = "吐槽一下 ~ ~";
             this.btnComplain.UseVisualStyleBackColor = false;
             // 
+            // yyu_PraiseNum1
+            // 
+            this.yyu_PraiseNum1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.yyu_PraiseNum1.BackColor = System.Drawing.Color.Transparent;
+            this.yyu_PraiseNum1.Location = new System.Drawing.Point(367, 101);
+            this.yyu_PraiseNum1.Name = "yyu_PraiseNum1";
+            this.yyu_PraiseNum1.Size = new System.Drawing.Size(101, 37);
+            this.yyu_PraiseNum1.TabIndex = 2;
+            // 
             // gifBox1
             // 
             this.gifBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -193,15 +199,6 @@
             this.picCookie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCookie.TabIndex = 0;
             this.picCookie.TabStop = false;
-            // 
-            // yyu_PraiseNum1
-            // 
-            this.yyu_PraiseNum1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.yyu_PraiseNum1.BackColor = System.Drawing.Color.Transparent;
-            this.yyu_PraiseNum1.Location = new System.Drawing.Point(367, 101);
-            this.yyu_PraiseNum1.Name = "yyu_PraiseNum1";
-            this.yyu_PraiseNum1.Size = new System.Drawing.Size(101, 37);
-            this.yyu_PraiseNum1.TabIndex = 2;
             // 
             // F_CookieInfo
             // 

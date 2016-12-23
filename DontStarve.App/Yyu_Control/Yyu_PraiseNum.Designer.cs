@@ -47,6 +47,8 @@
             this.labPraiseNum.TabIndex = 3;
             this.labPraiseNum.Text = "999";
             this.labPraiseNum.Click += new System.EventHandler(this.Yyu_PraiseNum_Click);
+            this.labPraiseNum.MouseEnter += new System.EventHandler(this.Yyu_PraiseNum_MouseEnter);
+        //    this.labPraiseNum.MouseLeave += new System.EventHandler(this.Yyu_PraiseNum_MouseLeave);
             // 
             // picPraise
             // 
@@ -61,6 +63,8 @@
             this.picPraise.TabIndex = 2;
             this.picPraise.TabStop = false;
             this.picPraise.Click += new System.EventHandler(this.Yyu_PraiseNum_Click);
+            this.picPraise.MouseEnter += new System.EventHandler(this.Yyu_PraiseNum_MouseEnter);
+     //       this.picPraise.MouseLeave += new System.EventHandler(this.Yyu_PraiseNum_MouseLeave);
             // 
             // Yyu_PraiseNum
             // 
@@ -71,6 +75,8 @@
             this.Controls.Add(this.labPraiseNum);
             this.Name = "Yyu_PraiseNum";
             this.Size = new System.Drawing.Size(101, 50);
+            this.Click += new System.EventHandler(this.Yyu_PraiseNum_Click);
+            this.MouseEnter += new System.EventHandler(this.Yyu_PraiseNum_MouseEnter);
             ((System.ComponentModel.ISupportInitialize)(this.picPraise)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

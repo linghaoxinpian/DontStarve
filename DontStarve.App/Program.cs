@@ -22,7 +22,7 @@ namespace DontStarve.App
             // {
 
                 F_Main.current_user = iuserInfoService.Login("零芯", Common.HashHelper.GetMD5("123456"));
-            Application.Run(new F_HotCookie());
+            Application.Run(new F_Main());
             // }
         }
     }

@@ -121,5 +121,11 @@ namespace DontStarve.App
         {
 
         }
+
+        private void yyu_PraiseNum1_MouseEnter(object sender, EventArgs e)
+        {            
+
+        }
+         
     }
 }
