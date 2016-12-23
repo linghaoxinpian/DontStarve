@@ -68,6 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DontStarve\IService\IFriendInfoService.cs" />
+    <Compile Include="F_HotCookie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_HotCookie.Designer.cs">
+      <DependentUpon>F_HotCookie.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_SimplyReply.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     <Compile Include="Yyu_SaySayDetails.Designer.cs">
       <DependentUpon>Yyu_SaySayDetails.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="F_HotCookie.resx">
+      <DependentUpon>F_HotCookie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_SimplyReply.resx">
       <DependentUpon>F_SimplyReply.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +252,10 @@
     <Content Include="IServices.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\noodle.jpg" />
+    <None Include="Resources\headpic1.jpeg" />
+    <None Include="Resources\crab.jpg" />
+    <None Include="Resources\hometpleave.png" />
     <None Include="Resources\novideo.png" />
     <None Include="Resources\nopic.jpg" />
     <None Include="Resources\thumb_up2.png" />

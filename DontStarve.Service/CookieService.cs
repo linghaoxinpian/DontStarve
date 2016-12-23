@@ -28,6 +28,11 @@ namespace DontStarve.Service
             return dbSessioin.icookieInfoDAL.LoadEntitiesByCategoryId(category_id).ToDictionary(c => c.Guid_id, c => c.Name);
         }
 
+        public List<cookinfo> LoadHotCookieByWeek(int count = 10)
+        {
+           
+        }
+
         protected override void Set_CurrentDAL()
         {
             CurrentDAL = dbSessioin.icookieInfoDAL;

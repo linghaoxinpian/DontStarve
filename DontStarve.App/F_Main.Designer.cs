@@ -34,6 +34,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.skinTabControl1 = new CCWin.SkinControl.SkinTabControl();
             this.tpHome = new CCWin.SkinControl.SkinTabPage();
+            this.gifBox1 = new CCWin.SkinControl.GifBox();
             this.tpFoodWorld = new CCWin.SkinControl.SkinTabPage();
             this.skinSplitContainer1 = new CCWin.SkinControl.SkinSplitContainer();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -69,6 +70,7 @@
             this.yyu_SaySayDetails2 = new DontStarve.App.Yyu_SaySayDetails();
             this.yyu_SaySayDetails3 = new DontStarve.App.Yyu_SaySayDetails();
             this.skinTabControl1.SuspendLayout();
+            this.tpHome.SuspendLayout();
             this.tpFoodWorld.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinSplitContainer1)).BeginInit();
             this.skinSplitContainer1.Panel1.SuspendLayout();
@@ -108,9 +110,9 @@
             this.skinTabControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(202)))), ((int)(((byte)(99)))));
             this.skinTabControl1.CloseRect = new System.Drawing.Rectangle(2, 2, 12, 12);
             this.skinTabControl1.Controls.Add(this.tpHome);
-            this.skinTabControl1.Controls.Add(this.tpFoodWorld);
             this.skinTabControl1.Controls.Add(this.tpFriend);
             this.skinTabControl1.Controls.Add(this.tpMoreFriend);
+            this.skinTabControl1.Controls.Add(this.tpFoodWorld);
             this.skinTabControl1.Controls.Add(this.tpSearch);
             this.skinTabControl1.Controls.Add(this.tpSelfManage);
             this.skinTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -130,7 +132,7 @@
             this.skinTabControl1.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Top;
             this.skinTabControl1.PageNorml = null;
             this.skinTabControl1.Radius = 15;
-            this.skinTabControl1.SelectedIndex = 4;
+            this.skinTabControl1.SelectedIndex = 0;
             this.skinTabControl1.Size = new System.Drawing.Size(898, 677);
             this.skinTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.skinTabControl1.TabIndex = 0;
@@ -141,6 +143,7 @@
             this.tpHome.BackColor = System.Drawing.Color.White;
             this.tpHome.BackgroundImage = global::DontStarve.App.Properties.Resources.hometp;
             this.tpHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tpHome.Controls.Add(this.gifBox1);
             this.tpHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tpHome.Location = new System.Drawing.Point(0, 130);
             this.tpHome.Name = "tpHome";
@@ -148,6 +151,20 @@
             this.tpHome.TabIndex = 0;
             this.tpHome.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpHome.TabItemImage")));
             this.tpHome.Text = "首页";
+            this.tpHome.MouseEnter += new System.EventHandler(this.tpHome_MouseEnter);
+            this.tpHome.MouseLeave += new System.EventHandler(this.tpHome_MouseLeave);
+            // 
+            // gifBox1
+            // 
+            this.gifBox1.BackColor = System.Drawing.Color.Transparent;
+            this.gifBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.gifBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.gifBox1.Image = global::DontStarve.App.Properties.Resources.house173;
+            this.gifBox1.Location = new System.Drawing.Point(224, 112);
+            this.gifBox1.Name = "gifBox1";
+            this.gifBox1.Size = new System.Drawing.Size(130, 135);
+            this.gifBox1.TabIndex = 0;
+            this.gifBox1.Text = "gifBox1";
             // 
             // tpFoodWorld
             // 
@@ -678,6 +695,7 @@
             this.SkinOpacity = 0.9D;
             this.Text = "";
             this.skinTabControl1.ResumeLayout(false);
+            this.tpHome.ResumeLayout(false);
             this.tpFoodWorld.ResumeLayout(false);
             this.skinSplitContainer1.Panel1.ResumeLayout(false);
             this.skinSplitContainer1.Panel2.ResumeLayout(false);
@@ -741,5 +759,6 @@
         private System.Windows.Forms.TextBox txtSearch;
         private CCWin.SkinControl.SkinButton btnSearch;
         private CCWin.SkinControl.SkinListBox lbSearchResult;
+        private CCWin.SkinControl.GifBox gifBox1;
     }
 }

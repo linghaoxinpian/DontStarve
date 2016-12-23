@@ -26,5 +26,12 @@ namespace DontStarve.IService
         /// 点赞数加一
         /// </summary>
         void AddPraise(Guid guid_id);
+
+        /// <summary>
+        /// 返回周最热
+        /// </summary>
+        /// <param name="count">返回几条数据</param>
+        /// <returns></returns>
+        List<cookinfo> LoadHotCookieByWeek(int count=10);
     }
 }

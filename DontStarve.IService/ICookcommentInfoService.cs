@@ -11,5 +11,12 @@ namespace DontStarve.IService
     public interface ICookcommentInfoService : IBaseService<cookcommentinfo>
     {
         List<cookcommentinfo> LoadEntitiesByCookieId(Guid guid_id);
+
+        /// <summary>
+        /// 根据美食id加载最火的评论
+        /// </summary>
+        /// <param name="cookies"></param>
+        /// <returns></returns>
+        List<cookcommentinfo> LoadHotCookieCommentByCoookieIds(params Guid[] cookies);
     }
 }

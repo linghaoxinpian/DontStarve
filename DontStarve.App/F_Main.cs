@@ -378,5 +378,20 @@ namespace DontStarve.App
                 fc.Show();
             }
         }
+
+        private void tpHome_MouseEnter(object sender, EventArgs e)
+        {
+            tpHome.BackgroundImage = Properties.Resources.hometp;
+        }
+
+        private void tpHome_MouseLeave(object sender, EventArgs e)
+        {
+            tpHome.BackgroundImage = Properties.Resources.hometpleave;
+        }
+
+        private void Load_HotCookie()
+        {
+
+        }
     }
 }

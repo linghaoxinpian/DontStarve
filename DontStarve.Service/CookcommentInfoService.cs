@@ -18,6 +18,11 @@ namespace DontStarve.Service
         
         }
 
+        public List<cookcommentinfo> LoadHotCookieCommentByCoookieIds(params Guid[] cookies)
+        {
+            throw new NotImplementedException();
+        }
+
         protected override void Set_CurrentDAL()
         {
             CurrentDAL= dbSessioin.icookcommentInfoDAL;

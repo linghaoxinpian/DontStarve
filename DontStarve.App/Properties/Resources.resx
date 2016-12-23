@@ -169,4 +169,16 @@
   <data name="novideo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\novideo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="hometpleave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hometpleave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="crab" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crab.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="headpic1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\headpic1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="noodle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\noodle.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
