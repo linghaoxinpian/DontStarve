@@ -33,14 +33,14 @@
             this.skinSplitContainer1 = new CCWin.SkinControl.SkinSplitContainer();
             this.gifBox1 = new CCWin.SkinControl.GifBox();
             this.skinSplitContainer2 = new CCWin.SkinControl.SkinSplitContainer();
+            this.lbLevel = new CCWin.SkinControl.SkinLabel();
             this.labRating = new CCWin.SkinControl.SkinLabel();
             this.yyu_PraiseNum1 = new DontStarve.App.Yyu_PraiseNum();
             this.labCookieName = new CCWin.SkinControl.SkinLabel();
             this.picCookie = new CCWin.SkinControl.SkinPictureBox();
+            this.btnVideo = new CCWin.SkinControl.SkinButton();
             this.lbFunc = new CCWin.SkinControl.SkinListBox();
             this.btnComplain = new CCWin.SkinControl.SkinButton();
-            this.lbLevel = new CCWin.SkinControl.SkinLabel();
-            this.btnVideo = new CCWin.SkinControl.SkinButton();
             ((System.ComponentModel.ISupportInitialize)(this.skinSplitContainer1)).BeginInit();
             this.skinSplitContainer1.Panel1.SuspendLayout();
             this.skinSplitContainer1.Panel2.SuspendLayout();
@@ -115,6 +115,18 @@
             this.skinSplitContainer2.SplitterWidth = 10;
             this.skinSplitContainer2.TabIndex = 0;
             // 
+            // lbLevel
+            // 
+            this.lbLevel.AutoSize = true;
+            this.lbLevel.BackColor = System.Drawing.Color.Transparent;
+            this.lbLevel.BorderColor = System.Drawing.Color.White;
+            this.lbLevel.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbLevel.Location = new System.Drawing.Point(159, 116);
+            this.lbLevel.Name = "lbLevel";
+            this.lbLevel.Size = new System.Drawing.Size(74, 17);
+            this.lbLevel.TabIndex = 4;
+            this.lbLevel.Text = "难度：★★★";
+            // 
             // labRating
             // 
             this.labRating.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -156,6 +168,7 @@
             // 
             this.picCookie.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picCookie.BackColor = System.Drawing.Color.Transparent;
+            this.picCookie.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picCookie.Location = new System.Drawing.Point(17, 3);
             this.picCookie.Name = "picCookie";
             this.picCookie.Size = new System.Drawing.Size(132, 108);
@@ -164,6 +177,24 @@
             this.picCookie.TabStop = false;
             this.picCookie.Click += new System.EventHandler(this.picCookie_Click);
             this.picCookie.MouseEnter += new System.EventHandler(this.picCookie_MouseEnter);
+            // 
+            // btnVideo
+            // 
+            this.btnVideo.BackColor = System.Drawing.Color.Transparent;
+            this.btnVideo.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.btnVideo.DownBack = null;
+            this.btnVideo.Font = new System.Drawing.Font("宋体", 9F);
+            this.btnVideo.Location = new System.Drawing.Point(286, 405);
+            this.btnVideo.MouseBack = null;
+            this.btnVideo.Name = "btnVideo";
+            this.btnVideo.NormlBack = null;
+            this.btnVideo.Radius = 30;
+            this.btnVideo.RoundStyle = CCWin.SkinClass.RoundStyle.All;
+            this.btnVideo.Size = new System.Drawing.Size(94, 33);
+            this.btnVideo.TabIndex = 4;
+            this.btnVideo.Text = "视频（Video）";
+            this.btnVideo.UseVisualStyleBackColor = false;
+            this.btnVideo.Click += new System.EventHandler(this.picCookie_Click);
             // 
             // lbFunc
             // 
@@ -206,36 +237,6 @@
             this.btnComplain.Text = "吐槽一下 ~ ~";
             this.btnComplain.UseVisualStyleBackColor = false;
             this.btnComplain.Click += new System.EventHandler(this.btnComplain_Click);
-            // 
-            // lbLevel
-            // 
-            this.lbLevel.AutoSize = true;
-            this.lbLevel.BackColor = System.Drawing.Color.Transparent;
-            this.lbLevel.BorderColor = System.Drawing.Color.White;
-            this.lbLevel.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbLevel.Location = new System.Drawing.Point(159, 116);
-            this.lbLevel.Name = "lbLevel";
-            this.lbLevel.Size = new System.Drawing.Size(74, 17);
-            this.lbLevel.TabIndex = 4;
-            this.lbLevel.Text = "难度：★★★";
-            // 
-            // btnVideo
-            // 
-            this.btnVideo.BackColor = System.Drawing.Color.Transparent;
-            this.btnVideo.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnVideo.DownBack = null;
-            this.btnVideo.Font = new System.Drawing.Font("宋体", 9F);
-            this.btnVideo.Location = new System.Drawing.Point(286, 405);
-            this.btnVideo.MouseBack = null;
-            this.btnVideo.Name = "btnVideo";
-            this.btnVideo.NormlBack = null;
-            this.btnVideo.Radius = 30;
-            this.btnVideo.RoundStyle = CCWin.SkinClass.RoundStyle.All;
-            this.btnVideo.Size = new System.Drawing.Size(94, 33);
-            this.btnVideo.TabIndex = 4;
-            this.btnVideo.Text = "视频（Video）";
-            this.btnVideo.UseVisualStyleBackColor = false;
-            this.btnVideo.Click += new System.EventHandler(this.picCookie_Click);
             // 
             // F_CookieInfo
             // 

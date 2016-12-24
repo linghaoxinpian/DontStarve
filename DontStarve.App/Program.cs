@@ -21,8 +21,8 @@ namespace DontStarve.App
             // if (login.ShowDialog() == DialogResult.OK)
             // {
 
-                F_Main.current_user = iuserInfoService.Login("零芯", Common.HashHelper.GetMD5("123456"));
-            Application.Run(new F_OneDayOneCate());
+            F_Main.current_user = iuserInfoService.Login("零芯", Common.HashHelper.GetMD5("123456"));
+            Application.Run(new F_Main());
             // }
         }
     }

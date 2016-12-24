@@ -146,17 +146,19 @@ namespace DontStarve.App
             Load_cookie_comment();
         }
 
+        ToolTip t = new ToolTip();
         //显示tooltip
         private void picCookie_MouseEnter(object sender, EventArgs e)
         {
-            ToolTip.AutoPopDelay = 5000;
-            ToolTip.Show("不会做？点击查看视频~~", picCookie);
+            t.InitialDelay = 200;
+            t.Show("不会做？点击查看视频~", picCookie);
         }
 
         //播放视频
         private void picCookie_Click(object sender, EventArgs e)
         {
-
+            F_Video fv = new F_Video(current_cookie.VideoPath);
+            fv.Show();
         }
     }
 }
