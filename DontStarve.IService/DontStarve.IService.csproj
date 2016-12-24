@@ -44,6 +44,7 @@
     <Compile Include="ICategoryInfoService.cs" />
     <Compile Include="ICookcommentInfoService.cs" />
     <Compile Include="ICookieInfoService.cs" />
+    <Compile Include="IEverydayRecommendInfoService.cs" />
     <Compile Include="IFriendInfoService.cs" />
     <Compile Include="ISaysaycommentInfoService.cs" />
     <Compile Include="ISaySayInfoService.cs" />

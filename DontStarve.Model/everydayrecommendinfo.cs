@@ -12,13 +12,14 @@ namespace DontStarve.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class cookcommentinfo
+    public partial class everydayrecommendinfo
     {
-        public System.Guid Guid_id { get; set; }
-        public Nullable<System.Guid> CookId { get; set; }
-        public Nullable<System.Guid> UserId { get; set; }
-        public string Content { get; set; }
-        public Nullable<long> PraiseNum { get; set; }
+        public System.Guid CookId { get; set; }
+        public System.Guid SubAdmin { get; set; }
+        public long RecommendTime { get; set; }
+        public string OurRatings { get; set; }
+        public string Reason { get; set; }
+        public long Subtime { get; set; }
     
         public virtual cookinfo cookinfo { get; set; }
         public virtual userinfo userinfo { get; set; }

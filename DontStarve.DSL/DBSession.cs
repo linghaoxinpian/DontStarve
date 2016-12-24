@@ -34,7 +34,7 @@ namespace DontStarve.DSL
         #region 将更改保存到数据库
         public bool SaveChanges()
         {
-           return  Model.dontstarveEntities.GetInstance().SaveChanges()>0;
+            return Model.dontstarveEntities.GetInstance().SaveChanges() > 0;
         }
         #endregion
 
@@ -127,6 +127,19 @@ namespace DontStarve.DSL
             set
             {
                 _isaysaycommentInfoDAL = value;
+            }
+        }
+
+        private IEverydayRecommendInfoDAL _ieverydayrecommendInfoDAL;
+        public IEverydayRecommendInfoDAL ieverydayrecommendInfoDAL
+        {
+            get
+            {
+                return _ieverydayrecommendInfoDAL == null ? AbstractFactory.CreateInstanceEverydayrecommendInfoDAL() : _ieverydayrecommendInfoDAL;
+            }
+            set
+            {
+                _ieverydayrecommendInfoDAL = value;
             }
         }
         #endregion

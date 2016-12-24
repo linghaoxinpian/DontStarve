@@ -27,7 +27,7 @@
           <Property Name="CookId" Type="guid" />
           <Property Name="UserId" Type="guid" />
           <Property Name="Content" Type="varchar" MaxLength="600" />
-          <Property Name="PraiseNum" Type="uint" />
+          <Property Name="PraiseNum" Type="uint" Nullable="false" />
         </EntityType>
         <EntityType Name="cookinfo">
           <Key>
@@ -43,6 +43,18 @@
           <Property Name="VideoPath" Type="varchar" MaxLength="100" />
           <Property Name="Remark" Type="text" />
           <Property Name="Func" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="everydayrecommendinfo">
+          <Key>
+            <PropertyRef Name="CookId" />
+            <PropertyRef Name="RecommendTime" />
+          </Key>
+          <Property Name="CookId" Type="guid" Nullable="false" />
+          <Property Name="SubAdmin" Type="guid" Nullable="false" />
+          <Property Name="RecommendTime" Type="bigint" Nullable="false" />
+          <Property Name="OurRatings" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="Reason" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="Subtime" Type="bigint" Nullable="false" />
         </EntityType>
         <EntityType Name="friendinfo">
           <Key>
@@ -233,6 +245,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Reference_17">
+          <End Role="cookinfo" Type="Self.cookinfo" Multiplicity="1" />
+          <End Role="everydayrecommendinfo" Type="Self.everydayrecommendinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cookinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="everydayrecommendinfo">
+              <PropertyRef Name="CookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_18">
+          <End Role="userinfo" Type="Self.userinfo" Multiplicity="1" />
+          <End Role="everydayrecommendinfo" Type="Self.everydayrecommendinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="userinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="everydayrecommendinfo">
+              <PropertyRef Name="SubAdmin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Reference_2">
           <End Role="cookinfo" Type="Self.cookinfo" Multiplicity="1" />
           <End Role="r_category_cookinfo" Type="Self.r_category_cookinfo" Multiplicity="*" />
@@ -334,6 +370,7 @@
           <EntitySet Name="categoryinfo" EntityType="Self.categoryinfo" Schema="dontstarve" store:Type="Tables" />
           <EntitySet Name="cookcommentinfo" EntityType="Self.cookcommentinfo" Schema="dontstarve" store:Type="Tables" />
           <EntitySet Name="cookinfo" EntityType="Self.cookinfo" Schema="dontstarve" store:Type="Tables" />
+          <EntitySet Name="everydayrecommendinfo" EntityType="Self.everydayrecommendinfo" Schema="dontstarve" store:Type="Tables" />
           <EntitySet Name="friendinfo" EntityType="Self.friendinfo" Schema="dontstarve" store:Type="Tables" />
           <EntitySet Name="materialinfo" EntityType="Self.materialinfo" Schema="dontstarve" store:Type="Tables" />
           <EntitySet Name="r_category_cookinfo" EntityType="Self.r_category_cookinfo" Schema="dontstarve" store:Type="Tables" />
@@ -372,6 +409,14 @@
           <AssociationSet Name="FK_Reference_16" Association="Self.FK_Reference_16">
             <End Role="userinfo" EntitySet="userinfo" />
             <End Role="friendinfo" EntitySet="friendinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_17" Association="Self.FK_Reference_17">
+            <End Role="cookinfo" EntitySet="cookinfo" />
+            <End Role="everydayrecommendinfo" EntitySet="everydayrecommendinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_18" Association="Self.FK_Reference_18">
+            <End Role="userinfo" EntitySet="userinfo" />
+            <End Role="everydayrecommendinfo" EntitySet="everydayrecommendinfo" />
           </AssociationSet>
           <AssociationSet Name="FK_Reference_2" Association="Self.FK_Reference_2">
             <End Role="cookinfo" EntitySet="cookinfo" />
@@ -456,6 +501,7 @@
           <NavigationProperty Name="cookcommentinfo" Relationship="Self.FK_Reference_11" FromRole="cookinfo" ToRole="cookcommentinfo" />
           <NavigationProperty Name="r_material_cookinfo" Relationship="Self.FK_Reference_4" FromRole="cookinfo" ToRole="r_material_cookinfo" />
           <NavigationProperty Name="categoryinfo" Relationship="Self.r_category_cookinfo" FromRole="cookinfo" ToRole="categoryinfo" />
+          <NavigationProperty Name="everydayrecommendinfo" Relationship="dontstarveModel.FK_Reference_17" FromRole="cookinfo" ToRole="everydayrecommendinfo" />
         </EntityType>
         <EntityType Name="friendinfo">
           <Key>
@@ -553,6 +599,7 @@
           <NavigationProperty Name="r_user_actioninfo" Relationship="Self.FK_Reference_10" FromRole="userinfo" ToRole="r_user_actioninfo" />
           <NavigationProperty Name="saysayinfo" Relationship="Self.FK_Reference_14" FromRole="userinfo" ToRole="saysayinfo" />
           <NavigationProperty Name="roleinfo" Relationship="Self.r_user_roleinfo" FromRole="userinfo" ToRole="roleinfo" />
+          <NavigationProperty Name="everydayrecommendinfo" Relationship="dontstarveModel.FK_Reference_18" FromRole="userinfo" ToRole="everydayrecommendinfo" />
         </EntityType>
         <Association Name="FK_Reference_9">
           <End Role="actioninfo" Type="Self.actioninfo" Multiplicity="1" />
@@ -735,7 +782,54 @@
             <End Role="userinfo" EntitySet="userinfo" />
             <End Role="roleinfo" EntitySet="roleinfo" />
           </AssociationSet>
+          <EntitySet Name="everydayrecommendinfo" EntityType="dontstarveModel.everydayrecommendinfo" />
+          <AssociationSet Name="FK_Reference_17" Association="dontstarveModel.FK_Reference_17">
+            <End Role="cookinfo" EntitySet="cookinfo" />
+            <End Role="everydayrecommendinfo" EntitySet="everydayrecommendinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_18" Association="dontstarveModel.FK_Reference_18">
+            <End Role="userinfo" EntitySet="userinfo" />
+            <End Role="everydayrecommendinfo" EntitySet="everydayrecommendinfo" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="everydayrecommendinfo">
+          <Key>
+            <PropertyRef Name="CookId" />
+            <PropertyRef Name="RecommendTime" />
+          </Key>
+          <Property Name="CookId" Type="Guid" Nullable="false" />
+          <Property Name="SubAdmin" Type="Guid" Nullable="false" />
+          <Property Name="RecommendTime" Type="Int64" Nullable="false" />
+          <Property Name="OurRatings" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Reason" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Subtime" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="cookinfo" Relationship="dontstarveModel.FK_Reference_17" FromRole="everydayrecommendinfo" ToRole="cookinfo" />
+          <NavigationProperty Name="userinfo" Relationship="dontstarveModel.FK_Reference_18" FromRole="everydayrecommendinfo" ToRole="userinfo" />
+        </EntityType>
+        <Association Name="FK_Reference_17">
+          <End Type="dontstarveModel.cookinfo" Role="cookinfo" Multiplicity="1" />
+          <End Type="dontstarveModel.everydayrecommendinfo" Role="everydayrecommendinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cookinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="everydayrecommendinfo">
+              <PropertyRef Name="CookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_18">
+          <End Type="dontstarveModel.userinfo" Role="userinfo" Multiplicity="1" />
+          <End Type="dontstarveModel.everydayrecommendinfo" Role="everydayrecommendinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="userinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="everydayrecommendinfo">
+              <PropertyRef Name="SubAdmin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -895,6 +989,18 @@
               <ScalarProperty Name="Guid_id" ColumnName="Rol_Guid_id" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="everydayrecommendinfo">
+            <EntityTypeMapping TypeName="dontstarveModel.everydayrecommendinfo">
+              <MappingFragment StoreEntitySet="everydayrecommendinfo">
+                <ScalarProperty Name="Subtime" ColumnName="Subtime" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="OurRatings" ColumnName="OurRatings" />
+                <ScalarProperty Name="RecommendTime" ColumnName="RecommendTime" />
+                <ScalarProperty Name="SubAdmin" ColumnName="SubAdmin" />
+                <ScalarProperty Name="CookId" ColumnName="CookId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

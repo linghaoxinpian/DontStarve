@@ -22,6 +22,7 @@ namespace DontStarve.Model
             this.r_user_actioninfo = new HashSet<r_user_actioninfo>();
             this.saysayinfo = new HashSet<saysayinfo>();
             this.roleinfo = new HashSet<roleinfo>();
+            this.everydayrecommendinfo = new HashSet<everydayrecommendinfo>();
         }
     
         public System.Guid Guid_id { get; set; }
@@ -46,5 +47,7 @@ namespace DontStarve.Model
         public virtual ICollection<saysayinfo> saysayinfo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<roleinfo> roleinfo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<everydayrecommendinfo> everydayrecommendinfo { get; set; }
     }
 }

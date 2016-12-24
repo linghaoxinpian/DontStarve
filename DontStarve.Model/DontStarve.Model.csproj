@@ -73,6 +73,9 @@
     </Compile>
     <Compile Include="dontstarveEntities.cs" />
     <Compile Include="EnumType\DeleteType.cs" />
+    <Compile Include="everydayrecommendinfo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="friendinfo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

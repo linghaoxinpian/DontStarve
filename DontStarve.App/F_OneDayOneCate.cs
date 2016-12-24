@@ -20,10 +20,15 @@ namespace DontStarve.App
         {
             InitializeComponent();
         }
+        private IEverydayRecommendInfoService ieverydayrecommendInfoService = new EverydayRecommendInfoService();
 
         private void F_OneDayOneCate_Load(object sender, EventArgs e)
         {
-                //加载
+            //加载背景图
+            this.SkinBack = Image.FromFile("img_png/taco.png");
+
+            //数据库加载数据
+
         }
 
         private void pic_Click(object sender, EventArgs e)

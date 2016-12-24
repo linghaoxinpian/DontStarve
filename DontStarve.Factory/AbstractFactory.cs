@@ -48,5 +48,10 @@ namespace DontStarve.Factory
         {
             return (ISaysaycommentInfoDAL)Assembly.Load(assembly).CreateInstance(class_namespace + ".SaysaycommentInfoDAL");
         }
+
+        public static IEverydayRecommendInfoDAL CreateInstanceEverydayrecommendInfoDAL()
+        {
+            return (IEverydayRecommendInfoDAL)Assembly.Load(assembly).CreateInstance(class_namespace + ".EverydayRecommendInfoDAL");
+        }
     }
 }

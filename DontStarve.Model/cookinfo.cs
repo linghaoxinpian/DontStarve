@@ -20,6 +20,7 @@ namespace DontStarve.Model
             this.cookcommentinfo = new HashSet<cookcommentinfo>();
             this.r_material_cookinfo = new HashSet<r_material_cookinfo>();
             this.categoryinfo = new HashSet<categoryinfo>();
+            this.everydayrecommendinfo = new HashSet<everydayrecommendinfo>();
         }
     
         public System.Guid Guid_id { get; set; }
@@ -39,5 +40,7 @@ namespace DontStarve.Model
         public virtual ICollection<r_material_cookinfo> r_material_cookinfo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<categoryinfo> categoryinfo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<everydayrecommendinfo> everydayrecommendinfo { get; set; }
     }
 }
