@@ -480,7 +480,7 @@
           <Property Name="CookId" Type="Guid" />
           <Property Name="UserId" Type="Guid" />
           <Property Name="Content" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
-          <Property Name="PraiseNum" Type="Int64" />
+          <Property Name="PraiseNum" Type="Int64" Nullable="false" />
           <NavigationProperty Name="cookinfo" Relationship="Self.FK_Reference_11" FromRole="cookcommentinfo" ToRole="cookinfo" />
           <NavigationProperty Name="userinfo" Relationship="Self.FK_Reference_15" FromRole="cookcommentinfo" ToRole="userinfo" />
         </EntityType>

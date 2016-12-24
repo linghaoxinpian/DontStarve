@@ -34,6 +34,8 @@
             this.lbCategory = new CCWin.SkinControl.SkinLabel();
             this.lbReason = new CCWin.SkinControl.SkinLabel();
             this.lbOurRatings = new CCWin.SkinControl.SkinLabel();
+            this.bgGo = new CCWin.SkinControl.GifBox();
+            this.gbBye = new CCWin.SkinControl.GifBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +44,7 @@
             this.pic.BackColor = System.Drawing.Color.Transparent;
             this.pic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic.Image = global::DontStarve.App.Properties.Resources.crab;
-            this.pic.Location = new System.Drawing.Point(257, 12);
+            this.pic.Location = new System.Drawing.Point(225, 21);
             this.pic.Name = "pic";
             this.pic.Size = new System.Drawing.Size(143, 76);
             this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -55,7 +57,7 @@
             this.skinLine1.BackColor = System.Drawing.Color.Transparent;
             this.skinLine1.LineColor = System.Drawing.Color.Black;
             this.skinLine1.LineHeight = 1;
-            this.skinLine1.Location = new System.Drawing.Point(164, 94);
+            this.skinLine1.Location = new System.Drawing.Point(132, 103);
             this.skinLine1.Name = "skinLine1";
             this.skinLine1.Size = new System.Drawing.Size(348, 10);
             this.skinLine1.TabIndex = 1;
@@ -68,7 +70,7 @@
             this.lbName.BorderColor = System.Drawing.Color.White;
             this.lbName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbName.Font = new System.Drawing.Font("微软雅黑", 19F);
-            this.lbName.Location = new System.Drawing.Point(273, 107);
+            this.lbName.Location = new System.Drawing.Point(241, 116);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(145, 35);
             this.lbName.TabIndex = 2;
@@ -81,7 +83,7 @@
             this.lbCategory.BackColor = System.Drawing.Color.Transparent;
             this.lbCategory.BorderColor = System.Drawing.Color.White;
             this.lbCategory.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbCategory.Location = new System.Drawing.Point(191, 191);
+            this.lbCategory.Location = new System.Drawing.Point(159, 200);
             this.lbCategory.Name = "lbCategory";
             this.lbCategory.Size = new System.Drawing.Size(100, 17);
             this.lbCategory.TabIndex = 3;
@@ -93,7 +95,7 @@
             this.lbReason.BackColor = System.Drawing.Color.Transparent;
             this.lbReason.BorderColor = System.Drawing.Color.White;
             this.lbReason.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbReason.Location = new System.Drawing.Point(188, 224);
+            this.lbReason.Location = new System.Drawing.Point(156, 233);
             this.lbReason.Name = "lbReason";
             this.lbReason.Size = new System.Drawing.Size(212, 51);
             this.lbReason.TabIndex = 3;
@@ -105,17 +107,44 @@
             this.lbOurRatings.BackColor = System.Drawing.Color.Transparent;
             this.lbOurRatings.BorderColor = System.Drawing.Color.White;
             this.lbOurRatings.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbOurRatings.Location = new System.Drawing.Point(191, 158);
+            this.lbOurRatings.Location = new System.Drawing.Point(159, 167);
             this.lbOurRatings.Name = "lbOurRatings";
             this.lbOurRatings.Size = new System.Drawing.Size(108, 17);
             this.lbOurRatings.TabIndex = 3;
             this.lbOurRatings.Text = "推荐指数：★★★★";
+            // 
+            // bgGo
+            // 
+            this.bgGo.BackColor = System.Drawing.Color.Transparent;
+            this.bgGo.BorderColor = System.Drawing.Color.Transparent;
+            this.bgGo.Cursor = System.Windows.Forms.Cursors.PanNW;
+            this.bgGo.Image = global::DontStarve.App.Properties.Resources.goeat;
+            this.bgGo.Location = new System.Drawing.Point(234, 433);
+            this.bgGo.Name = "bgGo";
+            this.bgGo.Size = new System.Drawing.Size(104, 103);
+            this.bgGo.TabIndex = 4;
+            this.bgGo.Text = "gifBox1";
+            this.bgGo.Click += new System.EventHandler(this.bgGo_Click);
+            // 
+            // gbBye
+            // 
+            this.gbBye.BackColor = System.Drawing.Color.Transparent;
+            this.gbBye.BorderColor = System.Drawing.Color.Transparent;
+            this.gbBye.Cursor = System.Windows.Forms.Cursors.PanEast;
+            this.gbBye.Image = global::DontStarve.App.Properties.Resources.byebye;
+            this.gbBye.Location = new System.Drawing.Point(397, 422);
+            this.gbBye.Name = "gbBye";
+            this.gbBye.Size = new System.Drawing.Size(104, 103);
+            this.gbBye.TabIndex = 4;
+            this.gbBye.Click += new System.EventHandler(this.gbBye_Click);
             // 
             // F_OneDayOneCate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 581);
+            this.Controls.Add(this.gbBye);
+            this.Controls.Add(this.bgGo);
             this.Controls.Add(this.lbReason);
             this.Controls.Add(this.lbOurRatings);
             this.Controls.Add(this.lbCategory);
@@ -123,10 +152,11 @@
             this.Controls.Add(this.skinLine1);
             this.Controls.Add(this.pic);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.KeyPreview = true;
             this.Name = "F_OneDayOneCate";
             this.SkinBack = global::DontStarve.App.Properties.Resources.taco;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "F_OneDayOneCate";
+            this.Text = "F_OneDayOneCate(&a)";
             this.Load += new System.EventHandler(this.F_OneDayOneCate_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.ResumeLayout(false);
@@ -142,5 +172,7 @@
         private CCWin.SkinControl.SkinLabel lbCategory;
         private CCWin.SkinControl.SkinLabel lbReason;
         private CCWin.SkinControl.SkinLabel lbOurRatings;
+        private CCWin.SkinControl.GifBox bgGo;
+        private CCWin.SkinControl.GifBox gbBye;
     }
 }
