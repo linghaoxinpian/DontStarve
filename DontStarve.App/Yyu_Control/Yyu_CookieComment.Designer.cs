@@ -84,6 +84,7 @@
             // 
             // txtComment
             // 
+            this.txtComment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(208)))), ((int)(((byte)(255)))));
             this.txtComment.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtComment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtComment.Location = new System.Drawing.Point(86, 3);

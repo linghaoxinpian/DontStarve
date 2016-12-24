@@ -86,16 +86,22 @@
     <Compile Include="F_SimplyReply.Designer.cs">
       <DependentUpon>F_SimplyReply.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_Video.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Video.Designer.cs">
+      <DependentUpon>F_Video.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelfManage\F_Friend.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SelfManage\F_Friend.Designer.cs">
       <DependentUpon>F_Friend.cs</DependentUpon>
     </Compile>
-    <Compile Include="Yyu_Control\F_Register.cs">
+    <Compile Include="F_Register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Yyu_Control\F_Register.Designer.cs">
+    <Compile Include="F_Register.Designer.cs">
       <DependentUpon>F_Register.cs</DependentUpon>
     </Compile>
     <Compile Include="SelfManage\F_SaySayReplay.cs">
@@ -166,10 +172,10 @@
     <Compile Include="Yyu_Control\Yyu_SelfSaySay.Designer.cs">
       <DependentUpon>Yyu_SelfSaySay.cs</DependentUpon>
     </Compile>
-    <Compile Include="Yyu_SaySayDetails.cs">
+    <Compile Include="Yyu_Control\Yyu_SaySayDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Yyu_SaySayDetails.Designer.cs">
+    <Compile Include="Yyu_Control\Yyu_SaySayDetails.Designer.cs">
       <DependentUpon>Yyu_SaySayDetails.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="F_HotCookie.resx">
@@ -181,10 +187,13 @@
     <EmbeddedResource Include="F_SimplyReply.resx">
       <DependentUpon>F_SimplyReply.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_Video.resx">
+      <DependentUpon>F_Video.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelfManage\F_Friend.resx">
       <DependentUpon>F_Friend.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Yyu_Control\F_Register.resx">
+    <EmbeddedResource Include="F_Register.resx">
       <DependentUpon>F_Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelfManage\F_SaySayReplay.resx">
@@ -231,7 +240,7 @@
     <EmbeddedResource Include="Yyu_Control\Yyu_SelfSaySay.resx">
       <DependentUpon>Yyu_SelfSaySay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Yyu_SaySayDetails.resx">
+    <EmbeddedResource Include="Yyu_Control\Yyu_SaySayDetails.resx">
       <DependentUpon>Yyu_SaySayDetails.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

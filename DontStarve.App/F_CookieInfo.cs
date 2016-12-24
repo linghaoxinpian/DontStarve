@@ -32,13 +32,19 @@ namespace DontStarve.App
         //加载“美食”数据
         private void F_CookieInfo_Load(object sender, EventArgs e)
         {
+            lbFunc.Items.Clear();   //开发时便于设计
+
             labCookieName.Text = current_cookie.Name;
             yyu_PraiseNum1.labPraiseNum.Text = current_cookie.PraiseNum.ToString();
             picCookie.Image = current_cookie.pic == null ? DontStarve.App.Properties.Resources._132 : Common.CommonHelper.BytesToPic(current_cookie.pic);
-            labRating.Text = "好评率：" + (current_cookie.Rating).ToString() + "%";
+            labRating.Text = "好评率：" + (current_cookie.Rating).ToString() + "%";     //加载“美食”好评率
+            lbLevel.Text = "难度：";   //加载美食难度等级
+            for (int i = 0; i < current_cookie.Level; i++)
+            {
+                lbLevel.Text += "★";
+            }
             //加载做法步骤
             var strs = current_cookie.Func.Split('\n');
-            lbFunc.Items.Clear();   //开发时便于设计
             for (int i = 1; i <= strs.Length; i++)
             {
                 int count = strs[i - 1].Length / 26;
@@ -119,13 +125,38 @@ namespace DontStarve.App
         //吐槽
         private void btnComplain_Click(object sender, EventArgs e)
         {
-
+            F_SimplyReply fs = new F_SimplyReply();
+            fs.Text = "                          吐槽一下~~~~";
+            fs.ShowDialog();
+            fs.func += new Func<bool>(() =>
+              {
+                  if (!string.IsNullOrEmpty(fs.txtContent.Text))
+                  {
+                      return icookcommentInfoService.AddEntity(new cookcommentinfo()
+                      {
+                          Guid_id = Guid.NewGuid(),
+                          CookId = current_cookie.Guid_id,
+                          UserId = F_Main.current_user.Guid_id,
+                          Content = fs.txtContent.Text
+                      });
+                  }
+                  return false;
+              });
+            //刷新
+            Load_cookie_comment();
         }
 
-        private void yyu_PraiseNum1_MouseEnter(object sender, EventArgs e)
-        {            
+        //显示tooltip
+        private void picCookie_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip.AutoPopDelay = 5000;
+            ToolTip.Show("不会做？点击查看视频~~", picCookie);
+        }
+
+        //播放视频
+        private void picCookie_Click(object sender, EventArgs e)
+        {
 
         }
-         
     }
 }
