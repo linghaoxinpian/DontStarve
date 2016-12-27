@@ -393,5 +393,11 @@ namespace DontStarve.App
         {
 
         }
+
+        private void picShareFood_Click(object sender, EventArgs e)
+        {
+            F_ShareFood fs = new F_ShareFood();
+            fs.Show();
+        }
     }
 }

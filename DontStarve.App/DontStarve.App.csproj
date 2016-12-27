@@ -68,6 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DontStarve\IService\IFriendInfoService.cs" />
+    <Compile Include="F_AdminEverydayRecommend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_AdminEverydayRecommend.Designer.cs">
+      <DependentUpon>F_AdminEverydayRecommend.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_HotCookie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,12 @@
     </Compile>
     <Compile Include="F_Praise.Designer.cs">
       <DependentUpon>F_Praise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_ShareFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_ShareFood.Designer.cs">
+      <DependentUpon>F_ShareFood.cs</DependentUpon>
     </Compile>
     <Compile Include="F_SimplyReply.cs">
       <SubType>Form</SubType>
@@ -178,11 +190,17 @@
     <Compile Include="Yyu_Control\Yyu_SaySayDetails.Designer.cs">
       <DependentUpon>Yyu_SaySayDetails.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="F_AdminEverydayRecommend.resx">
+      <DependentUpon>F_AdminEverydayRecommend.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_HotCookie.resx">
       <DependentUpon>F_HotCookie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Praise.resx">
       <DependentUpon>F_Praise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_ShareFood.resx">
+      <DependentUpon>F_ShareFood.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_SimplyReply.resx">
       <DependentUpon>F_SimplyReply.cs</DependentUpon>
@@ -279,6 +297,9 @@
     <Content Include="IServices.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\sign-right-icon.png" />
+    <None Include="Resources\sharefood.png" />
+    <None Include="Resources\ico.ooopic.png" />
     <None Include="Resources\byebye.gif" />
     <None Include="Resources\goeat.gif" />
     <None Include="Resources\taco.png" />

@@ -15,7 +15,7 @@ namespace DontStarve.Service
         {
             var entity = LoadEntities(c => c.Guid_id == guid_id).FirstOrDefault();
             entity.PraiseNum++;
-            entity.Rating = (byte?)(entity.PraiseNum / 50);
+            entity.Rating = (byte)(entity.PraiseNum / 50);
             EditEntity(entity);
         }
 

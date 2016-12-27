@@ -25,10 +25,10 @@ namespace DontStarve.Model
     
         public System.Guid Guid_id { get; set; }
         public string Name { get; set; }
-        public Nullable<byte> Level { get; set; }
-        public Nullable<bool> DelFlag { get; set; }
-        public Nullable<byte> Rating { get; set; }
-        public Nullable<long> PraiseNum { get; set; }
+        public byte Level { get; set; }
+        public bool DelFlag { get; set; }
+        public byte Rating { get; set; }
+        public long PraiseNum { get; set; }
         public byte[] pic { get; set; }
         public string VideoPath { get; set; }
         public string Remark { get; set; }

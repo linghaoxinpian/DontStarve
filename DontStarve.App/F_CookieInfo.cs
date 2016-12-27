@@ -32,7 +32,7 @@ namespace DontStarve.App
         //加载“美食”数据
         private void F_CookieInfo_Load(object sender, EventArgs e)
         {
-            lbFunc.Items.Clear();   //开发时便于设计
+            lbFunc.Items.Clear();   //开发时便于设计            
 
             labCookieName.Text = current_cookie.Name;
             yyu_PraiseNum1.labPraiseNum.Text = current_cookie.PraiseNum.ToString();
@@ -42,6 +42,12 @@ namespace DontStarve.App
             for (int i = 0; i < current_cookie.Level; i++)
             {
                 lbLevel.Text += "★";
+            }
+            //加载原料
+            txtMaterial.Text = "原料：";
+            foreach(var c in current_cookie.r_material_cookinfo)
+            {
+                txtMaterial.Text += " | " + c.materialinfo.Name + c.materialinfo.Remark;
             }
             //加载做法步骤
             var strs = current_cookie.Func.Split('\n');
@@ -120,6 +126,7 @@ namespace DontStarve.App
         {
             Load_cookie_comment();
             skinSplitContainer1.Panel1.Controls.Remove(gifBox1);
+            btnNextPage.Visible = true; //显示“下一页”按钮
         }
 
         //吐槽
@@ -159,6 +166,12 @@ namespace DontStarve.App
         {
             F_Video fv = new F_Video(current_cookie.VideoPath);
             fv.Show();
+        }
+
+        //下一页评论
+        private void btnNextPage_Click(object sender, EventArgs e)
+        {           
+            Load_cookie_comment();
         }
     }
 }
