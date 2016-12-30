@@ -34,16 +34,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new CCWin.SkinControl.SkinDataGridView();
+            this.CookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PraiseNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtReason = new System.Windows.Forms.TextBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.dtpRecommend = new CCWin.SkinControl.SkinDateTimePicker();
             this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
+            this.skinToolTip1 = new CCWin.SkinToolTip(this.components);
             this.btnNext = new CCWin.SkinControl.SkinButton();
-            this.CookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PraiseNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnFirst = new CCWin.SkinControl.SkinButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,6 +107,27 @@
             this.dgv.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
             this.dgv.DoubleClick += new System.EventHandler(this.dgv_DoubleClick);
             // 
+            // CookName
+            // 
+            this.CookName.DataPropertyName = "cookName";
+            this.CookName.HeaderText = "菜名";
+            this.CookName.Name = "CookName";
+            this.CookName.ReadOnly = true;
+            // 
+            // CategoryName
+            // 
+            this.CategoryName.DataPropertyName = "categoryName";
+            this.CategoryName.HeaderText = "所属类别";
+            this.CategoryName.Name = "CategoryName";
+            this.CategoryName.ReadOnly = true;
+            // 
+            // PraiseNum
+            // 
+            this.PraiseNum.DataPropertyName = "praiseNum";
+            this.PraiseNum.HeaderText = "点赞数";
+            this.PraiseNum.Name = "PraiseNum";
+            this.PraiseNum.ReadOnly = true;
+            // 
             // txtReason
             // 
             this.txtReason.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -127,6 +150,7 @@
             this.txtSearch.Size = new System.Drawing.Size(166, 29);
             this.txtSearch.TabIndex = 2;
             this.txtSearch.Text = "输入菜名";
+            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
             // 
             // btnSearch
             // 
@@ -137,6 +161,7 @@
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "搜索";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnOk
             // 
@@ -174,6 +199,13 @@
             this.skinLabel1.TabIndex = 5;
             this.skinLabel1.Text = "推荐日期";
             // 
+            // skinToolTip1
+            // 
+            this.skinToolTip1.AutoPopDelay = 5000;
+            this.skinToolTip1.InitialDelay = 500;
+            this.skinToolTip1.OwnerDraw = true;
+            this.skinToolTip1.ReshowDelay = 800;
+            // 
             // btnNext
             // 
             this.btnNext.BackColor = System.Drawing.Color.Transparent;
@@ -188,42 +220,47 @@
             this.btnNext.GlowColor = System.Drawing.Color.Transparent;
             this.btnNext.InnerBorderColor = System.Drawing.Color.Transparent;
             this.btnNext.IsDrawGlass = false;
-            this.btnNext.Location = new System.Drawing.Point(608, 343);
+            this.btnNext.Location = new System.Drawing.Point(618, 343);
             this.btnNext.MouseBack = null;
             this.btnNext.MouseBaseColor = System.Drawing.Color.Transparent;
             this.btnNext.Name = "btnNext";
             this.btnNext.NormlBack = null;
             this.btnNext.Size = new System.Drawing.Size(46, 39);
             this.btnNext.TabIndex = 6;
+            this.skinToolTip1.SetToolTip(this.btnNext, "下一页");
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // CookName
+            // btnFirst
             // 
-            this.CookName.DataPropertyName = "cookName";
-            this.CookName.HeaderText = "菜名";
-            this.CookName.Name = "CookName";
-            this.CookName.ReadOnly = true;
-            // 
-            // CategoryName
-            // 
-            this.CategoryName.DataPropertyName = "categoryName";
-            this.CategoryName.HeaderText = "所属类别";
-            this.CategoryName.Name = "CategoryName";
-            this.CategoryName.ReadOnly = true;
-            // 
-            // PraiseNum
-            // 
-            this.PraiseNum.DataPropertyName = "praiseNum";
-            this.PraiseNum.HeaderText = "点赞数";
-            this.PraiseNum.Name = "PraiseNum";
-            this.PraiseNum.ReadOnly = true;
+            this.btnFirst.BackColor = System.Drawing.Color.Transparent;
+            this.btnFirst.BackgroundImage = global::DontStarve.App.Properties.Resources.sign_left_icon;
+            this.btnFirst.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFirst.BaseColor = System.Drawing.Color.Transparent;
+            this.btnFirst.BorderColor = System.Drawing.Color.Transparent;
+            this.btnFirst.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.btnFirst.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFirst.DownBack = null;
+            this.btnFirst.DownBaseColor = System.Drawing.Color.Transparent;
+            this.btnFirst.GlowColor = System.Drawing.Color.Transparent;
+            this.btnFirst.InnerBorderColor = System.Drawing.Color.Transparent;
+            this.btnFirst.IsDrawGlass = false;
+            this.btnFirst.Location = new System.Drawing.Point(566, 344);
+            this.btnFirst.MouseBack = null;
+            this.btnFirst.MouseBaseColor = System.Drawing.Color.Transparent;
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.NormlBack = null;
+            this.btnFirst.Size = new System.Drawing.Size(46, 39);
+            this.btnFirst.TabIndex = 6;
+            this.btnFirst.UseVisualStyleBackColor = false;
+            this.btnFirst.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // F_AdminEverydayRecommend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 513);
+            this.Controls.Add(this.btnFirst);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.skinLabel1);
             this.Controls.Add(this.dtpRecommend);
@@ -258,5 +295,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CookName;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn PraiseNum;
+        private CCWin.SkinToolTip skinToolTip1;
+        private CCWin.SkinControl.SkinButton btnFirst;
     }
 }

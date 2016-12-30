@@ -32,11 +32,17 @@ namespace DontStarve.Service
         public List<cookinfo> LoadHotCookieByWeek(int size = 10)
         {
             //获取一周内的时间戳范围
-            long curentStamp=CommonHelper.GetCurrentDateStamp();    //当前时间戳
+            long curentStamp = CommonHelper.GetCurrentDateStamp();    //当前时间戳
             long weekLast = CommonHelper.GetCurrentDateStamp(DateTime.Now.AddDays(-7)); //后退七天的时间戳
             int totalCount;
-            var list= LoadPageEntities(c => c.DelFlag == false,c=>c.PraiseNum,1,size,out totalCount,false);
+            var list = LoadPageEntities(c => c.DelFlag == false, c => c.PraiseNum, 1, size, out totalCount, false);
             return list.ToList();
+        }
+
+        public List<cookinfo> LoadCookByCookName(string name)
+        {
+            List<cookinfo> list = dbSessioin.icookieInfoDAL.LoadCookByCookName(name);
+            return list;
         }
 
         protected override void Set_CurrentDAL()

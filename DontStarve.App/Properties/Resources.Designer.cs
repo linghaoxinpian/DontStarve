@@ -283,6 +283,16 @@ namespace DontStarve.App.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap sign_left_icon {
+            get {
+                object obj = ResourceManager.GetObject("sign_left_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap sign_right_icon {
             get {
                 object obj = ResourceManager.GetObject("sign_right_icon", resourceCulture);

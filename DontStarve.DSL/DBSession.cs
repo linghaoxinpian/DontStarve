@@ -38,6 +38,31 @@ namespace DontStarve.DSL
         }
         #endregion
 
+        #region 执行sql语句
+        /// <summary>
+        /// 增删改
+        /// </summary>
+        /// <param name="sql">sql语句</param>
+        /// <param name="ps">语句中的参数</param>
+        /// <returns>受影响的行数</returns>
+        public int ExecuteSQL(string sql, params System.Data.SqlClient.SqlParameter[] ps)
+        {
+            return dontstarveEntities.GetInstance().Database.ExecuteSqlCommand(sql, ps);
+        }
+
+        /// <summary>
+        /// 查询
+        /// </summary>
+        /// <typeparam name="T">返回的数据实体类型</typeparam>
+        /// <param name="sql">查询语句</param>
+        /// <param name="ps">参数</param>
+        /// <returns>List集合</returns>
+        public List<T> ExecuteQuery<T>(string sql, params object[] ps)
+        {
+            return dontstarveEntities.GetInstance().Database.SqlQuery<T>(sql, ps).ToList();
+        }
+        #endregion
+
         #region 各个 IDAL层接口实例对象
         private IUserInfoDAL _iuserinfoDAL;
         public IUserInfoDAL iuserInfoDAL

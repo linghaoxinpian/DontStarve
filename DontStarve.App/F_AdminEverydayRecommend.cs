@@ -26,6 +26,8 @@ namespace DontStarve.App
         private void F_AdminEverydayRecommend_Load(object sender, EventArgs e)
         {
             Load_DataSource();
+            //当前页加一
+            pageIndex++;
         }
 
         private void dgv_DoubleClick(object sender, EventArgs e)
@@ -47,6 +49,52 @@ namespace DontStarve.App
         private void Load_DataSource()
         {
             var list = icookieInfoService.LoadPageEntities(c => c.DelFlag == false, c => c.PraiseNum, pageIndex, 30, out count, false).ToList();
+            ShowDataBase(list);
+        }
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if ((sender as Button).Name == "btnNext")
+            {
+                if (pageIndex * 30 >= count)
+                {
+                    MessageBoxEx.Show("已到达最底部");
+                    return;
+                }
+                Load_DataSource();
+                //当前页加一
+                pageIndex++;
+            }
+            else
+            {
+                if (pageIndex <= 1)
+                {
+                    MessageBoxEx.Show("已到达第一页");
+                    return;
+                }
+                Load_DataSource();
+                //当前页减一
+                pageIndex--;
+            }
+        }
+
+        //搜索
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSearch.Text))
+            {
+                Load_DataSource();
+                return;
+            }
+            var list = icookieInfoService.LoadCookByCookName(txtSearch.Text);
+            ShowDataBase(list);
+        }
+
+        /// <summary>
+        /// 加工数据并显示
+        /// </summary>
+        /// <param name="list"></param>
+        private void ShowDataBase(List<cookinfo> list)
+        {
             var varlist = from l in list
                           select new
                           {
@@ -55,17 +103,12 @@ namespace DontStarve.App
                               praiseNum = l.PraiseNum
                           };
             dgv.DataSource = varlist.ToList();
-            //当前页加一
-            pageIndex++;
         }
-        private void btnNext_Click(object sender, EventArgs e)
+
+        private void txtSearch_Enter(object sender, EventArgs e)
         {
-            if (pageIndex * 30 >= count)
-            {
-                MessageBoxEx.Show("已到达最底部");
-                return;
-            }
-            Load_DataSource();
+            if (txtSearch.Text == "输入菜名")
+            txtSearch.Text = "";
         }
     }
 }

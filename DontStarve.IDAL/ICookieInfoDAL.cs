@@ -15,5 +15,12 @@ namespace DontStarve.IDAL
         /// <param name="category_id"></param>
         /// <returns></returns>
         ICollection<cookinfo> LoadEntitiesByCategoryId(int category_id);
+
+        /// <summary>
+        /// 模糊查询
+        /// </summary>
+        /// <param name="name">cookinfo的Name</param>
+        /// <returns></returns>
+        List<cookinfo> LoadCookByCookName(string name);
     }
 }

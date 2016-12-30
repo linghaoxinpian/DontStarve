@@ -10,6 +10,13 @@ namespace DontStarve.IService
     public interface ICookieInfoService : IBaseService<cookinfo>
     {
         /// <summary>
+        /// 根据Name查询
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+         List<cookinfo> LoadCookByCookName(string name);
+
+        /// <summary>
         /// 根据"分类id“加载Cookie
         /// </summary>
         /// <param name="category_id">分类id</param>

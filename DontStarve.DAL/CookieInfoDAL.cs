@@ -1,5 +1,6 @@
 ﻿using DontStarve.IDAL;
 using DontStarve.Model;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,12 @@ namespace DontStarve.DAL
 {
     public class CookieInfoDAL : BaseDAL<cookinfo>, ICookieInfoDAL
     {
+        public List<cookinfo> LoadCookByCookName(string name)
+        {
+            string sql = "SELECT `cookinfo`.`Guid_id`,`cookinfo`.`Name`,`cookinfo`.`Level`,`cookinfo`.`DelFlag`,`cookinfo`.`Rating`,`cookinfo`.`PraiseNum`,`cookinfo`.`pic`,`cookinfo`.`VideoPath`,`cookinfo`.`Remark`,`cookinfo`.`Func`FROM `dontstarve`.`cookinfo` WHERE Name like %@name%";
+            return dbContext.Database.SqlQuery<cookinfo>(sql, new MySqlParameter("name", name)).ToList();
+        }
+
         public ICollection<cookinfo> LoadEntitiesByCategoryId(int category_id)
         {
             var cates = dbContext.Set<categoryinfo>().Where(cate => cate.Auto_id == category_id).FirstOrDefault().cookinfo;
