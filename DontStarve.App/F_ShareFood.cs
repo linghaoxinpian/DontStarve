@@ -21,17 +21,32 @@ namespace DontStarve.App
             InitializeComponent();
         }
         private ICookieInfoService icookieInfoService = new CookieInfoService();
-
+        private ICategoryInfoService icategoryInfoService = new CategoryInfoService();
 
         private void F_ShareFood_Load(object sender, EventArgs e)
         {
+            //清空
+            clbCategory.Items.Clear();
+            //加载分类
+            Load_Category();
+        }
 
+        /// <summary>
+        /// 加载分类
+        /// </summary>
+        private void Load_Category()
+        {
+            var list = icategoryInfoService.LoadEntities(ca => true).ToArray();
+            //foreach(var l in list)
+            //{
+            clbCategory.Items.AddRange(list);
+            //}
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             //检查
-            if (string.IsNullOrEmpty(txtFunc.Text) || string.IsNullOrEmpty(txtName.Text)||pic.Image==null)
+            if (string.IsNullOrEmpty(txtFunc.Text) || string.IsNullOrEmpty(txtName.Text) || pic.Image == null || clbCategory.SelectedIndices.Count <= 0)
             {
                 MessageBoxEx.Show("请将信息填写完整,谢谢合作");
                 return;
@@ -48,6 +63,13 @@ namespace DontStarve.App
             {
                 entity.Remark = "分享人：" + F_Main.current_user.Name + "\n";
             }
+
+            for (int i = 0; i < clbCategory.Items.Count; i++)
+            {
+                if (clbCategory.GetItemCheckState(i) == CheckState.Checked)
+                    entity.categoryinfo.Add(clbCategory.Items[i] as categoryinfo);  //这一步会连接数据库吗？应该不会（<=2ms这么短的时间不会访问数据库）
+            }
+            //保存到数据库
             if (icookieInfoService.AddEntity(entity))
             {
                 MessageBoxEx.Show("提交成功！");

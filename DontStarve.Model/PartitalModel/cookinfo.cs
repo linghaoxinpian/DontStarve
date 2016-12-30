@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace DontStarve.Model.PartitalModel
 {
+    [MetadataType(typeof(Model.cookinfo))]
     public partial class cookinfo
     {
         /// <summary>

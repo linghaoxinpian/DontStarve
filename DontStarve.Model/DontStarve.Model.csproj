@@ -97,6 +97,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PartitalModel\categoryinfo.cs" />
     <Compile Include="PartitalModel\cookinfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="roleinfo.cs">
