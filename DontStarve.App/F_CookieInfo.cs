@@ -38,8 +38,8 @@ namespace DontStarve.App
             yyu_PraiseNum1.labPraiseNum.Text = current_cookie.PraiseNum.ToString();
             picCookie.Image = current_cookie.pic == null ? DontStarve.App.Properties.Resources._132 : Common.CommonHelper.BytesToPic(current_cookie.pic);
             labRating.Text = "好评率：" + (current_cookie.Rating).ToString() + "%";     //加载“美食”好评率
-            lbLevel.Text = "难度：";   //加载美食难度等级
-            for (int i = 0; i < current_cookie.Level; i++)
+            lbLevel.Text = "难度：★";   //加载美食难度等级
+            for (int i = 1; i < current_cookie.Level; i++)
             {
                 lbLevel.Text += "★";
             }

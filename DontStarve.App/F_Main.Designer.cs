@@ -44,10 +44,16 @@
             this.skinTabPage2 = new CCWin.SkinControl.SkinTabPage();
             this.tpFriend = new CCWin.SkinControl.SkinTabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.yyu_SaySayDetails4 = new DontStarve.App.Yyu_SaySayDetails();
+            this.yyu_SaySayDetails5 = new DontStarve.App.Yyu_SaySayDetails();
+            this.yyu_SaySayDetails6 = new DontStarve.App.Yyu_SaySayDetails();
             this.pl_right2 = new System.Windows.Forms.Panel();
             this.pl_left2 = new System.Windows.Forms.Panel();
             this.tpMoreFriend = new CCWin.SkinControl.SkinTabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.yyu_SaySayDetails1 = new DontStarve.App.Yyu_SaySayDetails();
+            this.yyu_SaySayDetails2 = new DontStarve.App.Yyu_SaySayDetails();
+            this.yyu_SaySayDetails3 = new DontStarve.App.Yyu_SaySayDetails();
             this.pl_right = new System.Windows.Forms.Panel();
             this.pl_left = new System.Windows.Forms.Panel();
             this.tpSearch = new CCWin.SkinControl.SkinTabPage();
@@ -64,12 +70,6 @@
             this.lbSelfSignature = new CCWin.SkinControl.SkinLabel();
             this.lbSelfUserName = new CCWin.SkinControl.SkinLabel();
             this.btnSelfUserPhoto = new CCWin.SkinControl.SkinButton();
-            this.yyu_SaySayDetails4 = new DontStarve.App.Yyu_SaySayDetails();
-            this.yyu_SaySayDetails5 = new DontStarve.App.Yyu_SaySayDetails();
-            this.yyu_SaySayDetails6 = new DontStarve.App.Yyu_SaySayDetails();
-            this.yyu_SaySayDetails1 = new DontStarve.App.Yyu_SaySayDetails();
-            this.yyu_SaySayDetails2 = new DontStarve.App.Yyu_SaySayDetails();
-            this.yyu_SaySayDetails3 = new DontStarve.App.Yyu_SaySayDetails();
             this.skinTabControl1.SuspendLayout();
             this.tpHome.SuspendLayout();
             this.tpFoodWorld.SuspendLayout();
@@ -143,7 +143,7 @@
             // tpHome
             // 
             this.tpHome.BackColor = System.Drawing.Color.White;
-            this.tpHome.BackgroundImage = global::DontStarve.App.Properties.Resources.hometp;
+            this.tpHome.BackgroundImage = global::DontStarve.App.Properties.Resources.hometpleave;
             this.tpHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tpHome.Controls.Add(this.gifBox1);
             this.tpHome.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -151,7 +151,7 @@
             this.tpHome.Name = "tpHome";
             this.tpHome.Size = new System.Drawing.Size(898, 547);
             this.tpHome.TabIndex = 0;
-            this.tpHome.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpHome.TabItemImage")));
+            this.tpHome.TabItemImage = global::DontStarve.App.Properties.Resources.redhouse3;
             this.tpHome.Text = "首页";
             this.tpHome.MouseEnter += new System.EventHandler(this.tpHome_MouseEnter);
             this.tpHome.MouseLeave += new System.EventHandler(this.tpHome_MouseLeave);
@@ -177,7 +177,7 @@
             this.tpFoodWorld.Name = "tpFoodWorld";
             this.tpFoodWorld.Size = new System.Drawing.Size(898, 547);
             this.tpFoodWorld.TabIndex = 1;
-            this.tpFoodWorld.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpFoodWorld.TabItemImage")));
+            this.tpFoodWorld.TabItemImage = global::DontStarve.App.Properties.Resources.foodfood2;
             this.tpFoodWorld.Text = "食界";
             // 
             // skinSplitContainer1
@@ -328,6 +328,30 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(642, 547);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
+            // yyu_SaySayDetails4
+            // 
+            this.yyu_SaySayDetails4.BackColor = System.Drawing.Color.White;
+            this.yyu_SaySayDetails4.Location = new System.Drawing.Point(6, 6);
+            this.yyu_SaySayDetails4.Name = "yyu_SaySayDetails4";
+            this.yyu_SaySayDetails4.Size = new System.Drawing.Size(203, 535);
+            this.yyu_SaySayDetails4.TabIndex = 0;
+            // 
+            // yyu_SaySayDetails5
+            // 
+            this.yyu_SaySayDetails5.BackColor = System.Drawing.Color.White;
+            this.yyu_SaySayDetails5.Location = new System.Drawing.Point(219, 6);
+            this.yyu_SaySayDetails5.Name = "yyu_SaySayDetails5";
+            this.yyu_SaySayDetails5.Size = new System.Drawing.Size(203, 535);
+            this.yyu_SaySayDetails5.TabIndex = 1;
+            // 
+            // yyu_SaySayDetails6
+            // 
+            this.yyu_SaySayDetails6.BackColor = System.Drawing.Color.White;
+            this.yyu_SaySayDetails6.Location = new System.Drawing.Point(432, 6);
+            this.yyu_SaySayDetails6.Name = "yyu_SaySayDetails6";
+            this.yyu_SaySayDetails6.Size = new System.Drawing.Size(204, 535);
+            this.yyu_SaySayDetails6.TabIndex = 2;
+            // 
             // pl_right2
             // 
             this.pl_right2.BackColor = System.Drawing.Color.DarkGray;
@@ -369,7 +393,7 @@
             this.tpMoreFriend.Name = "tpMoreFriend";
             this.tpMoreFriend.Size = new System.Drawing.Size(898, 547);
             this.tpMoreFriend.TabIndex = 3;
-            this.tpMoreFriend.TabItemImage = ((System.Drawing.Image)(resources.GetObject("tpMoreFriend.TabItemImage")));
+            this.tpMoreFriend.TabItemImage = global::DontStarve.App.Properties.Resources.mfood;
             this.tpMoreFriend.Text = "大千世界";
             // 
             // tableLayoutPanel1
@@ -399,6 +423,30 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 544F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(642, 547);
             this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // yyu_SaySayDetails1
+            // 
+            this.yyu_SaySayDetails1.BackColor = System.Drawing.Color.White;
+            this.yyu_SaySayDetails1.Location = new System.Drawing.Point(6, 6);
+            this.yyu_SaySayDetails1.Name = "yyu_SaySayDetails1";
+            this.yyu_SaySayDetails1.Size = new System.Drawing.Size(203, 535);
+            this.yyu_SaySayDetails1.TabIndex = 0;
+            // 
+            // yyu_SaySayDetails2
+            // 
+            this.yyu_SaySayDetails2.BackColor = System.Drawing.Color.White;
+            this.yyu_SaySayDetails2.Location = new System.Drawing.Point(219, 6);
+            this.yyu_SaySayDetails2.Name = "yyu_SaySayDetails2";
+            this.yyu_SaySayDetails2.Size = new System.Drawing.Size(203, 535);
+            this.yyu_SaySayDetails2.TabIndex = 1;
+            // 
+            // yyu_SaySayDetails3
+            // 
+            this.yyu_SaySayDetails3.BackColor = System.Drawing.Color.White;
+            this.yyu_SaySayDetails3.Location = new System.Drawing.Point(432, 6);
+            this.yyu_SaySayDetails3.Name = "yyu_SaySayDetails3";
+            this.yyu_SaySayDetails3.Size = new System.Drawing.Size(204, 535);
+            this.yyu_SaySayDetails3.TabIndex = 2;
             // 
             // pl_right
             // 
@@ -533,7 +581,7 @@
             this.tpSelfManage.Name = "tpSelfManage";
             this.tpSelfManage.Size = new System.Drawing.Size(898, 547);
             this.tpSelfManage.TabIndex = 5;
-            this.tpSelfManage.TabItemImage = global::DontStarve.App.Properties.Resources.headpic1;
+            this.tpSelfManage.TabItemImage = global::DontStarve.App.Properties.Resources.self2;
             this.tpSelfManage.Text = "我的世界";
             this.toolTip1.SetToolTip(this.tpSelfManage, "点击查看我的动态");
             // 
@@ -649,54 +697,6 @@
             this.toolTip1.SetToolTip(this.btnSelfUserPhoto, "点击查看个人动态");
             this.btnSelfUserPhoto.UseVisualStyleBackColor = false;
             this.btnSelfUserPhoto.Click += new System.EventHandler(this.btnSelfUserPhoto_Click);
-            // 
-            // yyu_SaySayDetails4
-            // 
-            this.yyu_SaySayDetails4.BackColor = System.Drawing.Color.White;
-            this.yyu_SaySayDetails4.Location = new System.Drawing.Point(6, 6);
-            this.yyu_SaySayDetails4.Name = "yyu_SaySayDetails4";
-            this.yyu_SaySayDetails4.Size = new System.Drawing.Size(203, 535);
-            this.yyu_SaySayDetails4.TabIndex = 0;
-            // 
-            // yyu_SaySayDetails5
-            // 
-            this.yyu_SaySayDetails5.BackColor = System.Drawing.Color.White;
-            this.yyu_SaySayDetails5.Location = new System.Drawing.Point(219, 6);
-            this.yyu_SaySayDetails5.Name = "yyu_SaySayDetails5";
-            this.yyu_SaySayDetails5.Size = new System.Drawing.Size(203, 535);
-            this.yyu_SaySayDetails5.TabIndex = 1;
-            // 
-            // yyu_SaySayDetails6
-            // 
-            this.yyu_SaySayDetails6.BackColor = System.Drawing.Color.White;
-            this.yyu_SaySayDetails6.Location = new System.Drawing.Point(432, 6);
-            this.yyu_SaySayDetails6.Name = "yyu_SaySayDetails6";
-            this.yyu_SaySayDetails6.Size = new System.Drawing.Size(204, 535);
-            this.yyu_SaySayDetails6.TabIndex = 2;
-            // 
-            // yyu_SaySayDetails1
-            // 
-            this.yyu_SaySayDetails1.BackColor = System.Drawing.Color.White;
-            this.yyu_SaySayDetails1.Location = new System.Drawing.Point(6, 6);
-            this.yyu_SaySayDetails1.Name = "yyu_SaySayDetails1";
-            this.yyu_SaySayDetails1.Size = new System.Drawing.Size(203, 535);
-            this.yyu_SaySayDetails1.TabIndex = 0;
-            // 
-            // yyu_SaySayDetails2
-            // 
-            this.yyu_SaySayDetails2.BackColor = System.Drawing.Color.White;
-            this.yyu_SaySayDetails2.Location = new System.Drawing.Point(219, 6);
-            this.yyu_SaySayDetails2.Name = "yyu_SaySayDetails2";
-            this.yyu_SaySayDetails2.Size = new System.Drawing.Size(203, 535);
-            this.yyu_SaySayDetails2.TabIndex = 1;
-            // 
-            // yyu_SaySayDetails3
-            // 
-            this.yyu_SaySayDetails3.BackColor = System.Drawing.Color.White;
-            this.yyu_SaySayDetails3.Location = new System.Drawing.Point(432, 6);
-            this.yyu_SaySayDetails3.Name = "yyu_SaySayDetails3";
-            this.yyu_SaySayDetails3.Size = new System.Drawing.Size(204, 535);
-            this.yyu_SaySayDetails3.TabIndex = 2;
             // 
             // F_Main
             // 

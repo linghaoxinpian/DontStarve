@@ -133,6 +133,16 @@ namespace DontStarve.App.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap foodfood2 {
+            get {
+                object obj = ResourceManager.GetObject("foodfood2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap goeat {
             get {
                 object obj = ResourceManager.GetObject("goeat", resourceCulture);
@@ -166,6 +176,16 @@ namespace DontStarve.App.Properties {
         internal static System.Drawing.Bitmap hometpleave {
             get {
                 object obj = ResourceManager.GetObject("hometpleave", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap hometpleave2 {
+            get {
+                object obj = ResourceManager.GetObject("hometpleave2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,6 +243,16 @@ namespace DontStarve.App.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap mfood {
+            get {
+                object obj = ResourceManager.GetObject("mfood", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap morefood {
             get {
                 object obj = ResourceManager.GetObject("morefood", resourceCulture);
@@ -266,6 +296,46 @@ namespace DontStarve.App.Properties {
         internal static System.Drawing.Bitmap novideo {
             get {
                 object obj = ResourceManager.GetObject("novideo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap redhouse {
+            get {
+                object obj = ResourceManager.GetObject("redhouse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap redhouse2 {
+            get {
+                object obj = ResourceManager.GetObject("redhouse2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap redhouse3 {
+            get {
+                object obj = ResourceManager.GetObject("redhouse3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap self2 {
+            get {
+                object obj = ResourceManager.GetObject("self2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

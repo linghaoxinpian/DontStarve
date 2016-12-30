@@ -32,6 +32,51 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DontStarve.DAL", "DontStarv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DontStarve.Service", "DontStarve.Service\DontStarve.Service.csproj", "{D927A454-9D39-4943-B710-EF46C551F06E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{03277F08-355A-4969-B363-D71E6324D9C6}"
+	ProjectSection(SolutionItems) = preProject
+		img\132.jpg = img\132.jpg
+		img\byebye.gif = img\byebye.gif
+		img\chilli.png = img\chilli.png
+		img\christmas.png = img\christmas.png
+		img\CoolClips.png = img\CoolClips.png
+		img\crab.jpg = img\crab.jpg
+		img\cup.png = img\cup.png
+		img\door.gif = img\door.gif
+		img\eat.png = img\eat.png
+		img\first.png = img\first.png
+		img\flash.gif = img\flash.gif
+		img\food.png = img\food.png
+		img\friend1.jpg = img\friend1.jpg
+		img\gif1.gif = img\gif1.gif
+		img\goeat.gif = img\goeat.gif
+		img\headpic1.jpeg = img\headpic1.jpeg
+		img\hometp.jpg = img\hometp.jpg
+		img\hometpleave.png = img\hometpleave.png
+		img\hometpleave2.png = img\hometpleave2.png
+		img\house.png = img\house.png
+		img\house173.png = img\house173.png
+		img\ico.ooopic.png = img\ico.ooopic.png
+		img\images.jpg = img\images.jpg
+		img\invite.jpg = img\invite.jpg
+		img\morefood.jpg = img\morefood.jpg
+		img\next.png = img\next.png
+		img\noodle.jpg = img\noodle.jpg
+		img\nopic.jpg = img\nopic.jpg
+		img\novideo.png = img\novideo.png
+		img\sharefood.png = img\sharefood.png
+		img\sign-left-icon.png = img\sign-left-icon.png
+		img\sign-right-icon.png = img\sign-right-icon.png
+		img\taco.png = img\taco.png
+		img\tempjpg.jpg = img\tempjpg.jpg
+		img\thumb_up.png = img\thumb_up.png
+		img\thumb_up2.png = img\thumb_up2.png
+		img\thumb_up3.png = img\thumb_up3.png
+		img\toolbarvideo.ico = img\toolbarvideo.ico
+		img\twopart.png = img\twopart.png
+		img\xingxing.gif = img\xingxing.gif
+		img\yellow-37.png = img\yellow-37.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

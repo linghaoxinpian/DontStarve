@@ -206,10 +206,10 @@ namespace DontStarve.App
             lv.Clear();
             foreach (var key_value in dic)
             {
-                lv.Items.Add(key_value.Value, 0).Tag = key_value.Key;
+                lv.Items.Add(key_value.Value, 0).Tag = key_value.Key;                
             }
             //为每个“美食图标”注册单击事件
-            lv.Click += new EventHandler((a, b) =>
+            lv.DoubleClick += new EventHandler((a, b) =>
               {
                   if (lv.SelectedItems.Count > 0)  //说明点击在item上，
                   {
@@ -381,12 +381,12 @@ namespace DontStarve.App
 
         private void tpHome_MouseEnter(object sender, EventArgs e)
         {
-            tpHome.BackgroundImage = Properties.Resources.hometp;
+            tpHome.BackgroundImage = Properties.Resources.hometpleave;
         }
 
         private void tpHome_MouseLeave(object sender, EventArgs e)
         {
-            tpHome.BackgroundImage = Properties.Resources.hometpleave;
+            tpHome.BackgroundImage = Properties.Resources.hometpleave2;
         }
 
         private void Load_HotCookie()

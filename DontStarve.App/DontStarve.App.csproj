@@ -297,6 +297,13 @@
     <Content Include="IServices.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\self2.png" />
+    <None Include="Resources\foodfood2.png" />
+    <None Include="Resources\mfood.png" />
+    <None Include="Resources\redhouse3.png" />
+    <None Include="Resources\redhouse2.png" />
+    <None Include="Resources\redhouse.png" />
+    <None Include="Resources\hometpleave2.png" />
     <None Include="Resources\sign-left-icon.png" />
     <None Include="Resources\sign-right-icon.png" />
     <None Include="Resources\sharefood.png" />
