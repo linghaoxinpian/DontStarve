@@ -74,10 +74,10 @@
     <Compile Include="F_AdminEverydayRecommend.Designer.cs">
       <DependentUpon>F_AdminEverydayRecommend.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_HotCookie.cs">
+    <Compile Include="Home\F_HotCookie.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_HotCookie.Designer.cs">
+    <Compile Include="Home\F_HotCookie.Designer.cs">
       <DependentUpon>F_HotCookie.cs</DependentUpon>
     </Compile>
     <Compile Include="F_Praise.cs">
@@ -134,10 +134,10 @@
     <Compile Include="SelfManage\F_SelfShare.Designer.cs">
       <DependentUpon>F_SelfShare.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_OneDayOneCate.cs">
+    <Compile Include="Home\F_OneDayOneCate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_OneDayOneCate.Designer.cs">
+    <Compile Include="Home\F_OneDayOneCate.Designer.cs">
       <DependentUpon>F_OneDayOneCate.cs</DependentUpon>
     </Compile>
     <Compile Include="Yyu_Control\Yyu_CookieComment.cs">
@@ -193,7 +193,7 @@
     <EmbeddedResource Include="F_AdminEverydayRecommend.resx">
       <DependentUpon>F_AdminEverydayRecommend.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_HotCookie.resx">
+    <EmbeddedResource Include="Home\F_HotCookie.resx">
       <DependentUpon>F_HotCookie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Praise.resx">
@@ -223,7 +223,7 @@
     <EmbeddedResource Include="SelfManage\F_SelfShare.resx">
       <DependentUpon>F_SelfShare.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_OneDayOneCate.resx">
+    <EmbeddedResource Include="Home\F_OneDayOneCate.resx">
       <DependentUpon>F_OneDayOneCate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Yyu_Control\Yyu_CookieComment.resx">
@@ -238,6 +238,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_Main.resx">
       <DependentUpon>F_Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

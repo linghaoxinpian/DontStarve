@@ -69,7 +69,7 @@ namespace DontStarve.App
         {
             Load_MyFriend();
         }
-        
+
         private int myFriend_pageIndex = 1;
         private int myFriend_pageSize = 3;
         private int myFriend_count;
@@ -79,7 +79,7 @@ namespace DontStarve.App
         private void Load_MyFriend()
         {
             //从数据库加载数据
-            dynamic list = isaysayInfoService.LoadMyFriend(F_Main.current_user.Guid_id,myFriend_pageIndex, myFriend_pageSize, out myFriend_count);
+            dynamic list = isaysayInfoService.LoadMyFriend(F_Main.current_user.Guid_id, myFriend_pageIndex, myFriend_pageSize, out myFriend_count);
             //s.Pic,
             //u.Name,
             //s.PraiseNum,
@@ -113,7 +113,7 @@ namespace DontStarve.App
         /// </summary>
         private void Load_moreFriend()
         {
-            Load_WorldFriend();            
+            Load_WorldFriend();
         }
 
         /// <summary>
@@ -206,7 +206,7 @@ namespace DontStarve.App
             lv.Clear();
             foreach (var key_value in dic)
             {
-                lv.Items.Add(key_value.Value, 0).Tag = key_value.Key;                
+                lv.Items.Add(key_value.Value, 0).Tag = key_value.Key;
             }
             //为每个“美食图标”注册单击事件
             lv.DoubleClick += new EventHandler((a, b) =>
@@ -270,22 +270,22 @@ namespace DontStarve.App
                 //食友圈
                 if (panel.Name == "pl_left2")
                 {
-                    toolTip1.Show("上一页： " + (myFriend_pageIndex - 1).ToString() + " 页  "+"\r\n总计记录数："+myFriend_count.ToString(), sender as Control);
-                }                          
-                else                       
-                {                          
-                    toolTip1.Show("下一页： " + (myFriend_pageIndex + 1).ToString() + " 页  "+"\r\n总计记录数："+myFriend_count, sender as Control);
+                    toolTip1.Show("上一页： " + (myFriend_pageIndex - 1).ToString() + " 页  " + "\r\n总计记录数：" + myFriend_count.ToString(), sender as Control);
+                }
+                else
+                {
+                    toolTip1.Show("下一页： " + (myFriend_pageIndex + 1).ToString() + " 页  " + "\r\n总计记录数：" + myFriend_count, sender as Control);
                 }
             }
             else
             {
                 if (panel.Name == "pl_left")
                 {
-                    toolTip1.Show("上一页： " + (moreFriend_pageIndx - 1).ToString() + " 页  "+"\r\n总计记录数："+moreFriend_count, sender as Control);
+                    toolTip1.Show("上一页： " + (moreFriend_pageIndx - 1).ToString() + " 页  " + "\r\n总计记录数：" + moreFriend_count, sender as Control);
                 }
                 else
                 {
-                    toolTip1.Show("下一页： " + (moreFriend_pageIndx + 1).ToString() + " 页  "+"\r\n总计记录数："+moreFriend_count, sender as Control);
+                    toolTip1.Show("下一页： " + (moreFriend_pageIndx + 1).ToString() + " 页  " + "\r\n总计记录数：" + moreFriend_count, sender as Control);
                 }
             }
         }
@@ -351,7 +351,7 @@ namespace DontStarve.App
                 }
             }
         }
-        
+
         private void btnJumpSearch_Click(object sender, EventArgs e)
         {
             skinTabControl1.SelectedIndex = 4;
@@ -359,12 +359,12 @@ namespace DontStarve.App
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var list=icookieInfoService.LoadEntities(c => c.Name == txtSearch.Text);
+            var list = icookieInfoService.LoadEntities(c => c.Name == txtSearch.Text);
             lbSearchResult.Items.Clear();
-            foreach(var l in list)
+            foreach (var l in list)
             {
                 var item = new CCWin.SkinControl.SkinListBoxItem(l.Func, l.pic == null ? Properties.Resources.nopic : CommonHelper.BytesToPic(l.pic));
-                item.Tag = l;                    
+                item.Tag = l;
                 lbSearchResult.Items.Add(item);
             }
         }
@@ -381,7 +381,7 @@ namespace DontStarve.App
 
         private void tpHome_MouseEnter(object sender, EventArgs e)
         {
-            tpHome.BackgroundImage = Properties.Resources.hometpleave;
+            tpHome.BackgroundImage = Properties.Resources.hometp;
         }
 
         private void tpHome_MouseLeave(object sender, EventArgs e)
@@ -398,6 +398,38 @@ namespace DontStarve.App
         {
             F_ShareFood fs = new F_ShareFood();
             fs.Show();
+        }
+
+        private void btnHotWeek_Click(object sender, EventArgs e)
+        {
+            F_HotCookie fh = new F_HotCookie();
+            this.Hide();
+            fh.ShowDialog();
+            this.Show();
+        }
+
+        private void btnOneDayOneRecommend_Click(object sender, EventArgs e)
+        {
+            F_OneDayOneCate fo = new F_OneDayOneCate();
+            this.Hide();
+            fo.ShowDialog();
+            this.Show();
+        }
+
+        //Button变大
+        private void btnHotWeek_MouseEnter(object sender, EventArgs e)
+        {
+            CCWin.SkinControl.SkinButton btn = sender as CCWin.SkinControl.SkinButton;
+            btn.Size = new Size(btn.Size.Width + 20, btn.Size.Height + 20);
+            btn.Radius = btn.Radius + 20;
+        }
+
+        //button变小
+        private void btnHotWeek_MouseLeave(object sender, EventArgs e)
+        {
+            CCWin.SkinControl.SkinButton btn = sender as CCWin.SkinControl.SkinButton;
+            btn.Size = new Size(btn.Size.Width - 20, btn.Size.Height - 20);
+            btn.Radius = btn.Radius - 20;
         }
     }
 }
