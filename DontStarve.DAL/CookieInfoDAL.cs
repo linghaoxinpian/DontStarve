@@ -11,10 +11,12 @@ namespace DontStarve.DAL
 {
     public class CookieInfoDAL : BaseDAL<cookinfo>, ICookieInfoDAL
     {
+        //有问题啊，这 like的预处理语句怎么写？
         public List<cookinfo> LoadCookByCookName(string name)
         {
-            string sql = "SELECT `cookinfo`.`Guid_id`,`cookinfo`.`Name`,`cookinfo`.`Level`,`cookinfo`.`DelFlag`,`cookinfo`.`Rating`,`cookinfo`.`PraiseNum`,`cookinfo`.`pic`,`cookinfo`.`VideoPath`,`cookinfo`.`Remark`,`cookinfo`.`Func`FROM `dontstarve`.`cookinfo` WHERE Name like %@name%";
-            return dbContext.Database.SqlQuery<cookinfo>(sql, new MySqlParameter("name", name)).ToList();
+             string sql = "SELECT `cookinfo`.`Guid_id`,`cookinfo`.`Name`,`cookinfo`.`Level`,`cookinfo`.`DelFlag`,`cookinfo`.`Rating`,`cookinfo`.`PraiseNum`,`cookinfo`.`pic`,`cookinfo`.`VideoPath`,`cookinfo`.`Remark`,`cookinfo`.`Func`FROM `dontstarve`.`cookinfo` WHERE Name like @name";
+           // string sql = "SELECT `cookinfo`.`Guid_id`,`cookinfo`.`Name`,`cookinfo`.`Level`,`cookinfo`.`DelFlag`,`cookinfo`.`Rating`,`cookinfo`.`PraiseNum`,`cookinfo`.`pic`,`cookinfo`.`VideoPath`,`cookinfo`.`Remark`,`cookinfo`.`Func`FROM `dontstarve`.`cookinfo` WHERE Name like '%@name%'";  //这样写是错误的
+            return dbContext.Database.SqlQuery<cookinfo>(sql, new MySqlParameter("name","%"+name+"%")).ToList();
         }
 
         public ICollection<cookinfo> LoadEntitiesByCategoryId(int category_id)

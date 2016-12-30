@@ -26,18 +26,42 @@ namespace DontStarve.App
         private void F_AdminEverydayRecommend_Load(object sender, EventArgs e)
         {
             Load_DataSource();
-            //当前页加一
-            pageIndex++;
+            //取消自动选中
+            dgv.SelectedRows[0].Selected = false;
+            //
+            cbOurRating.SelectedIndex = 0;
         }
 
+        //确定        
         private void dgv_DoubleClick(object sender, EventArgs e)
         {
             if (dgv.SelectedRows.Count > 0)
             {
-                if (MessageBoxEx.Show("确定推荐选中项？", "提示", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                DateTime dt = new DateTime();
+                if (DateTime.TryParse(dtpRecommend.Text, out dt)&&txtReason.Text.Length>5)
                 {
-
+                    if (MessageBoxEx.Show("确定推荐选中项？","提示", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {
+                        //保存到数据库
+                      MessageBoxEx.Show( ieverydayrecommendInfoService.AddEntity(new everydayrecommendinfo()
+                        {
+                            CookId = (Guid)dgv.SelectedRows[0].Cells[0].Value,
+                            OurRatings = cbOurRating.SelectedText,
+                            Reason = txtReason.Text,
+                            RecommendTime = Common.CommonHelper.GetCurrentDateStamp(dt),
+                            SubAdmin = F_Main.current_user.Guid_id,
+                            Subtime = Common.CommonHelper.GetCurrentDateStamp()
+                        })?"添加成功！！":"添加失败，请重试");                        
+                    }
                 }
+                else
+                {
+                    MessageBoxEx.Show("请填写完整");
+                }
+            }
+            else
+            {
+                MessageBoxEx.Show("请先选中！");
             }
         }
 
@@ -51,6 +75,7 @@ namespace DontStarve.App
             var list = icookieInfoService.LoadPageEntities(c => c.DelFlag == false, c => c.PraiseNum, pageIndex, 30, out count, false).ToList();
             ShowDataBase(list);
         }
+
         private void btnNext_Click(object sender, EventArgs e)
         {
             if ((sender as Button).Name == "btnNext")
@@ -87,6 +112,10 @@ namespace DontStarve.App
             }
             var list = icookieInfoService.LoadCookByCookName(txtSearch.Text);
             ShowDataBase(list);
+
+            //由于dynamic的私有性，此处还要反射影响性能
+            //dynamic dy = icookieInfoService.LoadCookByCookName(txtSearch.Text);            
+            //dgv.DataSource = dy.ToList();
         }
 
         /// <summary>
@@ -98,6 +127,7 @@ namespace DontStarve.App
             var varlist = from l in list
                           select new
                           {
+                              cookId=l.Guid_id,
                               cookName = l.Name,
                               categoryName = string.Join("|", l.categoryinfo.Select(ca => ca.Name).ToArray()),
                               praiseNum = l.PraiseNum
@@ -108,7 +138,12 @@ namespace DontStarve.App
         private void txtSearch_Enter(object sender, EventArgs e)
         {
             if (txtSearch.Text == "输入菜名")
-            txtSearch.Text = "";
+                txtSearch.Text = "";
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            dgv_DoubleClick(null, null);
         }
     }
 }

@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new CCWin.SkinControl.SkinDataGridView();
+            this.CookId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PraiseNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +47,8 @@
             this.skinToolTip1 = new CCWin.SkinToolTip(this.components);
             this.btnNext = new CCWin.SkinControl.SkinButton();
             this.btnFirst = new CCWin.SkinControl.SkinButton();
+            this.cbOurRating = new CCWin.SkinControl.SkinComboBox();
+            this.skinLabel2 = new CCWin.SkinControl.SkinLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,36 +56,37 @@
             // 
             this.dgv.AllowUserToAddRows = false;
             this.dgv.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
-            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
+            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv.ColumnFont = null;
             this.dgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv.ColumnHeadersHeight = 22;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CookId,
             this.CookName,
             this.CategoryName,
             this.PraiseNum});
             this.dgv.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgv.EnableHeadersVisualStyles = false;
             this.dgv.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -93,11 +97,11 @@
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv.RowTemplate.Height = 23;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(656, 313);
@@ -106,6 +110,14 @@
             this.dgv.TitleBackColorBegin = System.Drawing.Color.White;
             this.dgv.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
             this.dgv.DoubleClick += new System.EventHandler(this.dgv_DoubleClick);
+            // 
+            // CookId
+            // 
+            this.CookId.DataPropertyName = "cookId";
+            this.CookId.HeaderText = "CookId";
+            this.CookId.Name = "CookId";
+            this.CookId.ReadOnly = true;
+            this.CookId.Visible = false;
             // 
             // CookName
             // 
@@ -143,8 +155,9 @@
             // 
             // txtSearch
             // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.Font = new System.Drawing.Font("宋体", 15F);
-            this.txtSearch.Location = new System.Drawing.Point(287, 380);
+            this.txtSearch.Location = new System.Drawing.Point(287, 390);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(166, 29);
@@ -154,8 +167,9 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSearch.Location = new System.Drawing.Point(483, 384);
+            this.btnSearch.Location = new System.Drawing.Point(483, 394);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 3;
@@ -165,6 +179,7 @@
             // 
             // btnOk
             // 
+            this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOk.Location = new System.Drawing.Point(483, 459);
             this.btnOk.Name = "btnOk";
@@ -172,9 +187,11 @@
             this.btnOk.TabIndex = 3;
             this.btnOk.Text = "确定";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // dtpRecommend
             // 
+            this.dtpRecommend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpRecommend.BackColor = System.Drawing.Color.Transparent;
             this.dtpRecommend.DropDownHeight = 180;
             this.dtpRecommend.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
@@ -189,11 +206,12 @@
             // 
             // skinLabel1
             // 
+            this.skinLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.skinLabel1.AutoSize = true;
             this.skinLabel1.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel1.BorderColor = System.Drawing.Color.White;
             this.skinLabel1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinLabel1.Location = new System.Drawing.Point(290, 426);
+            this.skinLabel1.Location = new System.Drawing.Point(290, 432);
             this.skinLabel1.Name = "skinLabel1";
             this.skinLabel1.Size = new System.Drawing.Size(56, 17);
             this.skinLabel1.TabIndex = 5;
@@ -208,6 +226,7 @@
             // 
             // btnNext
             // 
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNext.BackColor = System.Drawing.Color.Transparent;
             this.btnNext.BackgroundImage = global::DontStarve.App.Properties.Resources.sign_right_icon;
             this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -233,6 +252,7 @@
             // 
             // btnFirst
             // 
+            this.btnFirst.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFirst.BackColor = System.Drawing.Color.Transparent;
             this.btnFirst.BackgroundImage = global::DontStarve.App.Properties.Resources.sign_left_icon;
             this.btnFirst.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -255,13 +275,47 @@
             this.btnFirst.UseVisualStyleBackColor = false;
             this.btnFirst.Click += new System.EventHandler(this.btnNext_Click);
             // 
+            // cbOurRating
+            // 
+            this.cbOurRating.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbOurRating.DisplayMember = "★★★";
+            this.cbOurRating.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbOurRating.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbOurRating.FormattingEnabled = true;
+            this.cbOurRating.Items.AddRange(new object[] {
+            "★★★",
+            "★★★★",
+            "★★★★★",
+            "★★★★★★",
+            "★★★★★★★"});
+            this.cbOurRating.Location = new System.Drawing.Point(328, 353);
+            this.cbOurRating.Name = "cbOurRating";
+            this.cbOurRating.Size = new System.Drawing.Size(125, 22);
+            this.cbOurRating.TabIndex = 7;
+            this.cbOurRating.WaterText = "";
+            // 
+            // skinLabel2
+            // 
+            this.skinLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.skinLabel2.AutoSize = true;
+            this.skinLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel2.BorderColor = System.Drawing.Color.White;
+            this.skinLabel2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabel2.Location = new System.Drawing.Point(266, 356);
+            this.skinLabel2.Name = "skinLabel2";
+            this.skinLabel2.Size = new System.Drawing.Size(56, 17);
+            this.skinLabel2.TabIndex = 5;
+            this.skinLabel2.Text = "推荐等级";
+            // 
             // F_AdminEverydayRecommend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 513);
+            this.Controls.Add(this.cbOurRating);
             this.Controls.Add(this.btnFirst);
             this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.skinLabel2);
             this.Controls.Add(this.skinLabel1);
             this.Controls.Add(this.dtpRecommend);
             this.Controls.Add(this.btnOk);
@@ -292,10 +346,13 @@
         private CCWin.SkinControl.SkinDateTimePicker dtpRecommend;
         private CCWin.SkinControl.SkinLabel skinLabel1;
         private CCWin.SkinControl.SkinButton btnNext;
+        private CCWin.SkinToolTip skinToolTip1;
+        private CCWin.SkinControl.SkinButton btnFirst;
+        private CCWin.SkinControl.SkinComboBox cbOurRating;
+        private CCWin.SkinControl.SkinLabel skinLabel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CookId;
         private System.Windows.Forms.DataGridViewTextBoxColumn CookName;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn PraiseNum;
-        private CCWin.SkinToolTip skinToolTip1;
-        private CCWin.SkinControl.SkinButton btnFirst;
     }
 }
