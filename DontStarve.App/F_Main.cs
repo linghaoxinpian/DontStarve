@@ -208,19 +208,19 @@ namespace DontStarve.App
         #endregion
 
         /// <summary>
-        /// “美食分类”选项卡改变事件
+        /// “美食分类”
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void tbFoods_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            if (e.TabPage == null) { return; } //Controls.Clea()会触发此事件            
+            if (e.TabPage == null||e.TabPage.Tag==null) { return; } //Controls.Clea()会触发此事件 e.TabPage可能是null或者是有值
             Dictionary<Guid, string> dic = icookieInfoService.LoadEntitiesByCategoryId((int)e.TabPage.Tag); //所有指定分类下的“美食”键值集合
             ListView lv = (ListView)e.TabPage.Controls[0];
             lv.Clear();
             foreach (var key_value in dic)
             {
-                lv.Items.Add(key_value.Value, 0).Tag = key_value.Key;
+                lv.Items.Add(key_value.Value,lv.Items.Count%2 ).Tag = key_value.Key;
             }
             //为每个“美食图标”注册单击事件
             lv.DoubleClick += new EventHandler((a, b) =>

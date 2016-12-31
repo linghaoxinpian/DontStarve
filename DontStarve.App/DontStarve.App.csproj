@@ -297,6 +297,8 @@
     <Content Include="IServices.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\food2.jpg" />
+    <None Include="Resources\food.jpeg" />
     <None Include="Resources\self2.png" />
     <None Include="Resources\foodfood2.png" />
     <None Include="Resources\mfood.png" />
