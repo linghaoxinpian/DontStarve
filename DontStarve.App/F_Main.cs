@@ -93,16 +93,23 @@ namespace DontStarve.App
                 //反射得到匿名类型值  并  填充控件
                 Type t = item.GetType();
                 PropertyInfo[] pros = t.GetProperties();
-                byte[] picByte = pros[0].GetValue(item) as byte[];
+                yssd.Tag = pros[0].GetValue(item);
+                byte[] picByte = pros[1].GetValue(item) as byte[];
                 if (picByte != null)
                 {
                     yssd.pic.Image = CommonHelper.BytesToPic(picByte);
                 }
-                yssd.llbName.Text = pros[1].GetValue(item);
-                yssd.yyu_PraiseNum1.labPraiseNum.Text = pros[2].GetValue(item).ToString();
-                yssd.lbSubtime.Text = pros[3].GetValue(item).ToString();
-                yssd.txtContent.Text = pros[4].GetValue(item);
-
+                yssd.llbName.Text = pros[2].GetValue(item);
+                yssd.yyu_PraiseNum1.labPraiseNum.Text = pros[3].GetValue(item).ToString();
+                yssd.lbSubtime.Text = pros[4].GetValue(item).ToString();
+                yssd.txtContent.Text = pros[5].GetValue(item);
+                //点赞注册事件
+                yssd.yyu_PraiseNum1.AddPraise += new Action(() =>
+                  {
+                      var entity_saysay = isaysayInfoService.LoadEntities(s => s.Guid_id == (Guid)yssd.Tag).First();
+                      entity_saysay.PraiseNum++;
+                      isaysayInfoService.EditEntity(entity_saysay);
+                  });
                 //添加控件
                 tableLayoutPanel2.Controls.Add(yssd);
             }
@@ -157,7 +164,14 @@ namespace DontStarve.App
                 yssd.yyu_PraiseNum1.labPraiseNum.Text = pros[2].GetValue(item).ToString();
                 yssd.lbSubtime.Text = pros[3].GetValue(item).ToString();
                 yssd.txtContent.Text = pros[4].GetValue(item);
-
+                yssd.Tag = pros[5].GetValue(item); //储存 “说说的guid_id”
+                //点赞注册事件
+                yssd.yyu_PraiseNum1.AddPraise += new Action(() =>
+                {
+                    var entity_saysay = isaysayInfoService.LoadEntities(s => s.Guid_id == (Guid)yssd.Tag).First();
+                    entity_saysay.PraiseNum++;
+                    isaysayInfoService.EditEntity(entity_saysay);
+                });
                 //添加控件
                 tableLayoutPanel1.Controls.Add(yssd);
             }
@@ -422,6 +436,9 @@ namespace DontStarve.App
             CCWin.SkinControl.SkinButton btn = sender as CCWin.SkinControl.SkinButton;
             btn.Size = new Size(btn.Size.Width + 20, btn.Size.Height + 20);
             btn.Radius = btn.Radius + 20;
+
+            //颜色变亮
+            btn.BorderColor = Color.Red;
         }
 
         //button变小
@@ -430,6 +447,9 @@ namespace DontStarve.App
             CCWin.SkinControl.SkinButton btn = sender as CCWin.SkinControl.SkinButton;
             btn.Size = new Size(btn.Size.Width - 20, btn.Size.Height - 20);
             btn.Radius = btn.Radius - 20;
+
+            //颜色恢复
+            btn.BorderColor = Color.FromArgb(9, 163, 220);
         }
     }
 }

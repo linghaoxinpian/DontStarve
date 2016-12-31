@@ -41,7 +41,7 @@ namespace DontStarve.App
         private void Yyu_PraiseNum_MouseEnter(object sender, EventArgs e)
         {
             if (fp == null)
-                fp = new F_Praise();    //此句完美解决不显示问题
+                fp = new F_Praise();    //此句完美解决窗体不显示问题（Show无效）
 
             //为 fp注册鼠标点击事件
             fp.Click += new EventHandler((a, b) =>
@@ -58,7 +58,7 @@ namespace DontStarve.App
             });
 
             //显示
-            fp.Location = new Point(MousePosition.X - 160, MousePosition.Y - 180);
+            fp.Location = new Point(MousePosition.X - 100, MousePosition.Y - 120);
             fp.Show();
         }       
     }

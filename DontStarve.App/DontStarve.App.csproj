@@ -67,7 +67,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DontStarve\IService\IFriendInfoService.cs" />
     <Compile Include="F_AdminEverydayRecommend.cs">
       <SubType>Form</SubType>
     </Compile>

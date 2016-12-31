@@ -25,7 +25,10 @@ namespace DontStarve.App
         private ICookcommentInfoService icookcommentInfoService = new CookcommentInfoService();
 
         private void F_HotCookie_Load(object sender, EventArgs e)
-        {            
+        {
+            //清空
+            skinListBox1.Items.Clear();
+            skinListBox2.Items.Clear();
             //加载热门美食
             skinListBox1.Items.Clear();
             List<cookinfo> list = icookieInfoService.LoadHotCookieByWeek();
@@ -68,6 +71,19 @@ namespace DontStarve.App
                     item.Image = Common.CommonHelper.BytesToPic(c.userinfo.Pic);
                     skinListBox2.Items.Add(item);
                 }
+            }
+        }
+
+        private void skinListBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void skinListBox2_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (skinListBox2.SelectedIndices.Count > 0)
+            {
+                skinToolTip1.Show((skinListBox2.SelectedItem as SkinListBoxItem).Text,skinListBox2);
             }
         }
     }

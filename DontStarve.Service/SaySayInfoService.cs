@@ -26,7 +26,8 @@ namespace DontStarve.Service
                        from s in iq_say
                        where u.Guid_id == s.UserId
                        select new
-                       {
+                       {            
+                           s.Guid_id,               
                            s.Pic,
                            u.Name,
                            s.PraiseNum,
@@ -41,7 +42,7 @@ namespace DontStarve.Service
         {
             var iq_saysay = LoadPageEntities(s => s.DelFlag == false && s.IsAllUserCanSee == true, s=>s.PraiseNum, pageIndex, pageSize, out count,false);
             var iq_user = dbSessioin.iuserInfoDAL.LoadEntities(u => u.DelFlag == false);
-
+            //匿名集合
             var list = from s in iq_saysay
                        from u in iq_user
                        where s.UserId == u.Guid_id
@@ -51,7 +52,8 @@ namespace DontStarve.Service
                            u.Name,
                            s.PraiseNum,
                            s.Subtime,
-                           s.Content
+                           s.Content,
+                           s.Guid_id
                        };
             return list;
         }
