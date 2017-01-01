@@ -73,11 +73,11 @@
     <Compile Include="F_AdminEverydayRecommend.Designer.cs">
       <DependentUpon>F_AdminEverydayRecommend.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_Message.cs">
+    <Compile Include="MessageYyu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_Message.Designer.cs">
-      <DependentUpon>F_Message.cs</DependentUpon>
+    <Compile Include="MessageYyu.Designer.cs">
+      <DependentUpon>MessageYyu.cs</DependentUpon>
     </Compile>
     <Compile Include="Home\F_HotCookie.cs">
       <SubType>Form</SubType>
@@ -198,8 +198,8 @@
     <EmbeddedResource Include="F_AdminEverydayRecommend.resx">
       <DependentUpon>F_AdminEverydayRecommend.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_Message.resx">
-      <DependentUpon>F_Message.cs</DependentUpon>
+    <EmbeddedResource Include="MessageYyu.resx">
+      <DependentUpon>MessageYyu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home\F_HotCookie.resx">
       <DependentUpon>F_HotCookie.cs</DependentUpon>

@@ -22,6 +22,7 @@ namespace DontStarve.App
         }
         private ICookieInfoService icookieInfoService = new CookieInfoService();
         private ICategoryInfoService icategoryInfoService = new CategoryInfoService();
+        private IMaterialInfoService imaterialInfoService = new MaterialInfoService();
 
         private void F_ShareFood_Load(object sender, EventArgs e)
         {
@@ -46,7 +47,7 @@ namespace DontStarve.App
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             //检查
-            if (string.IsNullOrEmpty(txtFunc.Text) || string.IsNullOrEmpty(txtName.Text) || pic.Image == null || clbCategory.SelectedIndices.Count <= 0)
+            if (string.IsNullOrEmpty(txtFunc.Text) || string.IsNullOrEmpty(txtName.Text) || pic.Image == null || clbCategory.SelectedIndices.Count <= 0 || string.IsNullOrEmpty(txtMaterial.Text))
             {
                 MessageBoxEx.Show("请将信息填写完整,谢谢合作");
                 return;
@@ -68,6 +69,42 @@ namespace DontStarve.App
             {
                 if (clbCategory.GetItemCheckState(i) == CheckState.Checked)
                     entity.categoryinfo.Add(clbCategory.Items[i] as categoryinfo);  //这一步会连接数据库吗？应该不会（<=2ms这么短的时间不会访问数据库）
+            }
+            //解析原料
+            foreach (string line in txtMaterial.Lines)
+            {
+                string[] details = line.Split('|');
+                //根据 details[0] 原料名查询数据库是否存在
+                string mName = details[0];
+                var material = imaterialInfoService.LoadEntities(m => m.Name == mName).FirstOrDefault();
+                //存在，得到原料Id
+                if (material != null)
+                {
+                    entity.r_material_cookinfo.Add(new r_material_cookinfo()
+                    {
+                        CookId = entity.Guid_id,
+                        MaterialId = material.auto_id,
+                        Num = details[1]
+                    });
+                }
+
+                //不存在，插入原料新数据
+                else
+                {
+                    //数据库新插入
+                    var entity2 = imaterialInfoService.AddEntityAndReturn(new materialinfo()
+                    {
+                        Name = details[0],
+                        Remark = "提交人：" + F_Main.current_user.Guid_id
+                    });
+                    
+                    entity.r_material_cookinfo.Add(new r_material_cookinfo()
+                    {
+                        CookId = entity.Guid_id,
+                        MaterialId = entity2.auto_id,
+                        Num = details[1]
+                    });
+                }
             }
             //保存到数据库
             if (icookieInfoService.AddEntity(entity))

@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace DontStarve.App
 {
-    public partial class F_Message : CCWin.SkinMain
+    public partial class MessageYyu : CCWin.SkinMain
     {
-        private F_Message()
+        private MessageYyu()
         {
             InitializeComponent();
         }
-        static F_Message fp;
+        static MessageYyu fp;
         /// <summary>
         /// 显示窗体
         /// </summary>
@@ -25,7 +25,7 @@ namespace DontStarve.App
         public static void ShowMessage(string message, string captical = "小提示")
         {
             if (fp == null)
-                fp = new F_Message();    //此句完美解决窗体不显示问题（Show无效）           
+                fp = new MessageYyu();    //此句完美解决窗体不显示问题（Show无效）           
 
             //显示
             fp.Location = new Point(MousePosition.X-40, MousePosition.Y-190);        

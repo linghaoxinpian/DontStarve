@@ -46,6 +46,7 @@
     <Compile Include="ICookieInfoDAL.cs" />
     <Compile Include="IEverydayRecommendInfoDAL.cs" />
     <Compile Include="IFriendInfoDAL.cs" />
+    <Compile Include="IMaterialInfoDAL.cs" />
     <Compile Include="ISaysaycommentInfoDAL.cs" />
     <Compile Include="ISaySayInfoDAL.cs" />
     <Compile Include="IUserInfoDAL.cs" />

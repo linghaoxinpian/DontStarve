@@ -46,6 +46,7 @@
     <Compile Include="CookieService.cs" />
     <Compile Include="EverydayRecommendInfoService.cs" />
     <Compile Include="FriendInfoService.cs" />
+    <Compile Include="MaterialInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SaysaycommentInfoService.cs" />
     <Compile Include="SaySayInfoService.cs" />

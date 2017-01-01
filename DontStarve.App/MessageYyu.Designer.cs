@@ -1,6 +1,6 @@
 ﻿namespace DontStarve.App
 {
-    partial class F_Message
+    partial class MessageYyu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Message));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MessageYyu));
             this.lbCaptical = new CCWin.SkinControl.SkinLabel();
             this.lbMessage = new CCWin.SkinControl.SkinLabel();
             this.SuspendLayout();

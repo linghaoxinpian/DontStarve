@@ -32,6 +32,8 @@ namespace DontStarve.App
         //加载“美食”数据
         private void F_CookieInfo_Load(object sender, EventArgs e)
         {
+            btnNextPage.BringToFront();
+            btnVideo.BringToFront();
             lbFunc.Items.Clear();   //开发时便于设计            
 
             labCookieName.Text = current_cookie.Name;
@@ -47,7 +49,7 @@ namespace DontStarve.App
             txtMaterial.Text = "原料：";
             foreach (var c in current_cookie.r_material_cookinfo)
             {
-                txtMaterial.Text += " | " + c.materialinfo.Name + c.materialinfo.Remark;
+                txtMaterial.Text +=c.materialinfo.Name + " " + c.Num+" 、 ";
             }
             //加载做法步骤
             var strs = current_cookie.Func.Split('\n');
@@ -126,7 +128,8 @@ namespace DontStarve.App
         {
             Load_cookie_comment();
             skinSplitContainer1.Panel1.Controls.Remove(gifBox1);
-            btnNextPage.Visible = true; //显示“下一页”按钮
+
+             btnNextPage.Show(); //显示“下一页”按钮
         }
 
         //吐槽
@@ -148,9 +151,11 @@ namespace DontStarve.App
                       if (result)
                       {
                           //显示提示
-                          F_Message.ShowMessage("评论成功！");
+                          MessageYyu.ShowMessage("评论成功！");
+                          fs.Close();
                           return true;
-                      }                      
+                      }
+                      MessageYyu.ShowMessage("评论失败，请重试");
                   }
                   return false;
               });

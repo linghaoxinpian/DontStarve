@@ -167,6 +167,19 @@ namespace DontStarve.DSL
                 _ieverydayrecommendInfoDAL = value;
             }
         }
+
+        private IMaterialInfoDAL _imaterialInfoDAL;
+        public IMaterialInfoDAL imaterialInfoDAL
+        {
+            get
+            {
+                return _imaterialInfoDAL == null ? AbstractFactory.CreateInstanceMaterialInfoDAL() : _imaterialInfoDAL;
+            }
+            set
+            {
+                _imaterialInfoDAL = value;
+            }
+        }
         #endregion
     }
 }
