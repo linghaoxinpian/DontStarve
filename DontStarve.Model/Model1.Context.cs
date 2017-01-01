@@ -38,5 +38,6 @@ namespace DontStarve.Model
         public virtual DbSet<saysayinfo> saysayinfo { get; set; }
         public virtual DbSet<userinfo> userinfo { get; set; }
         public virtual DbSet<everydayrecommendinfo> everydayrecommendinfo { get; set; }
+        public virtual DbSet<leavenoteinfo> leavenoteinfo { get; set; }
     }
 }

@@ -73,6 +73,30 @@
     <Compile Include="F_AdminEverydayRecommend.Designer.cs">
       <DependentUpon>F_AdminEverydayRecommend.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_AdminLeaveNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_AdminLeaveNote.Designer.cs">
+      <DependentUpon>F_AdminLeaveNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_AdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_AdminLogin.Designer.cs">
+      <DependentUpon>F_AdminLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_AdminMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_AdminMain.Designer.cs">
+      <DependentUpon>F_AdminMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_LeaveNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_LeaveNote.Designer.cs">
+      <DependentUpon>F_LeaveNote.cs</DependentUpon>
+    </Compile>
     <Compile Include="MessageYyu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +222,18 @@
     <EmbeddedResource Include="F_AdminEverydayRecommend.resx">
       <DependentUpon>F_AdminEverydayRecommend.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_AdminLeaveNote.resx">
+      <DependentUpon>F_AdminLeaveNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_AdminLogin.resx">
+      <DependentUpon>F_AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_AdminMain.resx">
+      <DependentUpon>F_AdminMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_LeaveNote.resx">
+      <DependentUpon>F_LeaveNote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MessageYyu.resx">
       <DependentUpon>MessageYyu.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +342,8 @@
     <Content Include="IServices.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\sharefood2.png" />
+    <None Include="Resources\Login1711.jpg" />
     <None Include="Resources\food2.jpg" />
     <None Include="Resources\food.jpeg" />
     <None Include="Resources\self2.png" />

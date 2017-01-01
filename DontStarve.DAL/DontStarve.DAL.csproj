@@ -59,6 +59,7 @@
     <Compile Include="CookieInfoDAL.cs" />
     <Compile Include="EverydayRecommendInfoDAL.cs" />
     <Compile Include="FriendInfoDAL.cs" />
+    <Compile Include="LeavenoteInfoDAL.cs" />
     <Compile Include="MaterialInfoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SaysaycommentInfoDAL.cs" />

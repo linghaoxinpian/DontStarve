@@ -7,15 +7,15 @@
       <Diagram DiagramId="9f4cb0cfc69a4231a9d8f346aec93d80" Name="Diagram1" ZoomLevel="81">
         <EntityTypeShape EntityType="dontstarveModel.actioninfo" Width="1.5" PointX="8.375" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="dontstarveModel.categoryinfo" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="dontstarveModel.cookcommentinfo" Width="1.5" PointX="8.125" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dontstarveModel.cookcommentinfo" Width="1.5" PointX="8.125" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="dontstarveModel.cookinfo" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="dontstarveModel.friendinfo" Width="1.5" PointX="5.75" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="dontstarveModel.materialinfo" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="dontstarveModel.r_material_cookinfo" Width="1.5" PointX="0.875" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="dontstarveModel.r_user_actioninfo" Width="1.5" PointX="10.125" PointY="10.125" IsExpanded="true" />
         <EntityTypeShape EntityType="dontstarveModel.roleinfo" Width="1.5" PointX="6.75" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="dontstarveModel.saysaycommentinfo" Width="1.5" PointX="11.125" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="dontstarveModel.saysayinfo" Width="1.5" PointX="11.125" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dontstarveModel.saysaycommentinfo" Width="1.5" PointX="11.125" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dontstarveModel.saysayinfo" Width="1.5" PointX="11.125" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="dontstarveModel.userinfo" Width="1.5" PointX="8.125" PointY="5.625" IsExpanded="true" />
         <AssociationConnector Association="dontstarveModel.FK_Reference_9" ManuallyRouted="false" />
         <AssociationConnector Association="dontstarveModel.FK_Reference_11" ManuallyRouted="false" />
@@ -32,6 +32,8 @@
         <EntityTypeShape EntityType="dontstarveModel.everydayrecommendinfo" Width="1.5" PointX="5.5" PointY="3.875" />
         <AssociationConnector Association="dontstarveModel.FK_Reference_17" />
         <AssociationConnector Association="dontstarveModel.FK_Reference_18" />
+        <EntityTypeShape EntityType="dontstarveModel.leavenoteinfo" Width="1.5" PointX="13" PointY="8.125" />
+        <AssociationConnector Association="dontstarveModel.FK_Reference_19" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -25,6 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{D9D1FA04-F9F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{12965C89-5E27-4EA8-8E40-1D457AF76E7B}"
 	ProjectSection(SolutionItems) = preProject
+		create.txt = create.txt
 		Database\sql.txt = Database\sql.txt
 	EndProjectSection
 EndProject

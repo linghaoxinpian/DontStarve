@@ -451,5 +451,21 @@ namespace DontStarve.App
             //颜色恢复
             btn.BorderColor = Color.FromArgb(9, 163, 220);
         }
+
+        private void F_Main_MouseLeave(object sender, EventArgs e)
+        {
+            tpHome_MouseLeave(null, null);
+        }
+
+        private void F_Main_MouseEnter(object sender, EventArgs e)
+        {
+            tpHome_MouseEnter(null, null);
+        }
+
+        //留言
+        private void picLeaveNote_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

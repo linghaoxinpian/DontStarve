@@ -207,7 +207,7 @@
             this.txtQQ.Name = "txtQQ";
             this.txtQQ.Size = new System.Drawing.Size(174, 31);
             this.txtQQ.TabIndex = 4;
-            this.txtQQ.Text = "530060499";
+            this.txtQQ.Text = "3253226650";
             // 
             // label5
             // 

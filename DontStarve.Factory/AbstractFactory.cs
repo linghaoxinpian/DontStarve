@@ -57,6 +57,11 @@ namespace DontStarve.Factory
         public static IMaterialInfoDAL CreateInstanceMaterialInfoDAL()
         {
             return (IMaterialInfoDAL)Assembly.Load(assembly).CreateInstance(class_namespace + ".MaterialInfoDAL");
+        }        
+
+            public static ILeavenoteInfoDAL CreateInstanceLeavenoteInfoDAL()
+        {
+            return (ILeavenoteInfoDAL)Assembly.Load(assembly).CreateInstance(class_namespace + ".LeavenoteInfoDAL");
         }
     }
 }

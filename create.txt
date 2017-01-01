@@ -1,0 +1,330 @@
+drop table if exists ActionInfo;
+
+drop table if exists CategoryInfo;
+
+drop table if exists CookCommentInfo;
+
+drop table if exists CookInfo;
+
+drop table if exists EverydayRecommendInfo;
+
+drop table if exists FriendInfo;
+
+drop table if exists LeaveNoteInfo;
+
+drop table if exists MaterialInfo;
+
+drop table if exists R_Category_CookInfo;
+
+drop table if exists R_Material_CookInfo;
+
+drop table if exists R_Role_ActionInfo;
+
+drop table if exists R_User_ActionInfo;
+
+drop table if exists R_User_RoleInfo;
+
+drop table if exists RoleInfo;
+
+drop table if exists SaysayCommentInfo;
+
+drop table if exists SaysayInfo;
+
+drop table if exists UserInfo;
+
+/*==============================================================*/
+/* Table: ActionInfo                                            */
+/*==============================================================*/
+create table ActionInfo
+(
+   Guid_id              char(36) not null comment 'Guid_id',
+   primary key (Guid_id)
+);
+
+alter table ActionInfo comment '权限';
+
+/*==============================================================*/
+/* Table: CategoryInfo                                          */
+/*==============================================================*/
+create table CategoryInfo
+(
+   Auto_id              int not null auto_increment comment 'id',
+   Name                 nchar(10) not null comment '名称',
+   Level                tinyint unsigned default '1' comment '分类等级',
+   primary key (Auto_id)
+);
+
+alter table CategoryInfo comment '总分类';
+
+/*==============================================================*/
+/* Table: CookCommentInfo                                       */
+/*==============================================================*/
+create table CookCommentInfo
+(
+   Guid_id              char(36) not null comment 'id',
+   CookId               char(36) comment '菜 id',
+   UserId               char(36) comment '用户id',
+   Content              varchar(600) comment 'Content',
+   PraiseNum            int unsigned not null default '0' comment '点赞数',
+   primary key (Guid_id)
+);
+
+alter table CookCommentInfo comment '菜的评论';
+
+/*==============================================================*/
+/* Table: CookInfo                                              */
+/*==============================================================*/
+create table CookInfo
+(
+   Guid_id              char(36) not null comment 'id',
+   Name                 varchar(30) not null comment '菜名',
+   Level                tinyint unsigned default '1' comment '难度',
+   DelFlag              bit default 0 comment '是否删除',
+   Rating               tinyint unsigned default '0' comment '好评度',
+   PraiseNum            int unsigned default '0' comment '点赞数',
+   Pic                  mediumblob comment '图片',
+   VideoPath            varchar(100) comment '做法视频',
+   Remark               text comment '备注',
+   Func                 text not null comment '做法',
+   primary key (Guid_id)
+);
+
+alter table CookInfo comment '菜';
+
+/*==============================================================*/
+/* Table: EverydayRecommendInfo                                 */
+/*==============================================================*/
+create table EverydayRecommendInfo
+(
+   CookId               char(36) not null comment 'CookId',
+   SubAdmin             char(36) not null comment '提交人Id',
+   RecommendTime        bigint not null comment '推荐日期',
+   OurRatings           char(2) not null comment '推荐指数',
+   Reason               nvarchar(300) not null comment '推荐理由',
+   Subtime              bigint not null comment '提交日期',
+   primary key (CookId, RecommendTime)
+);
+
+alter table EverydayRecommendInfo comment '每日推荐';
+
+/*==============================================================*/
+/* Table: FriendInfo                                            */
+/*==============================================================*/
+create table FriendInfo
+(
+   UserId               char(36) not null comment '用户id',
+   FriendId             char(36) not null comment '好友id',
+   SubTime              bigint not null comment '开始时间',
+   primary key (UserId, FriendId)
+);
+
+alter table FriendInfo comment '好友';
+
+/*==============================================================*/
+/* Table: LeaveNoteInfo                                         */
+/*==============================================================*/
+create table LeaveNoteInfo
+(
+   Auto_id              int not null comment 'Auto_id',
+   UserId               char(36) not null comment '用户id',
+   Context              text not null comment '内容',
+   Subtime              bigint not null comment '时间',
+   primary key (Auto_id)
+);
+
+alter table LeaveNoteInfo comment '留言';
+
+/*==============================================================*/
+/* Table: MaterialInfo                                          */
+/*==============================================================*/
+create table MaterialInfo
+(
+   auto_id              int not null auto_increment comment 'id',
+   Name                 varchar(30) not null comment '名称',
+   Remark               varchar(200) comment '备注',
+   primary key (auto_id)
+);
+
+alter table MaterialInfo comment '原料';
+
+/*==============================================================*/
+/* Table: R_Category_CookInfo                                   */
+/*==============================================================*/
+create table R_Category_CookInfo
+(
+   CategoryId           int not null comment '分类id',
+   CookId               char(36) not null comment '菜id',
+   primary key (CategoryId, CookId)
+);
+
+alter table R_Category_CookInfo comment 'R_Category_CookInfo';
+
+/*==============================================================*/
+/* Table: R_Material_CookInfo                                   */
+/*==============================================================*/
+create table R_Material_CookInfo
+(
+   CookId               char(36) not null comment '菜id',
+   MaterialId           int not null comment '原料id',
+   Num                  char(10) not null default '1份' comment '份量',
+   primary key (CookId, MaterialId)
+);
+
+alter table R_Material_CookInfo comment 'R_Material_CookInfo';
+
+/*==============================================================*/
+/* Table: R_Role_ActionInfo                                     */
+/*==============================================================*/
+create table R_Role_ActionInfo
+(
+   Guid_id              char(36) not null comment 'Guid_id',
+   Rol_Guid_id          char(36) not null comment '角色_Guid_id',
+   primary key (Guid_id, Rol_Guid_id)
+);
+
+alter table R_Role_ActionInfo comment 'R_Role_ActionInfo';
+
+/*==============================================================*/
+/* Table: R_User_ActionInfo                                     */
+/*==============================================================*/
+create table R_User_ActionInfo
+(
+   UserId               char(36) not null comment 'User_Id',
+   ActionId             char(36) not null comment 'Action_id',
+   IsPass               bit default TRUE comment '是否允许',
+   primary key (UserId, ActionId)
+);
+
+alter table R_User_ActionInfo comment 'R_User_ActionInfo';
+
+/*==============================================================*/
+/* Table: R_User_RoleInfo                                       */
+/*==============================================================*/
+create table R_User_RoleInfo
+(
+   Guid_id              char(36) not null comment 'Guid_id',
+   Rol_Guid_id          char(36) not null comment '角色_Guid_id',
+   primary key (Guid_id, Rol_Guid_id)
+);
+
+alter table R_User_RoleInfo comment 'R_User_RoleInfo';
+
+/*==============================================================*/
+/* Table: RoleInfo                                              */
+/*==============================================================*/
+create table RoleInfo
+(
+   Guid_id              char(36) not null comment 'Guid_id',
+   primary key (Guid_id)
+);
+
+alter table RoleInfo comment '角色';
+
+/*==============================================================*/
+/* Table: SaysayCommentInfo                                     */
+/*==============================================================*/
+create table SaysayCommentInfo
+(
+   Guid_id              char(36) not null comment 'Guid_id',
+   SaysayId             char(36) not null comment '说说id',
+   UserId               char(36) not null comment '对回复用户id',
+   Content              text comment 'Content',
+   Subtime              bigint not null comment '回复时间',
+   ToUserId             char(36) not null comment '回复被动的用户',
+   primary key (Guid_id)
+);
+
+alter table SaysayCommentInfo comment '说说评论';
+
+/*==============================================================*/
+/* Table: SaysayInfo                                            */
+/*==============================================================*/
+create table SaysayInfo
+(
+   Guid_id              char(36) not null comment 'Guid_id',
+   UserId               char(36) not null comment '用户id',
+   Content              text not null comment 'Content',
+   Subtime              bigint not null comment '发表时间',
+   Pic                  mediumblob comment '图片',
+   DelFlag              bit not null default 0 comment '删除',
+   IsAllUserCanSee      bit not null default false comment '所有人可见',
+   PraiseNum            int unsigned comment '点赞',
+   primary key (Guid_id)
+);
+
+alter table SaysayInfo comment '说说';
+
+/*==============================================================*/
+/* Table: UserInfo                                              */
+/*==============================================================*/
+create table UserInfo
+(
+   Guid_id              char(36) not null comment 'Guid_id',
+   Name                 varchar(32) not null comment '名字',
+   Pwd                  varchar(32) not null comment 'Pwd',
+   Remark               varchar(256) comment '备注',
+   Pic                  mediumblob comment '头像',
+   SubTime              bigint not null comment '注册时间',
+   Signature            varchar(32) comment '签名',
+   QQ                   char(13) comment 'QQ',
+   Phone                char(11) comment 'Phone',
+   DelFlag              bit default 0 comment '删除标识',
+   IdCard               char(18) comment 'IdCard',
+   primary key (Guid_id)
+);
+
+alter table UserInfo comment '用户';
+
+alter table CookCommentInfo add constraint FK_Reference_11 foreign key (CookId)
+      references CookInfo (Guid_id) on delete restrict on update restrict;
+
+alter table CookCommentInfo add constraint FK_Reference_15 foreign key (UserId)
+      references UserInfo (Guid_id) on delete restrict on update restrict;
+
+alter table EverydayRecommendInfo add constraint FK_Reference_17 foreign key (CookId)
+      references CookInfo (Guid_id) on delete restrict on update restrict;
+
+alter table EverydayRecommendInfo add constraint FK_Reference_18 foreign key (SubAdmin)
+      references UserInfo (Guid_id) on delete restrict on update restrict;
+
+alter table FriendInfo add constraint FK_Reference_16 foreign key (UserId)
+      references UserInfo (Guid_id) on delete restrict on update restrict;
+
+alter table LeaveNoteInfo add constraint FK_Reference_19 foreign key (UserId)
+      references UserInfo (Guid_id) on delete restrict on update restrict;
+
+alter table R_Category_CookInfo add constraint FK_Reference_1 foreign key (CategoryId)
+      references CategoryInfo (Auto_id) on delete restrict on update restrict;
+
+alter table R_Category_CookInfo add constraint FK_Reference_2 foreign key (CookId)
+      references CookInfo (Guid_id) on delete restrict on update restrict;
+
+alter table R_Material_CookInfo add constraint FK_Reference_3 foreign key (MaterialId)
+      references MaterialInfo (auto_id) on delete restrict on update restrict;
+
+alter table R_Material_CookInfo add constraint FK_Reference_4 foreign key (CookId)
+      references CookInfo (Guid_id) on delete restrict on update restrict;
+
+alter table R_Role_ActionInfo add constraint FK_Reference_7 foreign key (Rol_Guid_id)
+      references RoleInfo (Guid_id) on delete restrict on update restrict;
+
+alter table R_Role_ActionInfo add constraint FK_Reference_8 foreign key (Guid_id)
+      references ActionInfo (Guid_id) on delete restrict on update restrict;
+
+alter table R_User_ActionInfo add constraint FK_Reference_10 foreign key (UserId)
+      references UserInfo (Guid_id) on delete restrict on update restrict;
+
+alter table R_User_ActionInfo add constraint FK_Reference_9 foreign key (ActionId)
+      references ActionInfo (Guid_id) on delete restrict on update restrict;
+
+alter table R_User_RoleInfo add constraint FK_Reference_5 foreign key (Guid_id)
+      references UserInfo (Guid_id) on delete restrict on update restrict;
+
+alter table R_User_RoleInfo add constraint FK_Reference_6 foreign key (Rol_Guid_id)
+      references RoleInfo (Guid_id) on delete restrict on update restrict;
+
+alter table SaysayCommentInfo add constraint FK_Reference_13 foreign key (SaysayId)
+      references SaysayInfo (Guid_id) on delete restrict on update restrict;
+
+alter table SaysayInfo add constraint FK_Reference_14 foreign key (UserId)
+      references UserInfo (Guid_id) on delete restrict on update restrict;

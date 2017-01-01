@@ -45,10 +45,16 @@
             this.skinTabPage2 = new CCWin.SkinControl.SkinTabPage();
             this.tpFriend = new CCWin.SkinControl.SkinTabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.yyu_SaySayDetails4 = new DontStarve.App.Yyu_SaySayDetails();
+            this.yyu_SaySayDetails5 = new DontStarve.App.Yyu_SaySayDetails();
+            this.yyu_SaySayDetails6 = new DontStarve.App.Yyu_SaySayDetails();
             this.pl_right2 = new System.Windows.Forms.Panel();
             this.pl_left2 = new System.Windows.Forms.Panel();
             this.tpMoreFriend = new CCWin.SkinControl.SkinTabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.yyu_SaySayDetails1 = new DontStarve.App.Yyu_SaySayDetails();
+            this.yyu_SaySayDetails2 = new DontStarve.App.Yyu_SaySayDetails();
+            this.yyu_SaySayDetails3 = new DontStarve.App.Yyu_SaySayDetails();
             this.pl_right = new System.Windows.Forms.Panel();
             this.pl_left = new System.Windows.Forms.Panel();
             this.tpSearch = new CCWin.SkinControl.SkinTabPage();
@@ -65,12 +71,7 @@
             this.lbSelfSignature = new CCWin.SkinControl.SkinLabel();
             this.lbSelfUserName = new CCWin.SkinControl.SkinLabel();
             this.btnSelfUserPhoto = new CCWin.SkinControl.SkinButton();
-            this.yyu_SaySayDetails4 = new DontStarve.App.Yyu_SaySayDetails();
-            this.yyu_SaySayDetails5 = new DontStarve.App.Yyu_SaySayDetails();
-            this.yyu_SaySayDetails6 = new DontStarve.App.Yyu_SaySayDetails();
-            this.yyu_SaySayDetails1 = new DontStarve.App.Yyu_SaySayDetails();
-            this.yyu_SaySayDetails2 = new DontStarve.App.Yyu_SaySayDetails();
-            this.yyu_SaySayDetails3 = new DontStarve.App.Yyu_SaySayDetails();
+            this.picLeaveNote = new CCWin.SkinControl.SkinPictureBox();
             this.skinTabControl1.SuspendLayout();
             this.tpHome.SuspendLayout();
             this.tpFoodWorld.SuspendLayout();
@@ -91,6 +92,7 @@
             this.skinSplitContainer2.SuspendLayout();
             this.tpSelfManage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShareFood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLeaveNote)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList1
@@ -136,7 +138,7 @@
             this.skinTabControl1.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Top;
             this.skinTabControl1.PageNorml = null;
             this.skinTabControl1.Radius = 15;
-            this.skinTabControl1.SelectedIndex = 4;
+            this.skinTabControl1.SelectedIndex = 5;
             this.skinTabControl1.Size = new System.Drawing.Size(898, 677);
             this.skinTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.skinTabControl1.TabIndex = 0;
@@ -370,6 +372,30 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(642, 547);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
+            // yyu_SaySayDetails4
+            // 
+            this.yyu_SaySayDetails4.BackColor = System.Drawing.Color.White;
+            this.yyu_SaySayDetails4.Location = new System.Drawing.Point(6, 6);
+            this.yyu_SaySayDetails4.Name = "yyu_SaySayDetails4";
+            this.yyu_SaySayDetails4.Size = new System.Drawing.Size(203, 535);
+            this.yyu_SaySayDetails4.TabIndex = 0;
+            // 
+            // yyu_SaySayDetails5
+            // 
+            this.yyu_SaySayDetails5.BackColor = System.Drawing.Color.White;
+            this.yyu_SaySayDetails5.Location = new System.Drawing.Point(219, 6);
+            this.yyu_SaySayDetails5.Name = "yyu_SaySayDetails5";
+            this.yyu_SaySayDetails5.Size = new System.Drawing.Size(203, 535);
+            this.yyu_SaySayDetails5.TabIndex = 1;
+            // 
+            // yyu_SaySayDetails6
+            // 
+            this.yyu_SaySayDetails6.BackColor = System.Drawing.Color.White;
+            this.yyu_SaySayDetails6.Location = new System.Drawing.Point(432, 6);
+            this.yyu_SaySayDetails6.Name = "yyu_SaySayDetails6";
+            this.yyu_SaySayDetails6.Size = new System.Drawing.Size(204, 535);
+            this.yyu_SaySayDetails6.TabIndex = 2;
+            // 
             // pl_right2
             // 
             this.pl_right2.BackColor = System.Drawing.Color.DarkGray;
@@ -441,6 +467,30 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 544F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(642, 547);
             this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // yyu_SaySayDetails1
+            // 
+            this.yyu_SaySayDetails1.BackColor = System.Drawing.Color.White;
+            this.yyu_SaySayDetails1.Location = new System.Drawing.Point(6, 6);
+            this.yyu_SaySayDetails1.Name = "yyu_SaySayDetails1";
+            this.yyu_SaySayDetails1.Size = new System.Drawing.Size(203, 535);
+            this.yyu_SaySayDetails1.TabIndex = 0;
+            // 
+            // yyu_SaySayDetails2
+            // 
+            this.yyu_SaySayDetails2.BackColor = System.Drawing.Color.White;
+            this.yyu_SaySayDetails2.Location = new System.Drawing.Point(219, 6);
+            this.yyu_SaySayDetails2.Name = "yyu_SaySayDetails2";
+            this.yyu_SaySayDetails2.Size = new System.Drawing.Size(203, 535);
+            this.yyu_SaySayDetails2.TabIndex = 1;
+            // 
+            // yyu_SaySayDetails3
+            // 
+            this.yyu_SaySayDetails3.BackColor = System.Drawing.Color.White;
+            this.yyu_SaySayDetails3.Location = new System.Drawing.Point(432, 6);
+            this.yyu_SaySayDetails3.Name = "yyu_SaySayDetails3";
+            this.yyu_SaySayDetails3.Size = new System.Drawing.Size(204, 535);
+            this.yyu_SaySayDetails3.TabIndex = 2;
             // 
             // pl_right
             // 
@@ -564,6 +614,7 @@
             // tpSelfManage
             // 
             this.tpSelfManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(208)))), ((int)(((byte)(255)))));
+            this.tpSelfManage.Controls.Add(this.picLeaveNote);
             this.tpSelfManage.Controls.Add(this.picShareFood);
             this.tpSelfManage.Controls.Add(this.llbSelfFriend);
             this.tpSelfManage.Controls.Add(this.llbLoginUp);
@@ -585,10 +636,10 @@
             // 
             this.picShareFood.BackColor = System.Drawing.Color.Transparent;
             this.picShareFood.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picShareFood.Image = global::DontStarve.App.Properties.Resources.sharefood;
-            this.picShareFood.Location = new System.Drawing.Point(832, 9);
+            this.picShareFood.Image = global::DontStarve.App.Properties.Resources.sharefood2;
+            this.picShareFood.Location = new System.Drawing.Point(187, 402);
             this.picShareFood.Name = "picShareFood";
-            this.picShareFood.Size = new System.Drawing.Size(61, 63);
+            this.picShareFood.Size = new System.Drawing.Size(166, 63);
             this.picShareFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picShareFood.TabIndex = 3;
             this.picShareFood.TabStop = false;
@@ -695,58 +746,24 @@
             this.btnSelfUserPhoto.UseVisualStyleBackColor = false;
             this.btnSelfUserPhoto.Click += new System.EventHandler(this.btnSelfUserPhoto_Click);
             // 
-            // yyu_SaySayDetails4
+            // picLeaveNote
             // 
-            this.yyu_SaySayDetails4.BackColor = System.Drawing.Color.White;
-            this.yyu_SaySayDetails4.Location = new System.Drawing.Point(6, 6);
-            this.yyu_SaySayDetails4.Name = "yyu_SaySayDetails4";
-            this.yyu_SaySayDetails4.Size = new System.Drawing.Size(203, 535);
-            this.yyu_SaySayDetails4.TabIndex = 0;
-            // 
-            // yyu_SaySayDetails5
-            // 
-            this.yyu_SaySayDetails5.BackColor = System.Drawing.Color.White;
-            this.yyu_SaySayDetails5.Location = new System.Drawing.Point(219, 6);
-            this.yyu_SaySayDetails5.Name = "yyu_SaySayDetails5";
-            this.yyu_SaySayDetails5.Size = new System.Drawing.Size(203, 535);
-            this.yyu_SaySayDetails5.TabIndex = 1;
-            // 
-            // yyu_SaySayDetails6
-            // 
-            this.yyu_SaySayDetails6.BackColor = System.Drawing.Color.White;
-            this.yyu_SaySayDetails6.Location = new System.Drawing.Point(432, 6);
-            this.yyu_SaySayDetails6.Name = "yyu_SaySayDetails6";
-            this.yyu_SaySayDetails6.Size = new System.Drawing.Size(204, 535);
-            this.yyu_SaySayDetails6.TabIndex = 2;
-            // 
-            // yyu_SaySayDetails1
-            // 
-            this.yyu_SaySayDetails1.BackColor = System.Drawing.Color.White;
-            this.yyu_SaySayDetails1.Location = new System.Drawing.Point(6, 6);
-            this.yyu_SaySayDetails1.Name = "yyu_SaySayDetails1";
-            this.yyu_SaySayDetails1.Size = new System.Drawing.Size(203, 535);
-            this.yyu_SaySayDetails1.TabIndex = 0;
-            // 
-            // yyu_SaySayDetails2
-            // 
-            this.yyu_SaySayDetails2.BackColor = System.Drawing.Color.White;
-            this.yyu_SaySayDetails2.Location = new System.Drawing.Point(219, 6);
-            this.yyu_SaySayDetails2.Name = "yyu_SaySayDetails2";
-            this.yyu_SaySayDetails2.Size = new System.Drawing.Size(203, 535);
-            this.yyu_SaySayDetails2.TabIndex = 1;
-            // 
-            // yyu_SaySayDetails3
-            // 
-            this.yyu_SaySayDetails3.BackColor = System.Drawing.Color.White;
-            this.yyu_SaySayDetails3.Location = new System.Drawing.Point(432, 6);
-            this.yyu_SaySayDetails3.Name = "yyu_SaySayDetails3";
-            this.yyu_SaySayDetails3.Size = new System.Drawing.Size(204, 535);
-            this.yyu_SaySayDetails3.TabIndex = 2;
+            this.picLeaveNote.BackColor = System.Drawing.Color.Transparent;
+            this.picLeaveNote.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picLeaveNote.Image = global::DontStarve.App.Properties.Resources.sharefood;
+            this.picLeaveNote.Location = new System.Drawing.Point(824, 8);
+            this.picLeaveNote.Name = "picLeaveNote";
+            this.picLeaveNote.Size = new System.Drawing.Size(68, 63);
+            this.picLeaveNote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLeaveNote.TabIndex = 3;
+            this.picLeaveNote.TabStop = false;
+            this.picLeaveNote.Click += new System.EventHandler(this.picLeaveNote_Click);
             // 
             // F_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CanResize = false;
             this.ClientSize = new System.Drawing.Size(906, 709);
             this.CloseBoxSize = new System.Drawing.Size(32, 24);
             this.Controls.Add(this.skinTabControl1);
@@ -758,6 +775,8 @@
             this.ShowDrawIcon = false;
             this.SkinOpacity = 0.9D;
             this.Text = "";
+            this.MouseEnter += new System.EventHandler(this.F_Main_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.F_Main_MouseLeave);
             this.skinTabControl1.ResumeLayout(false);
             this.tpHome.ResumeLayout(false);
             this.tpFoodWorld.ResumeLayout(false);
@@ -780,6 +799,7 @@
             this.tpSelfManage.ResumeLayout(false);
             this.tpSelfManage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShareFood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLeaveNote)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -827,5 +847,6 @@
         private CCWin.SkinControl.SkinPictureBox picShareFood;
         private CCWin.SkinControl.SkinButton btnOneDayOneRecommend;
         private CCWin.SkinControl.SkinButton btnHotWeek;
+        private CCWin.SkinControl.SkinPictureBox picLeaveNote;
     }
 }

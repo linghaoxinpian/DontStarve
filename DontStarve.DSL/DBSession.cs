@@ -180,6 +180,19 @@ namespace DontStarve.DSL
                 _imaterialInfoDAL = value;
             }
         }
+
+        private ILeavenoteInfoDAL _ileavenoteInfoDAL;
+        public ILeavenoteInfoDAL ileavenoteInfoDAL
+        {
+            get
+            {
+                return _ileavenoteInfoDAL == null ? AbstractFactory.CreateInstanceLeavenoteInfoDAL() : _ileavenoteInfoDAL;
+            }
+            set
+            {
+                _ileavenoteInfoDAL = value;
+            }
+        }
         #endregion
     }
 }

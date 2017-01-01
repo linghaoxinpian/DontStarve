@@ -80,6 +80,9 @@
     <Compile Include="friendinfo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="leavenoteinfo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="materialinfo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

@@ -35,10 +35,10 @@
           </Key>
           <Property Name="Guid_id" Type="guid" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="Level" Type="utinyint" />
-          <Property Name="DelFlag" Type="bit" />
-          <Property Name="Rating" Type="utinyint" />
-          <Property Name="PraiseNum" Type="uint" />
+          <Property Name="Level" Type="utinyint" Nullable="false" />
+          <Property Name="DelFlag" Type="bit" Nullable="false" />
+          <Property Name="Rating" Type="utinyint" Nullable="false" />
+          <Property Name="PraiseNum" Type="uint" Nullable="false" />
           <Property Name="pic" Type="mediumblob" />
           <Property Name="VideoPath" Type="varchar" MaxLength="100" />
           <Property Name="Remark" Type="text" />
@@ -64,6 +64,15 @@
           <Property Name="UserId" Type="guid" Nullable="false" />
           <Property Name="FriendId" Type="guid" Nullable="false" />
           <Property Name="SubTime" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="leavenoteinfo">
+          <Key>
+            <PropertyRef Name="Auto_id" />
+          </Key>
+          <Property Name="Auto_id" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="guid" Nullable="false" />
+          <Property Name="Context" Type="text" Nullable="false" />
+          <Property Name="Subtime" Type="bigint" Nullable="false" />
         </EntityType>
         <EntityType Name="materialinfo">
           <Key>
@@ -269,6 +278,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Reference_19">
+          <End Role="userinfo" Type="Self.userinfo" Multiplicity="1" />
+          <End Role="leavenoteinfo" Type="Self.leavenoteinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="userinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="leavenoteinfo">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Reference_2">
           <End Role="cookinfo" Type="Self.cookinfo" Multiplicity="1" />
           <End Role="r_category_cookinfo" Type="Self.r_category_cookinfo" Multiplicity="*" />
@@ -372,6 +393,7 @@
           <EntitySet Name="cookinfo" EntityType="Self.cookinfo" Schema="dontstarve" store:Type="Tables" />
           <EntitySet Name="everydayrecommendinfo" EntityType="Self.everydayrecommendinfo" Schema="dontstarve" store:Type="Tables" />
           <EntitySet Name="friendinfo" EntityType="Self.friendinfo" Schema="dontstarve" store:Type="Tables" />
+          <EntitySet Name="leavenoteinfo" EntityType="Self.leavenoteinfo" Schema="dontstarve" store:Type="Tables" />
           <EntitySet Name="materialinfo" EntityType="Self.materialinfo" Schema="dontstarve" store:Type="Tables" />
           <EntitySet Name="r_category_cookinfo" EntityType="Self.r_category_cookinfo" Schema="dontstarve" store:Type="Tables" />
           <EntitySet Name="r_material_cookinfo" EntityType="Self.r_material_cookinfo" Schema="dontstarve" store:Type="Tables" />
@@ -417,6 +439,10 @@
           <AssociationSet Name="FK_Reference_18" Association="Self.FK_Reference_18">
             <End Role="userinfo" EntitySet="userinfo" />
             <End Role="everydayrecommendinfo" EntitySet="everydayrecommendinfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_19" Association="Self.FK_Reference_19">
+            <End Role="userinfo" EntitySet="userinfo" />
+            <End Role="leavenoteinfo" EntitySet="leavenoteinfo" />
           </AssociationSet>
           <AssociationSet Name="FK_Reference_2" Association="Self.FK_Reference_2">
             <End Role="cookinfo" EntitySet="cookinfo" />
@@ -490,10 +516,10 @@
           </Key>
           <Property Name="Guid_id" Type="Guid" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Level" Type="Byte" />
-          <Property Name="DelFlag" Type="Boolean" />
-          <Property Name="Rating" Type="Byte" />
-          <Property Name="PraiseNum" Type="Int64" />
+          <Property Name="Level" Type="Byte" Nullable="false" />
+          <Property Name="DelFlag" Type="Boolean" Nullable="false" />
+          <Property Name="Rating" Type="Byte" Nullable="false" />
+          <Property Name="PraiseNum" Type="Int64" Nullable="false" />
           <Property Name="pic" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="VideoPath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Remark" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
@@ -600,6 +626,7 @@
           <NavigationProperty Name="saysayinfo" Relationship="Self.FK_Reference_14" FromRole="userinfo" ToRole="saysayinfo" />
           <NavigationProperty Name="roleinfo" Relationship="Self.r_user_roleinfo" FromRole="userinfo" ToRole="roleinfo" />
           <NavigationProperty Name="everydayrecommendinfo" Relationship="dontstarveModel.FK_Reference_18" FromRole="userinfo" ToRole="everydayrecommendinfo" />
+          <NavigationProperty Name="leavenoteinfo" Relationship="dontstarveModel.FK_Reference_19" FromRole="userinfo" ToRole="leavenoteinfo" />
         </EntityType>
         <Association Name="FK_Reference_9">
           <End Role="actioninfo" Type="Self.actioninfo" Multiplicity="1" />
@@ -791,6 +818,11 @@
             <End Role="userinfo" EntitySet="userinfo" />
             <End Role="everydayrecommendinfo" EntitySet="everydayrecommendinfo" />
           </AssociationSet>
+          <EntitySet Name="leavenoteinfo" EntityType="dontstarveModel.leavenoteinfo" />
+          <AssociationSet Name="FK_Reference_19" Association="dontstarveModel.FK_Reference_19">
+            <End Role="userinfo" EntitySet="userinfo" />
+            <End Role="leavenoteinfo" EntitySet="leavenoteinfo" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="everydayrecommendinfo">
           <Key>
@@ -827,6 +859,28 @@
             </Principal>
             <Dependent Role="everydayrecommendinfo">
               <PropertyRef Name="SubAdmin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="leavenoteinfo">
+          <Key>
+            <PropertyRef Name="Auto_id" />
+          </Key>
+          <Property Name="Auto_id" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Context" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Subtime" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="userinfo" Relationship="dontstarveModel.FK_Reference_19" FromRole="leavenoteinfo" ToRole="userinfo" />
+        </EntityType>
+        <Association Name="FK_Reference_19">
+          <End Type="dontstarveModel.userinfo" Role="userinfo" Multiplicity="1" />
+          <End Type="dontstarveModel.leavenoteinfo" Role="leavenoteinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="userinfo">
+              <PropertyRef Name="Guid_id" />
+            </Principal>
+            <Dependent Role="leavenoteinfo">
+              <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -998,6 +1052,16 @@
                 <ScalarProperty Name="RecommendTime" ColumnName="RecommendTime" />
                 <ScalarProperty Name="SubAdmin" ColumnName="SubAdmin" />
                 <ScalarProperty Name="CookId" ColumnName="CookId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="leavenoteinfo">
+            <EntityTypeMapping TypeName="dontstarveModel.leavenoteinfo">
+              <MappingFragment StoreEntitySet="leavenoteinfo">
+                <ScalarProperty Name="Subtime" ColumnName="Subtime" />
+                <ScalarProperty Name="Context" ColumnName="Context" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Auto_id" ColumnName="Auto_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
