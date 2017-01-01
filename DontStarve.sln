@@ -23,12 +23,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{D9D1FA04-F9F
 		Lib\CSkin.XML = Lib\CSkin.XML
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{12965C89-5E27-4EA8-8E40-1D457AF76E7B}"
-	ProjectSection(SolutionItems) = preProject
-		create.txt = create.txt
-		Database\sql.txt = Database\sql.txt
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DontStarve.DAL", "DontStarve.DAL\DontStarve.DAL.csproj", "{0C4BEB33-8A85-416C-9341-6D34B09A72A2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DontStarve.Service", "DontStarve.Service\DontStarve.Service.csproj", "{D927A454-9D39-4943-B710-EF46C551F06E}"
@@ -76,6 +70,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{03277F08-355
 		img\twopart.png = img\twopart.png
 		img\xingxing.gif = img\xingxing.gif
 		img\yellow-37.png = img\yellow-37.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{2A23E23C-EAD5-4A4B-B2CC-FACB925F824E}"
+	ProjectSection(SolutionItems) = preProject
+		Database\BaiduShurufa_2017-1-1_18-33-56.png = Database\BaiduShurufa_2017-1-1_18-33-56.png
+		Database\Structure.sql = Database\Structure.sql
+		Database\StructureData.sql = Database\StructureData.sql
+		Database\必读.txt = Database\必读.txt
 	EndProjectSection
 EndProject
 Global

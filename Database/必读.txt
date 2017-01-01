@@ -1,0 +1,30 @@
+Structure.sql 只有整个数据库的结构，不含数据
+StructureData.sql 数据库结构+数据
+
+Entity FrameWork对Mysql的支持一般，MySQL5.7版本的服务器，可能会报这个错
+
+Entity Framework连接MySQL，出现报错：
+
+
+
+
+
+
+由于出现以下异常,无法生成模型:“表“TableDetails”中列“IsPrimaryKey”的值为DBNull.
+
+
+
+
+
+
+
+这是MySQL57版本的一个bug，出现这种情况时是在EF：从数据库更新模型时
+解决方法：
+1.mysql执行如下命令：
+use dontstarve;
+   set global optimizer_switch='derived_merge=OFF';
+
+
+
+
+2.重启Visual Studio

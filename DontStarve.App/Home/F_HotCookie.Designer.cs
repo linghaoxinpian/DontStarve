@@ -43,8 +43,8 @@
             this.skinListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.skinListBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.skinListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.skinListBox1.Font = new System.Drawing.Font("华文琥珀", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinListBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.skinListBox1.Font = new System.Drawing.Font("华文楷体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinListBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(208)))), ((int)(((byte)(255)))));
             this.skinListBox1.FormattingEnabled = true;
             this.skinListBox1.HorizontalScrollbar = true;
             this.skinListBox1.ImagePoint = false;
