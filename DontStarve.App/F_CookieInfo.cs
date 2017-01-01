@@ -45,7 +45,7 @@ namespace DontStarve.App
             }
             //加载原料
             txtMaterial.Text = "原料：";
-            foreach(var c in current_cookie.r_material_cookinfo)
+            foreach (var c in current_cookie.r_material_cookinfo)
             {
                 txtMaterial.Text += " | " + c.materialinfo.Name + c.materialinfo.Remark;
             }
@@ -134,21 +134,27 @@ namespace DontStarve.App
         {
             F_SimplyReply fs = new F_SimplyReply();
             fs.Text = "                          吐槽一下~~~~";
-            fs.ShowDialog();
             fs.func += new Func<bool>(() =>
               {
                   if (!string.IsNullOrEmpty(fs.txtContent.Text))
                   {
-                      return icookcommentInfoService.AddEntity(new cookcommentinfo()
+                      bool result = icookcommentInfoService.AddEntity(new cookcommentinfo()
                       {
                           Guid_id = Guid.NewGuid(),
                           CookId = current_cookie.Guid_id,
                           UserId = F_Main.current_user.Guid_id,
                           Content = fs.txtContent.Text
                       });
+                      if (result)
+                      {
+                          //显示提示
+                          F_Message.ShowMessage("评论成功！");
+                          return true;
+                      }                      
                   }
                   return false;
               });
+            fs.ShowDialog();
             //刷新
             Load_cookie_comment();
         }
@@ -170,7 +176,7 @@ namespace DontStarve.App
 
         //下一页评论
         private void btnNextPage_Click(object sender, EventArgs e)
-        {           
+        {
             Load_cookie_comment();
         }
     }

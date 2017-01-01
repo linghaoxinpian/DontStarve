@@ -65,6 +65,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximumSize = new System.Drawing.Size(525, 1024);
             this.Name = "F_SimplyReply";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "简易回复区";
             this.ResumeLayout(false);
             this.PerformLayout();
