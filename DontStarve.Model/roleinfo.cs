@@ -22,6 +22,7 @@ namespace DontStarve.Model
         }
     
         public System.Guid Guid_id { get; set; }
+        public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<actioninfo> actioninfo { get; set; }

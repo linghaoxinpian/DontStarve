@@ -69,7 +69,7 @@
           <Key>
             <PropertyRef Name="Auto_id" />
           </Key>
-          <Property Name="Auto_id" Type="int" Nullable="false" />
+          <Property Name="Auto_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserId" Type="guid" Nullable="false" />
           <Property Name="Context" Type="text" Nullable="false" />
           <Property Name="Subtime" Type="bigint" Nullable="false" />
@@ -129,6 +129,7 @@
             <PropertyRef Name="Guid_id" />
           </Key>
           <Property Name="Guid_id" Type="guid" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="saysaycommentinfo">
           <Key>
@@ -577,6 +578,7 @@
           <Property Name="Guid_id" Type="Guid" Nullable="false" />
           <NavigationProperty Name="actioninfo" Relationship="Self.r_role_actioninfo" FromRole="roleinfo" ToRole="actioninfo" />
           <NavigationProperty Name="userinfo" Relationship="Self.r_user_roleinfo" FromRole="roleinfo" ToRole="userinfo" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="saysaycommentinfo">
           <Key>
@@ -972,6 +974,7 @@
           <EntitySetMapping Name="roleinfo">
             <EntityTypeMapping TypeName="dontstarveModel.roleinfo">
               <MappingFragment StoreEntitySet="roleinfo">
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Guid_id" ColumnName="Guid_id" />
               </MappingFragment>
             </EntityTypeMapping>

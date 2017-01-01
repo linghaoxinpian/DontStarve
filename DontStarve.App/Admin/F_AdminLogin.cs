@@ -21,11 +21,22 @@ namespace DontStarve.App
         private void btnLogin_Click(object sender, EventArgs e)
         {
             F_Main.current_user = iuserInfoService.Login(txtName.Text, Common.HashHelper.GetMD5(txtPwd.Text));
+            //判断账号密码是否正确
             if (F_Main.current_user != null)
             {
-                this.Visible = false;
-                F_AdminMain f_am = new F_AdminMain();
-                f_am.ShowDialog();
+                //判断是否具有 管理权限
+                if (F_Main.current_user.roleinfo.Count > 0)
+                {
+                    this.Visible = false;
+                    F_AdminMain f_am = new F_AdminMain();
+                    f_am.ShowDialog();
+                    return;
+                }
+                else
+                {
+                    MessageYyu.ShowMessage("抱歉您尚没有此操作的权限", "警告");
+                    return;
+                }
             }
             MessageYyu.ShowMessage("密码错误！");
         }

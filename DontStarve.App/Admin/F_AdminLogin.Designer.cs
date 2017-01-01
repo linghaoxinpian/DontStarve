@@ -81,7 +81,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(168, 21);
             this.txtName.TabIndex = 1;
-            this.txtName.Text = "零芯";
+            this.txtName.Text = "上帝掷骰子";
             // 
             // txtPwd
             // 
@@ -109,7 +109,6 @@
             this.Name = "F_AdminLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F_AdminLogin";
-            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
