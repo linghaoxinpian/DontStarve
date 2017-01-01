@@ -465,7 +465,8 @@ namespace DontStarve.App
         //留言
         private void picLeaveNote_Click(object sender, EventArgs e)
         {
-
+            F_LeaveNote fl = new F_LeaveNote();
+            fl.Show();
         }
     }
 }

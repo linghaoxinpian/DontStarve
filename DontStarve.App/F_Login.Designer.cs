@@ -37,6 +37,7 @@
             this.picUserPhoto = new CCWin.SkinControl.SkinPictureBox();
             this.btnClose = new CCWin.SkinControl.SkinButton();
             this.llbRegister = new System.Windows.Forms.LinkLabel();
+            this.skinHotKey1 = new CCWin.SkinControl.SkinHotKey(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picUserPhoto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,6 +142,14 @@
             this.llbRegister.Text = "还没有账号？ -->";
             this.llbRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbRegister_LinkClicked);
             // 
+            // skinHotKey1
+            // 
+            this.skinHotKey1.Enabled = true;
+            this.skinHotKey1.Key = System.Windows.Forms.Keys.Y;
+            this.skinHotKey1.KeyModifier = CCWin.SkinControl.KeyModifiers.Control;
+            this.skinHotKey1.Tag = null;
+            this.skinHotKey1.HotKeyTrigger += new System.EventHandler<CCWin.SkinControl.HotKeyEventArgs>(this.skinHotKey1_HotKeyTrigger);
+            // 
             // F_Login
             // 
             this.AcceptButton = this.btnLogin;
@@ -156,12 +165,13 @@
             this.Controls.Add(this.skinLabel1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnLogin);
+            this.KeyPreview = true;
             this.Name = "F_Login";
             this.Radius = 490;
             this.ShadowWidth = 40;
             this.ShowBorder = false;
             this.ShowDrawIcon = false;
-            this.SkinOpacity = 0.8D;
+            this.SkinOpacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.F_Login_Load);
@@ -181,6 +191,7 @@
         public CCWin.SkinControl.SkinPictureBox picUserPhoto;
         private CCWin.SkinControl.SkinButton btnClose;
         private System.Windows.Forms.LinkLabel llbRegister;
+        private CCWin.SkinControl.SkinHotKey skinHotKey1;
     }
 }
 
