@@ -42,16 +42,15 @@ namespace DontStarve.App
                 {
                     if (MessageBoxEx.Show("确定推荐选中项？","提示", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
+                        var entity = new everydayrecommendinfo();
+                        entity.CookId = (Guid)dgv.SelectedRows[0].Cells[0].Value;
+                        entity.OurRatings = cbOurRating.SelectedItem.ToString().Length.ToString();
+                        entity.Reason = txtReason.Text;
+                        entity.RecommendTime = Common.CommonHelper.GetCurrentDateStamp(dt);
+                        entity.SubAdmin = F_Main.current_user.Guid_id;
+                        entity.Subtime = Common.CommonHelper.GetCurrentDateStamp();
                         //保存到数据库
-                      MessageBoxEx.Show( ieverydayrecommendInfoService.AddEntity(new everydayrecommendinfo()
-                        {
-                            CookId = (Guid)dgv.SelectedRows[0].Cells[0].Value,
-                            OurRatings = cbOurRating.SelectedText,
-                            Reason = txtReason.Text,
-                            RecommendTime = Common.CommonHelper.GetCurrentDateStamp(dt),
-                            SubAdmin = F_Main.current_user.Guid_id,
-                            Subtime = Common.CommonHelper.GetCurrentDateStamp()
-                        })?"添加成功！！":"添加失败，请重试");                        
+                      MessageBoxEx.Show( ieverydayrecommendInfoService.AddEntity(entity)?"添加成功！！":"添加失败，请重试");                        
                     }
                 }
                 else

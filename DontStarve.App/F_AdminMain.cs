@@ -22,5 +22,31 @@ namespace DontStarve.App
             F_AdminEverydayRecommend f_ae = new F_AdminEverydayRecommend();
             f_ae.Show();
         }
+
+        private void btnLeaveNote_Click(object sender, EventArgs e)
+        {
+            F_AdminLeaveNote f_al = new F_AdminLeaveNote();
+            f_al.Show();
+        }
+
+        private void btnEveryRecommend_MouseEnter(object sender, EventArgs e)
+        {
+            CCWin.SkinControl.SkinButton btn = sender as CCWin.SkinControl.SkinButton;
+            btn.Size = new Size(btn.Size.Width + 20, btn.Size.Height + 20);
+            btn.Radius = btn.Radius + 20;
+
+            //颜色变亮
+            btn.BorderColor = Color.Red;
+        }
+
+        private void btnEveryRecommend_MouseLeave(object sender, EventArgs e)
+        {
+            CCWin.SkinControl.SkinButton btn = sender as CCWin.SkinControl.SkinButton;
+            btn.Size = new Size(btn.Size.Width - 20, btn.Size.Height - 20);
+            btn.Radius = btn.Radius - 20;
+
+            //颜色恢复
+            btn.BorderColor = Color.FromArgb(9, 163, 220);
+        }
     }
 }

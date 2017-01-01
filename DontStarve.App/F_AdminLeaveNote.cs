@@ -29,7 +29,7 @@ namespace DontStarve.App
         //转化时间戳
         private void dgvLeaveNote_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == 2)
+            if (dgvLeaveNote.Columns[e.ColumnIndex].Name == "subtime")
             {
                 e.Value = Common.CommonHelper.StampToDateTime(e.Value.ToString());
             }

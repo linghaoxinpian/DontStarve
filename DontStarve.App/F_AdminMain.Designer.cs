@@ -61,6 +61,8 @@
             this.btnEveryRecommend.Text = "每日推荐";
             this.btnEveryRecommend.UseVisualStyleBackColor = false;
             this.btnEveryRecommend.Click += new System.EventHandler(this.btnEveryRecommend_Click);
+            this.btnEveryRecommend.MouseEnter += new System.EventHandler(this.btnEveryRecommend_MouseEnter);
+            this.btnEveryRecommend.MouseLeave += new System.EventHandler(this.btnEveryRecommend_MouseLeave);
             // 
             // skinButton1
             // 
@@ -85,6 +87,8 @@
             this.skinButton1.TabIndex = 1;
             this.skinButton1.Text = "美食管理";
             this.skinButton1.UseVisualStyleBackColor = false;
+            this.skinButton1.MouseEnter += new System.EventHandler(this.btnEveryRecommend_MouseEnter);
+            this.skinButton1.MouseLeave += new System.EventHandler(this.btnEveryRecommend_MouseLeave);
             // 
             // skinButton2
             // 
@@ -109,6 +113,8 @@
             this.skinButton2.TabIndex = 1;
             this.skinButton2.Text = "用户管理";
             this.skinButton2.UseVisualStyleBackColor = false;
+            this.skinButton2.MouseEnter += new System.EventHandler(this.btnEveryRecommend_MouseEnter);
+            this.skinButton2.MouseLeave += new System.EventHandler(this.btnEveryRecommend_MouseLeave);
             // 
             // skinButton3
             // 
@@ -133,6 +139,8 @@
             this.skinButton3.TabIndex = 1;
             this.skinButton3.Text = "分类管理";
             this.skinButton3.UseVisualStyleBackColor = false;
+            this.skinButton3.MouseEnter += new System.EventHandler(this.btnEveryRecommend_MouseEnter);
+            this.skinButton3.MouseLeave += new System.EventHandler(this.btnEveryRecommend_MouseLeave);
             // 
             // skinButton4
             // 
@@ -157,6 +165,8 @@
             this.skinButton4.TabIndex = 1;
             this.skinButton4.Text = "原料管理";
             this.skinButton4.UseVisualStyleBackColor = false;
+            this.skinButton4.MouseEnter += new System.EventHandler(this.btnEveryRecommend_MouseEnter);
+            this.skinButton4.MouseLeave += new System.EventHandler(this.btnEveryRecommend_MouseLeave);
             // 
             // btnLeaveNote
             // 
@@ -181,6 +191,9 @@
             this.btnLeaveNote.TabIndex = 1;
             this.btnLeaveNote.Text = "查看留言";
             this.btnLeaveNote.UseVisualStyleBackColor = false;
+            this.btnLeaveNote.Click += new System.EventHandler(this.btnLeaveNote_Click);
+            this.btnLeaveNote.MouseEnter += new System.EventHandler(this.btnEveryRecommend_MouseEnter);
+            this.btnLeaveNote.MouseLeave += new System.EventHandler(this.btnEveryRecommend_MouseLeave);
             // 
             // F_AdminMain
             // 

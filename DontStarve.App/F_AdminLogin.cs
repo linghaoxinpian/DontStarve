@@ -23,13 +23,26 @@ namespace DontStarve.App
             F_Main.current_user = iuserInfoService.Login(txtName.Text, Common.HashHelper.GetMD5(txtPwd.Text));
             if (F_Main.current_user != null)
             {
-               
+                this.Visible = false;
+                F_AdminMain f_am = new F_AdminMain();
+                f_am.ShowDialog();
             }
+            MessageYyu.ShowMessage("密码错误！");
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnClose_MouseEnter(object sender, EventArgs e)
+        {
+            (sender as CCWin.SkinControl.SkinButton).BackColor = Color.DimGray;
+        }
+
+        private void btnClose_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as CCWin.SkinControl.SkinButton).BackColor = Color.Transparent;
         }
     }
 }

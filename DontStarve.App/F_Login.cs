@@ -135,8 +135,9 @@ namespace DontStarve.App
         ////    }
         #endregion
 
+            //切换 后台
         private void skinHotKey1_HotKeyTrigger(object sender, CCWin.SkinControl.HotKeyEventArgs e)
-        {
+        {            
             this.Hide();
             F_AdminLogin f_al = new F_AdminLogin();
             f_al.ShowDialog();

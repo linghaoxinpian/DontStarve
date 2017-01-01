@@ -43,6 +43,7 @@
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.DownBack = null;
             this.btnClose.FadeGlow = false;
+            this.btnClose.IsDrawGlass = false;
             this.btnClose.Location = new System.Drawing.Point(524, 337);
             this.btnClose.MouseBack = null;
             this.btnClose.Name = "btnClose";
@@ -61,6 +62,7 @@
             this.btnLogin.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.btnLogin.DownBack = null;
             this.btnLogin.FadeGlow = false;
+            this.btnLogin.IsDrawGlass = false;
             this.btnLogin.Location = new System.Drawing.Point(436, 337);
             this.btnLogin.MouseBack = null;
             this.btnLogin.Name = "btnLogin";
@@ -79,13 +81,16 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(168, 21);
             this.txtName.TabIndex = 1;
+            this.txtName.Text = "零芯";
             // 
             // txtPwd
             // 
             this.txtPwd.Location = new System.Drawing.Point(445, 282);
             this.txtPwd.Name = "txtPwd";
+            this.txtPwd.PasswordChar = '*';
             this.txtPwd.Size = new System.Drawing.Size(168, 21);
             this.txtPwd.TabIndex = 1;
+            this.txtPwd.Text = "123456";
             // 
             // F_AdminLogin
             // 

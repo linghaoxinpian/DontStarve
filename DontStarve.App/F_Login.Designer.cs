@@ -87,7 +87,7 @@
             this.txtPwd.Font = new System.Drawing.Font("宋体", 12F);
             this.txtPwd.Location = new System.Drawing.Point(208, 298);
             this.txtPwd.Name = "txtPwd";
-            this.txtPwd.PasswordChar = '★';
+            this.txtPwd.PasswordChar = '❤';
             this.txtPwd.Size = new System.Drawing.Size(174, 19);
             this.txtPwd.TabIndex = 2;
             this.txtPwd.Text = "123456";
