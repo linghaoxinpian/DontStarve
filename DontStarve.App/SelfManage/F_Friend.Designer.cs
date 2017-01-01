@@ -156,6 +156,7 @@
             this.CloseBoxSize = new System.Drawing.Size(32, 24);
             this.Controls.Add(this.skinSplitContainer1);
             this.Controls.Add(this.chatListBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MiniSize = new System.Drawing.Size(32, 24);
             this.Name = "F_Friend";

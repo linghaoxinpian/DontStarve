@@ -111,6 +111,7 @@
             this.ClientSize = new System.Drawing.Size(660, 694);
             this.Controls.Add(this.skinListBox2);
             this.Controls.Add(this.skinListBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_HotCookie";
             this.ShowDrawIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

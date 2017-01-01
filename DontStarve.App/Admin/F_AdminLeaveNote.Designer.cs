@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_AdminLeaveNote));
             this.dgvLeaveNote = new CCWin.SkinControl.SkinDataGridView();
             this.subtime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -125,6 +126,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 542);
             this.Controls.Add(this.dgvLeaveNote);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_AdminLeaveNote";
             this.ShowDrawIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

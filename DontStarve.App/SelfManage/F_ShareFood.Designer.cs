@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_ShareFood));
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtFunc = new System.Windows.Forms.TextBox();
             this.txtRemark = new System.Windows.Forms.TextBox();
@@ -221,6 +222,7 @@
             this.Controls.Add(this.txtFunc);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.pic);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_ShareFood";
             this.ShowDrawIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

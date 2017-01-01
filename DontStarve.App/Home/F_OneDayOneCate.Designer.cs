@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_OneDayOneCate));
             this.pic = new CCWin.SkinControl.SkinPictureBox();
             this.skinLine1 = new CCWin.SkinControl.SkinLine();
             this.lbName = new CCWin.SkinControl.SkinLabel();
@@ -152,6 +153,7 @@
             this.Controls.Add(this.skinLine1);
             this.Controls.Add(this.pic);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "F_OneDayOneCate";
             this.SkinBack = global::DontStarve.App.Properties.Resources.taco;

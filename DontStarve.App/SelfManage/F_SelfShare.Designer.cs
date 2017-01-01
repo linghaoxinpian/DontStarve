@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_SelfShare));
             this.pic = new System.Windows.Forms.PictureBox();
             this.btnShare = new System.Windows.Forms.Button();
             this.txtContent = new System.Windows.Forms.TextBox();
@@ -78,6 +79,7 @@
             this.Controls.Add(this.btnShare);
             this.Controls.Add(this.pic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_SelfShare";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "没事吐吐槽、发发牢骚~~";

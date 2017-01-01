@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_AdminMain));
             this.btnEveryRecommend = new CCWin.SkinControl.SkinButton();
             this.skinButton1 = new CCWin.SkinControl.SkinButton();
             this.skinButton2 = new CCWin.SkinControl.SkinButton();
@@ -206,6 +207,7 @@
             this.Controls.Add(this.skinButton1);
             this.Controls.Add(this.btnLeaveNote);
             this.Controls.Add(this.btnEveryRecommend);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_AdminMain";
             this.ShowDrawIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

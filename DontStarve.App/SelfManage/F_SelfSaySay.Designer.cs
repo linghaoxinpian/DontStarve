@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_SelfSaySay));
             this.skinPanel1 = new CCWin.SkinControl.SkinPanel();
             this.btnShare = new CCWin.SkinControl.SkinButton();
             this.SuspendLayout();
@@ -75,6 +76,7 @@
             this.ClientSize = new System.Drawing.Size(542, 610);
             this.Controls.Add(this.btnShare);
             this.Controls.Add(this.skinPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_SelfSaySay";
             this.ShowDrawIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

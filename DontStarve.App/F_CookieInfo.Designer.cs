@@ -36,13 +36,13 @@
             this.skinSplitContainer2 = new CCWin.SkinControl.SkinSplitContainer();
             this.lbLevel = new CCWin.SkinControl.SkinLabel();
             this.labRating = new CCWin.SkinControl.SkinLabel();
+            this.yyu_PraiseNum1 = new DontStarve.App.Yyu_PraiseNum();
             this.labCookieName = new CCWin.SkinControl.SkinLabel();
             this.picCookie = new CCWin.SkinControl.SkinPictureBox();
             this.txtMaterial = new System.Windows.Forms.TextBox();
             this.btnVideo = new CCWin.SkinControl.SkinButton();
             this.lbFunc = new CCWin.SkinControl.SkinListBox();
             this.btnComplain = new CCWin.SkinControl.SkinButton();
-            this.yyu_PraiseNum1 = new DontStarve.App.Yyu_PraiseNum();
             ((System.ComponentModel.ISupportInitialize)(this.skinSplitContainer1)).BeginInit();
             this.skinSplitContainer1.Panel1.SuspendLayout();
             this.skinSplitContainer1.Panel2.SuspendLayout();
@@ -172,6 +172,15 @@
             this.labRating.TabIndex = 3;
             this.labRating.Text = "好评率：";
             // 
+            // yyu_PraiseNum1
+            // 
+            this.yyu_PraiseNum1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.yyu_PraiseNum1.BackColor = System.Drawing.Color.Transparent;
+            this.yyu_PraiseNum1.Location = new System.Drawing.Point(364, 101);
+            this.yyu_PraiseNum1.Name = "yyu_PraiseNum1";
+            this.yyu_PraiseNum1.Size = new System.Drawing.Size(101, 37);
+            this.yyu_PraiseNum1.TabIndex = 2;
+            // 
             // labCookieName
             // 
             this.labCookieName.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -282,15 +291,6 @@
             this.btnComplain.UseVisualStyleBackColor = false;
             this.btnComplain.Click += new System.EventHandler(this.btnComplain_Click);
             // 
-            // yyu_PraiseNum1
-            // 
-            this.yyu_PraiseNum1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.yyu_PraiseNum1.BackColor = System.Drawing.Color.Transparent;
-            this.yyu_PraiseNum1.Location = new System.Drawing.Point(364, 101);
-            this.yyu_PraiseNum1.Name = "yyu_PraiseNum1";
-            this.yyu_PraiseNum1.Size = new System.Drawing.Size(101, 37);
-            this.yyu_PraiseNum1.TabIndex = 2;
-            // 
             // F_CookieInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -303,6 +303,7 @@
             this.Controls.Add(this.skinSplitContainer1);
             this.EffectCaption = CCWin.TitleType.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.InnerBorderColor = System.Drawing.Color.Red;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Login));
             this.btnLogin = new CCWin.SkinControl.SkinButton();
             this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -166,6 +167,7 @@
             this.Controls.Add(this.skinLabel1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnLogin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "F_Login";
             this.Radius = 490;

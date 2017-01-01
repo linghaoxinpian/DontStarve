@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_AdminEverydayRecommend));
             this.dgv = new CCWin.SkinControl.SkinDataGridView();
             this.CookId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -324,6 +325,7 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.txtReason);
             this.Controls.Add(this.dgv);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_AdminEverydayRecommend";
             this.ShowDrawIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_SaySayReplay));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnReplay = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -64,6 +65,7 @@
             this.ClientSize = new System.Drawing.Size(460, 595);
             this.Controls.Add(this.panel1);
             this.EffectBack = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_SaySayReplay";
             this.ShowDrawIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

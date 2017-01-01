@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_LeaveNote));
             this.txtContent = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.cbIsNoName = new System.Windows.Forms.CheckBox();
@@ -76,6 +77,7 @@
             this.Controls.Add(this.cbIsNoName);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtContent);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_LeaveNote";
             this.ShowDrawIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
