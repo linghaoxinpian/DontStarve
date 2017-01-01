@@ -208,6 +208,7 @@
             this.Controls.Add(this.btnEveryRecommend);
             this.Name = "F_AdminMain";
             this.ShowDrawIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "欢迎您    ";
             this.TitleCenter = true;
             this.TitleOffset = new System.Drawing.Point(20, 0);

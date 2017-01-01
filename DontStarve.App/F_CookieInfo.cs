@@ -51,6 +51,7 @@ namespace DontStarve.App
             {
                 txtMaterial.Text +=c.materialinfo.Name + " " + c.Num+" 、 ";
             }
+            txtMaterial.Text = txtMaterial.Text.Substring(0, txtMaterial.Text.Length - 3);
             //加载做法步骤
             var strs = current_cookie.Func.Split('\n');
             for (int i = 1; i <= strs.Length; i++)

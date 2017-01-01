@@ -143,5 +143,14 @@ namespace DontStarve.App
             f_al.ShowDialog();
             this.Close();
         }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+           var userPhoto= iuserInfoService.LoadEntities(u => u.Name == txtName.Text).Select(u=>u.Pic).FirstOrDefault();
+            if (userPhoto != null)
+            {
+                picUserPhoto.Image = Common.CommonHelper.BytesToPic(userPhoto);
+            }
+        }
     }
 }

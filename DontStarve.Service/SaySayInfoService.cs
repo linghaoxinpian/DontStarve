@@ -26,21 +26,22 @@ namespace DontStarve.Service
                        from s in iq_say
                        where u.Guid_id == s.UserId
                        select new
-                       {            
-                           s.Guid_id,               
+                       {
+                         saysayId= s.Guid_id,
                            s.Pic,
                            u.Name,
                            s.PraiseNum,
                            s.Subtime,
-                           s.Content
+                           s.Content,
+                          userId= u.Guid_id,  // 该说说的发表者Id
                        };
             myFriend_count = list.Count();
-            list = list.OrderBy(l=>l.Subtime).Skip((myFriend_pageIndex - 1) * myFriend_pageSize).Take(myFriend_pageSize);
+            list = list.OrderBy(l => l.Subtime).Skip((myFriend_pageIndex - 1) * myFriend_pageSize).Take(myFriend_pageSize);
             return list;
         }
         public dynamic LoadWorldFriend(int pageIndex, int pageSize, out int count)
         {
-            var iq_saysay = LoadPageEntities(s => s.DelFlag == false && s.IsAllUserCanSee == true, s=>s.PraiseNum, pageIndex, pageSize, out count,false);
+            var iq_saysay = LoadPageEntities(s => s.DelFlag == false && s.IsAllUserCanSee == true, s => s.PraiseNum, pageIndex, pageSize, out count, false);
             var iq_user = dbSessioin.iuserInfoDAL.LoadEntities(u => u.DelFlag == false);
             //匿名集合
             var list = from s in iq_saysay

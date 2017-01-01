@@ -112,9 +112,11 @@
             this.Controls.Add(this.skinListBox2);
             this.Controls.Add(this.skinListBox1);
             this.Name = "F_HotCookie";
+            this.ShowDrawIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "热 门 美 食 -----周推荐";
             this.TitleCenter = true;
+            this.TitleOffset = new System.Drawing.Point(20, 0);
             this.Load += new System.EventHandler(this.F_HotCookie_Load);
             this.ResumeLayout(false);
 

@@ -41,7 +41,7 @@ namespace DontStarve.App
             }
             if(isaysayInfoService.AddEntity(entity))
             {
-                MessageBox.Show("添加成功", "提示");
+                MessageYyu.ShowMessage("添加成功", "提示");
                 DialogResult = DialogResult.OK;
                 this.Close();
             }

@@ -30,6 +30,7 @@ namespace DontStarve.App
         private ICategoryInfoService icategoryInfoService = new CategoryInfoService();
         private ICookieInfoService icookieInfoService = new CookieInfoService();
         private ISaySayInfoService isaysayInfoService = new SaySayInfoService();
+        private ISaysaycommentInfoService isaysaycommentInfoService = new SaysaycommentInfoService();
 
         /// <summary>
         /// 选项卡改变事件
@@ -57,7 +58,7 @@ namespace DontStarve.App
             if (current_user.Pic != null) btnSelfUserPhoto.BackgroundImage = CommonHelper.BytesToPic(current_user.Pic);
             lbSelfUserName.Text = current_user.Name;
             lbSelfSignature.Text = current_user.Signature;
-            lbSelfFoodAge.Text = "食龄：" + current_user.SubTime.ToString();
+            lbSelfFoodAge.Text = "食龄：" + ((int)(DateTime.Now-Common.CommonHelper.StampToDateTime(current_user.SubTime.ToString())).TotalDays)+"天";
         }
 
         private void Load_search()
@@ -80,11 +81,13 @@ namespace DontStarve.App
         {
             //从数据库加载数据
             dynamic list = isaysayInfoService.LoadMyFriend(F_Main.current_user.Guid_id, myFriend_pageIndex, myFriend_pageSize, out myFriend_count);
-            //s.Pic,
-            //u.Name,
-            //s.PraiseNum,
-            //s.Subtime,
-            //s.Content
+            //saysayId = s.Guid_id,
+            //               s.Pic,
+            //               u.Name,
+            //               s.PraiseNum,
+            //               s.Subtime,
+            //               s.Content,
+            //userId = u.Guid_id,  // 该说说的发表者Id
             tableLayoutPanel2.Controls.Clear(); //清理
             foreach (dynamic item in list)
             {
@@ -93,7 +96,7 @@ namespace DontStarve.App
                 //反射得到匿名类型值  并  填充控件
                 Type t = item.GetType();
                 PropertyInfo[] pros = t.GetProperties();
-                yssd.Tag = pros[0].GetValue(item);
+                yssd.Tag = pros[0].GetValue(item);  //存储“说说Id”
                 byte[] picByte = pros[1].GetValue(item) as byte[];
                 if (picByte != null)
                 {
@@ -109,6 +112,31 @@ namespace DontStarve.App
                       var entity_saysay = isaysayInfoService.LoadEntities(s => s.Guid_id == (Guid)yssd.Tag).First();
                       entity_saysay.PraiseNum++;
                       isaysayInfoService.EditEntity(entity_saysay);
+                  });
+                //回复 注册事件
+                yssd.llbName.Click += new EventHandler((a, b) =>
+                  {
+                      F_SimplyReply fs = new F_SimplyReply();
+                      fs.Text = "回复：" + yssd.llbName.Text;
+                      fs.Show();
+                      fs.func += new Func<bool>(() =>
+                        {
+                            if (!string.IsNullOrEmpty(fs.txtContent.Text))
+                            {
+                              isaysaycommentInfoService.AddEntity(new saysaycommentinfo()
+                              {
+                                  Guid_id = Guid.NewGuid(),
+                                  Content = fs.txtContent.Text,
+                                  SaysayId = (Guid)pros[0].GetValue(item),
+                                  Subtime = Common.CommonHelper.GetCurrentDateStamp(),
+                                  ToUserId = (Guid)pros[6].GetValue(item),
+                                   UserId=F_Main.current_user.Guid_id
+                                });
+                                MessageYyu.ShowMessage("评论成功~~");
+                                fs.Close();
+                            }
+                            return true;
+                        });
                   });
                 //添加控件
                 tableLayoutPanel2.Controls.Add(yssd);
@@ -257,8 +285,12 @@ namespace DontStarve.App
         //注销
         private void llbLoginUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            F_Login login = new F_Login();
-            login.ShowDialog();
+            Application.Restart();
+            //this.Hide();
+            //F_Login login = new F_Login();
+            //login.ShowDialog();
+            //this.skinTabControl1.SelectedIndex = 0;
+            //this.Show();
         }
 
         private void btnSelfUserPhoto_Click(object sender, EventArgs e)

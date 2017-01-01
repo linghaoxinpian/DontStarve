@@ -50,7 +50,7 @@ namespace DontStarve.App
                         entity.SubAdmin = F_Main.current_user.Guid_id;
                         entity.Subtime = Common.CommonHelper.GetCurrentDateStamp();
                         //保存到数据库
-                      MessageBoxEx.Show( ieverydayrecommendInfoService.AddEntity(entity)?"添加成功！！":"添加失败，请重试");                        
+                      MessageBoxEx.Show( ieverydayrecommendInfoService.AddEntity(entity)?"推荐成功！！":"添加失败，请重试");                        
                     }
                 }
                 else
@@ -81,7 +81,7 @@ namespace DontStarve.App
             {
                 if (pageIndex * 30 >= count)
                 {
-                    MessageBoxEx.Show("已到达最底部");
+                    MessageYyu.ShowMessage("已到达最底部");
                     return;
                 }
                 Load_DataSource();
@@ -92,7 +92,7 @@ namespace DontStarve.App
             {
                 if (pageIndex <= 1)
                 {
-                    MessageBoxEx.Show("已到达第一页");
+                    MessageYyu.ShowMessage("已到达第一页");
                     return;
                 }
                 Load_DataSource();

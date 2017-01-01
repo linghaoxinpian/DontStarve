@@ -73,18 +73,25 @@ namespace DontStarve.App
         //添加好友
         private void lbSearchFriendList_DoubleClick(object sender, EventArgs e)
         {
-            if (lbSearchFriendList.SelectedItems.Count > 0)
+            try
             {
-                var s = lbSearchFriendList.SelectedItems[0] as SkinListBoxItem;
-                ifriendInfoService.AddEntity(new friendinfo()
+                if (lbSearchFriendList.SelectedItems.Count > 0)
                 {
-                    FriendId = (Guid)s.Tag,
-                    UserId = F_Main.current_user.Guid_id,
-                    SubTime = Common.CommonHelper.GetCurrentDateStamp()                   
-                });
-                MessageBoxEx.Show("添加成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Async_LoadFriend(); //刷新好友列表
+                    var s = lbSearchFriendList.SelectedItems[0] as SkinListBoxItem;
+                    ifriendInfoService.AddEntity(new friendinfo()
+                    {
+                        FriendId = (Guid)s.Tag,
+                        UserId = F_Main.current_user.Guid_id,
+                        SubTime = Common.CommonHelper.GetCurrentDateStamp()
+                    });
+                    MessageBoxEx.Show("添加成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Async_LoadFriend(); //刷新好友列表
+                }
             }
+            catch
+            {
+                MessageYyu.ShowMessage("你可能已添加该好友，请重试");
+            }           
         }
 
         //删除好友

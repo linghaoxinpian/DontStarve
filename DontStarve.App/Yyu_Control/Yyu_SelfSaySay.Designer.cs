@@ -107,7 +107,7 @@
             this.btnReply.NormlBack = null;
             this.btnReply.Size = new System.Drawing.Size(414, 46);
             this.btnReply.TabIndex = 5;
-            this.btnReply.Text = "回复";
+            this.btnReply.Text = "回复列表";
             this.btnReply.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel1
@@ -143,6 +143,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 9);
             this.Name = "Yyu_SelfSaySay";
             this.Size = new System.Drawing.Size(542, 171);
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();

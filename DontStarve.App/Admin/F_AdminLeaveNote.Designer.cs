@@ -59,6 +59,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvLeaveNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLeaveNote.ColumnHeadersHeight = 26;
+            this.dgvLeaveNote.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLeaveNote.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.subtime,
             this.userId,
@@ -126,6 +127,7 @@
             this.Controls.Add(this.dgvLeaveNote);
             this.Name = "F_AdminLeaveNote";
             this.ShowDrawIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "查看留言";
             this.TitleCenter = true;
             this.TitleOffset = new System.Drawing.Point(20, 0);

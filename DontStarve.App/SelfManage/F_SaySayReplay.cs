@@ -38,6 +38,11 @@ namespace DontStarve.App
         {
             int count = 0;
             dynamic s = isaysaycommentInfoService.LoadReplyBySaysayId(saysayId, 1, 5, out count);
+            //u.Guid_id,   //回复者的id
+            //               u.Name,  //回复者的Name
+            //               ToName = tu.Name, //被回复者的Name
+            //               i.Content,   //回复内容
+            //               i.Subtime    //回复时间
             this.Text = "总回复数：" + count.ToString();
             int top = -83;
             foreach (dynamic i in s)
@@ -51,7 +56,7 @@ namespace DontStarve.App
                 yr.lbUserToUser.Tag = pros[0].GetValue(i);  //储存回复者的id
                 yr.lbUserToUser.Text = pros[1].GetValue(i) + " 回复 " + pros[2].GetValue(i);
                 yr.txtReply.Text = pros[3].GetValue(i);
-                yr.lbSubTime.Text = pros[4].GetValue(i).ToString(); //回复时间
+                yr.lbSubTime.Text =Common.CommonHelper.StampToDateTime(pros[4].GetValue(i).ToString()).ToString(); //回复时间
                 yr.ReplyAction += new Action(() =>      //回复“评论”
                 {
                     //弹出“回复”窗体
@@ -105,6 +110,12 @@ namespace DontStarve.App
                 //添加进窗体
                 panel1.Controls.Add(yr);
             }
+        }
+
+        private void btnReplay_Click(object sender, EventArgs e)
+        {
+            F_SimplyReply fs = new F_SimplyReply();
+            fs.Text = "回复：自己";
         }
     }
 }

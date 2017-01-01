@@ -32,6 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Main));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tpSelfManage = new CCWin.SkinControl.SkinTabPage();
+            this.picLeaveNote = new CCWin.SkinControl.SkinPictureBox();
+            this.picShareFood = new CCWin.SkinControl.SkinPictureBox();
+            this.llbSelfFriend = new System.Windows.Forms.LinkLabel();
+            this.llbLoginUp = new System.Windows.Forms.LinkLabel();
+            this.llbSelfEditUserDetails = new System.Windows.Forms.LinkLabel();
+            this.lbSelfFoodAge = new CCWin.SkinControl.SkinLabel();
+            this.lbSelfSignature = new CCWin.SkinControl.SkinLabel();
+            this.lbSelfUserName = new CCWin.SkinControl.SkinLabel();
+            this.btnSelfUserPhoto = new CCWin.SkinControl.SkinButton();
             this.skinTabControl1 = new CCWin.SkinControl.SkinTabControl();
             this.tpHome = new CCWin.SkinControl.SkinTabPage();
             this.btnOneDayOneRecommend = new CCWin.SkinControl.SkinButton();
@@ -62,16 +72,9 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new CCWin.SkinControl.SkinButton();
             this.lbSearchResult = new CCWin.SkinControl.SkinListBox();
-            this.tpSelfManage = new CCWin.SkinControl.SkinTabPage();
-            this.picShareFood = new CCWin.SkinControl.SkinPictureBox();
-            this.llbSelfFriend = new System.Windows.Forms.LinkLabel();
-            this.llbLoginUp = new System.Windows.Forms.LinkLabel();
-            this.llbSelfEditUserDetails = new System.Windows.Forms.LinkLabel();
-            this.lbSelfFoodAge = new CCWin.SkinControl.SkinLabel();
-            this.lbSelfSignature = new CCWin.SkinControl.SkinLabel();
-            this.lbSelfUserName = new CCWin.SkinControl.SkinLabel();
-            this.btnSelfUserPhoto = new CCWin.SkinControl.SkinButton();
-            this.picLeaveNote = new CCWin.SkinControl.SkinPictureBox();
+            this.tpSelfManage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLeaveNote)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShareFood)).BeginInit();
             this.skinTabControl1.SuspendLayout();
             this.tpHome.SuspendLayout();
             this.tpFoodWorld.SuspendLayout();
@@ -90,9 +93,6 @@
             this.skinSplitContainer2.Panel1.SuspendLayout();
             this.skinSplitContainer2.Panel2.SuspendLayout();
             this.skinSplitContainer2.SuspendLayout();
-            this.tpSelfManage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picShareFood)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLeaveNote)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList1
@@ -108,7 +108,155 @@
             this.toolTip1.InitialDelay = 50;
             this.toolTip1.ReshowDelay = 50;
             this.toolTip1.ShowAlways = true;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // tpSelfManage
+            // 
+            this.tpSelfManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(208)))), ((int)(((byte)(255)))));
+            this.tpSelfManage.Controls.Add(this.picLeaveNote);
+            this.tpSelfManage.Controls.Add(this.picShareFood);
+            this.tpSelfManage.Controls.Add(this.llbSelfFriend);
+            this.tpSelfManage.Controls.Add(this.llbLoginUp);
+            this.tpSelfManage.Controls.Add(this.llbSelfEditUserDetails);
+            this.tpSelfManage.Controls.Add(this.lbSelfFoodAge);
+            this.tpSelfManage.Controls.Add(this.lbSelfSignature);
+            this.tpSelfManage.Controls.Add(this.lbSelfUserName);
+            this.tpSelfManage.Controls.Add(this.btnSelfUserPhoto);
+            this.tpSelfManage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tpSelfManage.Location = new System.Drawing.Point(0, 130);
+            this.tpSelfManage.Name = "tpSelfManage";
+            this.tpSelfManage.Size = new System.Drawing.Size(898, 547);
+            this.tpSelfManage.TabIndex = 5;
+            this.tpSelfManage.TabItemImage = global::DontStarve.App.Properties.Resources.self2;
+            this.tpSelfManage.Text = "我的世界";
+            this.toolTip1.SetToolTip(this.tpSelfManage, "点击查看我的动态");
+            // 
+            // picLeaveNote
+            // 
+            this.picLeaveNote.BackColor = System.Drawing.Color.Transparent;
+            this.picLeaveNote.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picLeaveNote.Image = global::DontStarve.App.Properties.Resources.sharefood;
+            this.picLeaveNote.Location = new System.Drawing.Point(824, 8);
+            this.picLeaveNote.Name = "picLeaveNote";
+            this.picLeaveNote.Size = new System.Drawing.Size(68, 63);
+            this.picLeaveNote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLeaveNote.TabIndex = 3;
+            this.picLeaveNote.TabStop = false;
+            this.toolTip1.SetToolTip(this.picLeaveNote, "留言给我们");
+            this.picLeaveNote.Click += new System.EventHandler(this.picLeaveNote_Click);
+            // 
+            // picShareFood
+            // 
+            this.picShareFood.BackColor = System.Drawing.Color.Transparent;
+            this.picShareFood.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picShareFood.Image = global::DontStarve.App.Properties.Resources.sharefood2;
+            this.picShareFood.Location = new System.Drawing.Point(187, 402);
+            this.picShareFood.Name = "picShareFood";
+            this.picShareFood.Size = new System.Drawing.Size(166, 63);
+            this.picShareFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picShareFood.TabIndex = 3;
+            this.picShareFood.TabStop = false;
+            this.toolTip1.SetToolTip(this.picShareFood, "分享美食");
+            this.picShareFood.Click += new System.EventHandler(this.picShareFood_Click);
+            // 
+            // llbSelfFriend
+            // 
+            this.llbSelfFriend.AutoSize = true;
+            this.llbSelfFriend.LinkColor = System.Drawing.Color.Red;
+            this.llbSelfFriend.Location = new System.Drawing.Point(821, 107);
+            this.llbSelfFriend.Name = "llbSelfFriend";
+            this.llbSelfFriend.Size = new System.Drawing.Size(71, 12);
+            this.llbSelfFriend.TabIndex = 2;
+            this.llbSelfFriend.TabStop = true;
+            this.llbSelfFriend.Text = "我 的 好 友";
+            this.llbSelfFriend.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbSelfFriend_LinkClicked);
+            // 
+            // llbLoginUp
+            // 
+            this.llbLoginUp.AutoSize = true;
+            this.llbLoginUp.LinkColor = System.Drawing.Color.Red;
+            this.llbLoginUp.Location = new System.Drawing.Point(842, 136);
+            this.llbLoginUp.Name = "llbLoginUp";
+            this.llbLoginUp.Size = new System.Drawing.Size(29, 12);
+            this.llbLoginUp.TabIndex = 2;
+            this.llbLoginUp.TabStop = true;
+            this.llbLoginUp.Text = "注销";
+            this.llbLoginUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbLoginUp_LinkClicked);
+            // 
+            // llbSelfEditUserDetails
+            // 
+            this.llbSelfEditUserDetails.AutoSize = true;
+            this.llbSelfEditUserDetails.LinkColor = System.Drawing.Color.Red;
+            this.llbSelfEditUserDetails.Location = new System.Drawing.Point(818, 78);
+            this.llbSelfEditUserDetails.Name = "llbSelfEditUserDetails";
+            this.llbSelfEditUserDetails.Size = new System.Drawing.Size(77, 12);
+            this.llbSelfEditUserDetails.TabIndex = 2;
+            this.llbSelfEditUserDetails.TabStop = true;
+            this.llbSelfEditUserDetails.Text = "修改个人资料";
+            this.llbSelfEditUserDetails.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbSelfEditUserDetails_LinkClicked);
+            // 
+            // lbSelfFoodAge
+            // 
+            this.lbSelfFoodAge.AutoSize = true;
+            this.lbSelfFoodAge.BackColor = System.Drawing.Color.Transparent;
+            this.lbSelfFoodAge.BorderColor = System.Drawing.Color.White;
+            this.lbSelfFoodAge.Font = new System.Drawing.Font("微软雅黑", 17F);
+            this.lbSelfFoodAge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lbSelfFoodAge.Location = new System.Drawing.Point(450, 321);
+            this.lbSelfFoodAge.Name = "lbSelfFoodAge";
+            this.lbSelfFoodAge.Size = new System.Drawing.Size(118, 30);
+            this.lbSelfFoodAge.TabIndex = 1;
+            this.lbSelfFoodAge.Text = "食龄：2年";
+            // 
+            // lbSelfSignature
+            // 
+            this.lbSelfSignature.AutoSize = true;
+            this.lbSelfSignature.BackColor = System.Drawing.Color.Transparent;
+            this.lbSelfSignature.BorderColor = System.Drawing.Color.White;
+            this.lbSelfSignature.Font = new System.Drawing.Font("微软雅黑", 17F);
+            this.lbSelfSignature.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbSelfSignature.Location = new System.Drawing.Point(441, 251);
+            this.lbSelfSignature.Name = "lbSelfSignature";
+            this.lbSelfSignature.Size = new System.Drawing.Size(312, 30);
+            this.lbSelfSignature.TabIndex = 1;
+            this.lbSelfSignature.Text = "梦想总要有的，万一见鬼了昵";
+            // 
+            // lbSelfUserName
+            // 
+            this.lbSelfUserName.AutoSize = true;
+            this.lbSelfUserName.BackColor = System.Drawing.Color.Transparent;
+            this.lbSelfUserName.BorderColor = System.Drawing.Color.White;
+            this.lbSelfUserName.Font = new System.Drawing.Font("微软雅黑", 29F);
+            this.lbSelfUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbSelfUserName.Location = new System.Drawing.Point(509, 164);
+            this.lbSelfUserName.Name = "lbSelfUserName";
+            this.lbSelfUserName.Size = new System.Drawing.Size(139, 51);
+            this.lbSelfUserName.TabIndex = 1;
+            this.lbSelfUserName.Text = "汪星人";
+            // 
+            // btnSelfUserPhoto
+            // 
+            this.btnSelfUserPhoto.BackColor = System.Drawing.Color.Transparent;
+            this.btnSelfUserPhoto.BackgroundImage = global::DontStarve.App.Properties.Resources.christmas;
+            this.btnSelfUserPhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSelfUserPhoto.BaseColor = System.Drawing.Color.Transparent;
+            this.btnSelfUserPhoto.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.btnSelfUserPhoto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSelfUserPhoto.DownBack = null;
+            this.btnSelfUserPhoto.DownBaseColor = System.Drawing.Color.Transparent;
+            this.btnSelfUserPhoto.FadeGlow = false;
+            this.btnSelfUserPhoto.IsDrawGlass = false;
+            this.btnSelfUserPhoto.Location = new System.Drawing.Point(147, 149);
+            this.btnSelfUserPhoto.MouseBack = null;
+            this.btnSelfUserPhoto.MouseBaseColor = System.Drawing.Color.Transparent;
+            this.btnSelfUserPhoto.Name = "btnSelfUserPhoto";
+            this.btnSelfUserPhoto.NormlBack = null;
+            this.btnSelfUserPhoto.Radius = 220;
+            this.btnSelfUserPhoto.RoundStyle = CCWin.SkinClass.RoundStyle.All;
+            this.btnSelfUserPhoto.Size = new System.Drawing.Size(222, 222);
+            this.btnSelfUserPhoto.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.btnSelfUserPhoto, "点击查看个人动态");
+            this.btnSelfUserPhoto.UseVisualStyleBackColor = false;
+            this.btnSelfUserPhoto.Click += new System.EventHandler(this.btnSelfUserPhoto_Click);
             // 
             // skinTabControl1
             // 
@@ -611,154 +759,6 @@
             this.lbSearchResult.TabIndex = 0;
             this.lbSearchResult.DoubleClick += new System.EventHandler(this.lbSearchResult_DoubleClick);
             // 
-            // tpSelfManage
-            // 
-            this.tpSelfManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(208)))), ((int)(((byte)(255)))));
-            this.tpSelfManage.Controls.Add(this.picLeaveNote);
-            this.tpSelfManage.Controls.Add(this.picShareFood);
-            this.tpSelfManage.Controls.Add(this.llbSelfFriend);
-            this.tpSelfManage.Controls.Add(this.llbLoginUp);
-            this.tpSelfManage.Controls.Add(this.llbSelfEditUserDetails);
-            this.tpSelfManage.Controls.Add(this.lbSelfFoodAge);
-            this.tpSelfManage.Controls.Add(this.lbSelfSignature);
-            this.tpSelfManage.Controls.Add(this.lbSelfUserName);
-            this.tpSelfManage.Controls.Add(this.btnSelfUserPhoto);
-            this.tpSelfManage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tpSelfManage.Location = new System.Drawing.Point(0, 130);
-            this.tpSelfManage.Name = "tpSelfManage";
-            this.tpSelfManage.Size = new System.Drawing.Size(898, 547);
-            this.tpSelfManage.TabIndex = 5;
-            this.tpSelfManage.TabItemImage = global::DontStarve.App.Properties.Resources.self2;
-            this.tpSelfManage.Text = "我的世界";
-            this.toolTip1.SetToolTip(this.tpSelfManage, "点击查看我的动态");
-            // 
-            // picShareFood
-            // 
-            this.picShareFood.BackColor = System.Drawing.Color.Transparent;
-            this.picShareFood.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picShareFood.Image = global::DontStarve.App.Properties.Resources.sharefood2;
-            this.picShareFood.Location = new System.Drawing.Point(187, 402);
-            this.picShareFood.Name = "picShareFood";
-            this.picShareFood.Size = new System.Drawing.Size(166, 63);
-            this.picShareFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picShareFood.TabIndex = 3;
-            this.picShareFood.TabStop = false;
-            this.toolTip1.SetToolTip(this.picShareFood, "分享美食");
-            this.picShareFood.Click += new System.EventHandler(this.picShareFood_Click);
-            // 
-            // llbSelfFriend
-            // 
-            this.llbSelfFriend.AutoSize = true;
-            this.llbSelfFriend.LinkColor = System.Drawing.Color.Red;
-            this.llbSelfFriend.Location = new System.Drawing.Point(821, 107);
-            this.llbSelfFriend.Name = "llbSelfFriend";
-            this.llbSelfFriend.Size = new System.Drawing.Size(71, 12);
-            this.llbSelfFriend.TabIndex = 2;
-            this.llbSelfFriend.TabStop = true;
-            this.llbSelfFriend.Text = "我 的 好 友";
-            this.llbSelfFriend.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbSelfFriend_LinkClicked);
-            // 
-            // llbLoginUp
-            // 
-            this.llbLoginUp.AutoSize = true;
-            this.llbLoginUp.LinkColor = System.Drawing.Color.Red;
-            this.llbLoginUp.Location = new System.Drawing.Point(842, 136);
-            this.llbLoginUp.Name = "llbLoginUp";
-            this.llbLoginUp.Size = new System.Drawing.Size(29, 12);
-            this.llbLoginUp.TabIndex = 2;
-            this.llbLoginUp.TabStop = true;
-            this.llbLoginUp.Text = "注销";
-            this.llbLoginUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbLoginUp_LinkClicked);
-            // 
-            // llbSelfEditUserDetails
-            // 
-            this.llbSelfEditUserDetails.AutoSize = true;
-            this.llbSelfEditUserDetails.LinkColor = System.Drawing.Color.Red;
-            this.llbSelfEditUserDetails.Location = new System.Drawing.Point(818, 78);
-            this.llbSelfEditUserDetails.Name = "llbSelfEditUserDetails";
-            this.llbSelfEditUserDetails.Size = new System.Drawing.Size(77, 12);
-            this.llbSelfEditUserDetails.TabIndex = 2;
-            this.llbSelfEditUserDetails.TabStop = true;
-            this.llbSelfEditUserDetails.Text = "修改个人资料";
-            this.llbSelfEditUserDetails.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbSelfEditUserDetails_LinkClicked);
-            // 
-            // lbSelfFoodAge
-            // 
-            this.lbSelfFoodAge.AutoSize = true;
-            this.lbSelfFoodAge.BackColor = System.Drawing.Color.Transparent;
-            this.lbSelfFoodAge.BorderColor = System.Drawing.Color.White;
-            this.lbSelfFoodAge.Font = new System.Drawing.Font("微软雅黑", 17F);
-            this.lbSelfFoodAge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lbSelfFoodAge.Location = new System.Drawing.Point(450, 321);
-            this.lbSelfFoodAge.Name = "lbSelfFoodAge";
-            this.lbSelfFoodAge.Size = new System.Drawing.Size(118, 30);
-            this.lbSelfFoodAge.TabIndex = 1;
-            this.lbSelfFoodAge.Text = "食龄：2年";
-            // 
-            // lbSelfSignature
-            // 
-            this.lbSelfSignature.AutoSize = true;
-            this.lbSelfSignature.BackColor = System.Drawing.Color.Transparent;
-            this.lbSelfSignature.BorderColor = System.Drawing.Color.White;
-            this.lbSelfSignature.Font = new System.Drawing.Font("微软雅黑", 17F);
-            this.lbSelfSignature.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbSelfSignature.Location = new System.Drawing.Point(441, 251);
-            this.lbSelfSignature.Name = "lbSelfSignature";
-            this.lbSelfSignature.Size = new System.Drawing.Size(312, 30);
-            this.lbSelfSignature.TabIndex = 1;
-            this.lbSelfSignature.Text = "梦想总要有的，万一见鬼了昵";
-            // 
-            // lbSelfUserName
-            // 
-            this.lbSelfUserName.AutoSize = true;
-            this.lbSelfUserName.BackColor = System.Drawing.Color.Transparent;
-            this.lbSelfUserName.BorderColor = System.Drawing.Color.White;
-            this.lbSelfUserName.Font = new System.Drawing.Font("微软雅黑", 29F);
-            this.lbSelfUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbSelfUserName.Location = new System.Drawing.Point(509, 164);
-            this.lbSelfUserName.Name = "lbSelfUserName";
-            this.lbSelfUserName.Size = new System.Drawing.Size(139, 51);
-            this.lbSelfUserName.TabIndex = 1;
-            this.lbSelfUserName.Text = "汪星人";
-            // 
-            // btnSelfUserPhoto
-            // 
-            this.btnSelfUserPhoto.BackColor = System.Drawing.Color.Transparent;
-            this.btnSelfUserPhoto.BackgroundImage = global::DontStarve.App.Properties.Resources.christmas;
-            this.btnSelfUserPhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSelfUserPhoto.BaseColor = System.Drawing.Color.Transparent;
-            this.btnSelfUserPhoto.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnSelfUserPhoto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSelfUserPhoto.DownBack = null;
-            this.btnSelfUserPhoto.DownBaseColor = System.Drawing.Color.Transparent;
-            this.btnSelfUserPhoto.FadeGlow = false;
-            this.btnSelfUserPhoto.IsDrawGlass = false;
-            this.btnSelfUserPhoto.Location = new System.Drawing.Point(147, 149);
-            this.btnSelfUserPhoto.MouseBack = null;
-            this.btnSelfUserPhoto.MouseBaseColor = System.Drawing.Color.Transparent;
-            this.btnSelfUserPhoto.Name = "btnSelfUserPhoto";
-            this.btnSelfUserPhoto.NormlBack = null;
-            this.btnSelfUserPhoto.Radius = 220;
-            this.btnSelfUserPhoto.RoundStyle = CCWin.SkinClass.RoundStyle.All;
-            this.btnSelfUserPhoto.Size = new System.Drawing.Size(222, 222);
-            this.btnSelfUserPhoto.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.btnSelfUserPhoto, "点击查看个人动态");
-            this.btnSelfUserPhoto.UseVisualStyleBackColor = false;
-            this.btnSelfUserPhoto.Click += new System.EventHandler(this.btnSelfUserPhoto_Click);
-            // 
-            // picLeaveNote
-            // 
-            this.picLeaveNote.BackColor = System.Drawing.Color.Transparent;
-            this.picLeaveNote.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picLeaveNote.Image = global::DontStarve.App.Properties.Resources.sharefood;
-            this.picLeaveNote.Location = new System.Drawing.Point(824, 8);
-            this.picLeaveNote.Name = "picLeaveNote";
-            this.picLeaveNote.Size = new System.Drawing.Size(68, 63);
-            this.picLeaveNote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLeaveNote.TabIndex = 3;
-            this.picLeaveNote.TabStop = false;
-            this.picLeaveNote.Click += new System.EventHandler(this.picLeaveNote_Click);
-            // 
             // F_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -774,9 +774,14 @@
             this.ShadowWidth = 10;
             this.ShowDrawIcon = false;
             this.SkinOpacity = 0.9D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "";
             this.MouseEnter += new System.EventHandler(this.F_Main_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.F_Main_MouseLeave);
+            this.tpSelfManage.ResumeLayout(false);
+            this.tpSelfManage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLeaveNote)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShareFood)).EndInit();
             this.skinTabControl1.ResumeLayout(false);
             this.tpHome.ResumeLayout(false);
             this.tpFoodWorld.ResumeLayout(false);
@@ -796,10 +801,6 @@
             this.skinSplitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.skinSplitContainer2)).EndInit();
             this.skinSplitContainer2.ResumeLayout(false);
-            this.tpSelfManage.ResumeLayout(false);
-            this.tpSelfManage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picShareFood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLeaveNote)).EndInit();
             this.ResumeLayout(false);
 
         }

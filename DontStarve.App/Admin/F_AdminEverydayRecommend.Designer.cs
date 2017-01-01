@@ -326,6 +326,7 @@
             this.Controls.Add(this.dgv);
             this.Name = "F_AdminEverydayRecommend";
             this.ShowDrawIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "每日推荐";
             this.TitleCenter = true;
             this.TitleColor = System.Drawing.Color.BlanchedAlmond;

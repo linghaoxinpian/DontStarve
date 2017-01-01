@@ -64,7 +64,7 @@
             // lbSubTime
             // 
             this.lbSubTime.AutoSize = true;
-            this.lbSubTime.Location = new System.Drawing.Point(62, 46);
+            this.lbSubTime.Location = new System.Drawing.Point(47, 46);
             this.lbSubTime.Name = "lbSubTime";
             this.lbSubTime.Size = new System.Drawing.Size(77, 12);
             this.lbSubTime.TabIndex = 6;

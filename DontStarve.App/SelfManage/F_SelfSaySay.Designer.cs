@@ -35,11 +35,13 @@
             // 
             // skinPanel1
             // 
+            this.skinPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.skinPanel1.AutoScroll = true;
             this.skinPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.skinPanel1.BackColor = System.Drawing.Color.Transparent;
             this.skinPanel1.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.skinPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.skinPanel1.DownBack = null;
             this.skinPanel1.Location = new System.Drawing.Point(4, 103);
             this.skinPanel1.MouseBack = null;
@@ -52,7 +54,7 @@
             // 
             this.btnShare.BackColor = System.Drawing.Color.Transparent;
             this.btnShare.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnShare.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnShare.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnShare.DownBack = null;
             this.btnShare.Font = new System.Drawing.Font("华文彩云", 22F);
             this.btnShare.Location = new System.Drawing.Point(4, 28);

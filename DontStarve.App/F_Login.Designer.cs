@@ -79,6 +79,7 @@
             this.txtName.Size = new System.Drawing.Size(174, 19);
             this.txtName.TabIndex = 2;
             this.txtName.Text = "零芯";
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtPwd
             // 
@@ -107,7 +108,7 @@
             // picUserPhoto
             // 
             this.picUserPhoto.BackColor = System.Drawing.Color.Transparent;
-            this.picUserPhoto.Image = global::DontStarve.App.Properties.Resources.christmas;
+            this.picUserPhoto.Image = global::DontStarve.App.Properties.Resources.self2;
             this.picUserPhoto.Location = new System.Drawing.Point(183, 80);
             this.picUserPhoto.Name = "picUserPhoto";
             this.picUserPhoto.Size = new System.Drawing.Size(137, 98);

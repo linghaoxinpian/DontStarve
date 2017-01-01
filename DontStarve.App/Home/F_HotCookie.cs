@@ -37,7 +37,7 @@ namespace DontStarve.App
                 CCWin.SkinControl.SkinListBoxItem item = new CCWin.SkinControl.SkinListBoxItem();
                 item.Tag = list[i]; //存对象，减少查询数据库
                 item.Image = list[i].pic == null ? Properties.Resources.nopic : Common.CommonHelper.BytesToPic(list[i].pic);
-                item.Text = "第" + (i + 1).ToString() + "名：" + list[i].Name + "\n";
+                item.Text = "第" + (i + 1).ToString() + "名：" + list[i].Name + "\n\n";
                 item.Text += "已有" + list[i].PraiseNum + "位吃货为其点赞！！\n";
                 skinListBox1.Items.Add(item);
             }
