@@ -25,6 +25,9 @@ namespace DontStarve.App
             if (F_Main.current_user != null)
             {
                 this.DialogResult = DialogResult.OK;
+            }else
+            {
+                MessageYyu.ShowMessage("帐号或密码错误");               
             }
         }
 

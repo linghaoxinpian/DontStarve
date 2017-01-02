@@ -32,6 +32,7 @@
             this.pic = new System.Windows.Forms.PictureBox();
             this.btnShare = new System.Windows.Forms.Button();
             this.txtContent = new System.Windows.Forms.TextBox();
+            this.cbIsPublic = new CCWin.SkinControl.SkinCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,12 +70,32 @@
             this.txtContent.Size = new System.Drawing.Size(385, 220);
             this.txtContent.TabIndex = 2;
             // 
+            // cbIsPublic
+            // 
+            this.cbIsPublic.AutoSize = true;
+            this.cbIsPublic.BackColor = System.Drawing.Color.Transparent;
+            this.cbIsPublic.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.cbIsPublic.DownBack = null;
+            this.cbIsPublic.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cbIsPublic.Location = new System.Drawing.Point(71, 497);
+            this.cbIsPublic.MouseBack = null;
+            this.cbIsPublic.Name = "cbIsPublic";
+            this.cbIsPublic.NormlBack = null;
+            this.cbIsPublic.SelectedDownBack = null;
+            this.cbIsPublic.SelectedMouseBack = null;
+            this.cbIsPublic.SelectedNormlBack = null;
+            this.cbIsPublic.Size = new System.Drawing.Size(87, 21);
+            this.cbIsPublic.TabIndex = 3;
+            this.cbIsPublic.Text = "非好友可见";
+            this.cbIsPublic.UseVisualStyleBackColor = false;
+            // 
             // F_SelfShare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(208)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(458, 590);
+            this.Controls.Add(this.cbIsPublic);
             this.Controls.Add(this.txtContent);
             this.Controls.Add(this.btnShare);
             this.Controls.Add(this.pic);
@@ -95,5 +116,6 @@
         private System.Windows.Forms.PictureBox pic;
         private System.Windows.Forms.Button btnShare;
         private System.Windows.Forms.TextBox txtContent;
+        private CCWin.SkinControl.SkinCheckBox cbIsPublic;
     }
 }

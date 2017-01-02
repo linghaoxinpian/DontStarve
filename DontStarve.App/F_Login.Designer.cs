@@ -154,10 +154,8 @@
             // 
             // F_Login
             // 
-            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(500, 500);
             this.Controls.Add(this.llbRegister);
             this.Controls.Add(this.picUserPhoto);

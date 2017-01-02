@@ -36,14 +36,13 @@
             this.skinSplitContainer2 = new CCWin.SkinControl.SkinSplitContainer();
             this.lbLevel = new CCWin.SkinControl.SkinLabel();
             this.labRating = new CCWin.SkinControl.SkinLabel();
+            this.yyu_PraiseNum1 = new DontStarve.App.Yyu_PraiseNum();
             this.labCookieName = new CCWin.SkinControl.SkinLabel();
             this.picCookie = new CCWin.SkinControl.SkinPictureBox();
             this.txtMaterial = new System.Windows.Forms.TextBox();
             this.btnVideo = new CCWin.SkinControl.SkinButton();
             this.lbFunc = new CCWin.SkinControl.SkinListBox();
             this.btnComplain = new CCWin.SkinControl.SkinButton();
-            this.yyu_PraiseNum1 = new DontStarve.App.Yyu_PraiseNum();
-            this.skinButton1 = new CCWin.SkinControl.SkinButton();
             ((System.ComponentModel.ISupportInitialize)(this.skinSplitContainer1)).BeginInit();
             this.skinSplitContainer1.Panel1.SuspendLayout();
             this.skinSplitContainer1.Panel2.SuspendLayout();
@@ -75,7 +74,7 @@
             // 
             this.skinSplitContainer1.Panel2.Controls.Add(this.skinSplitContainer2);
             this.skinSplitContainer1.Size = new System.Drawing.Size(802, 598);
-            this.skinSplitContainer1.SplitterDistance = 316;
+            this.skinSplitContainer1.SplitterDistance = 310;
             this.skinSplitContainer1.SplitterWidth = 10;
             this.skinSplitContainer1.TabIndex = 0;
             this.skinSplitContainer1.CollapseClick += new System.EventHandler(this.skinSplitContainer1_CollapseClick);
@@ -114,7 +113,7 @@
             this.gifBox1.Image = ((System.Drawing.Image)(resources.GetObject("gifBox1.Image")));
             this.gifBox1.Location = new System.Drawing.Point(3, 182);
             this.gifBox1.Name = "gifBox1";
-            this.gifBox1.Size = new System.Drawing.Size(310, 199);
+            this.gifBox1.Size = new System.Drawing.Size(304, 199);
             this.gifBox1.TabIndex = 0;
             this.gifBox1.Text = "gifBox1";
             this.gifBox1.Click += new System.EventHandler(this.gifBox1_Click);
@@ -141,10 +140,9 @@
             // skinSplitContainer2.Panel2
             // 
             this.skinSplitContainer2.Panel2.Controls.Add(this.txtMaterial);
-            this.skinSplitContainer2.Panel2.Controls.Add(this.skinButton1);
             this.skinSplitContainer2.Panel2.Controls.Add(this.btnVideo);
             this.skinSplitContainer2.Panel2.Controls.Add(this.lbFunc);
-            this.skinSplitContainer2.Size = new System.Drawing.Size(476, 598);
+            this.skinSplitContainer2.Size = new System.Drawing.Size(482, 598);
             this.skinSplitContainer2.SplitterDistance = 143;
             this.skinSplitContainer2.TabIndex = 0;
             // 
@@ -168,11 +166,20 @@
             this.labRating.BorderColor = System.Drawing.Color.White;
             this.labRating.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labRating.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.labRating.Location = new System.Drawing.Point(24, 119);
+            this.labRating.Location = new System.Drawing.Point(27, 119);
             this.labRating.Name = "labRating";
             this.labRating.Size = new System.Drawing.Size(56, 17);
             this.labRating.TabIndex = 3;
             this.labRating.Text = "好评率：";
+            // 
+            // yyu_PraiseNum1
+            // 
+            this.yyu_PraiseNum1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.yyu_PraiseNum1.BackColor = System.Drawing.Color.Transparent;
+            this.yyu_PraiseNum1.Location = new System.Drawing.Point(367, 101);
+            this.yyu_PraiseNum1.Name = "yyu_PraiseNum1";
+            this.yyu_PraiseNum1.Size = new System.Drawing.Size(101, 37);
+            this.yyu_PraiseNum1.TabIndex = 2;
             // 
             // labCookieName
             // 
@@ -182,7 +189,7 @@
             this.labCookieName.BorderColor = System.Drawing.Color.White;
             this.labCookieName.Font = new System.Drawing.Font("楷体", 35F);
             this.labCookieName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.labCookieName.Location = new System.Drawing.Point(188, 28);
+            this.labCookieName.Location = new System.Drawing.Point(191, 28);
             this.labCookieName.Name = "labCookieName";
             this.labCookieName.Size = new System.Drawing.Size(164, 47);
             this.labCookieName.TabIndex = 1;
@@ -193,7 +200,7 @@
             this.picCookie.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picCookie.BackColor = System.Drawing.Color.Transparent;
             this.picCookie.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picCookie.Location = new System.Drawing.Point(14, 3);
+            this.picCookie.Location = new System.Drawing.Point(17, 3);
             this.picCookie.Name = "picCookie";
             this.picCookie.Size = new System.Drawing.Size(132, 108);
             this.picCookie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -210,12 +217,13 @@
             this.txtMaterial.Location = new System.Drawing.Point(0, 0);
             this.txtMaterial.Multiline = true;
             this.txtMaterial.Name = "txtMaterial";
-            this.txtMaterial.Size = new System.Drawing.Size(476, 90);
+            this.txtMaterial.Size = new System.Drawing.Size(482, 90);
             this.txtMaterial.TabIndex = 5;
             this.txtMaterial.Text = "原料：";
             // 
             // btnVideo
             // 
+            this.btnVideo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnVideo.BackColor = System.Drawing.Color.Transparent;
             this.btnVideo.BorderColor = System.Drawing.Color.Transparent;
             this.btnVideo.ControlState = CCWin.SkinClass.ControlState.Normal;
@@ -260,7 +268,7 @@
             this.lbFunc.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.lbFunc.RowBackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lbFunc.RowBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lbFunc.Size = new System.Drawing.Size(476, 361);
+            this.lbFunc.Size = new System.Drawing.Size(482, 361);
             this.lbFunc.TabIndex = 0;
             // 
             // btnComplain
@@ -287,39 +295,6 @@
             this.btnComplain.Text = "吐槽一下 ~ ~";
             this.btnComplain.UseVisualStyleBackColor = false;
             this.btnComplain.Click += new System.EventHandler(this.btnComplain_Click);
-            // 
-            // yyu_PraiseNum1
-            // 
-            this.yyu_PraiseNum1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.yyu_PraiseNum1.BackColor = System.Drawing.Color.Transparent;
-            this.yyu_PraiseNum1.Location = new System.Drawing.Point(364, 101);
-            this.yyu_PraiseNum1.Name = "yyu_PraiseNum1";
-            this.yyu_PraiseNum1.Size = new System.Drawing.Size(101, 37);
-            this.yyu_PraiseNum1.TabIndex = 2;
-            // 
-            // skinButton1
-            // 
-            this.skinButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.skinButton1.BackColor = System.Drawing.Color.Transparent;
-            this.skinButton1.BorderColor = System.Drawing.Color.Transparent;
-            this.skinButton1.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.skinButton1.Create = true;
-            this.skinButton1.DownBack = null;
-            this.skinButton1.Font = new System.Drawing.Font("宋体", 9F);
-            this.skinButton1.GlowColor = System.Drawing.Color.Transparent;
-            this.skinButton1.InnerBorderColor = System.Drawing.Color.Transparent;
-            this.skinButton1.IsDrawGlass = false;
-            this.skinButton1.Location = new System.Drawing.Point(284, 409);
-            this.skinButton1.MouseBack = null;
-            this.skinButton1.Name = "skinButton1";
-            this.skinButton1.NormlBack = null;
-            this.skinButton1.Radius = 30;
-            this.skinButton1.RoundStyle = CCWin.SkinClass.RoundStyle.All;
-            this.skinButton1.Size = new System.Drawing.Size(94, 33);
-            this.skinButton1.TabIndex = 4;
-            this.skinButton1.Text = "视频（Video）";
-            this.skinButton1.UseVisualStyleBackColor = false;
-            this.skinButton1.Click += new System.EventHandler(this.picCookie_Click);
             // 
             // F_CookieInfo
             // 
@@ -376,6 +351,5 @@
         private CCWin.SkinControl.SkinButton btnVideo;
         private CCWin.SkinControl.SkinButton btnNextPage;
         private System.Windows.Forms.TextBox txtMaterial;
-        private CCWin.SkinControl.SkinButton skinButton1;
     }
 }

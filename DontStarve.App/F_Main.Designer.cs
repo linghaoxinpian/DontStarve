@@ -260,7 +260,8 @@
             // 
             // skinTabControl1
             // 
-            this.skinTabControl1.AnimatorType = CCWin.SkinControl.AnimationType.HorizSlide;
+            this.skinTabControl1.AnimationStart = true;
+            this.skinTabControl1.AnimatorType = CCWin.SkinControl.AnimationType.Leaf;
             this.skinTabControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(202)))), ((int)(((byte)(99)))));
             this.skinTabControl1.CloseRect = new System.Drawing.Rectangle(2, 2, 12, 12);
             this.skinTabControl1.Controls.Add(this.tpHome);
@@ -286,7 +287,7 @@
             this.skinTabControl1.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Top;
             this.skinTabControl1.PageNorml = null;
             this.skinTabControl1.Radius = 15;
-            this.skinTabControl1.SelectedIndex = 1;
+            this.skinTabControl1.SelectedIndex = 0;
             this.skinTabControl1.Size = new System.Drawing.Size(898, 677);
             this.skinTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.skinTabControl1.TabIndex = 0;
@@ -775,6 +776,7 @@
             this.SkinOpacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "";
+            this.Load += new System.EventHandler(this.F_Main_Load);
             this.MouseEnter += new System.EventHandler(this.F_Main_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.F_Main_MouseLeave);
             this.tpSelfManage.ResumeLayout(false);

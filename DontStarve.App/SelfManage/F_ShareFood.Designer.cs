@@ -82,7 +82,7 @@
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(362, 60);
             this.txtRemark.TabIndex = 1;
-            this.txtRemark.Text = "备注信息：";
+            this.txtRemark.Text = "小贴士：";
             // 
             // btnSubmit
             // 
@@ -192,7 +192,7 @@
             this.txtMaterial.Name = "txtMaterial";
             this.txtMaterial.Size = new System.Drawing.Size(358, 97);
             this.txtMaterial.TabIndex = 1;
-            this.txtMaterial.Text = "鸡蛋|2只\r\n雪虾(小最好)|500克\r\n鸡精|适量";
+            this.txtMaterial.Text = "鸡蛋|2只\r\n雪虾(小最好)|500克";
             // 
             // skinLabel4
             // 
@@ -202,9 +202,9 @@
             this.skinLabel4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinLabel4.Location = new System.Drawing.Point(451, 121);
             this.skinLabel4.Name = "skinLabel4";
-            this.skinLabel4.Size = new System.Drawing.Size(152, 17);
+            this.skinLabel4.Size = new System.Drawing.Size(212, 17);
             this.skinLabel4.TabIndex = 3;
-            this.skinLabel4.Text = "所需原料（注意填写格式）";
+            this.skinLabel4.Text = "所需原料（注意填写格式，只写主料）";
             // 
             // F_ShareFood
             // 

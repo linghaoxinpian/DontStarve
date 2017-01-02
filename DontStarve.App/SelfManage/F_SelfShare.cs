@@ -29,12 +29,14 @@ namespace DontStarve.App
         private void btnShare_Click(object sender, EventArgs e)
         {
             //检查
+            //.................
             //取值
             saysayinfo entity = new saysayinfo();
             entity.Guid_id = Guid.NewGuid();
             entity.UserId = F_Main.current_user.Guid_id;
             entity.Content = txtContent.Text;
             entity.Subtime = Common.CommonHelper.GetCurrentDateStamp();
+            entity.IsAllUserCanSee = cbIsPublic.Checked;
             if (pic.Image != null)
             {
                 entity.Pic = Common.CommonHelper.PicToBytes(pic.Image);

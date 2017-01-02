@@ -48,6 +48,7 @@ namespace DontStarve.App
                 lbOurRatings.Text += "★";
             }
             var cates = entity.cookinfo.categoryinfo.Select(c => c.Name).ToArray();
+            lbCategory.Text = "分类：";
             for (int i = 0; i < cates.Length; i++)
             {
                 lbCategory.Text += cates[i] + "  ";

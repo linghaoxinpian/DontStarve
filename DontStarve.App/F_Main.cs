@@ -500,5 +500,10 @@ namespace DontStarve.App
             F_LeaveNote fl = new F_LeaveNote();
             fl.Show();
         }
+
+        private void F_Main_Load(object sender, EventArgs e)
+        {
+            skinTabControl1.SelectedIndex = 0;  //选中首页，不得已为之
+        }
     }
 }
