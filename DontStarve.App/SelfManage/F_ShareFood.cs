@@ -84,7 +84,7 @@ namespace DontStarve.App
                     {
                         CookId = entity.Guid_id,
                         MaterialId = material.auto_id,
-                        Num = details[1]
+                        Num = (details.Length > 1) ? details[1] : ""
                     });
                 }
 

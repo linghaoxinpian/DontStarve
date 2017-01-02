@@ -109,17 +109,13 @@ namespace DontStarve.App
             {
                 IsOpen = true;
                 //即将关闭panel1
-                this.Size = new Size(486, this.Height);
+            //    this.Size = new Size(486, this.Height);
             }
             else
             {
                 IsOpen = false;
                 //即将开启panel1
-                this.Size = new Size(810, this.Height);
-                ////调整位置
-                //yyu_PraiseNum1.Location = new Point(367, 101);
-                //picCookie.Location = new Point(17, 3);
-                ////
+                //this.Size = new Size(810, this.Height);           
                 Load_cookie_comment();
             }
         }
