@@ -80,6 +80,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{2A
 		Database\必读.txt = Database\必读.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InsertHelper", "InsertHelper", "{4AC1AF1F-E4BD-465C-A5BD-33D45956FD96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertData", "InsertData\InsertData.csproj", "{6E3CB498-7E97-413C-A37E-B544D2515E1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -122,8 +126,15 @@ Global
 		{D927A454-9D39-4943-B710-EF46C551F06E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D927A454-9D39-4943-B710-EF46C551F06E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D927A454-9D39-4943-B710-EF46C551F06E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E3CB498-7E97-413C-A37E-B544D2515E1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E3CB498-7E97-413C-A37E-B544D2515E1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E3CB498-7E97-413C-A37E-B544D2515E1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E3CB498-7E97-413C-A37E-B544D2515E1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6E3CB498-7E97-413C-A37E-B544D2515E1B} = {4AC1AF1F-E4BD-465C-A5BD-33D45956FD96}
 	EndGlobalSection
 EndGlobal

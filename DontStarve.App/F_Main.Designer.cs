@@ -286,7 +286,7 @@
             this.skinTabControl1.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Top;
             this.skinTabControl1.PageNorml = null;
             this.skinTabControl1.Radius = 15;
-            this.skinTabControl1.SelectedIndex = 5;
+            this.skinTabControl1.SelectedIndex = 1;
             this.skinTabControl1.Size = new System.Drawing.Size(898, 677);
             this.skinTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.skinTabControl1.TabIndex = 0;
@@ -428,7 +428,6 @@
             // 
             // tbFoods
             // 
-            this.tbFoods.Alignment = System.Windows.Forms.TabAlignment.Left;
             this.tbFoods.AnimatorType = CCWin.SkinControl.AnimationType.HorizSlide;
             this.tbFoods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.tbFoods.CloseRect = new System.Drawing.Rectangle(2, 2, 12, 12);
@@ -438,9 +437,8 @@
             this.tbFoods.Font = new System.Drawing.Font("宋体", 11F);
             this.tbFoods.HeadBack = null;
             this.tbFoods.ImgTxtOffset = new System.Drawing.Point(0, 0);
-            this.tbFoods.ItemSize = new System.Drawing.Size(50, 180);
+            this.tbFoods.ItemSize = new System.Drawing.Size(70, 50);
             this.tbFoods.Location = new System.Drawing.Point(0, 0);
-            this.tbFoods.Multiline = true;
             this.tbFoods.Name = "tbFoods";
             this.tbFoods.PageArrowDown = ((System.Drawing.Image)(resources.GetObject("tbFoods.PageArrowDown")));
             this.tbFoods.PageArrowHover = ((System.Drawing.Image)(resources.GetObject("tbFoods.PageArrowHover")));
@@ -450,7 +448,7 @@
             this.tbFoods.PageHover = ((System.Drawing.Image)(resources.GetObject("tbFoods.PageHover")));
             this.tbFoods.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.tbFoods.PageNorml = null;
-            this.tbFoods.SelectedIndex = 1;
+            this.tbFoods.SelectedIndex = 0;
             this.tbFoods.Size = new System.Drawing.Size(898, 420);
             this.tbFoods.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tbFoods.TabIndex = 0;
@@ -460,9 +458,9 @@
             // 
             this.skinTabPage1.BackColor = System.Drawing.Color.White;
             this.skinTabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.skinTabPage1.Location = new System.Drawing.Point(180, 0);
+            this.skinTabPage1.Location = new System.Drawing.Point(0, 50);
             this.skinTabPage1.Name = "skinTabPage1";
-            this.skinTabPage1.Size = new System.Drawing.Size(718, 420);
+            this.skinTabPage1.Size = new System.Drawing.Size(898, 370);
             this.skinTabPage1.TabIndex = 0;
             this.skinTabPage1.TabItemImage = null;
             this.skinTabPage1.Text = "徽菜";
@@ -471,9 +469,9 @@
             // 
             this.skinTabPage2.BackColor = System.Drawing.Color.White;
             this.skinTabPage2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.skinTabPage2.Location = new System.Drawing.Point(180, 0);
+            this.skinTabPage2.Location = new System.Drawing.Point(0, 50);
             this.skinTabPage2.Name = "skinTabPage2";
-            this.skinTabPage2.Size = new System.Drawing.Size(718, 420);
+            this.skinTabPage2.Size = new System.Drawing.Size(898, 370);
             this.skinTabPage2.TabIndex = 1;
             this.skinTabPage2.TabItemImage = null;
             this.skinTabPage2.Text = "湘菜";

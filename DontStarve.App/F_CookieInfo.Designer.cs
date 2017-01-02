@@ -36,13 +36,14 @@
             this.skinSplitContainer2 = new CCWin.SkinControl.SkinSplitContainer();
             this.lbLevel = new CCWin.SkinControl.SkinLabel();
             this.labRating = new CCWin.SkinControl.SkinLabel();
-            this.yyu_PraiseNum1 = new DontStarve.App.Yyu_PraiseNum();
             this.labCookieName = new CCWin.SkinControl.SkinLabel();
             this.picCookie = new CCWin.SkinControl.SkinPictureBox();
             this.txtMaterial = new System.Windows.Forms.TextBox();
             this.btnVideo = new CCWin.SkinControl.SkinButton();
             this.lbFunc = new CCWin.SkinControl.SkinListBox();
             this.btnComplain = new CCWin.SkinControl.SkinButton();
+            this.yyu_PraiseNum1 = new DontStarve.App.Yyu_PraiseNum();
+            this.skinButton1 = new CCWin.SkinControl.SkinButton();
             ((System.ComponentModel.ISupportInitialize)(this.skinSplitContainer1)).BeginInit();
             this.skinSplitContainer1.Panel1.SuspendLayout();
             this.skinSplitContainer1.Panel2.SuspendLayout();
@@ -58,7 +59,7 @@
             // 
             this.skinSplitContainer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.skinSplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.skinSplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.skinSplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.skinSplitContainer1.IsSplitterFixed = true;
             this.skinSplitContainer1.LineBack = System.Drawing.Color.Teal;
             this.skinSplitContainer1.Location = new System.Drawing.Point(4, 22);
@@ -140,6 +141,7 @@
             // skinSplitContainer2.Panel2
             // 
             this.skinSplitContainer2.Panel2.Controls.Add(this.txtMaterial);
+            this.skinSplitContainer2.Panel2.Controls.Add(this.skinButton1);
             this.skinSplitContainer2.Panel2.Controls.Add(this.btnVideo);
             this.skinSplitContainer2.Panel2.Controls.Add(this.lbFunc);
             this.skinSplitContainer2.Size = new System.Drawing.Size(476, 598);
@@ -172,15 +174,6 @@
             this.labRating.TabIndex = 3;
             this.labRating.Text = "好评率：";
             // 
-            // yyu_PraiseNum1
-            // 
-            this.yyu_PraiseNum1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.yyu_PraiseNum1.BackColor = System.Drawing.Color.Transparent;
-            this.yyu_PraiseNum1.Location = new System.Drawing.Point(364, 101);
-            this.yyu_PraiseNum1.Name = "yyu_PraiseNum1";
-            this.yyu_PraiseNum1.Size = new System.Drawing.Size(101, 37);
-            this.yyu_PraiseNum1.TabIndex = 2;
-            // 
             // labCookieName
             // 
             this.labCookieName.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -211,8 +204,9 @@
             // 
             // txtMaterial
             // 
+            this.txtMaterial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaterial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(208)))), ((int)(((byte)(255)))));
-            this.txtMaterial.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMaterial.Location = new System.Drawing.Point(0, 0);
             this.txtMaterial.Multiline = true;
             this.txtMaterial.Name = "txtMaterial";
@@ -245,10 +239,12 @@
             // 
             // lbFunc
             // 
+            this.lbFunc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbFunc.Back = null;
             this.lbFunc.BackColor = System.Drawing.Color.Transparent;
             this.lbFunc.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lbFunc.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lbFunc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.lbFunc.Font = new System.Drawing.Font("华文楷体", 12F);
             this.lbFunc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -269,6 +265,7 @@
             // 
             // btnComplain
             // 
+            this.btnComplain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnComplain.BackColor = System.Drawing.Color.Transparent;
             this.btnComplain.BorderColor = System.Drawing.Color.Transparent;
             this.btnComplain.ControlState = CCWin.SkinClass.ControlState.Normal;
@@ -291,11 +288,43 @@
             this.btnComplain.UseVisualStyleBackColor = false;
             this.btnComplain.Click += new System.EventHandler(this.btnComplain_Click);
             // 
+            // yyu_PraiseNum1
+            // 
+            this.yyu_PraiseNum1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.yyu_PraiseNum1.BackColor = System.Drawing.Color.Transparent;
+            this.yyu_PraiseNum1.Location = new System.Drawing.Point(364, 101);
+            this.yyu_PraiseNum1.Name = "yyu_PraiseNum1";
+            this.yyu_PraiseNum1.Size = new System.Drawing.Size(101, 37);
+            this.yyu_PraiseNum1.TabIndex = 2;
+            // 
+            // skinButton1
+            // 
+            this.skinButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.skinButton1.BackColor = System.Drawing.Color.Transparent;
+            this.skinButton1.BorderColor = System.Drawing.Color.Transparent;
+            this.skinButton1.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButton1.Create = true;
+            this.skinButton1.DownBack = null;
+            this.skinButton1.Font = new System.Drawing.Font("宋体", 9F);
+            this.skinButton1.GlowColor = System.Drawing.Color.Transparent;
+            this.skinButton1.InnerBorderColor = System.Drawing.Color.Transparent;
+            this.skinButton1.IsDrawGlass = false;
+            this.skinButton1.Location = new System.Drawing.Point(284, 409);
+            this.skinButton1.MouseBack = null;
+            this.skinButton1.Name = "skinButton1";
+            this.skinButton1.NormlBack = null;
+            this.skinButton1.Radius = 30;
+            this.skinButton1.RoundStyle = CCWin.SkinClass.RoundStyle.All;
+            this.skinButton1.Size = new System.Drawing.Size(94, 33);
+            this.skinButton1.TabIndex = 4;
+            this.skinButton1.Text = "视频（Video）";
+            this.skinButton1.UseVisualStyleBackColor = false;
+            this.skinButton1.Click += new System.EventHandler(this.picCookie_Click);
+            // 
             // F_CookieInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CanResize = false;
             this.CaptionHeight = 18;
             this.ClientSize = new System.Drawing.Size(810, 624);
             this.CloseBoxSize = new System.Drawing.Size(483, 27);
@@ -347,5 +376,6 @@
         private CCWin.SkinControl.SkinButton btnVideo;
         private CCWin.SkinControl.SkinButton btnNextPage;
         private System.Windows.Forms.TextBox txtMaterial;
+        private CCWin.SkinControl.SkinButton skinButton1;
     }
 }
