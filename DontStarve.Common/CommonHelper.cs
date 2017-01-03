@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DontStarve.Common
 {
-   public class CommonHelper
+    public class CommonHelper
     {
         /// <summary>
         /// 将二进制数组转换为Image图片
@@ -17,10 +17,19 @@ namespace DontStarve.Common
         /// <returns></returns>
         public static Image BytesToPic(byte[] bytes)
         {
-            System.IO.MemoryStream ms = new System.IO.MemoryStream(bytes);
-            Image img = Image.FromStream(ms);
-            ms.Close();
-            return img;
+            try
+            {
+                System.IO.MemoryStream ms = new System.IO.MemoryStream(bytes);
+                Image img = Image.FromStream(ms);
+                ms.Close();
+                return img;
+            }
+            catch (Exception ex)
+            {
+                //throw ex;
+                return null;
+            }
+
         }
 
         /// <summary>
@@ -29,14 +38,23 @@ namespace DontStarve.Common
         /// <param name="img"></param>
         /// <returns></returns>
         public static byte[] PicToBytes(Image img)
-        {           
-            MemoryStream ms = new MemoryStream();
-            img.Save(ms, img.RawFormat);
-            //byte[] bytes = new byte[ms.Length];
-            //ms.Read(bytes, 0, bytes.Length);
-            //return bytes;
+        {
+            try
+            {
+                MemoryStream ms = new MemoryStream();
+                img.Save(ms, img.RawFormat);
+                //byte[] bytes = new byte[ms.Length];
+                //ms.Read(bytes, 0, bytes.Length);
+                //return bytes;
 
-            return ms.ToArray();
+                return ms.ToArray();
+            }
+            catch (Exception ex)
+            {
+                //throw ex;
+                return null;
+            }
+
         }
 
         /// <summary>
@@ -49,11 +67,11 @@ namespace DontStarve.Common
             return (long)(DateTime.Now - startTime).TotalSeconds;
         }
 
-       /// <summary>
-       /// 将指定DateTime转成时间戳
-       /// </summary>
-       /// <param name="time"></param>
-       /// <returns></returns>
+        /// <summary>
+        /// 将指定DateTime转成时间戳
+        /// </summary>
+        /// <param name="time"></param>
+        /// <returns></returns>
         public static long GetCurrentDateStamp(System.DateTime time)
         {
             System.DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new System.DateTime(1970, 1, 1));

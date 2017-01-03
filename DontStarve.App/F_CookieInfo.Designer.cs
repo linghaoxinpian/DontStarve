@@ -74,7 +74,7 @@
             // 
             this.skinSplitContainer1.Panel2.Controls.Add(this.skinSplitContainer2);
             this.skinSplitContainer1.Size = new System.Drawing.Size(802, 598);
-            this.skinSplitContainer1.SplitterDistance = 310;
+            this.skinSplitContainer1.SplitterDistance = 304;
             this.skinSplitContainer1.SplitterWidth = 10;
             this.skinSplitContainer1.TabIndex = 0;
             this.skinSplitContainer1.CollapseClick += new System.EventHandler(this.skinSplitContainer1_CollapseClick);
@@ -113,7 +113,7 @@
             this.gifBox1.Image = ((System.Drawing.Image)(resources.GetObject("gifBox1.Image")));
             this.gifBox1.Location = new System.Drawing.Point(3, 182);
             this.gifBox1.Name = "gifBox1";
-            this.gifBox1.Size = new System.Drawing.Size(304, 199);
+            this.gifBox1.Size = new System.Drawing.Size(298, 199);
             this.gifBox1.TabIndex = 0;
             this.gifBox1.Text = "gifBox1";
             this.gifBox1.Click += new System.EventHandler(this.gifBox1_Click);
@@ -142,12 +142,13 @@
             this.skinSplitContainer2.Panel2.Controls.Add(this.txtMaterial);
             this.skinSplitContainer2.Panel2.Controls.Add(this.btnVideo);
             this.skinSplitContainer2.Panel2.Controls.Add(this.lbFunc);
-            this.skinSplitContainer2.Size = new System.Drawing.Size(482, 598);
+            this.skinSplitContainer2.Size = new System.Drawing.Size(488, 598);
             this.skinSplitContainer2.SplitterDistance = 143;
             this.skinSplitContainer2.TabIndex = 0;
             // 
             // lbLevel
             // 
+            this.lbLevel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbLevel.AutoSize = true;
             this.lbLevel.BackColor = System.Drawing.Color.Transparent;
             this.lbLevel.BorderColor = System.Drawing.Color.White;
@@ -166,7 +167,7 @@
             this.labRating.BorderColor = System.Drawing.Color.White;
             this.labRating.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labRating.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.labRating.Location = new System.Drawing.Point(27, 119);
+            this.labRating.Location = new System.Drawing.Point(30, 119);
             this.labRating.Name = "labRating";
             this.labRating.Size = new System.Drawing.Size(56, 17);
             this.labRating.TabIndex = 3;
@@ -176,7 +177,7 @@
             // 
             this.yyu_PraiseNum1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.yyu_PraiseNum1.BackColor = System.Drawing.Color.Transparent;
-            this.yyu_PraiseNum1.Location = new System.Drawing.Point(367, 101);
+            this.yyu_PraiseNum1.Location = new System.Drawing.Point(370, 101);
             this.yyu_PraiseNum1.Name = "yyu_PraiseNum1";
             this.yyu_PraiseNum1.Size = new System.Drawing.Size(101, 37);
             this.yyu_PraiseNum1.TabIndex = 2;
@@ -189,7 +190,7 @@
             this.labCookieName.BorderColor = System.Drawing.Color.White;
             this.labCookieName.Font = new System.Drawing.Font("楷体", 35F);
             this.labCookieName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.labCookieName.Location = new System.Drawing.Point(191, 28);
+            this.labCookieName.Location = new System.Drawing.Point(194, 28);
             this.labCookieName.Name = "labCookieName";
             this.labCookieName.Size = new System.Drawing.Size(164, 47);
             this.labCookieName.TabIndex = 1;
@@ -200,7 +201,7 @@
             this.picCookie.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picCookie.BackColor = System.Drawing.Color.Transparent;
             this.picCookie.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picCookie.Location = new System.Drawing.Point(17, 3);
+            this.picCookie.Location = new System.Drawing.Point(20, 3);
             this.picCookie.Name = "picCookie";
             this.picCookie.Size = new System.Drawing.Size(132, 108);
             this.picCookie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -217,7 +218,7 @@
             this.txtMaterial.Location = new System.Drawing.Point(0, 0);
             this.txtMaterial.Multiline = true;
             this.txtMaterial.Name = "txtMaterial";
-            this.txtMaterial.Size = new System.Drawing.Size(482, 90);
+            this.txtMaterial.Size = new System.Drawing.Size(488, 90);
             this.txtMaterial.TabIndex = 5;
             this.txtMaterial.Text = "原料：";
             // 
@@ -233,7 +234,7 @@
             this.btnVideo.GlowColor = System.Drawing.Color.Transparent;
             this.btnVideo.InnerBorderColor = System.Drawing.Color.Transparent;
             this.btnVideo.IsDrawGlass = false;
-            this.btnVideo.Location = new System.Drawing.Point(284, 409);
+            this.btnVideo.Location = new System.Drawing.Point(290, 409);
             this.btnVideo.MouseBack = null;
             this.btnVideo.Name = "btnVideo";
             this.btnVideo.NormlBack = null;
@@ -268,7 +269,7 @@
             this.lbFunc.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.lbFunc.RowBackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lbFunc.RowBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lbFunc.Size = new System.Drawing.Size(482, 361);
+            this.lbFunc.Size = new System.Drawing.Size(488, 361);
             this.lbFunc.TabIndex = 0;
             // 
             // btnComplain
