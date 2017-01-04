@@ -27,7 +27,8 @@ namespace DontStarve.App
                 this.DialogResult = DialogResult.OK;
             }else
             {
-                MessageYyu.ShowMessage("帐号或密码错误");               
+                MessageYyu.ShowMessage("帐号或密码错误");
+                System.Threading.Thread.Sleep(2000);
             }
         }
 

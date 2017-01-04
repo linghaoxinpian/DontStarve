@@ -13,7 +13,9 @@ namespace DontStarve.Service
 
         public userinfo Login(string user_name, string user_pwd)
         {
-            return  CurrentDAL.LoadEntities(u => u.Name == user_name && u.pwd == user_pwd&&u.DelFlag==false).FirstOrDefault();            
+            var list = LoadEntities(u => true).ToList().Where(u => u.Name == user_name && u.pwd == user_pwd).FirstOrDefault();
+            //return  LoadEntities(u => u.Name == user_name && u.pwd == user_pwd&&u.DelFlag==false).FirstOrDefault();       //这样写莫名出错：在迁移数据库后，以前的帐号查不出来
+            return list;
         }
 
         protected override void Set_CurrentDAL()
