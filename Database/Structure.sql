@@ -15,9 +15,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-
-CREATE DATABASE `dontstarve` /*!40100 DEFAULT CHARACTER SET utf8 */;
-
 --
 -- Table structure for table `actioninfo`
 --
@@ -43,7 +40,7 @@ CREATE TABLE `categoryinfo` (
   `Name` char(10) NOT NULL COMMENT '名称',
   `Level` tinyint(3) unsigned DEFAULT '1' COMMENT '分类等级',
   PRIMARY KEY (`Auto_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='总分类';
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COMMENT='总分类';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -60,9 +57,9 @@ CREATE TABLE `cookcommentinfo` (
   `Content` varchar(600) DEFAULT NULL COMMENT 'Content',
   `PraiseNum` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '点赞数',
   PRIMARY KEY (`Guid_id`),
-  KEY `FK_Reference_11` (`CookId`),
   KEY `FK_Reference_15` (`UserId`),
-  CONSTRAINT `FK_Reference_11` FOREIGN KEY (`CookId`) REFERENCES `cookinfo` (`Guid_id`),
+  KEY `FK_Reference_11` (`CookId`),
+  CONSTRAINT `FK_Reference_11` FOREIGN KEY (`CookId`) REFERENCES `cookinfo` (`Guid_id`) ON DELETE CASCADE,
   CONSTRAINT `FK_Reference_15` FOREIGN KEY (`UserId`) REFERENCES `userinfo` (`Guid_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='菜的评论';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -105,7 +102,7 @@ CREATE TABLE `everydayrecommendinfo` (
   `Subtime` bigint(20) NOT NULL COMMENT '提交日期',
   PRIMARY KEY (`CookId`,`RecommendTime`),
   KEY `FK_Reference_18` (`SubAdmin`),
-  CONSTRAINT `FK_Reference_17` FOREIGN KEY (`CookId`) REFERENCES `cookinfo` (`Guid_id`),
+  CONSTRAINT `FK_Reference_17` FOREIGN KEY (`CookId`) REFERENCES `cookinfo` (`Guid_id`) ON DELETE CASCADE,
   CONSTRAINT `FK_Reference_18` FOREIGN KEY (`SubAdmin`) REFERENCES `userinfo` (`Guid_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='每日推荐';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -141,7 +138,7 @@ CREATE TABLE `leavenoteinfo` (
   PRIMARY KEY (`Auto_id`),
   KEY `FK_Reference_19` (`UserId`),
   CONSTRAINT `FK_Reference_19` FOREIGN KEY (`UserId`) REFERENCES `userinfo` (`Guid_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='留言';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='留言';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,7 +153,7 @@ CREATE TABLE `materialinfo` (
   `Name` varchar(30) NOT NULL COMMENT '名称',
   `Remark` varchar(200) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`auto_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='原料';
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COMMENT='原料';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -172,7 +169,7 @@ CREATE TABLE `r_category_cookinfo` (
   PRIMARY KEY (`CategoryId`,`CookId`),
   KEY `FK_Reference_2` (`CookId`),
   CONSTRAINT `FK_Reference_1` FOREIGN KEY (`CategoryId`) REFERENCES `categoryinfo` (`Auto_id`),
-  CONSTRAINT `FK_Reference_2` FOREIGN KEY (`CookId`) REFERENCES `cookinfo` (`Guid_id`)
+  CONSTRAINT `FK_Reference_2` FOREIGN KEY (`CookId`) REFERENCES `cookinfo` (`Guid_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='R_Category_CookInfo';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -189,8 +186,8 @@ CREATE TABLE `r_material_cookinfo` (
   `Num` char(10) NOT NULL DEFAULT '1份' COMMENT '份量',
   PRIMARY KEY (`CookId`,`MaterialId`),
   KEY `FK_Reference_3` (`MaterialId`),
-  CONSTRAINT `FK_Reference_3` FOREIGN KEY (`MaterialId`) REFERENCES `materialinfo` (`auto_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_Reference_4` FOREIGN KEY (`CookId`) REFERENCES `cookinfo` (`Guid_id`)
+  CONSTRAINT `FK_Reference_3` FOREIGN KEY (`MaterialId`) REFERENCES `materialinfo` (`auto_id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_Reference_4` FOREIGN KEY (`CookId`) REFERENCES `cookinfo` (`Guid_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='R_Material_CookInfo';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -334,4 +331,4 @@ CREATE TABLE `userinfo` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-01-02  3:23:22
+-- Dump completed on 2017-01-03  1:26:16

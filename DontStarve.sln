@@ -74,9 +74,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{03277F08-355
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{2A23E23C-EAD5-4A4B-B2CC-FACB925F824E}"
 	ProjectSection(SolutionItems) = preProject
-		Database\BaiduShurufa_2017-1-1_18-33-56.png = Database\BaiduShurufa_2017-1-1_18-33-56.png
-		Database\Structure.sql = Database\Structure.sql
-		Database\StructureData.sql = Database\StructureData.sql
+		Database\0.png = Database\0.png
+		Database\1.png = Database\1.png
+		Database\2.png = Database\2.png
+		Database\3.png = Database\3.png
+		Database\4.png = Database\4.png
+		Database\structure.sql = Database\structure.sql
+		Database\StructureAndData.sql = Database\StructureAndData.sql
 		Database\必读.txt = Database\必读.txt
 	EndProjectSection
 EndProject
