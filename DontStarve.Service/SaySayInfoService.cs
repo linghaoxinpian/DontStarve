@@ -56,7 +56,7 @@ namespace DontStarve.Service
                            s.Content,
                            s.Guid_id
                        };
-            return list;
+            return list.ToList();
         }
 
         protected override void Set_CurrentDAL()

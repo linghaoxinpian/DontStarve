@@ -1,4 +1,5 @@
-﻿using DontStarve.Common;
+﻿using CCWin;
+using DontStarve.Common;
 using DontStarve.IService;
 using DontStarve.Model;
 using DontStarve.Service;
@@ -7,6 +8,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -31,6 +34,7 @@ namespace DontStarve.App
         private ICookieInfoService icookieInfoService = new CookieInfoService();
         private ISaySayInfoService isaysayInfoService = new SaySayInfoService();
         private ISaysaycommentInfoService isaysaycommentInfoService = new SaysaycommentInfoService();
+        private IService.IFriendInfoService ifriendInfoService = new Service.FriendInfoService();//(IService.IUserInfoService)Common.SpringIocHelper.GetObject("iuserInfoService");
 
         /// <summary>
         /// 选项卡改变事件
@@ -58,7 +62,7 @@ namespace DontStarve.App
             if (current_user.Pic != null) btnSelfUserPhoto.BackgroundImage = CommonHelper.BytesToPic(current_user.Pic);
             lbSelfUserName.Text = current_user.Name;
             lbSelfSignature.Text = current_user.Signature;
-            lbSelfFoodAge.Text = "食龄：" + ((int)(DateTime.Now-Common.CommonHelper.StampToDateTime(current_user.SubTime.ToString())).TotalDays)+"天";
+            lbSelfFoodAge.Text = "食龄：" + ((int)(DateTime.Now - Common.CommonHelper.StampToDateTime(current_user.SubTime.ToString())).TotalDays) + "天";
         }
 
         private void Load_search()
@@ -123,14 +127,14 @@ namespace DontStarve.App
                         {
                             if (!string.IsNullOrEmpty(fs.txtContent.Text))
                             {
-                              isaysaycommentInfoService.AddEntity(new saysaycommentinfo()
-                              {
-                                  Guid_id = Guid.NewGuid(),
-                                  Content = fs.txtContent.Text,
-                                  SaysayId = (Guid)pros[0].GetValue(item),
-                                  Subtime = Common.CommonHelper.GetCurrentDateStamp(),
-                                  ToUserId = (Guid)pros[6].GetValue(item),
-                                   UserId=F_Main.current_user.Guid_id
+                                isaysaycommentInfoService.AddEntity(new saysaycommentinfo()
+                                {
+                                    Guid_id = Guid.NewGuid(),
+                                    Content = fs.txtContent.Text,
+                                    SaysayId = (Guid)pros[0].GetValue(item),
+                                    Subtime = Common.CommonHelper.GetCurrentDateStamp(),
+                                    ToUserId = (Guid)pros[6].GetValue(item),
+                                    UserId = F_Main.current_user.Guid_id
                                 });
                                 MessageYyu.ShowMessage("评论成功~~");
                                 fs.Close();
@@ -144,7 +148,7 @@ namespace DontStarve.App
         }
 
         /// <summary>
-        /// 大千世界
+        /// 发现食友
         /// </summary>
         private void Load_moreFriend()
         {
@@ -158,7 +162,7 @@ namespace DontStarve.App
         /// <summary>
         /// 每页显示记录数
         /// </summary>
-        private int moreFriend_pageSize = 3;
+        private int moreFriend_pageSize = 1;
         /// <summary>
         /// 当前可加载的所有说说记录数
         /// </summary>
@@ -168,41 +172,107 @@ namespace DontStarve.App
         /// </summary>
         private void Load_WorldFriend()
         {
+            #region 第一版本的展示方式
+            //       tableLayoutPanel1.Controls.Clear(); //清理
+            //    foreach (dynamic item in list)
+            //    {
+            //        Yyu_SaySayDetails yssd = new Yyu_SaySayDetails();
+
+            //        //反射得到匿名类型值  并  填充控件
+            //        Type t = item.GetType();
+            //        PropertyInfo[] pros = t.GetProperties();
+            //        byte[] picByte = pros[0].GetValue(item) as byte[];
+            //        if (picByte != null)
+            //        {
+            //            yssd.pic.Image = CommonHelper.BytesToPic(picByte);
+            //        }
+            //        yssd.llbName.Text = pros[1].GetValue(item);
+            //        yssd.yyu_PraiseNum1.labPraiseNum.Text = pros[2].GetValue(item).ToString();
+            //        yssd.lbSubtime.Text = pros[3].GetValue(item).ToString();
+            //        yssd.txtContent.Text = pros[4].GetValue(item);
+            //        yssd.Tag = pros[5].GetValue(item); //储存 “说说的guid_id”
+            //        //点赞注册事件
+            //        yssd.yyu_PraiseNum1.AddPraise += new Action(() =>
+            //        {
+            //            var entity_saysay = isaysayInfoService.LoadEntities(s => s.Guid_id == (Guid)yssd.Tag).First();
+            //            entity_saysay.PraiseNum++;
+            //            isaysayInfoService.EditEntity(entity_saysay);
+            //        });
+            //        //添加控件
+            //  //        tableLayoutPanel1.Controls.Add(yssd);
+            //    }
+            #endregion
+
             //从数据库加载数据
             dynamic list = isaysayInfoService.LoadWorldFriend(moreFriend_pageIndx, moreFriend_pageSize, out moreFriend_count);
-            //s.Pic,
-            //u.Name,
-            //s.PraiseNum,
-            //s.Subtime,
-            //s.Content
-            tableLayoutPanel1.Controls.Clear(); //清理
-            foreach (dynamic item in list)
+            //反射得到匿名类型值  并  填充控件
+            Type t = list[0].GetType();
+            PropertyInfo[] pros = t.GetProperties();
+            byte[] picByte = pros[0].GetValue(list[0]) as byte[];
+            if (picByte != null)
             {
-                Yyu_SaySayDetails yssd = new Yyu_SaySayDetails();
-
-                //反射得到匿名类型值  并  填充控件
-                Type t = item.GetType();
-                PropertyInfo[] pros = t.GetProperties();
-                byte[] picByte = pros[0].GetValue(item) as byte[];
-                if (picByte != null)
-                {
-                    yssd.pic.Image = CommonHelper.BytesToPic(picByte);
-                }
-                yssd.llbName.Text = pros[1].GetValue(item);
-                yssd.yyu_PraiseNum1.labPraiseNum.Text = pros[2].GetValue(item).ToString();
-                yssd.lbSubtime.Text = pros[3].GetValue(item).ToString();
-                yssd.txtContent.Text = pros[4].GetValue(item);
-                yssd.Tag = pros[5].GetValue(item); //储存 “说说的guid_id”
-                //点赞注册事件
-                yssd.yyu_PraiseNum1.AddPraise += new Action(() =>
-                {
-                    var entity_saysay = isaysayInfoService.LoadEntities(s => s.Guid_id == (Guid)yssd.Tag).First();
-                    entity_saysay.PraiseNum++;
-                    isaysayInfoService.EditEntity(entity_saysay);
-                });
-                //添加控件
-                tableLayoutPanel1.Controls.Add(yssd);
+                //旋转图片
+                skinPictureBox1.Image = CommonHelper.BytesToPic(picByte);
             }
+            lbStrangerName.Text = "用户：" + pros[1].GetValue(list[0]);
+            lbStrangerName.Tag = pros[5].GetValue(list[0]);
+            lbStrangePraiseNum.Text = "好评数：" + pros[2].GetValue(list[0]).ToString();
+            if (string.IsNullOrEmpty((string)pros[4].GetValue(list[0])))
+            {
+                lbStrangeContent.Text = "该用户很懒，什么信息都没有留下 [鄙视]";
+            }
+            else if (((string)pros[4].GetValue(list[0])).Length > 40)
+            {
+                lbStrangeContent.Text = ((string)pros[4].GetValue(list[0])).Substring(0, 30);
+            }
+        }
+
+        /// <summary>
+        /// 任意角度旋转图片
+        /// </summary>
+        /// <param name="bmp">原始图Bitmap</param>
+        /// <param name="angle">旋转角度</param>
+        /// <param name="bkColor">背景色</param>
+        /// <returns>输出Bitmap</returns>
+        public static Bitmap KiRotate(Bitmap bmp, float angle, Color bkColor)
+        {
+                int w = bmp.Width + 2;
+                int h = bmp.Height + 2;
+
+                PixelFormat pf;
+
+                if (bkColor == Color.Transparent)
+                {
+                    pf = PixelFormat.Format32bppArgb;
+                }
+                else
+                {
+                    pf = bmp.PixelFormat;
+                }
+
+                Bitmap tmp = new Bitmap(w, h, pf);
+                Graphics g = Graphics.FromImage(tmp);
+                g.Clear(bkColor);
+                g.DrawImageUnscaled(bmp, 1, 1);
+                g.Dispose();
+
+                GraphicsPath path = new GraphicsPath();
+                path.AddRectangle(new RectangleF(0f, 0f, w, h));
+                Matrix mtrx = new Matrix();
+                mtrx.Rotate(angle);
+                RectangleF rct = path.GetBounds(mtrx);
+
+                Bitmap dst = new Bitmap((int)rct.Width, (int)rct.Height, pf);
+                g = Graphics.FromImage(dst);
+                g.Clear(bkColor);
+                g.TranslateTransform(-rct.X, -rct.Y);
+                g.RotateTransform(angle);
+                g.InterpolationMode = InterpolationMode.HighQualityBilinear;
+                g.DrawImageUnscaled(tmp, 0, 0);
+                g.Dispose();
+
+                tmp.Dispose();
+                return dst;        
         }
 
         /// <summary>
@@ -242,13 +312,13 @@ namespace DontStarve.App
         /// <param name="e"></param>
         private void tbFoods_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            if (e.TabPage == null||e.TabPage.Tag==null) { return; } //Controls.Clea()会触发此事件 e.TabPage可能是null或者是有值
+            if (e.TabPage == null || e.TabPage.Tag == null) { return; } //Controls.Clea()会触发此事件 e.TabPage可能是null或者是有值
             Dictionary<Guid, string> dic = icookieInfoService.LoadEntitiesByCategoryId((int)e.TabPage.Tag); //所有指定分类下的“美食”键值集合
             ListView lv = (ListView)e.TabPage.Controls[0];
             lv.Clear();
             foreach (var key_value in dic)
             {
-                lv.Items.Add(key_value.Value,lv.Items.Count%2 ).Tag = key_value.Key;
+                lv.Items.Add(key_value.Value, lv.Items.Count % 2).Tag = key_value.Key;
             }
             //为每个“美食图标”注册单击事件
             lv.DoubleClick += new EventHandler((a, b) =>
@@ -343,7 +413,7 @@ namespace DontStarve.App
 
         private void pl_left_Click(object sender, EventArgs e)
         {
-            //判断是大千世界还是是食友圈
+            //判断是发现食友还是是食友圈
             Control pl = sender as Control;
             if (pl.Name.Substring(pl.Name.Length - 1, 1) != "2")    //pl.Name="pl_left2"
             {
@@ -470,7 +540,7 @@ namespace DontStarve.App
             btn.Radius = btn.Radius + 20;
 
             //颜色变亮
-            btn.BorderColor = Color.Red;
+            btn.BorderColor = Color.Transparent;
         }
 
         //button变小
@@ -505,5 +575,57 @@ namespace DontStarve.App
         {
             skinTabControl1.SelectedIndex = 0;  //选中首页，不得已为之
         }
+
+        //加好友
+        private void lbStrangerName_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ifriendInfoService.AddEntity(new friendinfo()
+                {
+                    FriendId = (Guid)lbStrangerName.Tag,
+                    UserId = F_Main.current_user.Guid_id,
+                    SubTime = Common.CommonHelper.GetCurrentDateStamp()
+                });
+                MessageYyu.ShowMessage("添加好友成功");
+            }
+            catch
+            {
+                MessageYyu.ShowMessage("你可能已添加该好友，请检查后重试");
+            }
+        }
+
+        #region 图片旋转动画        
+        private int angel = 0;
+        private void timerRotatingPic_Tick(object sender, EventArgs e)
+        {
+            if (angel > 10)
+            {
+                timerRotatingPic.Enabled = false;
+                return;
+            }
+            skinPictureBox1.Image = KiRotate((Bitmap)skinPictureBox1.Image, ++angel, Color.Transparent);
+        }
+
+        private void skinPictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            if (angel == 0)
+            {
+                timerRotatingPic.Enabled = true;
+            }
+        }
+
+        //回旋图片
+        private void skinPictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            if (angel >= 0)
+            {
+                skinPictureBox1.Image = KiRotate((Bitmap)skinPictureBox1.Image, -30, Color.Transparent);
+                angel = 0;
+                timerRotatingPic.Enabled = false;
+                timerRotatingPic.Tick -= timerRotatingPic_Tick;
+            }
+        } 
+        #endregion
     }
 }

@@ -22,7 +22,8 @@ namespace DontStarve.App
         /// </summary>
         /// <param name="message">消息</param>
         /// <param name="captical">标题，默认：小提示</param>
-        public static void ShowMessage(string message, string captical = "小提示")
+        /// <param name="wait_time">关闭时间</param>
+        public static void ShowMessage(string message, string captical = "小提示",int wait_time=2000)
         {
             if (fp == null)
                 fp = new MessageYyu();    //此句完美解决窗体不显示问题（Show无效）           
@@ -34,7 +35,7 @@ namespace DontStarve.App
             fp.Show();
             //定时关闭
             Timer t = new Timer();
-            t.Interval = 2000;
+            t.Interval = wait_time;
             t.Tick += new EventHandler((a, b) =>
               {
                   fp.Hide();
