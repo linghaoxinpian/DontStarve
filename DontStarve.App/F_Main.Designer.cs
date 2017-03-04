@@ -360,6 +360,7 @@
             this.lbStrangerName.BackColor = System.Drawing.Color.Transparent;
             this.lbStrangerName.BorderColor = System.Drawing.Color.White;
             this.lbStrangerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbStrangerName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbStrangerName.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lbStrangerName.Location = new System.Drawing.Point(639, 15);
             this.lbStrangerName.Name = "lbStrangerName";
@@ -398,7 +399,7 @@
             this.skinTabControl1.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Top;
             this.skinTabControl1.PageNorml = null;
             this.skinTabControl1.Radius = 15;
-            this.skinTabControl1.SelectedIndex = 5;
+            this.skinTabControl1.SelectedIndex = 3;
             this.skinTabControl1.Size = new System.Drawing.Size(898, 677);
             this.skinTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.skinTabControl1.TabIndex = 0;
@@ -682,13 +683,13 @@
             // 
             this.lbStrangeContent.AutoSize = true;
             this.lbStrangeContent.BackColor = System.Drawing.Color.Transparent;
-            this.lbStrangeContent.BorderColor = System.Drawing.Color.White;
+            this.lbStrangeContent.BorderColor = System.Drawing.Color.Transparent;
             this.lbStrangeContent.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbStrangeContent.Location = new System.Drawing.Point(524, 464);
+            this.lbStrangeContent.Location = new System.Drawing.Point(511, 468);
             this.lbStrangeContent.Name = "lbStrangeContent";
-            this.lbStrangeContent.Size = new System.Drawing.Size(69, 17);
+            this.lbStrangeContent.Size = new System.Drawing.Size(224, 17);
             this.lbStrangeContent.TabIndex = 5;
-            this.lbStrangeContent.Text = "skinLabel1";
+            this.lbStrangeContent.Text = "该用户很懒，什么信息都没有留下 [鄙视]";
             // 
             // lbStrangePraiseNum
             // 
@@ -724,11 +725,9 @@
             this.skinPictureBox1.Location = new System.Drawing.Point(128, 0);
             this.skinPictureBox1.Name = "skinPictureBox1";
             this.skinPictureBox1.Size = new System.Drawing.Size(642, 547);
-            this.skinPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.skinPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.skinPictureBox1.TabIndex = 2;
             this.skinPictureBox1.TabStop = false;
-            this.skinPictureBox1.MouseLeave += new System.EventHandler(this.skinPictureBox1_MouseLeave);
-            this.skinPictureBox1.MouseHover += new System.EventHandler(this.skinPictureBox1_MouseHover);
             // 
             // pl_right
             // 

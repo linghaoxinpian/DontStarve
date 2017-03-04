@@ -60,6 +60,8 @@ namespace DontStarve.App
             entity.pic = Common.CommonHelper.PicToBytes(pic.Image);
             entity.Func = txtFunc.Text;
             entity.Remark = txtRemark.Text;
+            entity.VideoPath = txtHttpVideo.Text;
+            entity.DelFlag = false; //提交-》管理员审核-》可以显示
             if (entity.Remark == "备注信息：")
             {
                 entity.Remark = "分享人：" + F_Main.current_user.Name + "\n";
@@ -109,7 +111,7 @@ namespace DontStarve.App
             //保存到数据库
             if (icookieInfoService.AddEntity(entity))
             {
-                MessageBoxEx.Show("提交成功！");
+                MessageBoxEx.Show("提交成功！1-3天的审核通过后将可分享给好友~");
                 this.Close();
             }
             else

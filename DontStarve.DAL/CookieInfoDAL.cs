@@ -21,7 +21,7 @@ namespace DontStarve.DAL
 
         public ICollection<cookinfo> LoadEntitiesByCategoryId(int category_id)
         {
-            var cates = dbContext.Set<categoryinfo>().Where(cate => cate.Auto_id == category_id).FirstOrDefault().cookinfo;
+            var cates = dbContext.Set<categoryinfo>().Where(cate => cate.Auto_id == category_id).FirstOrDefault().cookinfo.Where(c=>c.DelFlag==false).ToList();
             return cates;
         }
     }

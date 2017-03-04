@@ -32,6 +32,7 @@ namespace DontStarve.App
         /// </summary>
         private void Load_SelfSaySay()
         {
+            skinPanel1.Controls.Clear();    //先清空
             int count = 0;
             var list = isaysayInfoDAL.LoadPageEntities(s => s.UserId == F_Main.current_user.Guid_id && s.DelFlag == false, s => s.Subtime, 1, 5, out count).ToList();
             foreach (var onesaysay in list)
@@ -41,7 +42,7 @@ namespace DontStarve.App
                 ys.Top = 30;
                 //控件赋值
                 if (onesaysay.Pic != null) ys.pic.Image = CommonHelper.BytesToPic(onesaysay.Pic);
-                ys.Name = F_Main.current_user.Name;
+                ys.lbName.Text = F_Main.current_user.Name;
                 ys.txtContent.Text = onesaysay.Content;
                 ys.yyu_PraiseNum1.labPraiseNum.Text = onesaysay.PraiseNum.ToString();
                 //end

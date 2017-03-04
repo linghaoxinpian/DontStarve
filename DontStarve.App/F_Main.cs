@@ -120,27 +120,30 @@ namespace DontStarve.App
                 //回复 注册事件
                 yssd.llbName.Click += new EventHandler((a, b) =>
                   {
-                      F_SimplyReply fs = new F_SimplyReply();
-                      fs.Text = "回复：" + yssd.llbName.Text;
-                      fs.Show();
-                      fs.func += new Func<bool>(() =>
-                        {
-                            if (!string.IsNullOrEmpty(fs.txtContent.Text))
-                            {
-                                isaysaycommentInfoService.AddEntity(new saysaycommentinfo()
-                                {
-                                    Guid_id = Guid.NewGuid(),
-                                    Content = fs.txtContent.Text,
-                                    SaysayId = (Guid)pros[0].GetValue(item),
-                                    Subtime = Common.CommonHelper.GetCurrentDateStamp(),
-                                    ToUserId = (Guid)pros[6].GetValue(item),
-                                    UserId = F_Main.current_user.Guid_id
-                                });
-                                MessageYyu.ShowMessage("评论成功~~");
-                                fs.Close();
-                            }
-                            return true;
-                        });
+                      //F_SimplyReply fs = new F_SimplyReply();
+                      //fs.Text = "回复：" + yssd.llbName.Text;
+                      //fs.Show();
+                      //fs.func += new Func<bool>(() =>
+                      //  {
+                      //      if (!string.IsNullOrEmpty(fs.txtContent.Text))
+                      //      {
+                      //          isaysaycommentInfoService.AddEntity(new saysaycommentinfo()
+                      //          {
+                      //              Guid_id = Guid.NewGuid(),
+                      //              Content = fs.txtContent.Text,
+                      //              SaysayId = (Guid)pros[0].GetValue(item),
+                      //              Subtime = Common.CommonHelper.GetCurrentDateStamp(),
+                      //              ToUserId = (Guid)pros[6].GetValue(item),
+                      //              UserId = F_Main.current_user.Guid_id
+                      //          });
+                      //          MessageYyu.ShowMessage("评论成功~~");
+                      //          fs.Close();
+                      //      }
+                      //      return true;
+                      //  });
+
+                      F_SaySayReplay fssr = new F_SaySayReplay((Guid)pros[0].GetValue(item));
+                      fssr.ShowDialog();
                   });
                 //添加控件
                 tableLayoutPanel2.Controls.Add(yssd);
@@ -148,7 +151,7 @@ namespace DontStarve.App
         }
 
         /// <summary>
-        /// 发现食友
+        /// 发现好友
         /// </summary>
         private void Load_moreFriend()
         {
@@ -216,67 +219,19 @@ namespace DontStarve.App
             }
             lbStrangerName.Text = "用户：" + pros[1].GetValue(list[0]);
             lbStrangerName.Tag = pros[5].GetValue(list[0]);
-            lbStrangePraiseNum.Text = "好评数：" + pros[2].GetValue(list[0]).ToString();
+            lbStrangePraiseNum.Text = "好评数：" + pros[2].GetValue(list[0]).ToString()+"人";
             if (string.IsNullOrEmpty((string)pros[4].GetValue(list[0])))
             {
                 lbStrangeContent.Text = "该用户很懒，什么信息都没有留下 [鄙视]";
             }
-            else if (((string)pros[4].GetValue(list[0])).Length > 40)
+            else if (((string)pros[4].GetValue(list[0])).Length > 40)   //如果文字太多，则截取前30个，
             {
-                lbStrangeContent.Text = ((string)pros[4].GetValue(list[0])).Substring(0, 30);
+                lbStrangeContent.Text = ((string)pros[4].GetValue(list[0])).Length > 40 ? ((string)pros[4].GetValue(list[0])).Substring(0, 30)+"..." : pros[4].GetValue(list[0]);
             }
-        }
+        }       
 
         /// <summary>
-        /// 任意角度旋转图片
-        /// </summary>
-        /// <param name="bmp">原始图Bitmap</param>
-        /// <param name="angle">旋转角度</param>
-        /// <param name="bkColor">背景色</param>
-        /// <returns>输出Bitmap</returns>
-        public static Bitmap KiRotate(Bitmap bmp, float angle, Color bkColor)
-        {
-                int w = bmp.Width + 2;
-                int h = bmp.Height + 2;
-
-                PixelFormat pf;
-
-                if (bkColor == Color.Transparent)
-                {
-                    pf = PixelFormat.Format32bppArgb;
-                }
-                else
-                {
-                    pf = bmp.PixelFormat;
-                }
-
-                Bitmap tmp = new Bitmap(w, h, pf);
-                Graphics g = Graphics.FromImage(tmp);
-                g.Clear(bkColor);
-                g.DrawImageUnscaled(bmp, 1, 1);
-                g.Dispose();
-
-                GraphicsPath path = new GraphicsPath();
-                path.AddRectangle(new RectangleF(0f, 0f, w, h));
-                Matrix mtrx = new Matrix();
-                mtrx.Rotate(angle);
-                RectangleF rct = path.GetBounds(mtrx);
-
-                Bitmap dst = new Bitmap((int)rct.Width, (int)rct.Height, pf);
-                g = Graphics.FromImage(dst);
-                g.Clear(bkColor);
-                g.TranslateTransform(-rct.X, -rct.Y);
-                g.RotateTransform(angle);
-                g.InterpolationMode = InterpolationMode.HighQualityBilinear;
-                g.DrawImageUnscaled(tmp, 0, 0);
-                g.Dispose();
-
-                tmp.Dispose();
-                return dst;        
-        }
-
-        /// <summary>
-        /// 加载“食届”
+        /// 加载“食界”
         /// </summary>
         private void Load_foodWorld()
         {
@@ -386,22 +341,23 @@ namespace DontStarve.App
                 //食友圈
                 if (panel.Name == "pl_left2")
                 {
-                    toolTip1.Show("上一页： " + (myFriend_pageIndex - 1).ToString() + " 页  " + "\r\n总计记录数：" + myFriend_count.ToString(), sender as Control);
+                    toolTip1.Show("上一页：第" + (myFriend_pageIndex - 1).ToString() + " 页  " + "\r\n总计记录数：" + myFriend_count.ToString()+"条", sender as Control);
                 }
                 else
                 {
-                    toolTip1.Show("下一页： " + (myFriend_pageIndex + 1).ToString() + " 页  " + "\r\n总计记录数：" + myFriend_count, sender as Control);
+                    toolTip1.Show("下一页：第" + (myFriend_pageIndex + 1).ToString() + " 页  " + "\r\n总计记录数：" + myFriend_count+"条", sender as Control);
                 }
             }
             else
             {
+                //发现好友
                 if (panel.Name == "pl_left")
                 {
-                    toolTip1.Show("上一页： " + (moreFriend_pageIndx - 1).ToString() + " 页  " + "\r\n总计记录数：" + moreFriend_count, sender as Control);
+                    toolTip1.Show("上一页：第" + (moreFriend_pageIndx - 1).ToString() + " 页  " + "\r\n总计数：" + moreFriend_count+"条", sender as Control);
                 }
                 else
                 {
-                    toolTip1.Show("下一页： " + (moreFriend_pageIndx + 1).ToString() + " 页  " + "\r\n总计记录数：" + moreFriend_count, sender as Control);
+                    toolTip1.Show("下一页：第" + (moreFriend_pageIndx + 1).ToString() + " 页  " + "\r\n总计记录数：" + moreFriend_count+"条", sender as Control);
                 }
             }
         }
@@ -431,7 +387,7 @@ namespace DontStarve.App
                 else
                 {
                     //下一页
-                    if (moreFriend_pageIndx * 3 >= moreFriend_count)
+                    if (moreFriend_pageIndx * moreFriend_pageSize >= moreFriend_count)
                     {
                         return;
                     }
@@ -457,7 +413,7 @@ namespace DontStarve.App
                 else
                 {
                     //下一页
-                    if (myFriend_pageIndex * 3 >= myFriend_count)
+                    if (myFriend_pageIndex * myFriend_pageSize >= myFriend_count)
                     {
                         return;
                     }
@@ -595,7 +551,55 @@ namespace DontStarve.App
             }
         }
 
-        #region 图片旋转动画        
+        #region 图片旋转动画(需优化，否则易内存泄漏)
+        /// <summary>
+        /// 任意角度旋转图片
+        /// </summary>
+        /// <param name="bmp">原始图Bitmap</param>
+        /// <param name="angle">旋转角度</param>
+        /// <param name="bkColor">背景色</param>
+        /// <returns>输出Bitmap</returns>
+        public static Bitmap KiRotate(Bitmap bmp, float angle, Color bkColor)
+        {
+            int w = bmp.Width + 2;
+            int h = bmp.Height + 2;
+
+            PixelFormat pf;
+
+            if (bkColor == Color.Transparent)
+            {
+                pf = PixelFormat.Format32bppArgb;
+            }
+            else
+            {
+                pf = bmp.PixelFormat;
+            }
+
+            Bitmap tmp = new Bitmap(w, h, pf);
+            Graphics g = Graphics.FromImage(tmp);
+            g.Clear(bkColor);
+            g.DrawImageUnscaled(bmp, 1, 1);
+            g.Dispose();
+
+            GraphicsPath path = new GraphicsPath();
+            path.AddRectangle(new RectangleF(0f, 0f, w, h));
+            Matrix mtrx = new Matrix();
+            mtrx.Rotate(angle);
+            RectangleF rct = path.GetBounds(mtrx);
+
+            Bitmap dst = new Bitmap((int)rct.Width, (int)rct.Height, pf);
+            g = Graphics.FromImage(dst);
+            g.Clear(bkColor);
+            g.TranslateTransform(-rct.X, -rct.Y);
+            g.RotateTransform(angle);
+            g.InterpolationMode = InterpolationMode.HighQualityBilinear;
+            g.DrawImageUnscaled(tmp, 0, 0);
+            g.Dispose();
+
+            tmp.Dispose();
+            return dst;
+        }
+
         private int angel = 0;
         private void timerRotatingPic_Tick(object sender, EventArgs e)
         {
@@ -650,25 +654,29 @@ namespace DontStarve.App
             Application.Exit();
         }
         #endregion
-        
+
+        #region 右下角小图标
+
         private void dont_Starve_icon_MouseClick(object sender, MouseEventArgs e)
         {
-            if(e.Button== MouseButtons.Left)
+            if (e.Button == MouseButtons.Left)
             {
                 this.ShowInTaskbar = true;
                 this.WindowState = FormWindowState.Normal;
-            }else
+            }
+            else
             {
-                
+
             }
         }
 
         private void F_Main_Resize(object sender, EventArgs e)
         {
-            if(this.WindowState== FormWindowState.Minimized)
+            if (this.WindowState == FormWindowState.Minimized)
             {
                 this.ShowInTaskbar = false;
-           }
-        }
+            }
+        } 
+        #endregion
     }
 }

@@ -80,7 +80,9 @@
             this.Name = "F_SelfSaySay";
             this.ShowDrawIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "";
+            this.Text = "我的动态";
+            this.TitleCenter = true;
+            this.TitleOffset = new System.Drawing.Point(30, 5);
             this.Load += new System.EventHandler(this.F_SelfSaySay_Load);
             this.ResumeLayout(false);
 

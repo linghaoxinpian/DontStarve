@@ -42,6 +42,8 @@
             this.skinToolTip1 = new CCWin.SkinToolTip(this.components);
             this.txtMaterial = new System.Windows.Forms.TextBox();
             this.skinLabel4 = new CCWin.SkinControl.SkinLabel();
+            this.txtHttpVideo = new System.Windows.Forms.TextBox();
+            this.skinLabel5 = new CCWin.SkinControl.SkinLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,10 +66,10 @@
             this.txtFunc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(208)))), ((int)(((byte)(255)))));
             this.txtFunc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFunc.ForeColor = System.Drawing.Color.Yellow;
-            this.txtFunc.Location = new System.Drawing.Point(443, 295);
+            this.txtFunc.Location = new System.Drawing.Point(443, 286);
             this.txtFunc.Multiline = true;
             this.txtFunc.Name = "txtFunc";
-            this.txtFunc.Size = new System.Drawing.Size(362, 184);
+            this.txtFunc.Size = new System.Drawing.Size(362, 156);
             this.txtFunc.TabIndex = 1;
             this.txtFunc.Text = "1.将新鲜的雪虾用清水洗干净\r\n2.打两个鸡蛋，用筷子搅拌，打均\r\n3.把雪虾放入搅拌好的鸡蛋中，加入适量盐，葱花，鸡精\r\n4.热锅凉油，油温8成，把搅拌好的雪虾" +
     "鸡蛋倒入锅中煎，蛋熟虾即熟.\r\n一盘鲜美的雪虾摊鸡蛋就好了，鲜美可口~";
@@ -77,7 +79,7 @@
             this.txtRemark.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(208)))), ((int)(((byte)(255)))));
             this.txtRemark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRemark.ForeColor = System.Drawing.Color.Yellow;
-            this.txtRemark.Location = new System.Drawing.Point(443, 507);
+            this.txtRemark.Location = new System.Drawing.Point(443, 529);
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(362, 60);
@@ -206,6 +208,30 @@
             this.skinLabel4.TabIndex = 3;
             this.skinLabel4.Text = "所需原料（注意填写格式，只写主料）";
             // 
+            // txtHttpVideo
+            // 
+            this.txtHttpVideo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(208)))), ((int)(((byte)(255)))));
+            this.txtHttpVideo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtHttpVideo.ForeColor = System.Drawing.Color.Yellow;
+            this.txtHttpVideo.Location = new System.Drawing.Point(443, 480);
+            this.txtHttpVideo.Multiline = true;
+            this.txtHttpVideo.Name = "txtHttpVideo";
+            this.txtHttpVideo.Size = new System.Drawing.Size(362, 36);
+            this.txtHttpVideo.TabIndex = 1;
+            this.txtHttpVideo.Text = "http://pan.baidu.com/share/link?shareid=00000";
+            // 
+            // skinLabel5
+            // 
+            this.skinLabel5.AutoSize = true;
+            this.skinLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel5.BorderColor = System.Drawing.Color.White;
+            this.skinLabel5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabel5.Location = new System.Drawing.Point(444, 457);
+            this.skinLabel5.Name = "skinLabel5";
+            this.skinLabel5.Size = new System.Drawing.Size(224, 17);
+            this.skinLabel5.TabIndex = 3;
+            this.skinLabel5.Text = "步骤视频（可以发布到优酷上或网盘上）";
+            // 
             // F_ShareFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -214,11 +240,13 @@
             this.Controls.Add(this.clbCategory);
             this.Controls.Add(this.skinLabel3);
             this.Controls.Add(this.skinLabel4);
+            this.Controls.Add(this.skinLabel5);
             this.Controls.Add(this.skinLabel2);
             this.Controls.Add(this.skinLabel1);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtRemark);
             this.Controls.Add(this.txtMaterial);
+            this.Controls.Add(this.txtHttpVideo);
             this.Controls.Add(this.txtFunc);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.pic);
@@ -251,5 +279,7 @@
         private CCWin.SkinToolTip skinToolTip1;
         private System.Windows.Forms.TextBox txtMaterial;
         private CCWin.SkinControl.SkinLabel skinLabel4;
+        private System.Windows.Forms.TextBox txtHttpVideo;
+        private CCWin.SkinControl.SkinLabel skinLabel5;
     }
 }

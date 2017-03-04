@@ -69,7 +69,7 @@
             this.Name = "F_SaySayReplay";
             this.ShowDrawIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "个 人 动 态";
+            this.Text = "评论";
             this.TitleCenter = true;
             this.TitleOffset = new System.Drawing.Point(20, 0);
             this.Load += new System.EventHandler(this.F_SaySayReplay_Load);

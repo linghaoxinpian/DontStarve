@@ -43,7 +43,7 @@ namespace DontStarve.App
             //               ToName = tu.Name, //被回复者的Name
             //               i.Content,   //回复内容
             //               i.Subtime    //回复时间
-            this.Text = "总回复数：" + count.ToString();
+            this.Text += "总评论数：" + count.ToString()+"条";
             int top = -83;
             foreach (dynamic i in s)
             {
@@ -55,6 +55,7 @@ namespace DontStarve.App
                 //“回复”控件赋值
                 yr.lbUserToUser.Tag = pros[0].GetValue(i);  //储存回复者的id
                 yr.lbUserToUser.Text = pros[1].GetValue(i) + " 回复 " + pros[2].GetValue(i);
+                yr.toolTip1.SetToolTip(yr.lbUserToUser, "点击回复" + pros[1].GetValue(i));                
                 yr.txtReply.Text = pros[3].GetValue(i);
                 yr.lbSubTime.Text =Common.CommonHelper.StampToDateTime(pros[4].GetValue(i).ToString()).ToString(); //回复时间
                 yr.ReplyAction += new Action(() =>      //回复“评论”

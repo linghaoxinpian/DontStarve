@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtReply = new CCWin.SkinControl.SkinWaterTextBox();
             this.lbUserToUser = new System.Windows.Forms.Label();
             this.lbSubTime = new System.Windows.Forms.Label();
+            this.toolTip1 = new CCWin.SkinToolTip(this.components);
             this.SuspendLayout();
             // 
             // txtReply
@@ -59,6 +61,7 @@
             this.lbUserToUser.Size = new System.Drawing.Size(136, 12);
             this.lbUserToUser.TabIndex = 5;
             this.lbUserToUser.Text = "上帝掷骰子 回复 零芯";
+            this.toolTip1.SetToolTip(this.lbUserToUser, "点击回复");
             this.lbUserToUser.Click += new System.EventHandler(this.lbUserToUser_Click);
             // 
             // lbSubTime
@@ -69,6 +72,13 @@
             this.lbSubTime.Size = new System.Drawing.Size(77, 12);
             this.lbSubTime.TabIndex = 6;
             this.lbSubTime.Text = "2016年3月1日";
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 5000;
+            this.toolTip1.InitialDelay = 500;
+            this.toolTip1.OwnerDraw = true;
+            this.toolTip1.ReshowDelay = 800;
             // 
             // Yyu_Reply
             // 
@@ -90,5 +100,6 @@
         public CCWin.SkinControl.SkinWaterTextBox txtReply;
         public System.Windows.Forms.Label lbUserToUser;
         public System.Windows.Forms.Label lbSubTime;
+        public CCWin.SkinToolTip toolTip1;
     }
 }
