@@ -88,6 +88,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InsertHelper", "InsertHelpe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertData", "InsertData\InsertData.csproj", "{6E3CB498-7E97-413C-A37E-B544D2515E1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDemo", "TestDemo\TestDemo.csproj", "{5B590E7C-B36F-4414-BCE1-EEF50432B5D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -134,11 +136,16 @@ Global
 		{6E3CB498-7E97-413C-A37E-B544D2515E1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E3CB498-7E97-413C-A37E-B544D2515E1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E3CB498-7E97-413C-A37E-B544D2515E1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B590E7C-B36F-4414-BCE1-EEF50432B5D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B590E7C-B36F-4414-BCE1-EEF50432B5D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B590E7C-B36F-4414-BCE1-EEF50432B5D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B590E7C-B36F-4414-BCE1-EEF50432B5D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6E3CB498-7E97-413C-A37E-B544D2515E1B} = {4AC1AF1F-E4BD-465C-A5BD-33D45956FD96}
+		{5B590E7C-B36F-4414-BCE1-EEF50432B5D6} = {4AC1AF1F-E4BD-465C-A5BD-33D45956FD96}
 	EndGlobalSection
 EndGlobal

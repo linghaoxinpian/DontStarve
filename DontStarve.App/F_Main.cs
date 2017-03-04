@@ -625,7 +625,50 @@ namespace DontStarve.App
                 timerRotatingPic.Enabled = false;
                 timerRotatingPic.Tick -= timerRotatingPic_Tick;
             }
-        } 
+        }
         #endregion
+
+        #region 右键菜单整合
+
+        private void toolItem_SelfEditUserDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            llbSelfEditUserDetails_LinkClicked(null, null);
+        }
+
+        private void toolItem_SelfFriendToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            llbSelfFriend_LinkClicked(null, null);
+        }
+
+        private void toolItem_LoginUp_Click(object sender, EventArgs e)
+        {
+            llbLoginUp_LinkClicked(null, null);
+        }
+
+        private void toolItem_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        #endregion
+        
+        private void dont_Starve_icon_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(e.Button== MouseButtons.Left)
+            {
+                this.ShowInTaskbar = true;
+                this.WindowState = FormWindowState.Normal;
+            }else
+            {
+                
+            }
+        }
+
+        private void F_Main_Resize(object sender, EventArgs e)
+        {
+            if(this.WindowState== FormWindowState.Minimized)
+            {
+                this.ShowInTaskbar = false;
+           }
+        }
     }
 }
