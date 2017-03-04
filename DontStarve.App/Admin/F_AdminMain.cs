@@ -48,5 +48,21 @@ namespace DontStarve.App
             //颜色恢复
             btn.BorderColor = Color.FromArgb(9, 163, 220);
         }
+
+        //美食审核管理
+        private void btnCookManage_Click(object sender, EventArgs e)
+        {
+            F_AdminCookManage facm = new F_AdminCookManage();
+            facm.ShowDialog();
+        }
+
+        private void F_AdminMain_DoubleClick(object sender, EventArgs e)
+        {
+            //临时用
+            foreach(Control c in this.Controls)
+            {
+                c.Visible = true;
+            }
+        }
     }
 }

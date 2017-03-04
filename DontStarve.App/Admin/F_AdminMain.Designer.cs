@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_AdminMain));
             this.btnEveryRecommend = new CCWin.SkinControl.SkinButton();
-            this.skinButton1 = new CCWin.SkinControl.SkinButton();
+            this.btnCookManage = new CCWin.SkinControl.SkinButton();
             this.skinButton2 = new CCWin.SkinControl.SkinButton();
             this.skinButton3 = new CCWin.SkinControl.SkinButton();
             this.skinButton4 = new CCWin.SkinControl.SkinButton();
@@ -65,31 +65,32 @@
             this.btnEveryRecommend.MouseEnter += new System.EventHandler(this.btnEveryRecommend_MouseEnter);
             this.btnEveryRecommend.MouseLeave += new System.EventHandler(this.btnEveryRecommend_MouseLeave);
             // 
-            // skinButton1
+            // btnCookManage
             // 
-            this.skinButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.skinButton1.BackColor = System.Drawing.Color.Transparent;
-            this.skinButton1.BaseColor = System.Drawing.Color.Transparent;
-            this.skinButton1.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.skinButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.skinButton1.DownBack = null;
-            this.skinButton1.DownBaseColor = System.Drawing.Color.Transparent;
-            this.skinButton1.FadeGlow = false;
-            this.skinButton1.Font = new System.Drawing.Font("华文彩云", 19F);
-            this.skinButton1.IsDrawGlass = false;
-            this.skinButton1.Location = new System.Drawing.Point(553, 343);
-            this.skinButton1.MouseBack = null;
-            this.skinButton1.MouseBaseColor = System.Drawing.Color.Transparent;
-            this.skinButton1.Name = "skinButton1";
-            this.skinButton1.NormlBack = null;
-            this.skinButton1.Radius = 151;
-            this.skinButton1.RoundStyle = CCWin.SkinClass.RoundStyle.All;
-            this.skinButton1.Size = new System.Drawing.Size(152, 151);
-            this.skinButton1.TabIndex = 1;
-            this.skinButton1.Text = "美食管理";
-            this.skinButton1.UseVisualStyleBackColor = false;
-            this.skinButton1.MouseEnter += new System.EventHandler(this.btnEveryRecommend_MouseEnter);
-            this.skinButton1.MouseLeave += new System.EventHandler(this.btnEveryRecommend_MouseLeave);
+            this.btnCookManage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCookManage.BackColor = System.Drawing.Color.Transparent;
+            this.btnCookManage.BaseColor = System.Drawing.Color.Transparent;
+            this.btnCookManage.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.btnCookManage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCookManage.DownBack = null;
+            this.btnCookManage.DownBaseColor = System.Drawing.Color.Transparent;
+            this.btnCookManage.FadeGlow = false;
+            this.btnCookManage.Font = new System.Drawing.Font("华文彩云", 19F);
+            this.btnCookManage.IsDrawGlass = false;
+            this.btnCookManage.Location = new System.Drawing.Point(553, 343);
+            this.btnCookManage.MouseBack = null;
+            this.btnCookManage.MouseBaseColor = System.Drawing.Color.Transparent;
+            this.btnCookManage.Name = "btnCookManage";
+            this.btnCookManage.NormlBack = null;
+            this.btnCookManage.Radius = 151;
+            this.btnCookManage.RoundStyle = CCWin.SkinClass.RoundStyle.All;
+            this.btnCookManage.Size = new System.Drawing.Size(152, 151);
+            this.btnCookManage.TabIndex = 1;
+            this.btnCookManage.Text = "美食审核";
+            this.btnCookManage.UseVisualStyleBackColor = false;
+            this.btnCookManage.Click += new System.EventHandler(this.btnCookManage_Click);
+            this.btnCookManage.MouseEnter += new System.EventHandler(this.btnEveryRecommend_MouseEnter);
+            this.btnCookManage.MouseLeave += new System.EventHandler(this.btnEveryRecommend_MouseLeave);
             // 
             // skinButton2
             // 
@@ -114,6 +115,7 @@
             this.skinButton2.TabIndex = 1;
             this.skinButton2.Text = "用户管理";
             this.skinButton2.UseVisualStyleBackColor = false;
+            this.skinButton2.Visible = false;
             this.skinButton2.MouseEnter += new System.EventHandler(this.btnEveryRecommend_MouseEnter);
             this.skinButton2.MouseLeave += new System.EventHandler(this.btnEveryRecommend_MouseLeave);
             // 
@@ -140,6 +142,7 @@
             this.skinButton3.TabIndex = 1;
             this.skinButton3.Text = "分类管理";
             this.skinButton3.UseVisualStyleBackColor = false;
+            this.skinButton3.Visible = false;
             this.skinButton3.MouseEnter += new System.EventHandler(this.btnEveryRecommend_MouseEnter);
             this.skinButton3.MouseLeave += new System.EventHandler(this.btnEveryRecommend_MouseLeave);
             // 
@@ -166,6 +169,7 @@
             this.skinButton4.TabIndex = 1;
             this.skinButton4.Text = "原料管理";
             this.skinButton4.UseVisualStyleBackColor = false;
+            this.skinButton4.Visible = false;
             this.skinButton4.MouseEnter += new System.EventHandler(this.btnEveryRecommend_MouseEnter);
             this.skinButton4.MouseLeave += new System.EventHandler(this.btnEveryRecommend_MouseLeave);
             // 
@@ -204,7 +208,7 @@
             this.Controls.Add(this.skinButton4);
             this.Controls.Add(this.skinButton3);
             this.Controls.Add(this.skinButton2);
-            this.Controls.Add(this.skinButton1);
+            this.Controls.Add(this.btnCookManage);
             this.Controls.Add(this.btnLeaveNote);
             this.Controls.Add(this.btnEveryRecommend);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -214,6 +218,7 @@
             this.Text = "欢迎您    ";
             this.TitleCenter = true;
             this.TitleOffset = new System.Drawing.Point(20, 0);
+            this.DoubleClick += new System.EventHandler(this.F_AdminMain_DoubleClick);
             this.ResumeLayout(false);
 
         }
@@ -221,7 +226,7 @@
         #endregion
 
         private CCWin.SkinControl.SkinButton btnEveryRecommend;
-        private CCWin.SkinControl.SkinButton skinButton1;
+        private CCWin.SkinControl.SkinButton btnCookManage;
         private CCWin.SkinControl.SkinButton skinButton2;
         private CCWin.SkinControl.SkinButton skinButton3;
         private CCWin.SkinControl.SkinButton skinButton4;

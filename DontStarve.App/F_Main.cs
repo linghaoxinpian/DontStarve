@@ -676,7 +676,14 @@ namespace DontStarve.App
             {
                 this.ShowInTaskbar = false;
             }
-        } 
+        }
+        #endregion
+
+        #region Extra
+        private void llbExtra_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //....
+        }
         #endregion
     }
 }

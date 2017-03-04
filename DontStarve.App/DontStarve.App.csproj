@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\F_AdminCookManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\F_AdminCookManage.Designer.cs">
+      <DependentUpon>F_AdminCookManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\F_AdminEverydayRecommend.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     <Compile Include="Yyu_Control\Yyu_SaySayDetails.Designer.cs">
       <DependentUpon>Yyu_SaySayDetails.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin\F_AdminCookManage.resx">
+      <DependentUpon>F_AdminCookManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\F_AdminEverydayRecommend.resx">
       <DependentUpon>F_AdminEverydayRecommend.cs</DependentUpon>
     </EmbeddedResource>

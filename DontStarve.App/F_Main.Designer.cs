@@ -64,6 +64,9 @@
             this.skinTabPage2 = new CCWin.SkinControl.SkinTabPage();
             this.tpFriend = new CCWin.SkinControl.SkinTabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.yyu_SaySayDetails4 = new DontStarve.App.Yyu_SaySayDetails();
+            this.yyu_SaySayDetails5 = new DontStarve.App.Yyu_SaySayDetails();
+            this.yyu_SaySayDetails6 = new DontStarve.App.Yyu_SaySayDetails();
             this.pl_right2 = new System.Windows.Forms.Panel();
             this.pl_left2 = new System.Windows.Forms.Panel();
             this.tpMoreFriend = new CCWin.SkinControl.SkinTabPage();
@@ -80,9 +83,7 @@
             this.lbSearchResult = new CCWin.SkinControl.SkinListBox();
             this.timerRotatingPic = new System.Windows.Forms.Timer(this.components);
             this.dont_Starve_icon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.yyu_SaySayDetails4 = new DontStarve.App.Yyu_SaySayDetails();
-            this.yyu_SaySayDetails5 = new DontStarve.App.Yyu_SaySayDetails();
-            this.yyu_SaySayDetails6 = new DontStarve.App.Yyu_SaySayDetails();
+            this.llbExtra = new System.Windows.Forms.LinkLabel();
             this.tpSelfManage.SuspendLayout();
             this.selfMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLeaveNote)).BeginInit();
@@ -125,6 +126,7 @@
             // 
             this.tpSelfManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(208)))), ((int)(((byte)(255)))));
             this.tpSelfManage.ContextMenuStrip = this.selfMenuStrip;
+            this.tpSelfManage.Controls.Add(this.llbExtra);
             this.tpSelfManage.Controls.Add(this.picLeaveNote);
             this.tpSelfManage.Controls.Add(this.picShareFood);
             this.tpSelfManage.Controls.Add(this.llbSelfFriend);
@@ -399,7 +401,7 @@
             this.skinTabControl1.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Top;
             this.skinTabControl1.PageNorml = null;
             this.skinTabControl1.Radius = 15;
-            this.skinTabControl1.SelectedIndex = 3;
+            this.skinTabControl1.SelectedIndex = 5;
             this.skinTabControl1.Size = new System.Drawing.Size(898, 677);
             this.skinTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.skinTabControl1.TabIndex = 0;
@@ -631,6 +633,30 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(642, 547);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
+            // yyu_SaySayDetails4
+            // 
+            this.yyu_SaySayDetails4.BackColor = System.Drawing.Color.White;
+            this.yyu_SaySayDetails4.Location = new System.Drawing.Point(6, 6);
+            this.yyu_SaySayDetails4.Name = "yyu_SaySayDetails4";
+            this.yyu_SaySayDetails4.Size = new System.Drawing.Size(203, 535);
+            this.yyu_SaySayDetails4.TabIndex = 0;
+            // 
+            // yyu_SaySayDetails5
+            // 
+            this.yyu_SaySayDetails5.BackColor = System.Drawing.Color.White;
+            this.yyu_SaySayDetails5.Location = new System.Drawing.Point(219, 6);
+            this.yyu_SaySayDetails5.Name = "yyu_SaySayDetails5";
+            this.yyu_SaySayDetails5.Size = new System.Drawing.Size(203, 535);
+            this.yyu_SaySayDetails5.TabIndex = 1;
+            // 
+            // yyu_SaySayDetails6
+            // 
+            this.yyu_SaySayDetails6.BackColor = System.Drawing.Color.White;
+            this.yyu_SaySayDetails6.Location = new System.Drawing.Point(432, 6);
+            this.yyu_SaySayDetails6.Name = "yyu_SaySayDetails6";
+            this.yyu_SaySayDetails6.Size = new System.Drawing.Size(204, 535);
+            this.yyu_SaySayDetails6.TabIndex = 2;
+            // 
             // pl_right2
             // 
             this.pl_right2.BackColor = System.Drawing.Color.DarkGray;
@@ -860,29 +886,16 @@
             this.dont_Starve_icon.Visible = true;
             this.dont_Starve_icon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dont_Starve_icon_MouseClick);
             // 
-            // yyu_SaySayDetails4
+            // llbExtra
             // 
-            this.yyu_SaySayDetails4.BackColor = System.Drawing.Color.White;
-            this.yyu_SaySayDetails4.Location = new System.Drawing.Point(6, 6);
-            this.yyu_SaySayDetails4.Name = "yyu_SaySayDetails4";
-            this.yyu_SaySayDetails4.Size = new System.Drawing.Size(203, 535);
-            this.yyu_SaySayDetails4.TabIndex = 0;
-            // 
-            // yyu_SaySayDetails5
-            // 
-            this.yyu_SaySayDetails5.BackColor = System.Drawing.Color.White;
-            this.yyu_SaySayDetails5.Location = new System.Drawing.Point(219, 6);
-            this.yyu_SaySayDetails5.Name = "yyu_SaySayDetails5";
-            this.yyu_SaySayDetails5.Size = new System.Drawing.Size(203, 535);
-            this.yyu_SaySayDetails5.TabIndex = 1;
-            // 
-            // yyu_SaySayDetails6
-            // 
-            this.yyu_SaySayDetails6.BackColor = System.Drawing.Color.White;
-            this.yyu_SaySayDetails6.Location = new System.Drawing.Point(432, 6);
-            this.yyu_SaySayDetails6.Name = "yyu_SaySayDetails6";
-            this.yyu_SaySayDetails6.Size = new System.Drawing.Size(204, 535);
-            this.yyu_SaySayDetails6.TabIndex = 2;
+            this.llbExtra.AutoSize = true;
+            this.llbExtra.Location = new System.Drawing.Point(749, 524);
+            this.llbExtra.Name = "llbExtra";
+            this.llbExtra.Size = new System.Drawing.Size(143, 12);
+            this.llbExtra.TabIndex = 5;
+            this.llbExtra.TabStop = true;
+            this.llbExtra.Text = "吃饱了？  发现更好玩—>";
+            this.llbExtra.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbExtra_LinkClicked);
             // 
             // F_Main
             // 
@@ -990,5 +1003,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolItem_LoginUp;
         private System.Windows.Forms.ToolStripMenuItem toolItem_Exit;
         private System.Windows.Forms.NotifyIcon dont_Starve_icon;
+        private System.Windows.Forms.LinkLabel llbExtra;
     }
 }
