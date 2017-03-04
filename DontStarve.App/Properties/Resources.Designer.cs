@@ -453,6 +453,16 @@ namespace DontStarve.App.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap wtfyX {
+            get {
+                object obj = ResourceManager.GetObject("wtfyX", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap yellow_37 {
             get {
                 object obj = ResourceManager.GetObject("yellow_37", resourceCulture);

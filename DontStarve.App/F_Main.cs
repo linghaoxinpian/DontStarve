@@ -683,7 +683,19 @@ namespace DontStarve.App
         private void llbExtra_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //....
+            F_Extra fe = new F_Extra();
+            fe.Show();
+        }
+
+        //关于我们
+        private void toolAboutMe_Click(object sender, EventArgs e)
+        {
+            F_AboutMe fam = new F_AboutMe();
+            this.WindowState = FormWindowState.Minimized;
+            fam.ShowDialog();
+            this.WindowState = FormWindowState.Normal;
         }
         #endregion
+
     }
 }

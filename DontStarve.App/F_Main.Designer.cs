@@ -41,6 +41,7 @@
             this.toolItem_picShareFood = new System.Windows.Forms.ToolStripMenuItem();
             this.toolItem_LoginUp = new System.Windows.Forms.ToolStripMenuItem();
             this.toolItem_Exit = new System.Windows.Forms.ToolStripMenuItem();
+            this.llbExtra = new System.Windows.Forms.LinkLabel();
             this.picLeaveNote = new CCWin.SkinControl.SkinPictureBox();
             this.picShareFood = new CCWin.SkinControl.SkinPictureBox();
             this.llbSelfFriend = new System.Windows.Forms.LinkLabel();
@@ -83,7 +84,7 @@
             this.lbSearchResult = new CCWin.SkinControl.SkinListBox();
             this.timerRotatingPic = new System.Windows.Forms.Timer(this.components);
             this.dont_Starve_icon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.llbExtra = new System.Windows.Forms.LinkLabel();
+            this.toolAboutMe = new System.Windows.Forms.ToolStripMenuItem();
             this.tpSelfManage.SuspendLayout();
             this.selfMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLeaveNote)).BeginInit();
@@ -168,11 +169,12 @@
             this.toolItemSelfToolStripMenuItem,
             this.toolItem_picShareFood,
             this.toolItem_LoginUp,
-            this.toolItem_Exit});
+            this.toolItem_Exit,
+            this.toolAboutMe});
             this.selfMenuStrip.ItemSplitter = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(148)))), ((int)(((byte)(212)))));
             this.selfMenuStrip.Name = "selfMenuStrip";
             this.selfMenuStrip.RadiusStyle = CCWin.SkinClass.RoundStyle.All;
-            this.selfMenuStrip.Size = new System.Drawing.Size(149, 158);
+            this.selfMenuStrip.Size = new System.Drawing.Size(153, 202);
             this.selfMenuStrip.SkinAllColor = true;
             this.selfMenuStrip.TitleAnamorphosis = true;
             this.selfMenuStrip.TitleColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(228)))), ((int)(((byte)(236)))));
@@ -182,51 +184,62 @@
             // toolItem_SelfEditUserDetailsToolStripMenuItem
             // 
             this.toolItem_SelfEditUserDetailsToolStripMenuItem.Name = "toolItem_SelfEditUserDetailsToolStripMenuItem";
-            this.toolItem_SelfEditUserDetailsToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.toolItem_SelfEditUserDetailsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.toolItem_SelfEditUserDetailsToolStripMenuItem.Text = "个人资料";
             this.toolItem_SelfEditUserDetailsToolStripMenuItem.Click += new System.EventHandler(this.toolItem_SelfEditUserDetailsToolStripMenuItem_Click);
             // 
             // toolItem_SelfFriendToolStripMenuItem
             // 
             this.toolItem_SelfFriendToolStripMenuItem.Name = "toolItem_SelfFriendToolStripMenuItem";
-            this.toolItem_SelfFriendToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.toolItem_SelfFriendToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.toolItem_SelfFriendToolStripMenuItem.Text = "我的好友";
             this.toolItem_SelfFriendToolStripMenuItem.Click += new System.EventHandler(this.toolItem_SelfFriendToolStripMenuItem_Click);
             // 
             // toolItem_LeaveNote
             // 
             this.toolItem_LeaveNote.Name = "toolItem_LeaveNote";
-            this.toolItem_LeaveNote.Size = new System.Drawing.Size(148, 22);
+            this.toolItem_LeaveNote.Size = new System.Drawing.Size(152, 22);
             this.toolItem_LeaveNote.Text = "我要反馈建议";
             this.toolItem_LeaveNote.Click += new System.EventHandler(this.picLeaveNote_Click);
             // 
             // toolItemSelfToolStripMenuItem
             // 
             this.toolItemSelfToolStripMenuItem.Name = "toolItemSelfToolStripMenuItem";
-            this.toolItemSelfToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.toolItemSelfToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.toolItemSelfToolStripMenuItem.Text = "我的动态";
             this.toolItemSelfToolStripMenuItem.Click += new System.EventHandler(this.btnSelfUserPhoto_Click);
             // 
             // toolItem_picShareFood
             // 
             this.toolItem_picShareFood.Name = "toolItem_picShareFood";
-            this.toolItem_picShareFood.Size = new System.Drawing.Size(148, 22);
+            this.toolItem_picShareFood.Size = new System.Drawing.Size(152, 22);
             this.toolItem_picShareFood.Text = "边分享边成长";
             this.toolItem_picShareFood.Click += new System.EventHandler(this.picShareFood_Click);
             // 
             // toolItem_LoginUp
             // 
             this.toolItem_LoginUp.Name = "toolItem_LoginUp";
-            this.toolItem_LoginUp.Size = new System.Drawing.Size(148, 22);
+            this.toolItem_LoginUp.Size = new System.Drawing.Size(152, 22);
             this.toolItem_LoginUp.Text = "注销";
             this.toolItem_LoginUp.Click += new System.EventHandler(this.toolItem_LoginUp_Click);
             // 
             // toolItem_Exit
             // 
             this.toolItem_Exit.Name = "toolItem_Exit";
-            this.toolItem_Exit.Size = new System.Drawing.Size(148, 22);
+            this.toolItem_Exit.Size = new System.Drawing.Size(152, 22);
             this.toolItem_Exit.Text = "退出";
             this.toolItem_Exit.Click += new System.EventHandler(this.toolItem_Exit_Click);
+            // 
+            // llbExtra
+            // 
+            this.llbExtra.AutoSize = true;
+            this.llbExtra.Location = new System.Drawing.Point(749, 524);
+            this.llbExtra.Name = "llbExtra";
+            this.llbExtra.Size = new System.Drawing.Size(143, 12);
+            this.llbExtra.TabIndex = 5;
+            this.llbExtra.TabStop = true;
+            this.llbExtra.Text = "吃饱了？  发现更好玩—>";
+            this.llbExtra.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbExtra_LinkClicked);
             // 
             // picLeaveNote
             // 
@@ -886,16 +899,12 @@
             this.dont_Starve_icon.Visible = true;
             this.dont_Starve_icon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dont_Starve_icon_MouseClick);
             // 
-            // llbExtra
+            // toolAboutMe
             // 
-            this.llbExtra.AutoSize = true;
-            this.llbExtra.Location = new System.Drawing.Point(749, 524);
-            this.llbExtra.Name = "llbExtra";
-            this.llbExtra.Size = new System.Drawing.Size(143, 12);
-            this.llbExtra.TabIndex = 5;
-            this.llbExtra.TabStop = true;
-            this.llbExtra.Text = "吃饱了？  发现更好玩—>";
-            this.llbExtra.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbExtra_LinkClicked);
+            this.toolAboutMe.Name = "toolAboutMe";
+            this.toolAboutMe.Size = new System.Drawing.Size(152, 22);
+            this.toolAboutMe.Text = "关于我们";
+            this.toolAboutMe.Click += new System.EventHandler(this.toolAboutMe_Click);
             // 
             // F_Main
             // 
@@ -1004,5 +1013,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolItem_Exit;
         private System.Windows.Forms.NotifyIcon dont_Starve_icon;
         private System.Windows.Forms.LinkLabel llbExtra;
+        private System.Windows.Forms.ToolStripMenuItem toolAboutMe;
     }
 }
