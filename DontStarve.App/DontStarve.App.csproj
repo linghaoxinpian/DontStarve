@@ -106,6 +106,18 @@
     <Compile Include="F_Extra.Designer.cs">
       <DependentUpon>F_Extra.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_Fancl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Fancl.Designer.cs">
+      <DependentUpon>F_Fancl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_Whitening.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Whitening.Designer.cs">
+      <DependentUpon>F_Whitening.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelfManage\F_AboutMe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +270,12 @@
     <EmbeddedResource Include="F_Extra.resx">
       <DependentUpon>F_Extra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_Fancl.resx">
+      <DependentUpon>F_Fancl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Whitening.resx">
+      <DependentUpon>F_Whitening.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelfManage\F_AboutMe.resx">
       <DependentUpon>F_AboutMe.cs</DependentUpon>
     </EmbeddedResource>
@@ -373,6 +391,15 @@
     <Content Include="IServices.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\lmsms.jpg" />
+    <None Include="Resources\yysmz.jpg" />
+    <None Include="Resources\ldsmt.jpg" />
+    <None Include="Resources\kdcyh.jpg" />
+    <None Include="Resources\qczdc.jpg" />
+    <None Include="Resources\smt.jpg" />
+    <None Include="Resources\ssyyhgz.jpg" />
+    <None Include="Resources\yygxdr.jpg" />
+    <None Include="Resources\sstbc.jpg" />
     <None Include="Resources\wtfyX.gif" />
     <None Include="Resources\sharefood2.png" />
     <None Include="Resources\Login1711.jpg" />

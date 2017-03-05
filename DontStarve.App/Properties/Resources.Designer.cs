@@ -263,6 +263,36 @@ namespace DontStarve.App.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap kdcyh {
+            get {
+                object obj = ResourceManager.GetObject("kdcyh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap ldsmt {
+            get {
+                object obj = ResourceManager.GetObject("ldsmt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap lmsms {
+            get {
+                object obj = ResourceManager.GetObject("lmsms", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap Login1711 {
             get {
                 object obj = ResourceManager.GetObject("Login1711", resourceCulture);
@@ -326,6 +356,16 @@ namespace DontStarve.App.Properties {
         internal static System.Drawing.Bitmap novideo {
             get {
                 object obj = ResourceManager.GetObject("novideo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap qczdc {
+            get {
+                object obj = ResourceManager.GetObject("qczdc", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,6 +453,36 @@ namespace DontStarve.App.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap smt {
+            get {
+                object obj = ResourceManager.GetObject("smt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap sstbc {
+            get {
+                object obj = ResourceManager.GetObject("sstbc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap ssyyhgz {
+            get {
+                object obj = ResourceManager.GetObject("ssyyhgz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap taco {
             get {
                 object obj = ResourceManager.GetObject("taco", resourceCulture);
@@ -466,6 +536,26 @@ namespace DontStarve.App.Properties {
         internal static System.Drawing.Bitmap yellow_37 {
             get {
                 object obj = ResourceManager.GetObject("yellow_37", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap yygxdr {
+            get {
+                object obj = ResourceManager.GetObject("yygxdr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap yysmz {
+            get {
+                object obj = ResourceManager.GetObject("yysmz", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
