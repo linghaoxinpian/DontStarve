@@ -16,5 +16,30 @@ namespace DontStarve.App
         {
             InitializeComponent();
         }
+
+        private void skinLabel2_Click(object sender, EventArgs e)
+        {
+            MessageYyu.ShowMessage("假装唤起了QQ");
+        }
+
+        private void skinLabel3_Click(object sender, EventArgs e)
+        {
+            MessageYyu.ShowMessage("假装唤起了微信");
+        }
+
+        private void skinLabel4_Click(object sender, EventArgs e)
+        {
+            MessageYyu.ShowMessage("假装有个二维码");
+        }
+
+        private void skinLabel4_MouseEnter(object sender, EventArgs e)
+        {
+            (sender as Control).ForeColor = Color.Red;
+        }
+
+        private void skinLabel4_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as Control).ForeColor = Color.Black;
+        }
     }
 }

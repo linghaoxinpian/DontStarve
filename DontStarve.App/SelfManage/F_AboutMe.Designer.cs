@@ -31,6 +31,8 @@
             this.gifBox1 = new CCWin.SkinControl.GifBox();
             this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
             this.skinLabel2 = new CCWin.SkinControl.SkinLabel();
+            this.skinLabel3 = new CCWin.SkinControl.SkinLabel();
+            this.skinLabel4 = new CCWin.SkinControl.SkinLabel();
             this.SuspendLayout();
             // 
             // gifBox1
@@ -61,18 +63,56 @@
             this.skinLabel2.AutoSize = true;
             this.skinLabel2.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel2.BorderColor = System.Drawing.Color.White;
+            this.skinLabel2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.skinLabel2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinLabel2.Location = new System.Drawing.Point(367, 475);
             this.skinLabel2.Name = "skinLabel2";
             this.skinLabel2.Size = new System.Drawing.Size(116, 17);
             this.skinLabel2.TabIndex = 3;
             this.skinLabel2.Text = "官方QQ群:0000000";
+            this.skinLabel2.Click += new System.EventHandler(this.skinLabel2_Click);
+            this.skinLabel2.MouseEnter += new System.EventHandler(this.skinLabel4_MouseEnter);
+            this.skinLabel2.MouseLeave += new System.EventHandler(this.skinLabel4_MouseLeave);
+            // 
+            // skinLabel3
+            // 
+            this.skinLabel3.AutoSize = true;
+            this.skinLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel3.BorderColor = System.Drawing.Color.White;
+            this.skinLabel3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.skinLabel3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabel3.Location = new System.Drawing.Point(367, 506);
+            this.skinLabel3.Name = "skinLabel3";
+            this.skinLabel3.Size = new System.Drawing.Size(120, 17);
+            this.skinLabel3.TabIndex = 3;
+            this.skinLabel3.Text = "官方微信群:0000000";
+            this.skinLabel3.Click += new System.EventHandler(this.skinLabel3_Click);
+            this.skinLabel3.MouseEnter += new System.EventHandler(this.skinLabel4_MouseEnter);
+            this.skinLabel3.MouseLeave += new System.EventHandler(this.skinLabel4_MouseLeave);
+            // 
+            // skinLabel4
+            // 
+            this.skinLabel4.AutoSize = true;
+            this.skinLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel4.BorderColor = System.Drawing.Color.White;
+            this.skinLabel4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.skinLabel4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabel4.Location = new System.Drawing.Point(367, 539);
+            this.skinLabel4.Name = "skinLabel4";
+            this.skinLabel4.Size = new System.Drawing.Size(134, 17);
+            this.skinLabel4.TabIndex = 3;
+            this.skinLabel4.Text = "我是土豪，我要赞助~~";
+            this.skinLabel4.Click += new System.EventHandler(this.skinLabel4_Click);
+            this.skinLabel4.MouseEnter += new System.EventHandler(this.skinLabel4_MouseEnter);
+            this.skinLabel4.MouseLeave += new System.EventHandler(this.skinLabel4_MouseLeave);
             // 
             // F_AboutMe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 608);
+            this.Controls.Add(this.skinLabel4);
+            this.Controls.Add(this.skinLabel3);
             this.Controls.Add(this.skinLabel2);
             this.Controls.Add(this.skinLabel1);
             this.Controls.Add(this.gifBox1);
@@ -94,5 +134,7 @@
         private CCWin.SkinControl.GifBox gifBox1;
         private CCWin.SkinControl.SkinLabel skinLabel1;
         private CCWin.SkinControl.SkinLabel skinLabel2;
+        private CCWin.SkinControl.SkinLabel skinLabel3;
+        private CCWin.SkinControl.SkinLabel skinLabel4;
     }
 }

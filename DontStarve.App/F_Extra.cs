@@ -19,7 +19,10 @@ namespace DontStarve.App
 
         private void skinTabControl2_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            tbHealth.SelectedTab.Controls.Clear();
+            if (e.TabPageIndex != 3)
+            {
+                tbHealth.SelectedTab.Controls.Clear();
+            }
             switch (e.TabPageIndex)
             {
                 case 0:
@@ -30,6 +33,9 @@ namespace DontStarve.App
                     break;
                 case 2:
                     LoadDetox();
+                    break;
+                case 3:
+
                     break;
             }
         }
@@ -84,6 +90,20 @@ namespace DontStarve.App
             fw.TopLevel = false;
             tbHealth.SelectedTab.Controls.Add(fw);
             fw.Show();
+        }
+      
+        private void llbExtra_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            F_LeaveNote fl = new F_LeaveNote();
+            fl.Show();
+        }
+
+        private void F_Extra_Load(object sender, EventArgs e)
+        {
+            //初始化，手动调用
+            tbExtra.SelectedIndex = 0;
+            tbHealth.SelectedIndex = 0;
+            LoadWhitening();
         }
     }
 }

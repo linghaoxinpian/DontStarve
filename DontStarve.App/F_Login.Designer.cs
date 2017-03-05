@@ -174,7 +174,7 @@
             this.ShowDrawIcon = false;
             this.SkinOpacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "打开新世界的大门";
             this.Load += new System.EventHandler(this.F_Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picUserPhoto)).EndInit();
             this.ResumeLayout(false);
