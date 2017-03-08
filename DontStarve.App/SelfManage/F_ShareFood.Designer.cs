@@ -85,6 +85,7 @@
             this.txtRemark.Size = new System.Drawing.Size(362, 60);
             this.txtRemark.TabIndex = 1;
             this.txtRemark.Text = "小贴士：";
+            this.skinToolTip1.SetToolTip(this.txtRemark, "一些易错点、注意点的小提示");
             // 
             // btnSubmit
             // 
@@ -110,9 +111,9 @@
             this.skinLabel1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinLabel1.Location = new System.Drawing.Point(453, 30);
             this.skinLabel1.Name = "skinLabel1";
-            this.skinLabel1.Size = new System.Drawing.Size(32, 17);
+            this.skinLabel1.Size = new System.Drawing.Size(37, 17);
             this.skinLabel1.TabIndex = 3;
-            this.skinLabel1.Text = "菜名";
+            this.skinLabel1.Text = "菜名*";
             // 
             // skinLabel2
             // 
@@ -170,11 +171,11 @@
             this.skinLabel3.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel3.BorderColor = System.Drawing.Color.White;
             this.skinLabel3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinLabel3.Location = new System.Drawing.Point(41, 341);
+            this.skinLabel3.Location = new System.Drawing.Point(22, 341);
             this.skinLabel3.Name = "skinLabel3";
-            this.skinLabel3.Size = new System.Drawing.Size(56, 17);
+            this.skinLabel3.Size = new System.Drawing.Size(61, 17);
             this.skinLabel3.TabIndex = 3;
-            this.skinLabel3.Text = "所属分类";
+            this.skinLabel3.Text = "所属分类*";
             // 
             // skinToolTip1
             // 
@@ -195,6 +196,7 @@
             this.txtMaterial.Size = new System.Drawing.Size(358, 97);
             this.txtMaterial.TabIndex = 1;
             this.txtMaterial.Text = "鸡蛋|2只\r\n雪虾(小最好)|500克";
+            this.skinToolTip1.SetToolTip(this.txtMaterial, "原料和用量写法如下：\r\n原料|份量");
             // 
             // skinLabel4
             // 
@@ -218,7 +220,7 @@
             this.txtHttpVideo.Name = "txtHttpVideo";
             this.txtHttpVideo.Size = new System.Drawing.Size(362, 36);
             this.txtHttpVideo.TabIndex = 1;
-            this.txtHttpVideo.Text = "http://pan.baidu.com/share/link?shareid=00000";
+            this.txtHttpVideo.Text = "http://pan.baidu.com...";
             // 
             // skinLabel5
             // 

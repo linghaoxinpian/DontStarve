@@ -421,7 +421,7 @@
             this.skinTabControl1.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Top;
             this.skinTabControl1.PageNorml = null;
             this.skinTabControl1.Radius = 15;
-            this.skinTabControl1.SelectedIndex = 5;
+            this.skinTabControl1.SelectedIndex = 0;
             this.skinTabControl1.Size = new System.Drawing.Size(898, 677);
             this.skinTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.skinTabControl1.TabIndex = 0;
@@ -849,7 +849,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(449, 59);
             this.txtSearch.TabIndex = 10;
-            this.txtSearch.Text = "三鲜锅煲";
+            this.txtSearch.Text = "煲";
             this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnSearch

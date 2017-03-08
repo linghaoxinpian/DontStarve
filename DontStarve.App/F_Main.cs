@@ -431,7 +431,7 @@ namespace DontStarve.App
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var list = icookieInfoService.LoadEntities(c => c.Name == txtSearch.Text).ToList();
+            var list = icookieInfoService.LoadEntities(c => c.Name.Contains(txtSearch.Text)).ToList();
             lbSearchResult.Items.Clear();
             foreach (var l in list)
             {

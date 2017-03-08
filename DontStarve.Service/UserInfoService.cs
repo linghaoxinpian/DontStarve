@@ -25,9 +25,11 @@ namespace DontStarve.Service
             //}
             //catch (Exception ex)
             //{
-                //为什么要加个try catch，网速一慢，第一行查询代码就崩溃，而把数据全部加载到客户端进行查询的代码反而正常运行！！我能怎么办，我也很绝望啊
-               return  LoadEntities(u => true).ToList().Where(u => u.Name == user_name && u.pwd == user_pwd).FirstOrDefault();
+            //为什么要加个try catch，网速一慢，第一行查询代码就崩溃，而把数据全部加载到客户端进行查询的代码反而正常运行！！我能怎么办，我也很绝望啊
+            //         return  LoadEntities(u => true).ToList().Where(u => u.Name == user_name && u.pwd == user_pwd).FirstOrDefault();
             //}
+
+            return LoadEntities(u => u.Name == user_name && u.pwd == user_pwd && u.DelFlag == false).FirstOrDefault();
         }
 
         protected override void Set_CurrentDAL()

@@ -39,6 +39,7 @@
             this.btnClose = new CCWin.SkinControl.SkinButton();
             this.llbRegister = new System.Windows.Forms.LinkLabel();
             this.skinHotKey1 = new CCWin.SkinControl.SkinHotKey(this.components);
+            this.skinToolTip1 = new CCWin.SkinToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picUserPhoto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +56,7 @@
             this.btnLogin.Size = new System.Drawing.Size(96, 40);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "登    陆";
+            this.skinToolTip1.SetToolTip(this.btnLogin, "Ctrl+Y 转回管理界面");
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -152,10 +154,19 @@
             this.skinHotKey1.Tag = null;
             this.skinHotKey1.HotKeyTrigger += new System.EventHandler<CCWin.SkinControl.HotKeyEventArgs>(this.skinHotKey1_HotKeyTrigger);
             // 
+            // skinToolTip1
+            // 
+            this.skinToolTip1.AutoPopDelay = 5000;
+            this.skinToolTip1.InitialDelay = 500;
+            this.skinToolTip1.OwnerDraw = true;
+            this.skinToolTip1.ReshowDelay = 800;
+            // 
             // F_Login
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnLogin;
             this.ClientSize = new System.Drawing.Size(500, 500);
             this.Controls.Add(this.llbRegister);
             this.Controls.Add(this.picUserPhoto);
@@ -193,6 +204,7 @@
         private CCWin.SkinControl.SkinButton btnClose;
         private System.Windows.Forms.LinkLabel llbRegister;
         private CCWin.SkinControl.SkinHotKey skinHotKey1;
+        private CCWin.SkinToolTip skinToolTip1;
     }
 }
 

@@ -82,7 +82,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(168, 21);
             this.txtName.TabIndex = 1;
-            this.txtName.Text = "上帝掷骰子";
+            this.txtName.Text = "零芯";
             // 
             // txtPwd
             // 

@@ -77,7 +77,7 @@
             this.btnCookManage.FadeGlow = false;
             this.btnCookManage.Font = new System.Drawing.Font("华文彩云", 19F);
             this.btnCookManage.IsDrawGlass = false;
-            this.btnCookManage.Location = new System.Drawing.Point(553, 343);
+            this.btnCookManage.Location = new System.Drawing.Point(553, 113);
             this.btnCookManage.MouseBack = null;
             this.btnCookManage.MouseBaseColor = System.Drawing.Color.Transparent;
             this.btnCookManage.Name = "btnCookManage";
@@ -104,7 +104,7 @@
             this.skinButton2.FadeGlow = false;
             this.skinButton2.Font = new System.Drawing.Font("华文彩云", 19F);
             this.skinButton2.IsDrawGlass = false;
-            this.skinButton2.Location = new System.Drawing.Point(553, 113);
+            this.skinButton2.Location = new System.Drawing.Point(553, 343);
             this.skinButton2.MouseBack = null;
             this.skinButton2.MouseBaseColor = System.Drawing.Color.Transparent;
             this.skinButton2.Name = "skinButton2";

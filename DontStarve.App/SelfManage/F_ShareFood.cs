@@ -46,78 +46,87 @@ namespace DontStarve.App
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //检查
-            if (string.IsNullOrEmpty(txtFunc.Text) || string.IsNullOrEmpty(txtName.Text) || pic.Image == null || clbCategory.SelectedIndices.Count <= 0 || string.IsNullOrEmpty(txtMaterial.Text))
+            try
             {
-                MessageBoxEx.Show("请将信息填写完整,谢谢合作");
-                return;
-            }
 
-            //取值
-            cookinfo entity = new cookinfo();
-            entity.Guid_id = Guid.NewGuid();
-            entity.Name = txtName.Text;
-            entity.pic = Common.CommonHelper.PicToBytes(pic.Image);
-            entity.Func = txtFunc.Text;
-            entity.Remark = txtRemark.Text;
-            entity.VideoPath = txtHttpVideo.Text;
-            entity.DelFlag = false; //提交-》管理员审核-》可以显示
-            if (entity.Remark == "备注信息：")
-            {
-                entity.Remark = "分享人：" + F_Main.current_user.Name + "\n";
-            }
 
-            for (int i = 0; i < clbCategory.Items.Count; i++)
-            {
-                if (clbCategory.GetItemCheckState(i) == CheckState.Checked)
-                    entity.categoryinfo.Add(clbCategory.Items[i] as categoryinfo);  //这一步会连接数据库吗？应该不会（<=2ms这么短的时间不会访问数据库）
-            }
-            //解析原料
-            foreach (string line in txtMaterial.Lines)
-            {
-                string[] details = line.Split('|');
-                //根据 details[0] 原料名查询数据库是否存在
-                string mName = details[0];
-                var material = imaterialInfoService.LoadEntities(m => m.Name == mName).FirstOrDefault();
-                //存在，得到原料Id
-                if (material != null)
+                //检查
+                if (string.IsNullOrEmpty(txtFunc.Text) || string.IsNullOrEmpty(txtName.Text) || pic.Image == null || clbCategory.SelectedIndices.Count <= 0 || string.IsNullOrEmpty(txtMaterial.Text))
                 {
-                    entity.r_material_cookinfo.Add(new r_material_cookinfo()
-                    {
-                        CookId = entity.Guid_id,
-                        MaterialId = material.auto_id,
-                        Num = (details.Length > 1) ? details[1] : ""
-                    });
+                    MessageBoxEx.Show("请将信息填写完整,谢谢合作");
+                    return;
                 }
 
-                //不存在，插入原料新数据
+                //取值
+                cookinfo entity = new cookinfo();
+                entity.Guid_id = Guid.NewGuid();
+                entity.Name = txtName.Text;
+                entity.pic = Common.CommonHelper.PicToBytes(pic.Image);
+                entity.Func = txtFunc.Text;
+                entity.Remark = txtRemark.Text;
+                entity.VideoPath =txtHttpVideo.Text=="http://pan.baidu.com..."?"":txtHttpVideo.Text;
+                entity.DelFlag = true; //提交-》管理员审核-》可以显示
+                if (entity.Remark == "备注信息：")
+                {
+                    entity.Remark = "分享人：" + F_Main.current_user.Name + "\n";
+                }
+
+                for (int i = 0; i < clbCategory.Items.Count; i++)
+                {
+                    if (clbCategory.GetItemCheckState(i) == CheckState.Checked)
+                        entity.categoryinfo.Add(clbCategory.Items[i] as categoryinfo);  //这一步会连接数据库吗？应该不会（<=2ms这么短的时间不会访问数据库）
+                }
+                //解析原料
+                foreach (string line in txtMaterial.Lines)
+                {
+                    string[] details = line.Split('|');
+                    //根据 details[0] 原料名查询数据库是否存在
+                    string mName = details[0];
+                    var material = imaterialInfoService.LoadEntities(m => m.Name == mName).FirstOrDefault();
+                    //存在，得到原料Id
+                    if (material != null)
+                    {
+                        entity.r_material_cookinfo.Add(new r_material_cookinfo()
+                        {
+                            CookId = entity.Guid_id,
+                            MaterialId = material.auto_id,
+                            Num = (details.Length > 1) ? details[1] : ""
+                        });
+                    }
+
+                    //不存在，插入原料新数据
+                    else
+                    {
+                        //数据库新插入
+                        var entity2 = imaterialInfoService.AddEntityAndReturn(new materialinfo()
+                        {
+                            Name = details[0],
+                            Remark = "提交人：" + F_Main.current_user.Guid_id
+                        });
+
+                        entity.r_material_cookinfo.Add(new r_material_cookinfo()
+                        {
+                            CookId = entity.Guid_id,
+                            MaterialId = entity2.auto_id,
+                            Num = details[1]
+                        });
+                    }
+                }
+                //保存到数据库
+                if (icookieInfoService.AddEntity(entity))
+                {
+                    MessageBoxEx.Show("提交成功！1-3天的审核通过后将可分享给好友~");
+                    this.Close();
+                }
                 else
                 {
-                    //数据库新插入
-                    var entity2 = imaterialInfoService.AddEntityAndReturn(new materialinfo()
-                    {
-                        Name = details[0],
-                        Remark = "提交人：" + F_Main.current_user.Guid_id
-                    });
-                    
-                    entity.r_material_cookinfo.Add(new r_material_cookinfo()
-                    {
-                        CookId = entity.Guid_id,
-                        MaterialId = entity2.auto_id,
-                        Num = details[1]
-                    });
+                    MessageBoxEx.Show("提交失败！请重试");
+                    return;
                 }
             }
-            //保存到数据库
-            if (icookieInfoService.AddEntity(entity))
+            catch (Exception ex)
             {
-                MessageBoxEx.Show("提交成功！1-3天的审核通过后将可分享给好友~");
-                this.Close();
-            }
-            else
-            {
-                MessageBoxEx.Show("提交失败！请重试");
-                return;
+                MessageBoxEx.Show("请按照格式填写信息！！");
             }
         }
 
