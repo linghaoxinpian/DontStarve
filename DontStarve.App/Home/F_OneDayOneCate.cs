@@ -23,7 +23,7 @@ namespace DontStarve.App
         private IEverydayRecommendInfoService ieverydayrecommendInfoService = new EverydayRecommendInfoService();
 
         private void F_OneDayOneCate_Load(object sender, EventArgs e)
-        {          
+        {
             //加载背景图
             this.SkinBack = Image.FromFile("imgpng/taco.png");
 
@@ -32,10 +32,8 @@ namespace DontStarve.App
             var entity = ieverydayrecommendInfoService.LoadEntities(er => er.RecommendTime == currentStamp).FirstOrDefault();
             if (entity == null)
             {
-                MessageBoxEx.Show("今天小编还没更新推荐呢~");
-                this.Close();
-                this.Dispose();
-                return;
+                MessageYyu.ShowMessage("今天小编还没更新推荐呢~\r\n先看一下最近更新的吧~~亲","",5000);    //这里不知道为什么不能使用MessageBox.show(),使用了就显示不出来窗体了。
+                entity = ieverydayrecommendInfoService.LoadEntities(er => er.RecommendTime == 1483459200).FirstOrDefault();
             }
             this.Tag = entity.cookinfo; //存实例
             if (entity.cookinfo.pic != null)
@@ -72,8 +70,8 @@ namespace DontStarve.App
 
         private void gbBye_Click(object sender, EventArgs e)
         {
+            this.Hide();
             this.Close();
-            this.Dispose();
         }
     }
 }

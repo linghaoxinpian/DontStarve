@@ -483,7 +483,7 @@ namespace DontStarve.App
         private void btnOneDayOneRecommend_Click(object sender, EventArgs e)
         {
             F_OneDayOneCate fo = new F_OneDayOneCate();
-            this.Hide();
+            this.Hide();           
             fo.ShowDialog();
             this.Show();
         }
