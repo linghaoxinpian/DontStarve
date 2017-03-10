@@ -33,7 +33,7 @@ namespace DontStarve.App
             if (entity == null)
             {
                 MessageYyu.ShowMessage("今天小编还没更新推荐呢~\r\n先看一下最近更新的吧~~亲","",5000);    //这里不知道为什么不能使用MessageBox.show(),使用了就显示不出来窗体了。
-                entity = ieverydayrecommendInfoService.LoadEntities(er => er.RecommendTime == 1483459200).FirstOrDefault();
+                entity = ieverydayrecommendInfoService.LoadEntities(er => er.RecommendTime == 1488988800).FirstOrDefault();
             }
             this.Tag = entity.cookinfo; //存实例
             if (entity.cookinfo.pic != null)
