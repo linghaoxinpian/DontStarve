@@ -108,7 +108,7 @@ namespace DontStarve.App
                 }
                 yssd.llbName.Text = pros[2].GetValue(item);
                 yssd.yyu_PraiseNum1.labPraiseNum.Text = pros[3].GetValue(item).ToString();
-                yssd.lbSubtime.Text = pros[4].GetValue(item).ToString();
+                yssd.lbSubtime.Text ="时间:"+ CommonHelper.StampToDateTime(pros[4].GetValue(item).ToString());
                 yssd.txtContent.Text = pros[5].GetValue(item);
                 //点赞注册事件
                 yssd.yyu_PraiseNum1.AddPraise += new Action(() =>
